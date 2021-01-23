@@ -2,7 +2,7 @@
 <html lang="en">
     <head>    
 
-        <title>Installation - Stackbit Libris Theme</title>
+        <title>2. Writing your first application - Stackbit Libris Theme</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="A documentation theme"/>
@@ -105,8 +105,8 @@
           
           
           
-          <li class="docs-menu-item has-children">
-            <a href="/docs/overview/">Overview</a>
+          <li class="docs-menu-item has-children active">
+            <a href="/docs/tutorials/">Tutorials</a>
             
             
               <button class="docs-submenu-toggle"><span class="screen-reader-text">Submenu</span><span class="icon-angle-right" aria-hidden="true"></span></button>
@@ -117,43 +117,39 @@
 <ul class="docs-submenu">
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/Layouts/">Layouts</a>
+      <a href="/docs/tutorials/1-QSkinny/">1. Introduction</a>
+    </li>
+  
+    <li class="docs-menu-item current">
+      <a href="/docs/tutorials/2-writing-your-first-application/">2. Writing your first application</a>
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/QSkinny/">Introduction</a>
+      <a href="/docs/tutorials/3-Layouts/">3. Layouts</a>
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/Skins/">Skins</a>
+      <a href="/docs/tutorials/4-Skins/">4. Skins</a>
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/parents-and-parent-items/">Parents and parent items</a>
+      <a href="/docs/tutorials/5-scalable-graphics/">5. (Scalable) graphics</a>
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/qskinny-and-qml/">Using QSkinny and QML</a>
+      <a href="/docs/tutorials/6-parents-and-parent-items/">6. Parents and parent items</a>
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/scalable-graphics/">(Scalable) graphics</a>
+      <a href="/docs/tutorials/7-qskinny-and-qml/">7. Using QSkinny and QML</a>
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/scene-graph/">Scene graph representations of controls</a>
+      <a href="/docs/tutorials/8-writing-own-controls/">8. Writing own controls</a>
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/table-of-contents/"></a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/overview/writing-own-controls/">Writing own controls</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/overview/writing-your-first-application/">Writing your first application</a>
+      <a href="/docs/tutorials/9-scene-graph/">9. Scene graph representations of controls</a>
     </li>
   
 </ul>
@@ -1051,157 +1047,162 @@
     <article class="post type-docs">
       <div class="post-inside">
         <header class="post-header">
-          <h1 class="post-title line-left">Installation</h1>
+          <h1 class="post-title line-left">2. Writing your first application</h1>
         </header><!-- .post-header -->
         <div class="post-content">
-          <div class="note">
-  <strong>Note:</strong> 
-  This is the demo content for demonstration purpose only. The primary function of this content is to show you what this theme can do. There is a more detailed explanation in the <strong>Getting Started</strong> section.
+          <div class="sect1">
+<h2 id="writing-your-first-application">Writing your first application</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="building-the-qskinny-repository">Building the QSkinny repository</h3>
+<div class="paragraph">
+<p>In this chapter we will write a simple QSkinny application on Linux from scratch. As a prerequisite, a recent Qt version (&gt;= 5.6) should be available and the directory of its <code>qmake</code> binary in the current <code>$PATH</code>. The we can build the QSkinny repository with the following commands:</p>
 </div>
-
-<h2 id="callouts">Callouts</h2>
-
-<hr />
-
-<p>There are two types of callouts available in this theme, <strong>note</strong> and <strong>important</strong>. To add a callout to your documentation simply add the following <code class="highlighter-rouge">html</code> code with class <code class="highlighter-rouge">important</code> or <code class="highlighter-rouge">note</code>. Like in the example bellow.</p>
-
-<h3 id="html-example">HTML example</h3>
-
-<p>Copy the code and modify these blocks according to your needs.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"important"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;strong&gt;</span>Important:<span class="nt">&lt;/strong&gt;</span> 
-  This is an "Important" callout block of text.
-  This block indicates a warning or caution. 
-  Use it for an important message. 
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"note"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;strong&gt;</span>Note:<span class="nt">&lt;/strong&gt;</span> 
-  This is a "Note" callout block of text. 
-  This block signifies a general note.
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
-<h3 id="live-example">Live example</h3>
-
-<div class="important">
-  <strong>Important:</strong> 
-  This is an "Important" callout block of text. 
-  This block indicates a warning or caution.
-  Use it for an important message. 
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">cd /home/user/dev/
+git clone https://github.com/uwerat/qskinny.git
+cd qskinny
+qmake
+make</code></pre>
 </div>
-
-<div class="note">
-  <strong>Note:</strong> 
-  This is an "Note" callout block of text. 
-  This block signifies a general note.
 </div>
-
-<h2 id="code-blocks">Code blocks</h2>
-
-<hr />
-
-<div class="note">
-  <strong>Note:</strong>
-  Code blocks have copy functionality. To copy the code press the grey button located in the right side top corner.
+<div class="paragraph">
+<p>This will produce the libraries <code>libqskinny.so</code> and others in the <code>qskinny/lib</code> directory. Optionally we could install the libraries to <code>/usr/local</code> via <code>make install</code>; for now we will use the ones from the local build at <code>/home/user/dev/qskinny/lib</code>. If you checked out the repository in another directory, you will have to adapt the include and library paths used below.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="compiling-our-first-app">Compiling our first app</h3>
+<div class="paragraph">
+<p>As a next step, we need to write our app. Let&#8217;s start with a simple <code>main.cpp</code> file in a directory <code>myapp</code>:</p>
+</div>
+<div class="listingblock">
+<div class="title">main.cpp</div>
+<div class="content">
+<pre class="highlight"><code>#include &lt;SkinnyFont.h&gt;
+#include &lt;QskWindow.h&gt;
 
-<p>You can create simple code blocks by placing triple backticks <code>```</code> before and after the code block. To render a code block more readable, we recommend placing a blank line before and after code blocks.</p>
+#include &lt;QGuiApplication&gt;
 
-<pre>```
-if (condition) {
-  code to run if condition is true
-} else {
-  run some other code instead
-}
-```
-</pre>
+int main( int argc, char* argv[] )
+{
+    QGuiApplication app( argc, argv );
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (condition) {
-  code to run if condition is true
-} else {
-  run some other code instead
-}
-</code></pre></div></div>
+    SkinnyFont::init( &amp;app );
 
-<h3 id="syntax-highlighting">Syntax highlighting</h3>
+    QskWindow window;
+    window.show();
 
-<p>You can add a language identifier to enable syntax highlighting in your code block. For example, to syntax highlight <strong>JavaScript</strong> code, specify <code class="highlighter-rouge">javascript</code> next to the tick marks before the fenced code block:</p>
+    return app.exec();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For now this will just create an empty window (the <code>QskWindow</code>) without any controls. Next, we need to create a <code>myapp.pro</code> file in our <code>myapp</code> directory:</p>
+</div>
+<div class="listingblock">
+<div class="title">myapp.pro</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">TEMPLATE = app
+TARGET = myapp
 
-<pre>
-```javascript
-if (condition) {
-  code to run if condition is true
-} else {
-  run some other code instead
-}
-```
-</pre>
+INCLUDEPATH += /home/user/dev/qskinny/support \
+               /home/user/dev/qskinny/src/common \
+               /home/user/dev/qskinny/src/controls \
+               /home/peter/temp/qskinny/src/layouts
 
-<p>The rendered output looks like this:</p>
+LIBS += -L/home/user/dev/qskinny/lib -lqskinny -lqsktestsupport
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">code</span> <span class="nx">to</span> <span class="nx">run</span> <span class="k">if</span> <span class="nx">condition</span> <span class="nx">is</span> <span class="kc">true</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="nx">run</span> <span class="nx">some</span> <span class="nx">other</span> <span class="nx">code</span> <span class="nx">instead</span>
-<span class="p">}</span>
-</code></pre></div></div>
+SOURCES += \
+    main.cpp</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now we can compile our app:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">cd myapp
+qmake
+make</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When running the app we will have to supply the <code>LD_LIBRARY_PATH</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">LD_LIBRARY_PATH=/home/user/dev/qskinny/lib ./myapp</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This should show just an empty window.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-ui-controls">Adding UI controls</h3>
+<div class="paragraph">
+<p>Now that we have our app running, we can add some UI controls to it by extending the <code>main.cpp</code> file we created earlier. We will add some additional include directives, and then create a horizontal layout containing two push buttons. The layout with the two buttons will be shown in the window. Below is the complete updated source file:</p>
+</div>
+<div class="listingblock">
+<div class="title">main.cpp</div>
+<div class="content">
+<pre class="highlight"><code>#include &lt;SkinnyFont.h&gt;
+#include &lt;QskWindow.h&gt;
+#include &lt;QskLinearBox.h&gt;
+#include &lt;QskPushButton.h&gt;
 
-<h2 id="tables">Tables</h2>
+#include &lt;QGuiApplication&gt;
 
-<hr />
+int main( int argc, char* argv[] )
+{
+    QGuiApplication app( argc, argv );
 
-<table>
-  <tbody>
-    <tr>
-      <td>You can build tables with markdown to help you organize information. To add a table, use three or more hyphens (—) to create each column’s header, and use pipes (</td>
-      <td>) to separate each column like in the example below.</td>
-    </tr>
-  </tbody>
+    SkinnyFont::init( &amp;app );
+
+    auto* horizontalBox = new QskLinearBox( Qt::Horizontal );
+    auto* button1 = new QskPushButton( "button 1", horizontalBox );
+    auto* button2 = new QskPushButton( "button 2", horizontalBox );
+
+    QskWindow window;
+    window.addItem( horizontalBox );
+    window.show();
+
+    return app.exec();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now the app is displaying the two buttons:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/writing-first-application.png" alt="An app showing two buttons">
+</div>
+</div>
+<div class="paragraph">
+<p>That&#8217;s it; you just created a QSkinny application from scratch.</p>
+</div>
+<div class="paragraph">
+<p>For information on how the controls and layouts above behave, see the next chapters.</p>
+</div>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="QSkinny.html">&lt; Previous: Introduction</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="QSkinny.html">Home</a></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><a href="Layouts.html">Next: Layouts &gt;</a></p></td>
+</tr>
+</tbody>
 </table>
-
-<pre>
-| Title | Title |
-| ------| ----- |
-| Text  | Text  |
-| Text  | Text  |
-</pre>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Title</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Text</td>
-      <td>Text</td>
-    </tr>
-    <tr>
-      <td>Text</td>
-      <td>Text</td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="note">
-  <strong>Note:</strong> 
-  Creating tables with hyphens and pipes can be time-consuming. To speed up the process, try using the <a href="http://www.tablesgenerator.com/markdown_tables">Markdown Tables Generator</a>.
 </div>
-
-<h2 id="start-using-libris-theme">Start using Libris theme</h2>
-
-<hr />
-
-<p>We’ve packed this theme with powerful features to help you have awesome documentation for your current or next project.</p>
-
-<p><strong>Why not start using this theme today?</strong></p>
-
-<p><a href="https://www.stackbit.com/" class="button">Join Stackbit</a></p>
-
+</div>
+</div>
           
           
           

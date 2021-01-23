@@ -2,7 +2,7 @@
 <html lang="en">
     <head>    
 
-        <title>Writing your first application - Stackbit Libris Theme</title>
+        <title>8. Writing own controls - Stackbit Libris Theme</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="A documentation theme"/>
@@ -106,7 +106,7 @@
           
           
           <li class="docs-menu-item has-children active">
-            <a href="/docs/overview/">Overview</a>
+            <a href="/docs/tutorials/">Tutorials</a>
             
             
               <button class="docs-submenu-toggle"><span class="screen-reader-text">Submenu</span><span class="icon-angle-right" aria-hidden="true"></span></button>
@@ -117,43 +117,39 @@
 <ul class="docs-submenu">
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/Layouts/">Layouts</a>
+      <a href="/docs/tutorials/1-QSkinny/">1. Introduction</a>
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/QSkinny/">Introduction</a>
+      <a href="/docs/tutorials/2-writing-your-first-application/">2. Writing your first application</a>
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/Skins/">Skins</a>
+      <a href="/docs/tutorials/3-Layouts/">3. Layouts</a>
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/parents-and-parent-items/">Parents and parent items</a>
+      <a href="/docs/tutorials/4-Skins/">4. Skins</a>
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/qskinny-and-qml/">Using QSkinny and QML</a>
+      <a href="/docs/tutorials/5-scalable-graphics/">5. (Scalable) graphics</a>
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/scalable-graphics/">(Scalable) graphics</a>
+      <a href="/docs/tutorials/6-parents-and-parent-items/">6. Parents and parent items</a>
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/scene-graph/">Scene graph representations of controls</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/overview/table-of-contents/"></a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/overview/writing-own-controls/">Writing own controls</a>
+      <a href="/docs/tutorials/7-qskinny-and-qml/">7. Using QSkinny and QML</a>
     </li>
   
     <li class="docs-menu-item current">
-      <a href="/docs/overview/writing-your-first-application/">Writing your first application</a>
+      <a href="/docs/tutorials/8-writing-own-controls/">8. Writing own controls</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/tutorials/9-scene-graph/">9. Scene graph representations of controls</a>
     </li>
   
 </ul>
@@ -1051,145 +1047,374 @@
     <article class="post type-docs">
       <div class="post-inside">
         <header class="post-header">
-          <h1 class="post-title line-left">Writing your first application</h1>
+          <h1 class="post-title line-left">8. Writing own controls</h1>
         </header><!-- .post-header -->
         <div class="post-content">
           <div class="sect1">
-<h2 id="writing-your-first-application">Writing your first application</h2>
+<h2 id="writing-own-controls">Writing own controls</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="building-the-qskinny-repository">Building the QSkinny repository</h3>
 <div class="paragraph">
-<p>In this chapter we will write a simple QSkinny application on Linux from scratch. As a prerequisite, a recent Qt version (&gt;= 5.6) should be available and the directory of its <code>qmake</code> binary in the current <code>$PATH</code>. The we can build the QSkinny repository with the following commands:</p>
+<p>Writing own controls is either done by subclassing or compositing an
+existing displayable control like <code>QskTextLabel</code>, or by writing a
+completely new class including a skinlet, which is typically derived
+directly from <code>QskControl</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="subclassing-existing-controls">Subclassing existing controls</h3>
+<div class="paragraph">
+<p>Let’s say an app is displaying a text label with a specific style at
+several different places, then it makes sense to subclass <code>QskTextLabel</code>
+and set the needed properties like font size etc. in the derived class:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml">cd /home/user/dev/
-git clone https://github.com/uwerat/qskinny.git
-cd qskinny
-qmake
-make</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This will produce the libraries <code>libqskinny.so</code> and others in the <code>qskinny/lib</code> directory. Optionally we could install the libraries to <code>/usr/local</code> via <code>make install</code>; for now we will use the ones from the local build at <code>/home/user/dev/qskinny/lib</code>. If you checked out the repository in another directory, you will have to adapt the include and library paths used below.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="compiling-our-first-app">Compiling our first app</h3>
-<div class="paragraph">
-<p>As a next step, we need to write our app. Let&#8217;s start with a simple <code>main.cpp</code> file in a directory <code>myapp</code>:</p>
-</div>
-<div class="listingblock">
-<div class="title">main.cpp</div>
-<div class="content">
-<pre class="highlight"><code>#include &lt;SkinnyFont.h&gt;
-#include &lt;QskWindow.h&gt;
-
-#include &lt;QGuiApplication&gt;
-
-int main( int argc, char* argv[] )
+<pre class="highlight"><code>class TextLabel : public QskTextLabel
 {
-    QGuiApplication app( argc, argv );
 
-    SkinnyFont::init( &amp;app );
+    Q_OBJECT
 
-    QskWindow window;
-    window.show();
-
-    return app.exec();
-}</code></pre>
+public:
+    TextLabel( const QString&amp; text, QQuickItem* parent = nullptr ) : QskTextLabel( text, parent )
+    {
+        setMargins( 15 );
+        setBackgroundColor( Qt::cyan );
+    }
+};</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>For now this will just create an empty window (the <code>QskWindow</code>) without any controls. Next, we need to create a <code>myapp.pro</code> file in our <code>myapp</code> directory:</p>
-</div>
-<div class="listingblock">
-<div class="title">myapp.pro</div>
-<div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml">TEMPLATE = app
-TARGET = myapp
-
-INCLUDEPATH += /home/user/dev/qskinny/support \
-               /home/user/dev/qskinny/src/common \
-               /home/user/dev/qskinny/src/controls \
-               /home/peter/temp/qskinny/src/layouts
-
-LIBS += -L/home/user/dev/qskinny/lib -lqskinny -lqsktestsupport
-
-SOURCES += \
-    main.cpp</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Now we can compile our app:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml">cd myapp
-qmake
-make</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>When running the app we will have to supply the <code>LD_LIBRARY_PATH</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml">LD_LIBRARY_PATH=/home/user/dev/qskinny/lib ./myapp</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This should show just an empty window.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="adding-ui-controls">Adding UI controls</h3>
-<div class="paragraph">
-<p>Now that we have our app running, we can add some UI controls to it by extending the <code>main.cpp</code> file we created earlier. We will add some additional include directives, and then create a horizontal layout containing two push buttons. The layout with the two buttons will be shown in the window. Below is the complete updated source file:</p>
-</div>
-<div class="listingblock">
-<div class="title">main.cpp</div>
-<div class="content">
-<pre class="highlight"><code>#include &lt;SkinnyFont.h&gt;
-#include &lt;QskWindow.h&gt;
-#include &lt;QskLinearBox.h&gt;
-#include &lt;QskPushButton.h&gt;
-
-#include &lt;QGuiApplication&gt;
-
-int main( int argc, char* argv[] )
-{
-    QGuiApplication app( argc, argv );
-
-    SkinnyFont::init( &amp;app );
-
-    auto* horizontalBox = new QskLinearBox( Qt::Horizontal );
-    auto* button1 = new QskPushButton( "button 1", horizontalBox );
-    auto* button2 = new QskPushButton( "button 2", horizontalBox );
-
-    QskWindow window;
-    window.addItem( horizontalBox );
-    window.show();
-
-    return app.exec();
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Now the app is displaying the two buttons:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/writing-first-application.png" alt="An app showing two buttons">
+<img src="../images/subclassing-existing-controls.png" alt="Subclassing existing controls">
+</div>
+<div class="title">Figure 1. A subclassed control with local skin hints</div>
+</div>
+<div class="paragraph">
+<p>Then there is no need to set the margins and background color for every
+instance of the custom text label.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="making-custom-classes-skinnable">Making custom classes skinnable</h3>
+<div class="paragraph">
+<p>To make custom classes like the <code>TextLabel</code> class above skinnable, we
+need to define our own subcontrols and style them in our skin, in
+contrast to setting the values directly in the class. To be able to set
+specific values for our <code>TextLabel</code> class that are different from the
+generic <code>QskTextLabel</code>, we need to define our own subcontrols and
+substitute the generic subcontrols for them in an overriden method
+<code>effectiveSubcontrol()</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>class TextLabel : public QskTextLabel
+{
+    QSK_SUBCONTROLS( Panel )
+
+    TextLabel( const QString&amp; text, QQuickItem* parent = nullptr ) : QskTextLabel( text, parent )
+    {
+    }
+
+    QskAspect::Subcontrol effectiveSubcontrol( QskAspect::Subcontrol subControl ) const override final
+    {
+        if ( subControl == QskTextLabel::Panel )
+            return TextLabel::Panel;
+
+        return subControl;
+    }
+    ...
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>That&#8217;s it; you just created a QSkinny application from scratch.</p>
+<p>When the skinlet is drawing a <code>TextLabel</code> instance, it queries it for
+its subcontrols through <code>effectiveSubcontrol()</code> in order to style them
+properly. Now that we substitute the <code>QskTextLabel::Panel</code> for our
+<code>TextLabel::Panel</code>, we can style it accordingly in our skin, so we don’t
+need to set the local skin hints in the constructor of <code>TextLabel</code>
+anymore.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>class MySkin : public QskSkin
+{
+
+public:
+    MySkin( QObject* parent = nullptr ) : QskSkin( parent )
+    {
+        setGradient( TextLabel::Panel, Qt::cyan );
+        setMargins( TextLabel::Panel | QskAspect::Padding, 15 );
+    }
+};</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/subclassing-existing-controls.png" alt="Subclassing existing controls">
+</div>
+<div class="title">Figure 2. A subclassed control with skin hints defined in the skin</div>
 </div>
 <div class="paragraph">
-<p>For information on how the controls and layouts above behave, see the next chapters.</p>
+<p>The styling described above has the same effect as in the simpler
+example, but now the <code>TextLabel</code> control can be given a different style
+depending on the skin.</p>
 </div>
+<div class="paragraph">
+<p>In our class we only set a custom skin hint for the panel, but as
+<code>QskTextLabel</code> also has a <code>Text</code> subcontrol, we could of course also
+define our own one for the text.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="compositing-controls">Compositing controls</h3>
+<div class="paragraph">
+<p>Controls can also be composited; e.g. when writing a class with a text
+label on the left and a graphic on the right side, it could look like
+this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>class TextAndGraphic : public QskLinearBox
+{
+
+    Q_OBJECT
+
+public:
+    TextAndGraphic( const QString&amp; text, const QString&amp; graphicName, QQuickItem* parent = nullptr )
+        : QskLinearBox( Qt::Horizontal, parent ),
+          m_textLabel( new QskTextLabel( text, this ) )
+    {
+        addItem( m_textLabel );
+
+        QImage image( QString( ":/images/%1.svg" ).arg( graphicName ) );
+        auto graphic = QskGraphic::fromImage( image );
+
+        m_graphicLabel = new QskGraphicLabel( graphic );
+        m_graphicLabel-&gt;setExplicitSizeHint( Qt::PreferredSize, { 30, 30 } );
+        addItem( m_graphicLabel );
+
+        setAutoLayoutChildren( true );
+        ...
+    }
+
+private:
+    QskTextLabel* m_textLabel;
+    QskGraphicLabel* m_graphicLabel;
+};</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This allows for easy instantiation of the class with a text and a file
+name for the graphic:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>auto* textAndGraphic = new TextAndGraphic( "Text", "cloud" );</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/compositing-controls.png" alt="Compositing controls">
+</div>
+<div class="title">Figure 3. A composited control</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="writing-controls-with-a-skinlet">Writing controls with a skinlet</h3>
+<div class="paragraph">
+<p>QSkinny already comes with controls like text labels, list views,
+buttons etc. When there is a completely new control to be written that
+cannot be subclassed or composited, the skinlet for the class needs to
+be implemented as well.</p>
+</div>
+<div class="sect3">
+<h4 id="writing-the-class">Writing the class</h4>
+<div class="paragraph">
+<p>For demo purposes we create a class called <code>CustomShape</code> which shall
+display an outer circle and an inner circle, with minimal API. There are
+only 2 subcontrols that will be painted in the skinlet later:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>class CustomShape : public QskControl
+{
+    Q_OBJECT
+
+public:
+    QSK_SUBCONTROLS( Panel, InnerShape )
+
+    CustomShape( QQuickItem* parent = nullptr ) : QskControl( parent )
+    {
+    }
+};</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="writing-the-skinlet">Writing the skinlet</h4>
+<div class="paragraph">
+<p>Writing the skinlet is the hard part of the work. We need the following
+things in our skinlet:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A definition of node roles. They typically correspond to subcontrols
+from the control, so since in our case we have a subcontrol <code>Panel</code> and
+<code>InnerShape</code>, there will be the node roles <code>PanelRole</code> and
+<code>InnerShapeRole</code>. The node roles are often set in the constructor of the
+class.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+The constructor of the skinlet needs to be invokable!
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>class CustomShapeSkinlet : public QskSkinlet
+{
+    Q_GADGET
+
+public:
+    enum NodeRole
+    {
+        PanelRole, InnerShapeRole
+    };
+
+    Q_INVOKABLE CustomShapeSkinlet( QskSkin* skin = nullptr ) : QskSkinlet( skin )
+    {
+        setNodeRoles( { PanelRole, InnerShapeRole } );
+    }</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The enclosing rectangle for each subcontrol. This can be just the
+<code>contentsRect</code>, but we can define it more accurately if we want by
+applying some metrics. If the code below is hard to understand, the
+important thing to take away from it is that different subcontrols can
+have different enclosing rectangles.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>    QRectF subControlRect( const QskSkinnable* skinnable, const QRectF&amp; contentsRect, QskAspect::Subcontrol subControl ) const override
+    {
+        const auto* customShape = static_cast&lt; const CustomShape* &gt;( skinnable );
+
+        if ( subControl == CustomShape::Panel )
+        {
+            return contentsRect;
+        }
+        else if ( subControl == CustomShape::InnerShape )
+        {
+            const auto margins = customShape-&gt;marginsHint( CustomShape::InnerShape );
+            return contentsRect.marginsRemoved( margins );
+        }
+
+        return QskSkinlet::subControlRect( skinnable, contentsRect, subControl );</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The code to actually draw the nodes. In our case of an outer circle
+and an inner circle, the code for each subcontrol / node role is quite
+similar. The method <code>updateSubNode()</code>, which is reimplemented from
+<code>QQuickItem</code>, is called once for each node role. The code below again
+might not be straight forward to understand, the gist of it is that for
+each node role we draw a circle by creating a <code>BoxNode</code>.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>protected:
+    QSGNode* updateSubNode( const QskSkinnable* skinnable, quint8 nodeRole, QSGNode* node ) const override
+    {
+        const auto* customShape = static_cast&lt; const CustomShape* &gt;( skinnable );
+
+        switch ( nodeRole )
+        {
+            case PanelRole:
+            {
+                auto panelNode = static_cast&lt; QskBoxNode* &gt;( node );
+
+                ...
+                const auto panelRect = subControlRect( customShape, customShape-&gt;contentsRect(), CustomShape::Panel );
+                const qreal radius = panelRect.width() / 2;
+                panelNode-&gt;setBoxData( panelRect, shapeMetrics, borderMetrics, borderColors, gradient );
+
+                return panelNode;
+            }
+            case InnerShapeRole:
+            {
+                auto innerNode = static_cast&lt; QskBoxNode* &gt;( node );
+
+                ...
+                const auto innerRect = subControlRect( customShape, customShape-&gt;contentsRect(), CustomShape::InnerShape );
+                const qreal radius = innerRect.width() / 2;
+                innerNode-&gt;setBoxData( innerRect, shapeMetrics, borderMetrics, borderColors, gradient );
+
+                return innerNode;
+            }
+        }
+
+        return QskSkinlet::updateSubNode( skinnable, nodeRole, node );
+    }
+};</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="connecting-class-and-skinlet">Connecting class and skinlet</h4>
+<div class="paragraph">
+<p>In our skin, we need to declare that the skinlet above will be
+responsible of drawing our control via <code>declareSkinlet</code>. Also, we can
+style our control with skin hints:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>class MySkin : public QskSkin
+{
+
+public:
+    MySkin( QObject* parent = nullptr ) : QskSkin( parent )
+    {
+       declareSkinlet&lt; CustomShape, CustomShapeSkinlet &gt;();
+
+       setGradient( CustomShape::Panel, Qt::blue );
+       setMargins( CustomShape::InnerShape, 20 );
+       setGradient( CustomShape::InnerShape, Qt::magenta );
+    }
+};</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>SkinFactories etc. are again omitted here. Finally we can draw our
+control; the effort might seem excessive, but we wrote the control with
+all capabilities of styling; in addition, the control will react to size
+changes properly. A simpler version with hardcoded values for margins,
+colors etc. can be written with less code.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/control-with-skinlet.png" alt="Control with skinlet">
+</div>
+<div class="title">Figure 4. A class with an own skinlet</div>
+</div>
+<hr>
 <table class="tableblock frame-none grid-none stretch">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -1198,12 +1423,13 @@ int main( int argc, char* argv[] )
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="QSkinny.html">&lt; Previous: Introduction</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="qskinny-and-qml.html">&lt; Previous: Using QSkinny and QML</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><a href="QSkinny.html">Home</a></p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock"><a href="Layouts.html">Next: Layouts &gt;</a></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><a href="scene-graph.html">Next: Scene graph representations of controls &gt;</a></p></td>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>

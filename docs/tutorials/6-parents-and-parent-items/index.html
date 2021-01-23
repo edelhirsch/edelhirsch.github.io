@@ -2,7 +2,7 @@
 <html lang="en">
     <head>    
 
-        <title>Layouts - Stackbit Libris Theme</title>
+        <title>6. Parents and parent items - Stackbit Libris Theme</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="A documentation theme"/>
@@ -106,7 +106,7 @@
           
           
           <li class="docs-menu-item has-children active">
-            <a href="/docs/overview/">Overview</a>
+            <a href="/docs/tutorials/">Tutorials</a>
             
             
               <button class="docs-submenu-toggle"><span class="screen-reader-text">Submenu</span><span class="icon-angle-right" aria-hidden="true"></span></button>
@@ -116,44 +116,40 @@
 
 <ul class="docs-submenu">
   
+    <li class="docs-menu-item">
+      <a href="/docs/tutorials/1-QSkinny/">1. Introduction</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/tutorials/2-writing-your-first-application/">2. Writing your first application</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/tutorials/3-Layouts/">3. Layouts</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/tutorials/4-Skins/">4. Skins</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/tutorials/5-scalable-graphics/">5. (Scalable) graphics</a>
+    </li>
+  
     <li class="docs-menu-item current">
-      <a href="/docs/overview/Layouts/">Layouts</a>
+      <a href="/docs/tutorials/6-parents-and-parent-items/">6. Parents and parent items</a>
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/QSkinny/">Introduction</a>
+      <a href="/docs/tutorials/7-qskinny-and-qml/">7. Using QSkinny and QML</a>
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/Skins/">Skins</a>
+      <a href="/docs/tutorials/8-writing-own-controls/">8. Writing own controls</a>
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/overview/parents-and-parent-items/">Parents and parent items</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/overview/qskinny-and-qml/">Using QSkinny and QML</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/overview/scalable-graphics/">(Scalable) graphics</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/overview/scene-graph/">Scene graph representations of controls</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/overview/table-of-contents/"></a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/overview/writing-own-controls/">Writing own controls</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/overview/writing-your-first-application/">Writing your first application</a>
+      <a href="/docs/tutorials/9-scene-graph/">9. Scene graph representations of controls</a>
     </li>
   
 </ul>
@@ -1051,547 +1047,63 @@
     <article class="post type-docs">
       <div class="post-inside">
         <header class="post-header">
-          <h1 class="post-title line-left">Layouts</h1>
+          <h1 class="post-title line-left">6. Parents and parent items</h1>
         </header><!-- .post-header -->
         <div class="post-content">
           <div class="sect1">
-<h2 id="layouts">Layouts</h2>
+<h2 id="parents-and-parent-items">Parents and parent items</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Layouts manage the position of UI elements on the screen, and how the
-elements react to size changes (e.g. window resize).</p>
-</div>
-<div class="sect2">
-<h3 id="size-hints">Size hints</h3>
-<div class="paragraph">
-<p>Size hints let the layouting code know how big UI elements are, and to
-which size they may shrink or grow.</p>
-</div>
-<div class="paragraph">
-<p>Size hints can be explicit or implicit. Explicit sizes are set by the
-user via an API call through <code>setExplicitSizeHint()</code> ("This element is
-of that size''), while implicit sizes are deduced from the elements
-themselves. Explicit size hints always take precedence over implicit
-ones.</p>
-</div>
-<div class="paragraph">
-<p>For instance, the implicit size of a button is calculated from the
-text width (which itself depends on the font) and possibly padding and
-margins:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/size-hints-calculation.png" alt="implicit horizontal size hint of a button">
-</div>
-<div class="title">Figure 1. implicit horizontal size hint of a button</div>
-</div>
-<div class="paragraph">
-<p>The implicit width of a composited UI element containing a
-graphic on the left and a text on the right would be the sum of the elements’
-width, again with padding and margins.</p>
-</div>
-<div class="paragraph">
-<p>Layouts, i.e. classes deriving from <code>QskBox</code>, are also controls
-(i.e. <code>QskControl</code> instances), so they also have size hints. A layout
-typically calculates its implicit size hint by summing up the size of
-its children. For instace a horizontal layout containing three buttons
-next to each other will calculate its implicit width by summing up the
-widths of the buttons (spacing and margins again come on top).</p>
-</div>
-<div class="paragraph">
-<p>There are three types of size hints: <strong>Minimum</strong>, <strong>Preferred</strong> and
-<strong>Maximum</strong>.</p>
+<p>Creating an app with QSkinny consists of creating controls, putting them
+into layouts and nesting layouts and controls inside each other. The
+nesting already creates some sort of a hierarchy in the app, see the
+"Nesting layouts" section in the <a href="Layouts.html">layouts page</a>. In
+more general terms, all controls are part of several hierarchies:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The <strong>minimum size hint</strong> of a UI element is used by layouting code to
-determine how small an element can be.</p>
+<p>The <strong>object tree</strong>. This is a tree of <code>QObject</code> instances which manages
+lifetime: Objects created with a parent will get deleted whenever their
+parent is deleted. For more information, see the Qt documentation on
+<a href="https://doc.qt.io/qt-5/objecttrees.html">Object Trees &amp; Ownership</a>.</p>
 </li>
 <li>
-<p>The <strong>preferred size hint</strong> is the natural size of an element, and will
-be used in an ideal case, meaning there is enough space available.</p>
+<p>The <strong>item tree</strong>. This is a tree of items displayed on the screen,
+i.e. <code>QQuickItem</code> instances. Qt will traverse the item tree when
+rendering items on the screen. The positioning of an item depends on its
+parent item, e.g. layouts will position their child items according to
+certain policies. In addition, visual items will inherit properties from
+its parent item like visibility or opacity. The item tree is often
+similar to the object tree, but not necessarily: Instances of
+<code>QQuickItem</code> can have a parent item set, but have another parent, or no
+parent at all. See also the Qt documentation on
+<a href="https://doc.qt.io/qt-5/qtquick-visualcanvas-visualparent.html">Concepts -
+Visual Parent in Qt Quick</a>.</p>
 </li>
 <li>
-<p>The <strong>maximum size hint</strong> is used by layouting code to determine how big
-an element can be.</p>
+<p>The <strong>scene graph</strong>. The scene graph contains a representation of
+graphic primitives like rectangles, textures (i.e. images) and text, to
+allow efficient rendering on the screen with OpenGL or other backends.
+This is described in more details in <a href="scene-graph.html">scene graph
+representations of controls</a>.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Minimum and maximum size hints of atomic controls like <code>QskPushButton</code>
-or <code>QskTextLabel</code> are typically not used, instead size policies are used
-to express how small or big a component can be (see next topic).
-Minimum and maximum sizes, i.e. the methods <code>minimumSize()</code> and
-<code>maximumSize()</code>, are typically used for layouts though.</p>
-</div>
-<div class="paragraph">
-<p>So in total, a control can have up to 6 size hints: the three types
-described above, and each one can have an implicit and an explicit hint.</p>
-</div>
-<div class="sect3">
-<h4 id="example">Example</h4>
-<div class="paragraph">
-<p>Below is an image with an implicit size hint with a width of 91 pixels
-and a height of 39 pixels (91x39). The hint is determined by the size of
-the text (71x19 pixels) plus margins (10 pixels each for top, right,
-bottom, left). We don’t need to set a size hint explicitly, the control
-will be rendered correctly with the implicit size hint:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>auto* label1 = new QskTextLabel( "control 1" );
-label1-&gt;setMargins( 10 );
-label1-&gt;setBackgroundColor( Qt::magenta );</code></pre>
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/size-hints-1.png" alt="Image without explicit size hint">
-</div>
-<div class="title">Figure 2. control without explicit size hint</div>
-</div>
-<div class="paragraph">
-<p>If we set an explicit size hint of 150x60 pixels ourselves for the
-preferred size, the control will be rendered differently:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>label1-&gt;setExplicitSizeHint( Qt::PreferredSize, { 150, 60 } );</pre>
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/size-hints-2.png" alt="Image with explicit size hint">
-</div>
-<div class="title">Figure 3. control with explicit size hint</div>
-</div>
-<div class="paragraph">
-<p>When dealing with standard controls or layouts, the size hints don’t
-need to be specified explicitly, as it can be deduced from its standard
-values, as seen in the example above.</p>
-</div>
-<div class="paragraph">
-<p>The actual size of a UI element also depends on its size policy, see the
-next topic.</p>
-</div>
-</div>
-</div>
 <div class="sect2">
-<h3 id="size-policies">Size policies</h3>
+<h3 id="example">Example</h3>
 <div class="paragraph">
-<p>Size policies define the way UI elements can change their size depending
-on the available space. Imagine a UI with a top bar and a main content
-area: When a status bar at the bottom is to be faded in, the top bar and
-main content have less space to display. One way to deal with this would
-be to leave the top bar at the same size and shrink the main area. This
-can be achieved with size policies: The top bar would have a vertical
-size policy of <code>Fixed</code>, while the main area would be <code>Preferred</code>,
-meaning it can grow and shrink.</p>
-</div>
-<div class="paragraph">
-<p>The size policies of QSkinny correspond to the
-<strong><a href="https://doc.qt.io/qt-5/qsizepolicy.html#Policy-enum">size policies from
-QtWidgets</a></strong>:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><code>QskSizePolicy::Policy</code></th>
-<th class="tableblock halign-left valign-top">description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Fixed</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The control has a fixed size and can neither grow nor shrink.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Minimum</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The control cannot shrink beyond its minimum size, but it
-can grow if needed.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Maximum</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The control cannot grow beyond its maximum size, but it can
-shrink if needed.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Preferred</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The control can grow and shrink, but it should be of the
-size given by <code>sizeHint()</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MinimumExpanding</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The control cannot shrink beyond its minimum size,
-but it can grow and should get as much space as possible.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Expanding</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The control can shrink and grow, and it should get as much
-space as possible.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ignored</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>sizeHint()</code> is ignored, and the control will get as
-much space as possible.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Constrained</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The size of the control depends on a constraint,
-i.e. the width is depending on the height or vice versa. For this policy
-and the other <code>Constrained*</code> ones below, <code>QskControl::widthForHeight()</code>
-or <code>QskControl::heightForWidth()</code> will be queried.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ConstrainedMinimum</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The size of the control depends on a constraint,
-but it can grow if needed.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ConstrainedMaximum</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The size of the control depends on a constraint,
-but it can shrink if needed.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ConstrainedPreferred</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The size of the control depends on a
-constraint, but it can grow and srhink if needed.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ConstrainedMinimumExpanding</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The size of the control depends on a
-constraint, but it can grow and should get as much space as possible.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ConstrainedExpanding</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The size of the control depends on a
-constraint, and it should get as much space as possible.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>All the <code>Constrained*</code> policies correspond to Qt’s
-<a href="https://doc.qt.io/qt-5/qsizepolicy.html#hasHeightForWidth">QSizePolicy::hasHeightForWidth()</a>
-or
-<a href="https://doc.qt.io/qt-5/qsizepolicy.html#hasWidthForHeight">QSizePolicy::hasWidthForHeight()</a>
-flag. E.g. if a control has a horizontal size policy of <code>Constrained</code>
-and a vertical size policy of <code>Fixed</code>, it will call <code>widthForHeight()</code>
-to determine the width that corresponds to the height.</p>
-</div>
-<div class="sect3">
-<h4 id="example-2">Example</h4>
-<div class="paragraph">
-<p>Below is an example of two buttons with different size policies. In this
-case only the horizontal size policies are considered; the vertical size
-policies behave correspondingly.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>auto horizontalBox = new QskLinearBox( Qt::Horizontal );
-
-auto* label1 = new QskTextLabel( "size policy: fixed" );
-label1-&gt;setSizePolicy( Qt::Horizontal, QskSizePolicy::Fixed );
-horizontalBox-&gt;addItem( label1 );
-
-auto* label2 = new QskTextLabel( "size policy: minimum" );
-label2-&gt;setSizePolicy( Qt::Horizontal, QskSizePolicy::Minimum );
-horizontalBox-&gt;addItem( label2 );
-...</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>By default the width of the buttons is determined by its text plus its
-margins:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/size-policies-horizontal-minimum-1.png" alt="Fixed vs. Minimum size policy">
-</div>
-<div class="title">Figure 4. Size policies with preferred size</div>
-</div>
-<div class="paragraph">
-<p>After growing the window horizontally, the button with the Fixed
-horizontal size policy keeps its width, while the button with the
-Minimum policy will grow:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/size-policies-horizontal-minimum-2.png" alt="Fixed vs. Minimum size policy">
-</div>
-<div class="title">Figure 5. Size policies when increasing window width</div>
-</div>
-<div class="paragraph">
-<p>When shrinking the window below its original size, both buttons stay
-with their width: The one on the left because of its <code>Fixed</code> size policy,
-and the one on the right because it won’t shrink below its original size
-due to the <code>Minimum</code> size policy.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/size-policies-horizontal-minimum-3.png" alt="Fixed vs. Minimum size policy">
-</div>
-<div class="title">Figure 6. Size policies when shrinking window width</div>
-</div>
-<div class="paragraph">
-<p>If we change the policy of the right button to <code>Preferred</code>, it will shrink
-below its original size (even though the text is too wide now):</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>label2-&gt;setSizePolicy( Qt::Horizontal, QskSizePolicy::Preferred );
-label2-&gt;setText( "size policy: preferred" );</pre>
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/size-policies-horizontal-minimum-4.png" alt="Fixed vs. Minimum size policy">
-</div>
-<div class="title">Figure 7. Size policies when changing to preferred size policy</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="types-of-layouts">Types of layouts</h3>
-<div class="paragraph">
-<p>There are different types of layouts that can group UI elements
-together. Internally, layouts use the <code>layoutRect()</code> method to determine
-the available space to place its children.</p>
-</div>
-<div class="sect3">
-<h4 id="linear-layouts-qsklinearbox">Linear layouts (QskLinearBox)</h4>
-<div class="paragraph">
-<p>A linear layout can group elements either horizontally or vertically, as
-in the images below.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>auto horizontalBox = new QskLinearBox( Qt::Horizontal );
-
-auto* label1 = new QskTextLabel( "control 1" );
-horizontalBox-&gt;addItem( label1 );
-
-auto* label2 = new QskTextLabel( "control 2" );
-horizontalBox-&gt;addItem( label2 );
-
-auto* label3 = new QskTextLabel( "control 3" );
-horizontalBox-&gt;addItem( label3 );
-...</code></pre>
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/layout-horizontal.png" alt="Horizontal layout">
-</div>
-<div class="title">Figure 8. Horizontal layout</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>auto verticalBox = new QskLinearBox( Qt::Vertical );
-
-auto* label1 = new QskTextLabel( "control 1" );
-verticalBox-&gt;addItem( label1 );
-
-auto* label2 = new QskTextLabel( "control 2" );
-verticalBox-&gt;addItem( label2 );
-
-auto* label3 = new QskTextLabel( "control 3" );
-verticalBox-&gt;addItem( label3 );
-...</code></pre>
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/layout-vertical.png" alt="Vertical layout">
-</div>
-<div class="title">Figure 9. Vertical layout</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="grid-layouts-qskgridbox">Grid layouts (QskGridBox)</h4>
-<div class="paragraph">
-<p>Grid layouts are like linear layouts, but 2 dimensional, and support
-laying out UI controls in a grid, including spanning columns and rows.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>auto* gridBox = new QskGridBox;
-
-auto* label1 = new QskTextLabel( "control 1" );
-gridBox-&gt;addItem( label1, 0, 0 ); // last two arguments are row and column
-
-auto* label2 = new QskTextLabel( "control 2" );
-gridBox-&gt;addItem( label2, 0, 1 );
-
-auto* label3 = new QskTextLabel( "control 3" );
-gridBox-&gt;addItem( label3, 0, 2 );
-
-auto* label4 = new QskTextLabel( "control 4" );
-gridBox-&gt;addItem( label4, 1, 0, 1, 2 ); // additional arguments are rowSpan and columnSpan
-
-auto* label5 = new QskTextLabel( "control 5" );
-gridBox-&gt;addItem( label5, 1, 2 );
-
-auto* label6 = new QskTextLabel( "control 6" );
-gridBox-&gt;addItem( label6, 2, 0 );
-
-auto* label7 = new QskTextLabel( "control 7" );
-gridBox-&gt;addItem( label7, 2, 1, 1, 2 );</code></pre>
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/layout-grid.png" alt="Grid layout">
-</div>
-<div class="title">Figure 10. Grid layout</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="stack-layouts-qskstackbox">Stack layouts (QskStackBox)</h4>
-<div class="paragraph">
-<p>Stack layouts allow for items to be arranged on top of each other.
-Usually there is one current (visible) item, while the rest of the items
-are hidden below the current one:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>auto* stackBox = new QskStackBox;
-
-auto* label1 = new QskTextLabel( "control 1" );
-label1-&gt;setBackgroundColor( Qt::blue );
-stackBox-&gt;addItem( label1 );
-
-auto* label2 = new QskTextLabel( "control 2" );
-label2-&gt;setBackgroundColor( Qt::cyan );
-stackBox-&gt;addItem( label2 );
-
-auto* label3 = new QskTextLabel( "control 3" );
-label3-&gt;setBackgroundColor( Qt::magenta );
-stackBox-&gt;addItem( label3 );
-
-stackBox-&gt;setCurrentIndex( 2 );
-...</code></pre>
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/layout-stack.png" alt="Stack layout">
-</div>
-<div class="title">Figure 11. Stack layout (symbolized)</div>
-</div>
-<div class="paragraph">
-<p>In this example, "control 3" is stacked on top of the blue and the
-cyan control. Controls in a stacked layout can be of different sizes.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-The image above is just for illustrating purposes. In practice
-the topmost control ("control 3" here) is completely covering the ones
-below it.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="qskcontrolautolayoutchildren">QskControl::autoLayoutChildren()</h4>
-<div class="paragraph">
-<p>When the <code>QskControl::autoLayoutChildren()</code> flag is set, the control will
-recalculate the geometry of its children whenever the item is updating
-its layout.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="stretch-factors">Stretch factors</h3>
-<div class="paragraph">
-<p>Stretch factors allow layouts to keep a size ratio for their elements.
-Let’s say a horizontal layout contains two elements, and when filling up
-additional space, the second element should always have twice the width
-of the first element. Then the first element should have a stretch
-factor of 1 and the second element a factor of 2.</p>
-</div>
-<div class="paragraph">
-<p>Stretch factors are set on the layout rather than on the controls
-itself:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>auto horizontalBox = new QskLinearBox( Qt::Horizontal );
-
-auto* label1 = new QskTextLabel( "stretch factor 1" );
-horizontalBox-&gt;addItem( label1 );
-horizontalBox-&gt;setStretchFactor( label1, 1 );
-
-auto* label2 = new QskTextLabel( "stretch factor 2" );
-horizontalBox-&gt;addItem( label2 );
-horizontalBox-&gt;setStretchFactor( label2, 2 );
-
-...</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>When the layout has all the space it needs (but not more), both elements
-are rendered with their preferred size:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/stretch-factors-1.png" alt="Stretch factors preferred size">
-</div>
-<div class="title">Figure 12. Stretch factors with preferred size</div>
-</div>
-<div class="paragraph">
-<p>When the layout gets more width, the stretch factors come into play:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/stretch-factors-2.png" alt="Stretch factors increasing width">
-</div>
-<div class="title">Figure 13. A stretch factor of 1:2</div>
-</div>
-<div class="paragraph">
-<p>No matter how wide the layout is, the aspect ratio of 1:2 will always be
-kept, meaning that the label on the left will get 33% of the space, and
-the label on the right 67%:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/stretch-factors-3.png" alt="Stretch factors even more width">
-</div>
-<div class="title">Figure 14. A stretch factor of 1:2 with different widths</div>
-</div>
-<div class="paragraph">
-<p>Stretch factors in QSkinny are the same as in the Qt Graphics View
-Framework, see
-<a href="https://doc.qt.io/qt-5/qgraphicslinearlayout.html#stretch-factor-in-qgraphicslinearlayout">Stretch
-Factor in QGraphicsLinearLayout</a>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="nesting-layouts">Nesting layouts</h3>
-<div class="paragraph">
-<p>In a real-world application it is typical to nest several layouts in
-each other. The example below depicts a UI with a top bar and menu items
-on the left:</p>
+<p>Let’s look at the "Nesting layouts" example from the
+<a href="Layouts.html">layouts documentation</a>. The UI looks like this:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/nesting-layouts.png" alt="Nested layouts">
 </div>
-<div class="title">Figure 15. A UI with nested layouts</div>
+<div class="title">Figure 1. UI with nested layouts</div>
 </div>
 <div class="paragraph">
-<p>The code to produce the above UI could look like this (setting colors
-etc. omitted for brevity):</p>
+<p>The code for this UI is below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1612,30 +1124,162 @@ auto* menuLabel2 = new QskTextLabel( "menu 2", menuBox );
 auto* menuLabel3 = new QskTextLabel( "menu 3", menuBox );
 
 auto* mainText = new QskTextLabel( "here main area", mainBox );
-...</code></pre>
+
+QskWindow window;
+window.addItem( outerBox );
+window.show();</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="object-tree">Object tree</h4>
+<div class="paragraph">
+<p>In the example above, when we created a new element, we always passed
+the <code>QObject</code> parent as an argument to the constructor, which is good
+practice. We do that for instance in this line:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>auto* topLabel1 = new QskTextLabel( "top bar label 1", topBar );</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Here we have an outer vertical layout which divides the content into a
-top bar and a main box. The top bar itself consists of a horizontal
-layout with 3 buttons, while the main area is split into a left part
-with menu buttons and a right part for the main area. That left part
-with the menu buttons is again a vertical layout.</p>
+<p>This makes sure <code>topBar</code> is a parent of <code>topLabel1</code>. It means that when
+<code>topBar</code> is deleted, it will automatically delete <code>topLabel1</code>, because
+the latter is a child of the <code>topBar</code>.</p>
 </div>
 <div class="paragraph">
-<p>The following diagram makes the layouts visible:</p>
+<p>Below is an image of the object tree, i.e. the <code>QObject</code> parent-child
+relationship. The <code>QskWindow</code> is hereby the parent of the
+<code>QQuickRootItem</code>, which itself is the parent of the <code>outer box</code>, and so
+on. For information on how to obtain this tree, see
+<a href="https://doc.qt.io/qt-5/qobject.html#dumpObjectTree">QObject::dumpObjectTree()</a>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/nesting-layouts-architecture.png" alt="Nested layouts architecture">
+<img src="../images/object-hierarchy.png" alt="QObject hierarchy">
 </div>
-<div class="title">Figure 16. The layout structure of the UI</div>
+<div class="title">Figure 2. QObject tree (and item tree) of the nested layouts UI</div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="anchoring-in-qskinny">Anchoring in QSkinny</h3>
+<div class="sect3">
+<h4 id="item-tree">Item tree</h4>
 <div class="paragraph">
-<p>TODO</p>
+<p>The Item tree for the example above is identical to the object tree. As
+described, we always pass the parent object in the constructor:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>auto* topLabel1 = new QskTextLabel( "top bar label 1", topBar );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The line above will (in addition to the setting the parent) also ensure
+that <code>topBar</code> will be a <strong>parent item</strong> of <code>topLabel1</code>; this is done by
+the <code>QQuickItem</code> constructor.</p>
+</div>
+<div class="paragraph">
+<p>Even if we had not passed the parent in the constructor, we could still
+add the label to the <code>topBar</code> via an explicit call:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>auto* topLabel1 = new QskTextLabel( "top bar label 1" );
+topBar-&gt;addItem( topLabel1 );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The call to <code>addItem()</code> above sets the parent item of <code>topLabel1</code> to
+<code>topBar</code> and thus the latter will display it as one of its children. In
+this case it would also set the parent, because the <code>topLabel1</code> does not
+have one yet. In other words, setting a parent item will also set the
+parent <strong>if</strong> the parent is null.</p>
+</div>
+<div class="paragraph">
+<p>So since the <code>topBar</code> is a parent item of <code>topLabel1</code>, it means that
+<code>topLabel1</code> will inherit settings like visibility and opacity from
+<code>topBar</code>. For instance, if we set the the visibility of the <code>topBar</code> to
+false, all its child items will be invisible as well (which in this case
+would be all top bar labels). If we set the opacity to 0.2, all its
+child items will be almost transparent:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>topBar-&gt;setOpacity( 0.2 );</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/nesting-layouts-item-tree-1.png" alt="Changing the item tree">
+</div>
+<div class="title">Figure 3. Changing opacity of an item will affect all its child items</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="difference-in-object-trees-and-item-trees">Difference in object trees and item trees</h4>
+<div class="paragraph">
+<p>As an example for when the object tree and item tree differ, let’s
+decide to add a bottom bar to our UI and move our <code>topLabel1</code> from the
+top bar to the bottom bar. This is easy:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>auto* bottomBar = new QskLinearBox( Qt::Horizontal, outerBox );
+topLabel1-&gt;setParentItem( bottomBar );</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/nesting-layouts-item-tree-2.png" alt="Moving a label to the bottom bar">
+</div>
+<div class="title">Figure 4. Moving a label from the top bar to the bottom bar</div>
+</div>
+<div class="paragraph">
+<p>Now we decide to get rid of our top bar altogether:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>topBar-&gt;deleteLater();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will also delete our label from the bottom bar:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/nesting-layouts-item-tree-3.png" alt="Deleting the top bar">
+</div>
+<div class="title">Figure 5. Deleting the top bar will delete all its children</div>
+</div>
+<div class="paragraph">
+<p>The reason why the label from the bottom bar was also deleted is that
+with the call to <code>setParentItem()</code> above we set a new parent item; the
+parent, however, was still <code>topBar</code> (the call to <code>setParentItem()</code> did
+not change the parent, because it was not null). So when the <code>topBar</code>
+was deleted, it deleted all of its children, including the moved label
+<code>topLabel1</code>.</p>
+</div>
+<div class="paragraph">
+<p>After we moved the label to the bottom bar, the object tree was
+different from the item tree, hence we got a surprising result when
+deleting the top bar. It is a good idea to try to keep the trees the
+same, and be aware of the existence of both of them.</p>
+</div>
+<div class="paragraph">
+<p>If we reparent our label to the bottom bar before deleting the top bar,
+we get the desired effect:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>topLabel1-&gt;setParent( bottomBar );
+topLabel1-&gt;setParentItem( bottomBar );
+topBar-&gt;deleteLater();</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/nesting-layouts-item-tree-4.png" alt="Reparenting the item">
+</div>
+<div class="title">Figure 6. Reparenting the label will keep it alive when deleting the top bar</div>
 </div>
 <hr>
 <table class="tableblock frame-none grid-none stretch">
@@ -1646,12 +1290,13 @@ with the menu buttons is again a vertical layout.</p>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="writing-your-first-application.html">&lt; Previous: Writing your first application</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="scalable-graphics.html">&lt; Previous: (Scalable) graphics</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><a href="QSkinny.html">Home</a></p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock"><a href="Skins.html">Next: Skins &gt;</a></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><a href="qskinny-and-qml.html">Next: Using QSkinny and QML &gt;</a></p></td>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>
