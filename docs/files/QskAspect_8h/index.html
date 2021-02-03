@@ -1,0 +1,2376 @@
+<!doctype html>
+<html lang="en">
+    <head>    
+
+        <title>common/QskAspect.h - Stackbit Libris Theme</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="A documentation theme"/>
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%26display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="/assets/css/main.css">
+        
+    </head>
+    <body>
+        
+        <div id="page" class="site">
+  <header id="masthead" class="site-header outer">
+  <div class="inner">
+    <div class="site-header-inside">
+      <div class="site-branding">
+        
+        
+        <p class="site-title"><a href="/"></a></p>
+        
+      </div><!-- .site-branding -->
+      
+      
+      <nav id="main-navigation" class="site-navigation" aria-label="Main Navigation">
+        <div class="site-nav-inside">
+          <button id="menu-close" class="menu-toggle"><span class="screen-reader-text">Open Menu</span><span class="icon-close" aria-hidden="true"></span></button>
+          <ul class="menu">
+          
+            
+            
+            <li class="menu-item">
+              
+              
+<a class="" href="/">
+  
+  Home
+  
+</a>
+
+              
+            </li>
+          
+            
+            
+            <li class="menu-item">
+              
+              
+<a class="" href="/docs">
+  
+  Documentation
+  
+</a>
+
+              
+            </li>
+          
+            
+            
+            <li class="menu-item menu-button">
+              
+              
+<a class="button" href="https://github.com/uwerat/qskinny">
+  
+  GitHub
+  
+</a>
+
+              
+            </li>
+          
+          </ul>
+        </div><!-- .site-nav-inside -->
+      </nav><!-- .site-navigation -->
+      <button id="menu-open" class="menu-toggle"><span class="screen-reader-text">Close Menu</span><span class="icon-menu" aria-hidden="true"></span></button>
+      
+    </div><!-- .site-header-inside -->
+  </div><!-- .inner -->
+</header><!-- .site-header -->
+
+  <main id="content" class="site-content">
+    <div class="inner outer">
+  <div class="docs-content">
+    
+    
+
+
+
+
+<nav id="docs-nav" class="docs-nav">
+  <div id="docs-nav-inside" class="docs-nav-inside sticky">
+    <button id="docs-nav-toggle" class="docs-nav-toggle">Navigate Docs<span class="icon-angle-right" aria-hidden="true"></span></button>
+    <div class="docs-nav-menu">
+      <ul id="docs-menu" class="docs-menu">
+        <li class="docs-menu-item">
+          <a href="/docs/">Introduction</a>
+        </li>
+        
+          
+          
+          
+          
+          
+          
+          
+          <li class="docs-menu-item has-children">
+            <a href="/docs/tutorials/">Tutorials</a>
+            
+            
+              <button class="docs-submenu-toggle"><span class="screen-reader-text">Submenu</span><span class="icon-angle-right" aria-hidden="true"></span></button>
+              
+              
+
+
+<ul class="docs-submenu">
+  
+    <li class="docs-menu-item">
+      <a href="/docs/tutorials/1-QSkinny/">1. Introduction</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/tutorials/2-writing-your-first-application/">2. Writing your first application</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/tutorials/3-Layouts/">3. Layouts</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/tutorials/4-Skins/">4. Skins</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/tutorials/5-scalable-graphics/">5. (Scalable) graphics</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/tutorials/6-parents-and-parent-items/">6. Parents and parent items</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/tutorials/7-qskinny-and-qml/">7. Using QSkinny and QML</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/tutorials/8-writing-own-controls/">8. Writing own controls</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/tutorials/9-scene-graph/">9. Scene graph representations of controls</a>
+    </li>
+  
+</ul>
+
+            
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+          <li class="docs-menu-item has-children">
+            <a href="/docs/modules/">Modules</a>
+            
+            
+              <button class="docs-submenu-toggle"><span class="screen-reader-text">Submenu</span><span class="icon-angle-right" aria-hidden="true"></span></button>
+              
+              
+
+
+<ul class="docs-submenu">
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group__Animation/">Animation</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group__Controls/">Controls</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group__Core/">Core</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group__Dialogs/">Dialogs</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group__Framework/">Framework</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group__Graphic/">Graphic</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group__Layouts/">Layouts</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group__Scenegraph/">Scenegraph</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group__Skinlets/">Skinlets</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group__Themeing/">Themeing</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group___animation/">Animation</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group___container/">Container</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group___controls/">Controls</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group___core/">Core</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group___dialogs/">Dialogs</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group___framework/">Framework</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group___graphic/">Graphic</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group___layouts/">Layouts</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group___scenegraph/">Scenegraph</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group___skinlets/">Skinlets</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group___themeing/">Themeing</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/modules/group__container/">Container</a>
+    </li>
+  
+</ul>
+
+            
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+          <li class="docs-menu-item has-children">
+            <a href="/docs/classes/">Classes</a>
+            
+            
+              <button class="docs-submenu-toggle"><span class="screen-reader-text">Submenu</span><span class="icon-angle-right" aria-hidden="true"></span></button>
+              
+              
+
+
+<ul class="docs-submenu">
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskAbstractButton/">QskAbstractButton</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskAnimationHint/">QskAnimationHint</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskAnimator/">QskAnimator</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskAnimatorDriver/">QskAnimatorDriver</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskAnimatorEvent/">QskAnimatorEvent</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskAspect/">QskAspect</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskBoundedControl/">QskBoundedControl</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskBoundedInput/">QskBoundedInput</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskBoundedRangeInput/">QskBoundedRangeInput</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskBoundedValueInput/">QskBoundedValueInput</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskBox/">QskBox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskBoxBorderColors/">QskBoxBorderColors</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskBoxBorderMetrics/">QskBoxBorderMetrics</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskBoxClipNode/">QskBoxClipNode</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskBoxNode/">QskBoxNode</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskBoxRenderer/">QskBoxRenderer</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskBoxRendererColorMap/">QskBoxRendererColorMap</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskBoxShapeMetrics/">QskBoxShapeMetrics</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskBoxSkinlet/">QskBoxSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskColorFilter/">QskColorFilter</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskControl/">QskControl</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskCorner/">QskCorner</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskDialog/">QskDialog</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskDialogButton/">QskDialogButton</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskDialogButtonBox/">QskDialogButtonBox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskDialogSubWindow/">QskDialogSubWindow</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskDialogWindow/">QskDialogWindow</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskDirtyItemFilter/">QskDirtyItemFilter</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskEvent/">QskEvent</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskFlickAnimator/">QskFlickAnimator</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskFocusIndicator/">QskFocusIndicator</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskFocusIndicatorSkinlet/">QskFocusIndicatorSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGeometryChangeEvent/">QskGeometryChangeEvent</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGesture/">QskGesture</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGestureEvent/">QskGestureEvent</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGestureRecognizer/">QskGestureRecognizer</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGradient/">QskGradient</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGradientStop/">QskGradientStop</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGraphic/">QskGraphic</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGraphicIO/">QskGraphicIO</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGraphicImageProvider/">QskGraphicImageProvider</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGraphicLabel/">QskGraphicLabel</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGraphicLabelSkinlet/">QskGraphicLabelSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGraphicNode/">QskGraphicNode</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGraphicPaintEngine/">QskGraphicPaintEngine</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGraphicProvider/">QskGraphicProvider</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGraphicProviderMap/">QskGraphicProviderMap</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGraphicTextureFactory/">QskGraphicTextureFactory</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGridBox/">QskGridBox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskGridLayoutEngine/">QskGridLayoutEngine</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskHintAnimator/">QskHintAnimator</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskHintAnimatorTable/">QskHintAnimatorTable</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskIndexedLayoutBox/">QskIndexedLayoutBox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskInputContext/">QskInputContext</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskInputContextFactory/">QskInputContextFactory</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskInputGrabber/">QskInputGrabber</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskInputPanel/">QskInputPanel</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskInputPanelBox/">QskInputPanelBox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskInputPredictionBar/">QskInputPredictionBar</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskIntervalF/">QskIntervalF</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskLayoutChain/">QskLayoutChain</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskLayoutEngine2D/">QskLayoutEngine2D</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskLayoutHint/">QskLayoutHint</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskLinearBox/">QskLinearBox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskLinearLayoutEngine/">QskLinearLayoutEngine</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskListView/">QskListView</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskListViewNode/">QskListViewNode</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskListViewSkinlet/">QskListViewSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskMargins/">QskMargins</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskMessageSubWindow/">QskMessageSubWindow</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskMessageWindow/">QskMessageWindow</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskMetaFunction/">QskMetaFunction</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskMetaInvokable/">QskMetaInvokable</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskObjectCounter/">QskObjectCounter</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskObjectCounterHook/">QskObjectCounterHook</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskPageIndicator/">QskPageIndicator</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskPageIndicatorSkinlet/">QskPageIndicatorSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskPaintedNode/">QskPaintedNode</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskPainterCommand/">QskPainterCommand</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskPanGesture/">QskPanGesture</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskPanGestureRecognizer/">QskPanGestureRecognizer</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskPlainTextRenderer/">QskPlainTextRenderer</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskPopup/">QskPopup</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskPopupEvent/">QskPopupEvent</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskPopupSkinlet/">QskPopupSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskProgressBar/">QskProgressBar</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskProgressBarSkinlet/">QskProgressBarSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskPushButton/">QskPushButton</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskPushButtonSkinlet/">QskPushButtonSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskQuick/">QskQuick</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskQuickItem/">QskQuickItem</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskRgbPalette/">QskRgbPalette</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskRgbValue/">QskRgbValue</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskRichTextRenderer/">QskRichTextRenderer</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSGNode/">QskSGNode</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskScaleEngine/">QskScaleEngine</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskScaleRenderer/">QskScaleRenderer</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskScaleTickmarks/">QskScaleTickmarks</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskScrollArea/">QskScrollArea</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskScrollBox/">QskScrollBox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskScrollView/">QskScrollView</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskScrollViewSkinlet/">QskScrollViewSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSelectionSubWindow/">QskSelectionSubWindow</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSelectionWindow/">QskSelectionWindow</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSeparator/">QskSeparator</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSeparatorSkinlet/">QskSeparatorSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSetup/">QskSetup</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskShadowMetrics/">QskShadowMetrics</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskShortcutHandler/">QskShortcutHandler</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskShortcutMap/">QskShortcutMap</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSimpleListBox/">QskSimpleListBox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSizePolicy/">QskSizePolicy</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSkin/">QskSkin</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSkinFactory/">QskSkinFactory</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSkinHintTable/">QskSkinHintTable</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSkinHintTableEditor/">QskSkinHintTableEditor</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSkinManager/">QskSkinManager</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSkinTransition/">QskSkinTransition</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSkinlet/">QskSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSlider/">QskSlider</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSliderSkinlet/">QskSliderSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskStackBox/">QskStackBox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskStackBoxAnimator/">QskStackBoxAnimator</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskStackBoxAnimator1/">QskStackBoxAnimator1</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskStackBoxAnimator3/">QskStackBoxAnimator3</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskStandardSymbol/">QskStandardSymbol</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskStatusIndicator/">QskStatusIndicator</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskStatusIndicatorSkinlet/">QskStatusIndicatorSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSubWindow/">QskSubWindow</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSubWindowArea/">QskSubWindowArea</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSubWindowAreaSkinlet/">QskSubWindowAreaSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSubWindowSkinlet/">QskSubWindowSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskSwipeGesture/">QskSwipeGesture</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTabBar/">QskTabBar</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTabButton/">QskTabButton</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTabButtonSkinlet/">QskTabButtonSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTabView/">QskTabView</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTabViewSkinlet/">QskTabViewSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTapAndHoldGesture/">QskTapAndHoldGesture</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTapGesture/">QskTapGesture</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTextColors/">QskTextColors</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTextInput/">QskTextInput</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTextInputSkinlet/">QskTextInputSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTextLabel/">QskTextLabel</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTextLabelSkinlet/">QskTextLabelSkinlet</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTextNode/">QskTextNode</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTextOptions/">QskTextOptions</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTextPredictor/">QskTextPredictor</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTextRenderer/">QskTextRenderer</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTextureNode/">QskTextureNode</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTextureNodePrivate/">QskTextureNodePrivate</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTextureRenderer/">QskTextureRenderer</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTickmarksNode/">QskTickmarksNode</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskTickmarksNodePrivate/">QskTickmarksNodePrivate</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskVariantAnimator/">QskVariantAnimator</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskVertex/">QskVertex</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskVirtualKeyboard/">QskVirtualKeyboard</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskWindow/">QskWindow</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskWindowChangeEvent/">QskWindowChangeEvent</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/classQskWindowPrivate/">QskWindowPrivate</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/classes/structQskVirtualKeyboardLayouts/">QskVirtualKeyboardLayouts</a>
+    </li>
+  
+</ul>
+
+            
+          </li>
+        
+      </ul><!-- .docs-menu -->
+    </div><!-- .docs-nav-menu -->
+  </div><!-- .docs-nav-inside -->
+</nav><!-- .docs-nav -->
+
+    <article class="post type-docs">
+      <div class="post-inside">
+        <header class="post-header">
+          <h1 class="post-title line-left">common/QskAspect.h</h1>
+        </header><!-- .post-header -->
+        <div class="post-content">
+          <h2 id="namespaces">Namespaces</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="/docs/namespaces/namespacestd/">std</a></strong> <br />STL namespace.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="classes">Classes</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>class</td>
+      <td><strong><a href="/docs/classes/classQskAspect/">QskAspect</a></strong> <br />Lookup key for a QskSkinHintTable.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="functions">Functions</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Name</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>constexpr QskAspect::State</td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(const QskAspect::State &amp; a, const QskAspect::State &amp; b)</td>
+    </tr>
+    <tr>
+      <td>QskAspect::State &amp;</td>
+      <td>**[operator</td>
+      <td>=](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>=)**(QskAspect::State &amp; a, const QskAspect::State &amp; b)</td>
+    </tr>
+    <tr>
+      <td>constexpr QskAspect::State</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-operator&amp;">operator&amp;</a></strong>(const QskAspect::State &amp; a, const QskAspect::State &amp; b)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>QskAspect::State &amp;</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-operator&amp;=">operator&amp;=</a></strong>(QskAspect::State &amp; a, const QskAspect::State &amp; b)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>constexpr QskAspect::State</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-operator~">operator~</a></strong>(const QskAspect::State &amp; a)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>constexpr QskAspect::State</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-operator^">operator^</a></strong>(const QskAspect::State &amp; a, const QskAspect::State &amp; b)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>QskAspect::State &amp;</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-operator^=">operator^=</a></strong>(QskAspect::State &amp; a, const QskAspect::State &amp; b)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>constexpr QskAspect::State</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-operator&lt;&lt;">operator«</a></strong>(const QskAspect::State &amp; a, const int &amp; b)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>constexpr QskAspect::State</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-operator&gt;&gt;">operator»</a></strong>(const QskAspect::State &amp; a, const int &amp; b)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>constexpr bool</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-operator!">operator!</a></strong>(const QskAspect::State &amp; a)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(QskAspect::State state, const <a href="/docs/classes/classQskAspect/">QskAspect</a> &amp; aspect)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(QskAspect::Subcontrol subControl, const <a href="/docs/classes/classQskAspect/">QskAspect</a> &amp; aspect)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(<a href="/docs/classes/classQskAspect/#enum-type">QskAspect::Type</a> type, const <a href="/docs/classes/classQskAspect/">QskAspect</a> &amp; aspect)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(QskAspect::Placement placement, const <a href="/docs/classes/classQskAspect/">QskAspect</a> &amp; aspect)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(QskAspect::Subcontrol subControl, <a href="/docs/classes/classQskAspect/#enum-type">QskAspect::Type</a> type)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(<a href="/docs/classes/classQskAspect/#enum-type">QskAspect::Type</a> type, QskAspect::Subcontrol subControl)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(QskAspect::Subcontrol subControl, QskAspect::State state)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(<a href="/docs/classes/classQskAspect/#enum-type">QskAspect::Type</a> type, QskAspect::Placement placement)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(QskAspect::Placement placement, <a href="/docs/classes/classQskAspect/#enum-type">QskAspect::Type</a> type)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(QskAspect::State state, QskAspect::Subcontrol subControl)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(QskAspect::Subcontrol subControl, QskAspect::FlagPrimitive primitive)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(QskAspect::FlagPrimitive primitive, QskAspect::Subcontrol subControl)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(QskAspect::Subcontrol subControl, QskAspect::ColorPrimitive primitive)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(QskAspect::ColorPrimitive primitive, QskAspect::Subcontrol subControl)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(QskAspect::Subcontrol subControl, QskAspect::MetricPrimitive primitive)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(QskAspect::MetricPrimitive primitive, QskAspect::Subcontrol subControl)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(QskAspect::Subcontrol subControl, QskAspect::Placement placement)</td>
+    </tr>
+    <tr>
+      <td>constexpr <a href="/docs/classes/classQskAspect/">QskAspect</a></td>
+      <td>**[operator</td>
+      <td>](/docs/files/QskAspect_8h/#function-operator</td>
+      <td>)**(QskAspect::Placement placement, QskAspect::Subcontrol subControl)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-q_declare_typeinfo">Q_DECLARE_TYPEINFO</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> , Q_MOVABLE_TYPE )</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>QDebug</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-operator&lt;&lt;">operator«</a></strong>(QDebug debug, <a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>QDebug</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-operator&lt;&lt;">operator«</a></strong>(QDebug debug, <a href="/docs/classes/classQskAspect/#enum-type">QskAspect::Type</a> type)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>QDebug</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-operator&lt;&lt;">operator«</a></strong>(QDebug debug, QskAspect::Subcontrol subControl)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>QDebug</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-operator&lt;&lt;">operator«</a></strong>(QDebug debug, QskAspect::FlagPrimitive primitive)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>QDebug</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-operator&lt;&lt;">operator«</a></strong>(QDebug debug, QskAspect::ColorPrimitive primitive)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>QDebug</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-operator&lt;&lt;">operator«</a></strong>(QDebug debug, QskAspect::MetricPrimitive primitive)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>QDebug</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-operator&lt;&lt;">operator«</a></strong>(QDebug debug, QskAspect::Placement placement)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>QDebug</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-operator&lt;&lt;">operator«</a></strong>(QDebug debug, QskAspect::State state)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-qskdebugstate">qskDebugState</a></strong>(QDebug debug, const QMetaObject * metaObject, QskAspect::State state)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#function-qskdebugaspect">qskDebugAspect</a></strong>(QDebug debug, const QMetaObject * metaObject, <a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="defines">Defines</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#define-qsk_subcontrol">QSK_SUBCONTROL</a></strong>(type, name)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#define-qsk_state">QSK_STATE</a></strong>(type, name, value)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#define-qsk_system_state">QSK_SYSTEM_STATE</a></strong>(type, name, value)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#define-qsk_subcontrols">QSK_SUBCONTROLS</a></strong>(…)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong><a href="/docs/files/QskAspect_8h/#define-qsk_states">QSK_STATES</a></strong>(…)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="functions-documentation">Functions Documentation</h2>
+
+<h3 id="function-operator">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="n">b</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-1">function operator|=</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">|=</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="n">b</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-2">function operator&amp;</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="k">operator</span><span class="o">&amp;</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="n">b</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-3">function operator&amp;=</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&amp;=</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="n">b</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-4">function operator~</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="k">operator</span><span class="o">~</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="n">a</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-5">function operator^</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="k">operator</span><span class="o">^</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="n">b</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-6">function operator^=</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">^=</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="n">b</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-7">function operator«</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span> <span class="n">b</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-8">function operator»</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span> <span class="n">b</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-9">function operator!</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">constexpr</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">!</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="o">&amp;</span> <span class="n">a</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-10">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">state</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">QskAspect</span> <span class="o">&amp;</span> <span class="n">aspect</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-11">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">QskAspect</span> <span class="o">&amp;</span> <span class="n">aspect</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-12">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Type</span> <span class="n">type</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">QskAspect</span> <span class="o">&amp;</span> <span class="n">aspect</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-13">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">placement</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">QskAspect</span> <span class="o">&amp;</span> <span class="n">aspect</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-14">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Type</span> <span class="n">type</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-15">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Type</span> <span class="n">type</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-16">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">state</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-17">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Type</span> <span class="n">type</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">placement</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-18">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">placement</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Type</span> <span class="n">type</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-19">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">state</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-20">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">FlagPrimitive</span> <span class="n">primitive</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-21">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">FlagPrimitive</span> <span class="n">primitive</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-22">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">ColorPrimitive</span> <span class="n">primitive</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-23">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">ColorPrimitive</span> <span class="n">primitive</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-24">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">MetricPrimitive</span> <span class="n">primitive</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-25">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">MetricPrimitive</span> <span class="n">primitive</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-26">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">placement</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-27">function operator|</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">placement</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-q_declare_typeinfo">function Q_DECLARE_TYPEINFO</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Q_DECLARE_TYPEINFO</span><span class="p">(</span>
+    <span class="n">QskAspect</span> <span class="p">,</span>
+    <span class="n">Q_MOVABLE_TYPE</span> 
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-28">function operator«</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
+    <span class="n">QDebug</span> <span class="n">debug</span><span class="p">,</span>
+    <span class="n">QskAspect</span> <span class="n">aspect</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-29">function operator«</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
+    <span class="n">QDebug</span> <span class="n">debug</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Type</span> <span class="n">type</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-30">function operator«</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
+    <span class="n">QDebug</span> <span class="n">debug</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-31">function operator«</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
+    <span class="n">QDebug</span> <span class="n">debug</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">FlagPrimitive</span> <span class="n">primitive</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-32">function operator«</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
+    <span class="n">QDebug</span> <span class="n">debug</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">ColorPrimitive</span> <span class="n">primitive</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-33">function operator«</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
+    <span class="n">QDebug</span> <span class="n">debug</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">MetricPrimitive</span> <span class="n">primitive</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-34">function operator«</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
+    <span class="n">QDebug</span> <span class="n">debug</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">placement</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-operator-35">function operator«</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span>
+    <span class="n">QDebug</span> <span class="n">debug</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">state</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-qskdebugstate">function qskDebugState</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">qskDebugState</span><span class="p">(</span>
+    <span class="n">QDebug</span> <span class="n">debug</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">QMetaObject</span> <span class="o">*</span> <span class="n">metaObject</span><span class="p">,</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">state</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-qskdebugaspect">function qskDebugAspect</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">qskDebugAspect</span><span class="p">(</span>
+    <span class="n">QDebug</span> <span class="n">debug</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">QMetaObject</span> <span class="o">*</span> <span class="n">metaObject</span><span class="p">,</span>
+    <span class="n">QskAspect</span> <span class="n">aspect</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="macro-documentation">Macro Documentation</h2>
+
+<h3 id="define-qsk_subcontrol">define QSK_SUBCONTROL</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define QSK_SUBCONTROL(
+</span>    <span class="n">type</span><span class="p">,</span>
+    <span class="n">name</span>
+<span class="p">)</span>
+    <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">type</span><span class="o">::</span><span class="n">name</span> <span class="o">=</span> \
+        <span class="n">QskAspect</span><span class="o">::</span><span class="n">nextSubcontrol</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">type</span><span class="o">::</span><span class="n">staticMetaObject</span><span class="p">,</span> <span class="err">#</span><span class="n">type</span> <span class="s">"::"</span> <span class="err">#</span><span class="n">name</span> <span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="define-qsk_state">define QSK_STATE</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define QSK_STATE(
+</span>    <span class="n">type</span><span class="p">,</span>
+    <span class="n">name</span><span class="p">,</span>
+    <span class="n">value</span>
+<span class="p">)</span>
+    <span class="k">static_assert</span><span class="p">(</span> \
+        <span class="p">(</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">FirstUserState</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">LastUserState</span> <span class="p">),</span> \
+        <span class="s">"Invalid state"</span> \
+    <span class="p">);</span> \
+    <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">type</span><span class="o">::</span><span class="n">name</span> <span class="o">=</span> \
+        <span class="n">QskAspect</span><span class="o">::</span><span class="n">registerState</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">type</span><span class="o">::</span><span class="n">staticMetaObject</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="err">#</span><span class="n">type</span> <span class="s">"::"</span> <span class="err">#</span><span class="n">name</span> <span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="define-qsk_system_state">define QSK_SYSTEM_STATE</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define QSK_SYSTEM_STATE(
+</span>    <span class="n">type</span><span class="p">,</span>
+    <span class="n">name</span><span class="p">,</span>
+    <span class="n">value</span>
+<span class="p">)</span>
+    <span class="k">static_assert</span><span class="p">(</span> \
+        <span class="p">(</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">FirstSystemState</span> <span class="o">&amp;&amp;</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">FirstUserState</span> <span class="p">)</span> <span class="o">||</span> \
+        <span class="p">(</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">LastUserState</span> <span class="o">&amp;&amp;</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">LastSystemState</span> <span class="p">),</span> \
+        <span class="s">"Invalid system state"</span> \
+    <span class="p">);</span> \
+    <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">type</span><span class="o">::</span><span class="n">name</span> <span class="o">=</span> \
+        <span class="n">QskAspect</span><span class="o">::</span><span class="n">registerState</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">type</span><span class="o">::</span><span class="n">staticMetaObject</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="err">#</span><span class="n">type</span> <span class="s">"::"</span> <span class="err">#</span><span class="n">name</span> <span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="define-qsk_subcontrols">define QSK_SUBCONTROLS</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define QSK_SUBCONTROLS(
+</span>    <span class="p">...</span>
+<span class="p">)</span>
+<span class="k">static</span> <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">__VA_ARGS__</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="define-qsk_states">define QSK_STATES</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define QSK_STATES(
+</span>    <span class="p">...</span>
+<span class="p">)</span>
+<span class="k">static</span> <span class="k">const</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">__VA_ARGS__</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="source-code">Source code</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/******************************************************************************
+ * QSkinny - Copyright (C) 2016 Uwe Rathmann
+ * This file may be used under the terms of the QSkinny License, Version 1.0
+ *****************************************************************************/</span>
+
+<span class="cp">#ifndef QSK_ASPECT_H
+#define QSK_ASPECT_H
+</span>
+<span class="cp">#include "QskGlobal.h"
+#include "QskFlags.h"
+</span>
+<span class="cp">#include &lt;qmetaobject.h&gt;
+#include &lt;qnamespace.h&gt;
+</span>
+<span class="k">class</span> <span class="nc">QSK_EXPORT</span> <span class="n">QskAspect</span>
+<span class="p">{</span>
+    <span class="n">Q_GADGET</span>
+
+  <span class="k">public</span><span class="o">:</span>
+
+    <span class="k">enum</span> <span class="n">Type</span> <span class="o">:</span> <span class="n">quint8</span>
+    <span class="p">{</span>
+        <span class="n">Flag</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">Metric</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">Color</span>  <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="p">};</span>
+    <span class="n">Q_ENUM</span><span class="p">(</span> <span class="n">Type</span> <span class="p">)</span>
+
+    <span class="k">static</span> <span class="k">constexpr</span> <span class="n">uint</span> <span class="n">typeCount</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+    <span class="k">enum</span> <span class="n">FlagPrimitive</span> <span class="o">:</span> <span class="n">quint8</span>
+    <span class="p">{</span>
+        <span class="n">NoFlagPrimitive</span><span class="p">,</span>
+
+        <span class="n">Alignment</span><span class="p">,</span>
+        <span class="n">Direction</span><span class="p">,</span>
+        <span class="n">Style</span><span class="p">,</span>
+        <span class="n">Decoration</span><span class="p">,</span>
+        <span class="n">GraphicRole</span><span class="p">,</span>
+        <span class="n">FontRole</span>
+    <span class="p">};</span>
+    <span class="n">Q_ENUM</span><span class="p">(</span> <span class="n">FlagPrimitive</span> <span class="p">)</span>
+
+    <span class="k">enum</span> <span class="n">MetricPrimitive</span> <span class="o">:</span> <span class="n">quint8</span>
+    <span class="p">{</span>
+        <span class="n">NoMetricPrimitive</span><span class="p">,</span>
+
+        <span class="n">StrutSize</span><span class="p">,</span>
+
+        <span class="n">Size</span><span class="p">,</span>
+        <span class="n">Position</span><span class="p">,</span>
+
+        <span class="n">Margin</span><span class="p">,</span>
+        <span class="n">Padding</span><span class="p">,</span>
+        <span class="n">Shadow</span><span class="p">,</span>
+
+        <span class="n">Spacing</span><span class="p">,</span>
+
+        <span class="n">Shape</span><span class="p">,</span>
+        <span class="n">Border</span>
+    <span class="p">};</span>
+    <span class="n">Q_ENUM</span><span class="p">(</span> <span class="n">MetricPrimitive</span> <span class="p">)</span>
+
+    <span class="k">enum</span> <span class="n">ColorPrimitive</span> <span class="o">:</span> <span class="n">quint8</span>
+    <span class="p">{</span>
+        <span class="n">NoColorPrimitive</span><span class="p">,</span>
+
+        <span class="n">TextColor</span><span class="p">,</span>
+        <span class="n">StyleColor</span><span class="p">,</span>
+        <span class="n">LinkColor</span>
+    <span class="p">};</span>
+    <span class="n">Q_ENUM</span><span class="p">(</span> <span class="n">ColorPrimitive</span> <span class="p">)</span>
+
+    <span class="k">enum</span> <span class="n">Placement</span> <span class="o">:</span> <span class="n">quint8</span>
+    <span class="p">{</span>
+        <span class="n">NoPlacement</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+
+        <span class="n">Vertical</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">::</span><span class="n">Vertical</span><span class="p">,</span>
+        <span class="n">Horizontal</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">::</span><span class="n">Horizontal</span><span class="p">,</span>
+
+        <span class="n">Top</span>    <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">Left</span>   <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="n">Right</span>  <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="n">Bottom</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="p">};</span>
+    <span class="n">Q_ENUM</span><span class="p">(</span> <span class="n">Placement</span> <span class="p">)</span>
+
+    <span class="k">enum</span> <span class="n">Subcontrol</span> <span class="o">:</span> <span class="n">quint16</span>
+    <span class="p">{</span>
+        <span class="n">Control</span>        <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">LastSubcontrol</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">12</span> <span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="p">};</span>
+
+    <span class="n">Q_ENUM</span><span class="p">(</span> <span class="n">Subcontrol</span> <span class="p">)</span>
+
+    <span class="k">enum</span> <span class="n">State</span> <span class="o">:</span> <span class="n">quint16</span>
+    <span class="p">{</span>
+        <span class="n">NoState</span>          <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+
+        <span class="n">FirstSystemState</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">FirstUserState</span>   <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="n">LastUserState</span>    <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">11</span><span class="p">,</span>
+        <span class="n">LastSystemState</span>  <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">15</span><span class="p">,</span>
+
+        <span class="n">AllUserStates</span>    <span class="o">=</span>   <span class="mh">0x0FF0</span><span class="p">,</span>
+        <span class="n">AllStates</span>        <span class="o">=</span>   <span class="mh">0xFFFF</span>
+    <span class="p">};</span>
+    <span class="n">Q_ENUM</span><span class="p">(</span> <span class="n">State</span> <span class="p">)</span>
+
+    <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="p">()</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">Subcontrol</span> <span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">Type</span> <span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">Placement</span> <span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskAspect</span><span class="o">&amp;</span> <span class="p">)</span> <span class="k">noexcept</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">QskAspect</span><span class="o">&amp;&amp;</span> <span class="p">)</span> <span class="k">noexcept</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+
+    <span class="n">QskAspect</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskAspect</span><span class="o">&amp;</span> <span class="p">)</span> <span class="k">noexcept</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+
+    <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskAspect</span><span class="o">&amp;</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskAspect</span><span class="o">&amp;</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskAspect</span><span class="o">&amp;</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span> <span class="n">Subcontrol</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span> <span class="n">Type</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span> <span class="n">FlagPrimitive</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span> <span class="n">MetricPrimitive</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span> <span class="n">ColorPrimitive</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span> <span class="n">Placement</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span> <span class="n">State</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="n">stateless</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="n">trunk</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="k">constexpr</span> <span class="n">quint64</span> <span class="n">value</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">isAnimator</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="n">setAnimator</span><span class="p">(</span> <span class="kt">bool</span> <span class="n">on</span> <span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="k">constexpr</span> <span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="n">setSubControl</span><span class="p">(</span> <span class="n">Subcontrol</span> <span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="k">constexpr</span> <span class="n">Type</span> <span class="n">type</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="n">setType</span><span class="p">(</span> <span class="n">Type</span> <span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">isMetric</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">isColor</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">isFlag</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="k">constexpr</span> <span class="n">Placement</span> <span class="n">placement</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="n">setPlacement</span><span class="p">(</span> <span class="n">Placement</span> <span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="k">constexpr</span> <span class="n">State</span> <span class="n">state</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="n">State</span> <span class="n">topState</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="kt">void</span> <span class="n">setState</span><span class="p">(</span> <span class="n">State</span> <span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="n">addState</span><span class="p">(</span> <span class="n">State</span> <span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">hasState</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="n">clearState</span><span class="p">(</span> <span class="n">State</span> <span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="n">clearStates</span><span class="p">()</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="k">constexpr</span> <span class="n">FlagPrimitive</span> <span class="n">flagPrimitive</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="n">ColorPrimitive</span> <span class="n">colorPrimitive</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="n">MetricPrimitive</span> <span class="n">metricPrimitive</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="kt">void</span> <span class="n">setPrimitive</span><span class="p">(</span> <span class="n">Type</span><span class="p">,</span> <span class="n">uint</span> <span class="n">primitive</span> <span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="n">uint</span> <span class="n">primitive</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="n">clearPrimitive</span><span class="p">()</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">toPrintable</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+
+    <span class="k">static</span> <span class="n">State</span> <span class="n">registerState</span><span class="p">(</span> <span class="k">const</span> <span class="n">QMetaObject</span><span class="o">*</span><span class="p">,</span> <span class="n">State</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="p">);</span>
+    <span class="k">static</span> <span class="n">Subcontrol</span> <span class="n">nextSubcontrol</span><span class="p">(</span> <span class="k">const</span> <span class="n">QMetaObject</span><span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="p">);</span>
+
+    <span class="k">static</span> <span class="n">QByteArray</span> <span class="n">subControlName</span><span class="p">(</span> <span class="n">Subcontrol</span> <span class="p">);</span>
+    <span class="k">static</span> <span class="n">QVector</span><span class="o">&lt;</span> <span class="n">QByteArray</span> <span class="o">&gt;</span> <span class="n">subControlNames</span><span class="p">(</span> <span class="k">const</span> <span class="n">QMetaObject</span><span class="o">*</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">);</span>
+    <span class="k">static</span> <span class="n">QVector</span><span class="o">&lt;</span> <span class="n">Subcontrol</span> <span class="o">&gt;</span> <span class="n">subControls</span><span class="p">(</span> <span class="k">const</span> <span class="n">QMetaObject</span><span class="o">*</span> <span class="p">);</span>
+
+    <span class="k">static</span> <span class="n">quint8</span> <span class="n">primitiveCount</span><span class="p">(</span> <span class="n">Type</span> <span class="p">);</span>
+    <span class="k">static</span> <span class="kt">void</span> <span class="n">reservePrimitives</span><span class="p">(</span> <span class="n">Type</span><span class="p">,</span> <span class="n">quint8</span> <span class="n">count</span> <span class="p">);</span>
+
+  <span class="k">private</span><span class="o">:</span>
+    <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">Subcontrol</span><span class="p">,</span> <span class="n">Type</span><span class="p">,</span> <span class="n">Placement</span> <span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">uint</span> <span class="n">subControl</span><span class="p">,</span> <span class="n">uint</span> <span class="n">type</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isAnimator</span><span class="p">,</span>
+        <span class="n">uint</span> <span class="n">primitive</span><span class="p">,</span> <span class="n">uint</span> <span class="n">placement</span><span class="p">,</span> <span class="n">uint</span> <span class="n">states</span> <span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+
+    <span class="k">struct</span> <span class="n">Bits</span>
+    <span class="p">{</span>
+        <span class="n">uint</span> <span class="n">subControl</span> <span class="o">:</span> <span class="mi">12</span><span class="p">;</span>
+
+        <span class="n">uint</span> <span class="n">type</span> <span class="o">:</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="n">uint</span> <span class="n">isAnimator</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+
+        <span class="n">uint</span> <span class="n">primitive</span> <span class="o">:</span> <span class="mi">5</span><span class="p">;</span>
+        <span class="n">uint</span> <span class="n">placement</span> <span class="o">:</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="n">uint</span> <span class="n">reserved1</span> <span class="o">:</span> <span class="mi">8</span><span class="p">;</span>
+
+        <span class="n">uint</span> <span class="n">states</span> <span class="o">:</span> <span class="mi">16</span><span class="p">;</span>
+        <span class="n">uint</span> <span class="n">reserved2</span> <span class="o">:</span> <span class="mi">16</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">union</span>
+    <span class="p">{</span>
+        <span class="n">Bits</span> <span class="n">m_bits</span><span class="p">;</span>
+        <span class="n">quint64</span> <span class="n">m_value</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="n">QSK_DECLARE_OPERATORS_FOR_FLAGS</span><span class="p">(</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="p">)</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">QskAspect</span><span class="p">()</span> <span class="k">noexcept</span>
+    <span class="o">:</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">Control</span><span class="p">,</span> <span class="n">Flag</span><span class="p">,</span> <span class="n">NoPlacement</span> <span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">QskAspect</span><span class="p">(</span> <span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">noexcept</span>
+    <span class="o">:</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">subControl</span><span class="p">,</span> <span class="n">Flag</span><span class="p">,</span> <span class="n">NoPlacement</span> <span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">QskAspect</span><span class="p">(</span> <span class="n">Type</span> <span class="n">type</span> <span class="p">)</span> <span class="k">noexcept</span>
+    <span class="o">:</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">Control</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">NoPlacement</span> <span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">QskAspect</span><span class="p">(</span> <span class="n">Placement</span> <span class="n">placement</span> <span class="p">)</span> <span class="k">noexcept</span>
+    <span class="o">:</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">Control</span><span class="p">,</span> <span class="n">Flag</span><span class="p">,</span> <span class="n">placement</span> <span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">QskAspect</span><span class="p">(</span>
+        <span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">,</span> <span class="n">Type</span> <span class="n">type</span><span class="p">,</span> <span class="n">Placement</span> <span class="n">placement</span> <span class="p">)</span> <span class="k">noexcept</span>
+    <span class="o">:</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">subControl</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">placement</span><span class="p">,</span> <span class="n">NoState</span> <span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">QskAspect</span><span class="p">(</span> <span class="n">uint</span> <span class="n">subControl</span><span class="p">,</span> <span class="n">uint</span> <span class="n">type</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isAnimator</span><span class="p">,</span>
+        <span class="n">uint</span> <span class="n">primitive</span><span class="p">,</span> <span class="n">uint</span> <span class="n">placement</span><span class="p">,</span> <span class="n">uint</span> <span class="n">states</span> <span class="p">)</span> <span class="k">noexcept</span>
+    <span class="o">:</span> <span class="n">m_bits</span> <span class="p">{</span> <span class="n">subControl</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">isAnimator</span><span class="p">,</span> <span class="n">primitive</span><span class="p">,</span> <span class="n">placement</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">states</span><span class="p">,</span> <span class="mi">0</span> <span class="p">}</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="kt">bool</span> <span class="n">QskAspect</span><span class="o">::</span><span class="k">operator</span><span class="o">==</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskAspect</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">m_value</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">m_value</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="kt">bool</span> <span class="n">QskAspect</span><span class="o">::</span><span class="k">operator</span><span class="o">!=</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskAspect</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">m_value</span> <span class="o">!=</span> <span class="n">other</span><span class="p">.</span><span class="n">m_value</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="kt">bool</span> <span class="n">QskAspect</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskAspect</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">m_value</span> <span class="o">&lt;</span> <span class="n">other</span><span class="p">.</span><span class="n">m_value</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="n">QskAspect</span><span class="o">::</span><span class="k">operator</span><span class="o">|</span><span class="p">(</span> <span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">subControl</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">type</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">isAnimator</span><span class="p">,</span>
+        <span class="n">m_bits</span><span class="p">.</span><span class="n">primitive</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">placement</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">states</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="n">QskAspect</span><span class="o">::</span><span class="k">operator</span><span class="o">|</span><span class="p">(</span> <span class="n">Type</span> <span class="n">type</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">subControl</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">isAnimator</span><span class="p">,</span>
+        <span class="n">m_bits</span><span class="p">.</span><span class="n">primitive</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">placement</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">states</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="n">QskAspect</span><span class="o">::</span><span class="k">operator</span><span class="o">|</span><span class="p">(</span> <span class="n">FlagPrimitive</span> <span class="n">primitive</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">subControl</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">type</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">isAnimator</span><span class="p">,</span>
+        <span class="n">primitive</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">placement</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">states</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="n">QskAspect</span><span class="o">::</span><span class="k">operator</span><span class="o">|</span><span class="p">(</span> <span class="n">MetricPrimitive</span> <span class="n">primitive</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span> <span class="k">static_cast</span><span class="o">&lt;</span> <span class="n">FlagPrimitive</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">primitive</span> <span class="p">)</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="n">QskAspect</span><span class="o">::</span><span class="k">operator</span><span class="o">|</span><span class="p">(</span> <span class="n">ColorPrimitive</span> <span class="n">primitive</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span> <span class="k">static_cast</span><span class="o">&lt;</span> <span class="n">FlagPrimitive</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">primitive</span> <span class="p">)</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="n">QskAspect</span><span class="o">::</span><span class="k">operator</span><span class="o">|</span><span class="p">(</span> <span class="n">Placement</span> <span class="n">placement</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">subControl</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">type</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">isAnimator</span><span class="p">,</span>
+        <span class="n">m_bits</span><span class="p">.</span><span class="n">primitive</span><span class="p">,</span> <span class="n">placement</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">states</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="n">QskAspect</span><span class="o">::</span><span class="k">operator</span><span class="o">|</span><span class="p">(</span> <span class="n">State</span> <span class="n">state</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">subControl</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">type</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">isAnimator</span><span class="p">,</span>
+        <span class="n">m_bits</span><span class="p">.</span><span class="n">primitive</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">placement</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">states</span> <span class="o">|</span> <span class="n">state</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">stateless</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">subControl</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">type</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">isAnimator</span><span class="p">,</span>
+        <span class="n">m_bits</span><span class="p">.</span><span class="n">primitive</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">placement</span><span class="p">,</span> <span class="mi">0</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">trunk</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">subControl</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">type</span><span class="p">,</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">isAnimator</span><span class="p">,</span>
+        <span class="n">m_bits</span><span class="p">.</span><span class="n">primitive</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">quint64</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">value</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">m_value</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">isAnimator</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">isAnimator</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="kt">void</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">setAnimator</span><span class="p">(</span> <span class="kt">bool</span> <span class="n">on</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="n">m_bits</span><span class="p">.</span><span class="n">isAnimator</span> <span class="o">=</span> <span class="n">on</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">subControl</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span> <span class="n">Subcontrol</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">subControl</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="kt">void</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">setSubControl</span><span class="p">(</span> <span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="n">m_bits</span><span class="p">.</span><span class="n">subControl</span> <span class="o">=</span> <span class="n">subControl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Type</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">type</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span> <span class="n">Type</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">type</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="kt">void</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">setType</span><span class="p">(</span> <span class="n">Type</span> <span class="n">type</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="n">m_bits</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">type</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">isMetric</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">type</span><span class="p">()</span> <span class="o">==</span> <span class="n">Metric</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">isColor</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">type</span><span class="p">()</span> <span class="o">==</span> <span class="n">Color</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">isFlag</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">type</span><span class="p">()</span> <span class="o">==</span> <span class="n">Flag</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">state</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span> <span class="n">State</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">states</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="kt">void</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">setState</span><span class="p">(</span> <span class="n">State</span> <span class="n">state</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="n">m_bits</span><span class="p">.</span><span class="n">states</span> <span class="o">=</span> <span class="n">state</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="kt">void</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">addState</span><span class="p">(</span> <span class="n">State</span> <span class="n">state</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="n">m_bits</span><span class="p">.</span><span class="n">states</span> <span class="o">|=</span> <span class="n">state</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">hasState</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">states</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="kt">void</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">clearState</span><span class="p">(</span> <span class="n">State</span> <span class="n">state</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="n">m_bits</span><span class="p">.</span><span class="n">states</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="n">state</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="kt">void</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">clearStates</span><span class="p">()</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="n">m_bits</span><span class="p">.</span><span class="n">states</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">FlagPrimitive</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">flagPrimitive</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">Flag</span> <span class="p">)</span>
+        <span class="o">?</span>  <span class="k">static_cast</span><span class="o">&lt;</span> <span class="n">FlagPrimitive</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">primitive</span> <span class="p">)</span> <span class="o">:</span> <span class="n">NoFlagPrimitive</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">ColorPrimitive</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">colorPrimitive</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">Color</span> <span class="p">)</span>
+        <span class="o">?</span>  <span class="k">static_cast</span><span class="o">&lt;</span> <span class="n">ColorPrimitive</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">primitive</span> <span class="p">)</span> <span class="o">:</span> <span class="n">NoColorPrimitive</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">MetricPrimitive</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">metricPrimitive</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">Metric</span> <span class="p">)</span>
+        <span class="o">?</span> <span class="k">static_cast</span><span class="o">&lt;</span> <span class="n">MetricPrimitive</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">primitive</span> <span class="p">)</span> <span class="o">:</span> <span class="n">NoMetricPrimitive</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">uint</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">primitive</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">primitive</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="kt">void</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">setPrimitive</span><span class="p">(</span> <span class="n">Type</span> <span class="n">type</span><span class="p">,</span> <span class="n">uint</span> <span class="n">primitive</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="n">m_bits</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">type</span><span class="p">;</span>
+    <span class="n">m_bits</span><span class="p">.</span><span class="n">primitive</span> <span class="o">=</span> <span class="n">primitive</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="kt">void</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">clearPrimitive</span><span class="p">()</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="n">m_bits</span><span class="p">.</span><span class="n">primitive</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">placement</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span> <span class="n">Placement</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">m_bits</span><span class="p">.</span><span class="n">placement</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="kt">void</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">setPlacement</span><span class="p">(</span> <span class="n">Placement</span> <span class="n">placement</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="n">m_bits</span><span class="p">.</span><span class="n">placement</span> <span class="o">=</span> <span class="n">placement</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">state</span><span class="p">,</span> <span class="k">const</span> <span class="n">QskAspect</span><span class="o">&amp;</span> <span class="n">aspect</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">aspect</span> <span class="o">|</span> <span class="n">state</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">,</span> <span class="k">const</span> <span class="n">QskAspect</span><span class="o">&amp;</span> <span class="n">aspect</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">aspect</span> <span class="o">|</span> <span class="n">subControl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Type</span> <span class="n">type</span><span class="p">,</span> <span class="k">const</span> <span class="n">QskAspect</span><span class="o">&amp;</span> <span class="n">aspect</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">aspect</span> <span class="o">|</span> <span class="n">type</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">placement</span><span class="p">,</span> <span class="k">const</span> <span class="n">QskAspect</span><span class="o">&amp;</span> <span class="n">aspect</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">aspect</span> <span class="o">|</span> <span class="n">placement</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Type</span> <span class="n">type</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">subControl</span> <span class="p">)</span> <span class="o">|</span> <span class="n">type</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Type</span> <span class="n">type</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">subControl</span> <span class="o">|</span> <span class="n">type</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">state</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">subControl</span> <span class="p">)</span> <span class="o">|</span> <span class="n">state</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Type</span> <span class="n">type</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">placement</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">type</span> <span class="p">)</span> <span class="o">|</span> <span class="n">placement</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">placement</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Type</span> <span class="n">type</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">type</span> <span class="o">|</span> <span class="n">placement</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">state</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">subControl</span> <span class="o">|</span> <span class="n">state</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">FlagPrimitive</span> <span class="n">primitive</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">subControl</span> <span class="p">)</span> <span class="o">|</span> <span class="n">primitive</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">FlagPrimitive</span> <span class="n">primitive</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">subControl</span> <span class="o">|</span> <span class="n">primitive</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">ColorPrimitive</span> <span class="n">primitive</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">subControl</span> <span class="p">)</span> <span class="o">|</span> <span class="n">primitive</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">ColorPrimitive</span> <span class="n">primitive</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">subControl</span> <span class="o">|</span> <span class="n">primitive</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">MetricPrimitive</span> <span class="n">primitive</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">subControl</span> <span class="p">)</span> <span class="o">|</span> <span class="n">primitive</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">MetricPrimitive</span> <span class="n">primitive</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">subControl</span> <span class="o">|</span> <span class="n">primitive</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">placement</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">QskAspect</span><span class="p">(</span> <span class="n">subControl</span> <span class="p">)</span> <span class="o">|</span> <span class="n">placement</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">QskAspect</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span>
+    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">placement</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">subControl</span> <span class="o">|</span> <span class="n">placement</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">namespace</span> <span class="n">std</span>
+<span class="p">{</span>
+    <span class="k">template</span><span class="o">&lt;</span> <span class="o">&gt;</span> <span class="k">struct</span> <span class="n">hash</span><span class="o">&lt;</span> <span class="n">QskAspect</span> <span class="o">&gt;</span>
+    <span class="p">{</span>
+        <span class="k">constexpr</span> <span class="kt">size_t</span> <span class="k">operator</span><span class="p">()(</span> <span class="k">const</span> <span class="n">QskAspect</span><span class="o">&amp;</span> <span class="n">aspect</span> <span class="p">)</span> <span class="k">const</span> <span class="k">noexcept</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">aspect</span><span class="p">.</span><span class="n">value</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="n">Q_DECLARE_TYPEINFO</span><span class="p">(</span> <span class="n">QskAspect</span><span class="p">,</span> <span class="n">Q_MOVABLE_TYPE</span> <span class="p">);</span>
+
+<span class="cp">#ifndef QT_NO_DEBUG_STREAM
+</span>
+<span class="k">class</span> <span class="nc">QDebug</span><span class="p">;</span>
+
+<span class="n">QSK_EXPORT</span> <span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="n">QDebug</span><span class="p">,</span> <span class="n">QskAspect</span> <span class="p">);</span>
+<span class="n">QSK_EXPORT</span> <span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="n">QDebug</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Type</span> <span class="p">);</span>
+<span class="n">QSK_EXPORT</span> <span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="n">QDebug</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="p">);</span>
+
+<span class="n">QSK_EXPORT</span> <span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="n">QDebug</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">FlagPrimitive</span> <span class="p">);</span>
+<span class="n">QSK_EXPORT</span> <span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="n">QDebug</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">ColorPrimitive</span> <span class="p">);</span>
+<span class="n">QSK_EXPORT</span> <span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="n">QDebug</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">MetricPrimitive</span> <span class="p">);</span>
+
+<span class="n">QSK_EXPORT</span> <span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="n">QDebug</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="p">);</span>
+<span class="n">QSK_EXPORT</span> <span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="n">QDebug</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="p">);</span>
+
+<span class="n">QSK_EXPORT</span> <span class="kt">void</span> <span class="n">qskDebugState</span><span class="p">(</span> <span class="n">QDebug</span><span class="p">,</span> <span class="k">const</span> <span class="n">QMetaObject</span><span class="o">*</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="p">);</span>
+<span class="n">QSK_EXPORT</span> <span class="kt">void</span> <span class="n">qskDebugAspect</span><span class="p">(</span> <span class="n">QDebug</span><span class="p">,</span> <span class="k">const</span> <span class="n">QMetaObject</span><span class="o">*</span><span class="p">,</span> <span class="n">QskAspect</span> <span class="p">);</span>
+
+<span class="cp">#endif
+</span>
+<span class="cp">#define QSK_SUBCONTROL( type, name ) \
+    const QskAspect::Subcontrol type::name = \
+        QskAspect::nextSubcontrol( &amp;type::staticMetaObject, #type "::" #name );
+</span>
+<span class="cp">#define QSK_STATE( type, name, value ) \
+    static_assert( \
+        ( value &gt;= QskAspect::FirstUserState ) &amp;&amp; ( value &lt;= QskAspect::LastUserState ), \
+        "Invalid state" \
+    ); \
+    const QskAspect::State type::name = \
+        QskAspect::registerState( &amp;type::staticMetaObject, value, #type "::" #name );
+</span>
+<span class="cp">#define QSK_SYSTEM_STATE( type, name, value ) \
+    static_assert( \
+        ( value &gt;= QskAspect::FirstSystemState &amp;&amp; value &lt; QskAspect::FirstUserState ) || \
+        ( value &gt; QskAspect::LastUserState &amp;&amp; value &lt;= QskAspect::LastSystemState ), \
+        "Invalid system state" \
+    ); \
+    const QskAspect::State type::name = \
+        QskAspect::registerState( &amp;type::staticMetaObject, value, #type "::" #name );
+</span>
+<span class="cp">#if !defined( _MSC_VER )
+</span>
+<span class="cp">#define QSK_SUBCONTROLS( ... ) static const QskAspect::Subcontrol __VA_ARGS__;
+#define QSK_STATES( ... ) static const QskAspect::State __VA_ARGS__;
+</span>
+<span class="cp">#else
+</span>
+<span class="cm">/*
+    Working around a MSVC bug: when static member are defined in one statement
+    only the first one is exported. Unfortuately the code below is also not
+    compliant with ISO C++11 and gcc -pedantic f.e. would fail.
+ */</span>
+
+<span class="cp">#define _QSK_EXPAND(x) x
+</span>
+<span class="cp">#define _QSK_EVAL_0( m, x, ... ) m(x)
+#define _QSK_EVAL_1( m, x, ... ) m(x) _QSK_EXPAND( _QSK_EVAL_0( m, __VA_ARGS__ ) )
+#define _QSK_EVAL_2( m, x, ... ) m(x) _QSK_EXPAND( _QSK_EVAL_1( m, __VA_ARGS__ ) )
+#define _QSK_EVAL_3( m, x, ... ) m(x) _QSK_EXPAND( _QSK_EVAL_2( m, __VA_ARGS__ ) )
+#define _QSK_EVAL_4( m, x, ... ) m(x) _QSK_EXPAND( _QSK_EVAL_3( m, __VA_ARGS__ ) )
+#define _QSK_EVAL_5( m, x, ... ) m(x) _QSK_EXPAND( _QSK_EVAL_4( m, __VA_ARGS__ ) )
+#define _QSK_EVAL_6( m, x, ... ) m(x) _QSK_EXPAND( _QSK_EVAL_5( m, __VA_ARGS__ ) )
+#define _QSK_EVAL_7( m, x, ... ) m(x) _QSK_EXPAND( _QSK_EVAL_6( m, __VA_ARGS__ ) )
+#define _QSK_EVAL_8( m, x, ... ) m(x) _QSK_EXPAND( _QSK_EVAL_7( m, __VA_ARGS__ ) )
+#define _QSK_EVAL_9( m, x, ... ) m(x) _QSK_EXPAND( _QSK_EVAL_8( m, __VA_ARGS__ ) )
+#define _QSK_EVAL_A( m, x, ... ) m(x) _QSK_EXPAND( _QSK_EVAL_9( m, __VA_ARGS__ ) )
+#define _QSK_EVAL_B( m, x, ... ) m(x) _QSK_EXPAND( _QSK_EVAL_A( m, __VA_ARGS__ ) )
+#define _QSK_EVAL_C( m, x, ... ) m(x) _QSK_EXPAND( _QSK_EVAL_B( m, __VA_ARGS__ ) )
+#define _QSK_EVAL_D( m, x, ... ) m(x) _QSK_EXPAND( _QSK_EVAL_C( m, __VA_ARGS__ ) )
+#define _QSK_EVAL_E( m, x, ... ) m(x) _QSK_EXPAND( _QSK_EVAL_D( m, __VA_ARGS__ ) )
+#define _QSK_EVAL_F( m, x, ... ) m(x) _QSK_EXPAND( _QSK_EVAL_E( m, __VA_ARGS__ ) )
+</span>
+<span class="cp">#define _QSK_EVAL_NARG( ... ) _QSK_EVAL_NARG_( __VA_ARGS__, _QSK_EVAL_RSEQ_N() )
+#define _QSK_EVAL_NARG_( ... ) _QSK_EXPAND( _QSK_EVAL_ARG_N(  __VA_ARGS__ ) )
+</span>
+<span class="cp">#define _QSK_EVAL_ARG_N( _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, A, B, C, D, E, F, N, ... ) N
+#define _QSK_EVAL_RSEQ_N() F, E, D, C, B, A, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0
+</span>
+<span class="cp">#define _QSK_CAT(x,y) x ## y
+#define _QSK_EVAL_( N, m, ... ) _QSK_EXPAND( _QSK_CAT( _QSK_EVAL_, N )( m, __VA_ARGS__ ) )
+#define _QSK_EVAL( m, ... ) _QSK_EVAL_( _QSK_EVAL_NARG( __VA_ARGS__ ), m, __VA_ARGS__ )
+</span>
+<span class="cp">#define _QSK_SUBCONTROLS_HELPER( name ) static const QskAspect::Subcontrol name;
+#define QSK_SUBCONTROLS( ... ) _QSK_EVAL( _QSK_SUBCONTROLS_HELPER, __VA_ARGS__ )
+</span>
+<span class="cp">#define _QSK_STATES_HELPER( name ) static const QskAspect::State name;
+#define QSK_STATES( ... ) _QSK_EVAL( _QSK_STATES_HELPER, __VA_ARGS__ )
+</span>
+<span class="cp">#endif
+</span>
+<span class="cp">#endif
+</span></code></pre></div></div>
+
+<hr />
+
+<p>Updated on  3 February 2021 at 15:05:46 CET</p>
+
+          
+          
+          
+            
+            
+            
+            
+            
+          
+        </div><!-- .post-content -->
+      </div><!-- .post-inside -->
+    </article><!-- .post -->
+    <nav id="page-nav" class="page-nav">
+      <div id="page-nav-inside" class="page-nav-inside sticky">
+        <h2 class="page-nav-title">Jump to Section</h2>
+        <div id="page-nav-link-container"></div>
+      </div><!-- .page-nav-inside -->
+    </nav><!-- .page-nav -->
+  </div><!-- .docs-content -->
+</div><!-- .inner-->
+
+  </main><!-- .site-content -->
+  <footer id="colophon" class="site-footer outer">
+  <div class="inner">
+    <div class="site-footer-inside">
+      <p class="site-info">
+        
+        
+        <span class="copyright">&copy; Stackbit. All rights reserved. This Jamstack site was created on <a href="https://www.stackbit.com" target="_blank" rel="noopener">Stackbit</a>. Get yours <a href="https://app.stackbit.com/create?theme=libris" target="_blank" rel="noopener">here</a>.</span>
+        
+        
+      </p><!-- .site-info -->
+      
+      
+      <div class="social-links">
+        
+          
+          
+<a class="button button-icon" href="https://twitter.com/" target="_blank" rel="noopener">
+  
+  <span class="icon fab fa-twitter" aria-hidden="true"></span><span class="screen-reader-text">Twitter</span>
+  
+</a>
+
+        
+          
+          
+<a class="button button-icon" href="https://www.linkedin.com/" target="_blank" rel="noopener">
+  
+  <span class="icon fab fa-linkedin" aria-hidden="true"></span><span class="screen-reader-text">LinkedIn</span>
+  
+</a>
+
+        
+          
+          
+<a class="button button-icon" href="https://github.com/" target="_blank" rel="noopener">
+  
+  <span class="icon fab fa-github" aria-hidden="true"></span><span class="screen-reader-text">GitHub</span>
+  
+</a>
+
+        
+      </div><!-- .social-links -->
+      
+    </div><!-- .site-footer-inside -->
+  </div><!-- .inner -->
+</footer><!-- .site-footer -->
+
+</div><!-- .site -->
+
+        <!-- Scripts -->
+        <script src="/assets/js/plugins.js"></script>
+        <script src="/assets/js/main.js"></script>
+        <script src="/assets/js/page-load.js"></script>
+    </body> 
+</html>
