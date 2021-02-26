@@ -8,6 +8,8 @@
         <meta name="description" content="A documentation theme"/>
         <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%26display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="/assets/css/main.css">
+        <link rel="stylesheet" href="/assets/css/syntax.css">
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         
     </head>
     <body>
@@ -89,10 +91,13 @@
 
 
 
-<nav id="docs-nav" class="docs-nav">
+<nav id="docs-nav" class="docs-nav" style="z-index: 1000">
   <div id="docs-nav-inside" class="docs-nav-inside sticky">
     <button id="docs-nav-toggle" class="docs-nav-toggle">Navigate Docs<span class="icon-angle-right" aria-hidden="true"></span></button>
     <div class="docs-nav-menu">
+      <select id="search-field">
+      </select>
+      <br /><br />
       <ul id="docs-menu" class="docs-menu">
         <li class="docs-menu-item">
           <a href="/docs/">Introduction</a>
@@ -216,50 +221,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/modules/group___animation/">Animation</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/modules/group___container/">Container</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/modules/group___controls/">Controls</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/modules/group___core/">Core</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/modules/group___dialogs/">Dialogs</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/modules/group___framework/">Framework</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/modules/group___graphic/">Graphic</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/modules/group___layouts/">Layouts</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/modules/group___scenegraph/">Scenegraph</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/modules/group___skinlets/">Skinlets</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/modules/group___themeing/">Themeing</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/modules/group__container/">Container</a>
     </li>
   
@@ -351,10 +312,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/classes/classQskBoxRendererColorMap/">QskBoxRendererColorMap</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/classes/classQskBoxShapeMetrics/">QskBoxShapeMetrics</a>
     </li>
   
@@ -440,10 +397,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/classes/classQskGraphic/">QskGraphic</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/classes/classQskGraphicIO/">QskGraphicIO</a>
     </li>
   
     <li class="docs-menu-item">
@@ -611,10 +564,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/classes/classQskPlainTextRenderer/">QskPlainTextRenderer</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/classes/classQskPopup/">QskPopup</a>
     </li>
   
@@ -643,27 +592,11 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/classes/classQskQuick/">QskQuick</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/classes/classQskQuickItem/">QskQuickItem</a>
     </li>
   
     <li class="docs-menu-item">
       <a href="/docs/classes/classQskRgbPalette/">QskRgbPalette</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/classes/classQskRgbValue/">QskRgbValue</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/classes/classQskRichTextRenderer/">QskRichTextRenderer</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/classes/classQskSGNode/">QskSGNode</a>
     </li>
   
     <li class="docs-menu-item">
@@ -887,19 +820,11 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/classes/classQskTextRenderer/">QskTextRenderer</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/classes/classQskTextureNode/">QskTextureNode</a>
     </li>
   
     <li class="docs-menu-item">
       <a href="/docs/classes/classQskTextureNodePrivate/">QskTextureNodePrivate</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/classes/classQskTextureRenderer/">QskTextureRenderer</a>
     </li>
   
     <li class="docs-menu-item">
@@ -912,10 +837,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/classes/classQskVariantAnimator/">QskVariantAnimator</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/classes/classQskVertex/">QskVertex</a>
     </li>
   
     <li class="docs-menu-item">
@@ -943,6 +864,1261 @@
             
           </li>
         
+          
+          
+          
+          
+          
+          
+          
+          <li class="docs-menu-item has-children">
+            <a href="/docs/files/">Files</a>
+            
+            
+              <button class="docs-submenu-toggle"><span class="screen-reader-text">Submenu</span><span class="icon-angle-right" aria-hidden="true"></span></button>
+              
+              
+
+
+<ul class="docs-submenu">
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskAbstractButton_8cpp/">controls/QskAbstractButton.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskAbstractButton_8h/">controls/QskAbstractButton.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskAnimationHint_8h/">controls/QskAnimationHint.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskAnimator_8cpp/">controls/QskAnimator.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskAnimator_8h/">controls/QskAnimator.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskAspect_8cpp/">common/QskAspect.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskAspect_8dox/">QskAspect.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskAspect_8h/">common/QskAspect.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoundedControl_8cpp/">controls/QskBoundedControl.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoundedControl_8h/">controls/QskBoundedControl.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoundedInput_8cpp/">controls/QskBoundedInput.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoundedInput_8h/">controls/QskBoundedInput.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoundedRangeInput_8cpp/">controls/QskBoundedRangeInput.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoundedRangeInput_8h/">controls/QskBoundedRangeInput.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoundedValueInput_8cpp/">controls/QskBoundedValueInput.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoundedValueInput_8h/">controls/QskBoundedValueInput.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxBorderColors_8cpp/">common/QskBoxBorderColors.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxBorderColors_8h/">common/QskBoxBorderColors.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxBorderMetrics_8cpp/">common/QskBoxBorderMetrics.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxBorderMetrics_8h/">common/QskBoxBorderMetrics.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxClipNode_8cpp/">nodes/QskBoxClipNode.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxClipNode_8h/">nodes/QskBoxClipNode.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxNode_8cpp/">nodes/QskBoxNode.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxNode_8h/">nodes/QskBoxNode.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxRendererColorMap_8h/">nodes/QskBoxRendererColorMap.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxRendererDEllipse_8cpp/">nodes/QskBoxRendererDEllipse.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxRendererEllipse_8cpp/">nodes/QskBoxRendererEllipse.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxRendererRect_8cpp/">nodes/QskBoxRendererRect.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxRenderer_8h/">nodes/QskBoxRenderer.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxShapeMetrics_8cpp/">common/QskBoxShapeMetrics.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxShapeMetrics_8h/">common/QskBoxShapeMetrics.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxSkinlet_8cpp/">controls/QskBoxSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBoxSkinlet_8h/">controls/QskBoxSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBox_8cpp/">controls/QskBox.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskBox_8h/">controls/QskBox.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskColorFilter_8cpp/">graphic/QskColorFilter.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskColorFilter_8h/">graphic/QskColorFilter.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskControl_8cpp/">controls/QskControl.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskControl_8dox/">QskControl.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskControl_8h/">controls/QskControl.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskCorner_8cpp/">common/QskCorner.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskCorner_8h/">common/QskCorner.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskDialogButtonBox_8cpp/">dialogs/QskDialogButtonBox.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskDialogButtonBox_8h/">dialogs/QskDialogButtonBox.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskDialogButton_8cpp/">dialogs/QskDialogButton.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskDialogButton_8h/">dialogs/QskDialogButton.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskDialogSubWindow_8cpp/">dialogs/QskDialogSubWindow.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskDialogSubWindow_8h/">dialogs/QskDialogSubWindow.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskDialogWindow_8cpp/">dialogs/QskDialogWindow.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskDialogWindow_8h/">dialogs/QskDialogWindow.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskDialog_8cpp/">dialogs/QskDialog.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskDialog_8h/">dialogs/QskDialog.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskDirtyItemFilter_8cpp/">controls/QskDirtyItemFilter.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskDirtyItemFilter_8h/">controls/QskDirtyItemFilter.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskEvent_8cpp/">controls/QskEvent.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskEvent_8h/">controls/QskEvent.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskFlags_8h/">common/QskFlags.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskFlickAnimator_8cpp/">controls/QskFlickAnimator.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskFlickAnimator_8h/">controls/QskFlickAnimator.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskFocusIndicatorSkinlet_8cpp/">controls/QskFocusIndicatorSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskFocusIndicatorSkinlet_8h/">controls/QskFocusIndicatorSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskFocusIndicator_8cpp/">controls/QskFocusIndicator.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskFocusIndicator_8h/">controls/QskFocusIndicator.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskFunctions_8cpp/">common/QskFunctions.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskFunctions_8h/">common/QskFunctions.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGestureRecognizer_8cpp/">controls/QskGestureRecognizer.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGestureRecognizer_8h/">controls/QskGestureRecognizer.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGesture_8cpp/">controls/QskGesture.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGesture_8h/">controls/QskGesture.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGlobal_8h/">common/QskGlobal.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGradient_8cpp/">common/QskGradient.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGradient_8h/">common/QskGradient.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicIO_8cpp/">graphic/QskGraphicIO.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicIO_8h/">graphic/QskGraphicIO.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicImageProvider_8cpp/">graphic/QskGraphicImageProvider.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicImageProvider_8h/">graphic/QskGraphicImageProvider.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicLabelSkinlet_8cpp/">controls/QskGraphicLabelSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicLabelSkinlet_8h/">controls/QskGraphicLabelSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicLabel_8cpp/">controls/QskGraphicLabel.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicLabel_8h/">controls/QskGraphicLabel.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicNode_8cpp/">nodes/QskGraphicNode.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicNode_8h/">nodes/QskGraphicNode.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicPaintEngine_8cpp/">graphic/QskGraphicPaintEngine.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicPaintEngine_8h/">graphic/QskGraphicPaintEngine.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicProviderMap_8cpp/">graphic/QskGraphicProviderMap.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicProviderMap_8h/">graphic/QskGraphicProviderMap.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicProvider_8cpp/">graphic/QskGraphicProvider.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicProvider_8h/">graphic/QskGraphicProvider.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicTextureFactory_8cpp/">graphic/QskGraphicTextureFactory.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphicTextureFactory_8h/">graphic/QskGraphicTextureFactory.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphic_8cpp/">graphic/QskGraphic.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphic_8dox/">QskGraphic.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGraphic_8h/">graphic/QskGraphic.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGridBox_8cpp/">layouts/QskGridBox.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGridBox_8h/">layouts/QskGridBox.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGridLayoutEngine_8cpp/">layouts/QskGridLayoutEngine.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskGridLayoutEngine_8h/">layouts/QskGridLayoutEngine.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskHintAnimator_8cpp/">controls/QskHintAnimator.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskHintAnimator_8h/">controls/QskHintAnimator.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskIndexedLayoutBox_8cpp/">layouts/QskIndexedLayoutBox.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskIndexedLayoutBox_8dox/">QskIndexedLayoutBox.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskIndexedLayoutBox_8h/">layouts/QskIndexedLayoutBox.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskInputContext_8cpp/">inputpanel/QskInputContext.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskInputContext_8h/">inputpanel/QskInputContext.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskInputGrabber_8cpp/">controls/QskInputGrabber.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskInputGrabber_8h/">controls/QskInputGrabber.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskInputPanelBox_8cpp/">inputpanel/QskInputPanelBox.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskInputPanelBox_8h/">inputpanel/QskInputPanelBox.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskInputPanel_8cpp/">inputpanel/QskInputPanel.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskInputPanel_8h/">inputpanel/QskInputPanel.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskInputPredictionBar_8cpp/">inputpanel/QskInputPredictionBar.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskInputPredictionBar_8h/">inputpanel/QskInputPredictionBar.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskIntervalF_8cpp/">common/QskIntervalF.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskIntervalF_8h/">common/QskIntervalF.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskLayoutChain_8cpp/">layouts/QskLayoutChain.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskLayoutChain_8h/">layouts/QskLayoutChain.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskLayoutEngine2D_8cpp/">layouts/QskLayoutEngine2D.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskLayoutEngine2D_8h/">layouts/QskLayoutEngine2D.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskLayoutHint_8cpp/">layouts/QskLayoutHint.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskLayoutHint_8h/">layouts/QskLayoutHint.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskLinearBox_8cpp/">layouts/QskLinearBox.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskLinearBox_8dox/">QskLinearBox.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskLinearBox_8h/">layouts/QskLinearBox.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskLinearLayoutEngine_8cpp/">layouts/QskLinearLayoutEngine.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskLinearLayoutEngine_8h/">layouts/QskLinearLayoutEngine.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskListViewSkinlet_8cpp/">controls/QskListViewSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskListViewSkinlet_8h/">controls/QskListViewSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskListView_8cpp/">controls/QskListView.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskListView_8h/">controls/QskListView.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskMargins_8cpp/">common/QskMargins.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskMargins_8h/">common/QskMargins.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskMessageSubWindow_8cpp/">dialogs/QskMessageSubWindow.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskMessageSubWindow_8h/">dialogs/QskMessageSubWindow.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskMessageWindow_8cpp/">dialogs/QskMessageWindow.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskMessageWindow_8h/">dialogs/QskMessageWindow.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskMetaFunction_8cpp/">common/QskMetaFunction.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskMetaFunction_8h/">common/QskMetaFunction.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskMetaFunction_8hpp/">common/QskMetaFunction.hpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskMetaInvokable_8cpp/">common/QskMetaInvokable.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskMetaInvokable_8h/">common/QskMetaInvokable.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskNamespace_8h/">common/QskNamespace.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskObjectCounter_8cpp/">common/QskObjectCounter.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskObjectCounter_8h/">common/QskObjectCounter.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskObjectTree_8cpp/">controls/QskObjectTree.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskObjectTree_8h/">controls/QskObjectTree.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPageIndicatorSkinlet_8cpp/">controls/QskPageIndicatorSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPageIndicatorSkinlet_8h/">controls/QskPageIndicatorSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPageIndicator_8cpp/">controls/QskPageIndicator.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPageIndicator_8h/">controls/QskPageIndicator.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPaintedNode_8cpp/">nodes/QskPaintedNode.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPaintedNode_8h/">nodes/QskPaintedNode.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPainterCommand_8cpp/">graphic/QskPainterCommand.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPainterCommand_8h/">graphic/QskPainterCommand.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPanGestureRecognizer_8cpp/">controls/QskPanGestureRecognizer.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPanGestureRecognizer_8h/">controls/QskPanGestureRecognizer.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPlainTextRenderer_8cpp/">nodes/QskPlainTextRenderer.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPlainTextRenderer_8h/">nodes/QskPlainTextRenderer.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPopupSkinlet_8cpp/">controls/QskPopupSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPopupSkinlet_8h/">controls/QskPopupSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPopup_8cpp/">controls/QskPopup.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPopup_8h/">controls/QskPopup.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskProgressBarSkinlet_8cpp/">controls/QskProgressBarSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskProgressBarSkinlet_8h/">controls/QskProgressBarSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskProgressBar_8cpp/">controls/QskProgressBar.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskProgressBar_8h/">controls/QskProgressBar.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPushButtonSkinlet_8cpp/">controls/QskPushButtonSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPushButtonSkinlet_8h/">controls/QskPushButtonSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPushButton_8cpp/">controls/QskPushButton.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskPushButton_8h/">controls/QskPushButton.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskQuickItem_8cpp/">controls/QskQuickItem.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskQuickItem_8dox/">QskQuickItem.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskQuickItem_8h/">controls/QskQuickItem.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskQuick_8cpp/">controls/QskQuick.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskQuick_8h/">controls/QskQuick.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskRgbPalette_8cpp/">common/QskRgbPalette.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskRgbPalette_8h/">common/QskRgbPalette.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskRgbValue_8cpp/">common/QskRgbValue.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskRgbValue_8h/">common/QskRgbValue.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskRichTextRenderer_8cpp/">nodes/QskRichTextRenderer.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskRichTextRenderer_8h/">nodes/QskRichTextRenderer.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSGNode_8cpp/">nodes/QskSGNode.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSGNode_8h/">nodes/QskSGNode.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskScaleEngine_8cpp/">common/QskScaleEngine.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskScaleEngine_8h/">common/QskScaleEngine.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskScaleRenderer_8cpp/">nodes/QskScaleRenderer.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskScaleRenderer_8h/">nodes/QskScaleRenderer.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskScaleTickmarks_8cpp/">common/QskScaleTickmarks.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskScaleTickmarks_8h/">common/QskScaleTickmarks.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskScrollArea_8cpp/">controls/QskScrollArea.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskScrollArea_8h/">controls/QskScrollArea.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskScrollBox_8cpp/">controls/QskScrollBox.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskScrollBox_8h/">controls/QskScrollBox.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskScrollViewSkinlet_8cpp/">controls/QskScrollViewSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskScrollViewSkinlet_8h/">controls/QskScrollViewSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskScrollView_8cpp/">controls/QskScrollView.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskScrollView_8h/">controls/QskScrollView.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSelectionSubWindow_8cpp/">dialogs/QskSelectionSubWindow.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSelectionSubWindow_8h/">dialogs/QskSelectionSubWindow.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSelectionWindow_8cpp/">dialogs/QskSelectionWindow.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSelectionWindow_8h/">dialogs/QskSelectionWindow.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSeparatorSkinlet_8cpp/">controls/QskSeparatorSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSeparatorSkinlet_8h/">controls/QskSeparatorSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSeparator_8cpp/">controls/QskSeparator.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSeparator_8dox/">QskSeparator.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSeparator_8h/">controls/QskSeparator.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSetup_8cpp/">controls/QskSetup.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSetup_8dox/">QskSetup.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSetup_8h/">controls/QskSetup.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskShadowMetrics_8cpp/">common/QskShadowMetrics.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskShadowMetrics_8h/">common/QskShadowMetrics.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskShortcutMap_8cpp/">controls/QskShortcutMap.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskShortcutMap_8h/">controls/QskShortcutMap.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSimpleListBox_8cpp/">controls/QskSimpleListBox.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSimpleListBox_8h/">controls/QskSimpleListBox.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSizePolicy_8cpp/">common/QskSizePolicy.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSizePolicy_8h/">common/QskSizePolicy.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinFactory_8cpp/">controls/QskSkinFactory.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinFactory_8h/">controls/QskSkinFactory.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinHintTableEditor_8h/">controls/QskSkinHintTableEditor.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinHintTable_8cpp/">controls/QskSkinHintTable.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinHintTable_8h/">controls/QskSkinHintTable.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinManager_8cpp/">controls/QskSkinManager.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinManager_8h/">controls/QskSkinManager.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinTransition_8cpp/">controls/QskSkinTransition.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinTransition_8h/">controls/QskSkinTransition.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkin_8cpp/">controls/QskSkin.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkin_8h/">controls/QskSkin.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinlet_8cpp/">controls/QskSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinlet_8dox/">QskSkinlet.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinlet_8h/">controls/QskSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinnable_8cpp/">controls/QskSkinnable.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinnable_8dox/">QskSkinnable.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinnable_8h/">controls/QskSkinnable.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSliderSkinlet_8cpp/">controls/QskSliderSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSliderSkinlet_8h/">controls/QskSliderSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSlider_8cpp/">controls/QskSlider.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSlider_8h/">controls/QskSlider.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskStackBoxAnimator_8cpp/">layouts/QskStackBoxAnimator.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskStackBoxAnimator_8h/">layouts/QskStackBoxAnimator.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskStackBox_8cpp/">layouts/QskStackBox.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskStackBox_8h/">layouts/QskStackBox.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskStandardSymbol_8cpp/">graphic/QskStandardSymbol.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskStandardSymbol_8h/">graphic/QskStandardSymbol.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskStatusIndicatorSkinlet_8cpp/">controls/QskStatusIndicatorSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskStatusIndicatorSkinlet_8h/">controls/QskStatusIndicatorSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskStatusIndicator_8cpp/">controls/QskStatusIndicator.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskStatusIndicator_8h/">controls/QskStatusIndicator.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSubWindowAreaSkinlet_8cpp/">controls/QskSubWindowAreaSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSubWindowAreaSkinlet_8h/">controls/QskSubWindowAreaSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSubWindowArea_8cpp/">controls/QskSubWindowArea.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSubWindowArea_8h/">controls/QskSubWindowArea.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSubWindowSkinlet_8cpp/">controls/QskSubWindowSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSubWindowSkinlet_8h/">controls/QskSubWindowSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSubWindow_8cpp/">controls/QskSubWindow.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskSubWindow_8h/">controls/QskSubWindow.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTabBar_8cpp/">controls/QskTabBar.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTabBar_8h/">controls/QskTabBar.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTabButtonSkinlet_8cpp/">controls/QskTabButtonSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTabButtonSkinlet_8h/">controls/QskTabButtonSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTabButton_8cpp/">controls/QskTabButton.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTabButton_8h/">controls/QskTabButton.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTabViewSkinlet_8cpp/">controls/QskTabViewSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTabViewSkinlet_8h/">controls/QskTabViewSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTabView_8cpp/">controls/QskTabView.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTabView_8h/">controls/QskTabView.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextColors_8cpp/">common/QskTextColors.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextColors_8h/">common/QskTextColors.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextInputSkinlet_8cpp/">controls/QskTextInputSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextInputSkinlet_8h/">controls/QskTextInputSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextInput_8cpp/">controls/QskTextInput.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextInput_8h/">controls/QskTextInput.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextLabelSkinlet_8cpp/">controls/QskTextLabelSkinlet.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextLabelSkinlet_8h/">controls/QskTextLabelSkinlet.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextLabel_8cpp/">controls/QskTextLabel.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextLabel_8h/">controls/QskTextLabel.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextNode_8cpp/">nodes/QskTextNode.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextNode_8h/">nodes/QskTextNode.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextOptions_8cpp/">common/QskTextOptions.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextOptions_8h/">common/QskTextOptions.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextPredictor_8cpp/">inputpanel/QskTextPredictor.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextPredictor_8h/">inputpanel/QskTextPredictor.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextRenderer_8cpp/">nodes/QskTextRenderer.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextRenderer_8h/">nodes/QskTextRenderer.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextureNode_8cpp/">nodes/QskTextureNode.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextureNode_8h/">nodes/QskTextureNode.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextureRenderer_8cpp/">nodes/QskTextureRenderer.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTextureRenderer_8h/">nodes/QskTextureRenderer.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTickmarksNode_8cpp/">nodes/QskTickmarksNode.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskTickmarksNode_8h/">nodes/QskTickmarksNode.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskVariantAnimator_8cpp/">controls/QskVariantAnimator.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskVariantAnimator_8h/">controls/QskVariantAnimator.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskVertex_8cpp/">nodes/QskVertex.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskVertex_8h/">nodes/QskVertex.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskVirtualKeyboardLayouts_8cpp/">inputpanel/QskVirtualKeyboardLayouts.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskVirtualKeyboard_8cpp/">inputpanel/QskVirtualKeyboard.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskVirtualKeyboard_8h/">inputpanel/QskVirtualKeyboard.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskWindow_8cpp/">controls/QskWindow.cpp</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/QskWindow_8h/">controls/QskWindow.h</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/dir_3367554fba2c52f1c04b4bdcbbcfa03d/">layouts</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/dir_546733639134b9431ef34ac72f6d1288/">graphic</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/dir_642c141dc41d50796cd757b87656e351/">classes</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/dir_68267d1309a1af8e8297ef4c3efbcdba/">src</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/dir_7afd03d72c1de07a6d47e666c364824c/">controls</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/dir_9870864803860a03def48f6710b1f137/">dialogs</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/dir_b50dc725db71458029b22868a9250dc9/">nodes</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/dir_f8eda551c9202cae9063524ab5c4921d/">inputpanel</a>
+    </li>
+  
+    <li class="docs-menu-item">
+      <a href="/docs/files/dir_fdedb0aba14d44ce9d99bc100e026e6a/">common</a>
+    </li>
+  
+</ul>
+
+            
+          </li>
+        
       </ul><!-- .docs-menu -->
     </div><!-- .docs-nav-menu -->
   </div><!-- .docs-nav-inside -->
@@ -954,13 +2130,17 @@
           <h1 class="post-title line-left">QskControl</h1>
         </header><!-- .post-header -->
         <div class="post-content">
-          <p><strong>Module:</strong> <strong><a href="/docs/modules/group__Framework/">Framework</a></strong></p>
-
-<p>Base class of all Qsk controls.  <a href="#detailed-description">More…</a></p>
+          <p>Base class of all Qsk controls.  <a href="#detailed-description">More…</a></p>
 
 <p><code class="highlighter-rouge">#include &lt;QskControl.h&gt;</code></p>
 
-<p>Inherits from <a href="/docs/classes/classQskQuickItem/">QskQuickItem</a>, QskSkinnable</p>
+<object type="image/svg+xml" data="../svg/classQskControl__inherit__graph_org.svg">
+</object>
+<p><br /></p>
+
+<p>Inherits from
+<a href="/docs/classes/classQskQuickItem/">QskQuickItem</a>
+, <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a></p>
 
 <p>Inherited by <a href="/docs/classes/classQskAbstractButton/">QskAbstractButton</a>, <a href="/docs/classes/classQskBoundedControl/">QskBoundedControl</a>, <a href="/docs/classes/classQskBox/">QskBox</a>, <a href="/docs/classes/classQskFocusIndicator/">QskFocusIndicator</a>, <a href="/docs/classes/classQskGraphicLabel/">QskGraphicLabel</a>, <a href="/docs/classes/classQskInputGrabber/">QskInputGrabber</a>, <a href="/docs/classes/classQskInputPanel/">QskInputPanel</a>, <a href="/docs/classes/classQskPageIndicator/">QskPageIndicator</a>, <a href="/docs/classes/classQskPopup/">QskPopup</a>, <a href="/docs/classes/classQskScrollBox/">QskScrollBox</a>, <a href="/docs/classes/classQskSeparator/">QskSeparator</a>, <a href="/docs/classes/classQskStatusIndicator/">QskStatusIndicator</a>, <a href="/docs/classes/classQskSubWindowArea/">QskSubWindowArea</a>, <a href="/docs/classes/classQskTabView/">QskTabView</a>, <a href="/docs/classes/classQskTextInput/">QskTextInput</a>, <a href="/docs/classes/classQskTextLabel/">QskTextLabel</a></p>
 
@@ -975,15 +2155,15 @@
   </thead>
   <tbody>
     <tr>
-      <td>const QskAspect::State</td>
+      <td> </td>
       <td><strong><a href="/docs/classes/classQskControl/#state-disabled">Disabled</a></strong></td>
     </tr>
     <tr>
-      <td>const QskAspect::State</td>
+      <td> </td>
       <td><strong><a href="/docs/classes/classQskControl/#state-hovered">Hovered</a></strong></td>
     </tr>
     <tr>
-      <td>const QskAspect::State</td>
+      <td> </td>
       <td><strong><a href="/docs/classes/classQskControl/#state-focused">Focused</a></strong></td>
     </tr>
   </tbody>
@@ -1001,7 +2181,7 @@
   <tbody>
     <tr>
       <td>enum</td>
-      <td><strong><a href="/docs/classes/classQskControl/#enum-layouthint">LayoutHint</a></strong> { RetainSizeWhenHidden = 1 « 0, LayoutOutWhenHidden = 1 « 1}</td>
+      <td><strong><a href="/docs/classes/classQskControl/#enum-layouthint">LayoutHint</a></strong> { RetainSizeWhenHidden = 1 « 0<br />LayoutOutWhenHidden = 1 « 1}</td>
     </tr>
   </tbody>
 </table>
@@ -1523,726 +2703,1463 @@ Even if QQuickItem is part of the public C++ API it has obviously been designed 
   <li>QEvent::LayoutRequest</li>
 </ul>
 
+<p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 22.
+<br /><br /></p>
+
 <h2 id="public-states-documentation">Public States Documentation</h2>
 
-<h3 id="state-disabled">state Disabled</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-state" id="state-disabled">state Disabled</h3>
 
-<h3 id="state-hovered">state Hovered</h3>
+  <div class="qskinny-inner-block">
 
-<h3 id="state-focused">state Focused</h3>
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 56.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-state" id="state-hovered">state Hovered</h3>
+
+  <div class="qskinny-inner-block">
+
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 56.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-state" id="state-focused">state Focused</h3>
+
+  <div class="qskinny-inner-block">
+
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 56.
+<br /><br /></p>
+
+  </div>
+</div>
 
 <h2 id="public-types-documentation">Public Types Documentation</h2>
 
-<h3 id="enum-layouthint">enum LayoutHint</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-type" id="enum-layouthint">enum LayoutHint</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Enumerator</th>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>RetainSizeWhenHidden</td>
-      <td>1 « 0</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>LayoutOutWhenHidden</td>
-      <td>1 « 1</td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
+  <div class="qskinny-inner-block">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Enumerator</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>RetainSizeWhenHidden</strong></td>
+          <td>1 « 0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Enumerator</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>LayoutOutWhenHidden</strong></td>
+          <td>1 « 1</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 59.
+<br /><br /></p>
+
+  </div>
+</div>
 
 <h2 id="public-functions-documentation">Public Functions Documentation</h2>
 
-<h3 id="function-qskcontrol">function QskControl</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-qskcontrol">function QskControl</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskControl</span><span class="p">(</span>
-    <span class="n">QQuickItem</span> <span class="o">*</span> <span class="n">parent</span> <span class="o">=</span><span class="nb">nullptr</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskControl</span><span class="p">(</span> <span class="n">QQuickItem</span> <span class="o">*</span> <span class="n">parent</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">)</span>
+</code></pre></div>    </div>
 
-<h3 id="function-qskcontrol-1">function ~QskControl</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 32.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">~</span><span class="n">QskControl</span><span class="p">()</span> <span class="k">override</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setmargins">function setMargins</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-qskcontrol-1">function ~QskControl</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMargins</span><span class="p">(</span>
-    <span class="n">qreal</span> <span class="n">margin</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">~</span><span class="n">QskControl</span><span class="p">()</span> <span class="k">override</span>
+</code></pre></div>    </div>
 
-<h3 id="function-setmargins-1">function setMargins</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 44.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMargins</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">QMarginsF</span> <span class="o">&amp;</span> <span class="n">margins</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-resetmargins">function resetMargins</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setmargins">function setMargins</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">resetMargins</span><span class="p">()</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMargins</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">margin</span> <span class="p">)</span>
+</code></pre></div>    </div>
 
-<h3 id="function-margins">function margins</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 162.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QMarginsF</span> <span class="n">margins</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setbackgroundcolor">function setBackgroundColor</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setmargins-1">function setMargins</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setBackgroundColor</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">QColor</span> <span class="o">&amp;</span> <span class="n">color</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMargins</span><span class="p">(</span> <span class="k">const</span> <span class="n">QMarginsF</span> <span class="o">&amp;</span> <span class="n">margins</span> <span class="p">)</span>
+</code></pre></div>    </div>
 
-<h3 id="function-setbackground">function setBackground</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 167.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setBackground</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">QskGradient</span> <span class="o">&amp;</span> <span class="n">gradient</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-resetbackground">function resetBackground</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-resetmargins">function resetMargins</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">resetBackground</span><span class="p">()</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">resetMargins</span><span class="p">()</span>
+</code></pre></div>    </div>
 
-<h3 id="function-background">function background</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 178.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskGradient</span> <span class="n">background</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-contentsrect">function contentsRect</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-margins">function margins</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">contentsRect</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QMarginsF</span> <span class="n">margins</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-layoutrect">function layoutRect</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 187.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">layoutRect</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-layoutrectforsize">function layoutRectForSize</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setbackgroundcolor">function setBackgroundColor</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="n">QRectF</span> <span class="n">layoutRectForSize</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setBackgroundColor</span><span class="p">(</span> <span class="k">const</span> <span class="n">QColor</span> <span class="o">&amp;</span> <span class="n">color</span> <span class="p">)</span>
+</code></pre></div>    </div>
 
-<h3 id="function-gesturerect">function gestureRect</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 139.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="n">QRectF</span> <span class="n">gestureRect</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-focusindicatorrect">function focusIndicatorRect</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setbackground">function setBackground</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="n">QRectF</span> <span class="n">focusIndicatorRect</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setBackground</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskGradient</span> <span class="o">&amp;</span> <span class="n">gradient</span> <span class="p">)</span>
+</code></pre></div>    </div>
 
-<h3 id="function-focusindicatorcliprect">function focusIndicatorClipRect</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 145.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="n">QRectF</span> <span class="n">focusIndicatorClipRect</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-subcontrolrect">function subControlRect</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-resetbackground">function resetBackground</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">subControlRect</span><span class="p">(</span>
-    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">resetBackground</span><span class="p">()</span>
+</code></pre></div>    </div>
 
-<h3 id="function-subcontrolrect-1">function subControlRect</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 151.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">subControlRect</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span><span class="p">,</span>
-    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-subcontrolcontentsrect">function subControlContentsRect</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-background">function background</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">subControlContentsRect</span><span class="p">(</span>
-    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskGradient</span> <span class="n">background</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-subcontrolcontentsrect-1">function subControlContentsRect</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 157.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">subControlContentsRect</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span><span class="p">,</span>
-    <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setautofillbackground">function setAutoFillBackground</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-contentsrect">function contentsRect</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setAutoFillBackground</span><span class="p">(</span>
-    <span class="kt">bool</span> <span class="n">on</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">contentsRect</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-autofillbackground">function autoFillBackground</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 192.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">autoFillBackground</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setautolayoutchildren">function setAutoLayoutChildren</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-layoutrect">function layoutRect</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setAutoLayoutChildren</span><span class="p">(</span>
-    <span class="kt">bool</span> <span class="n">on</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">layoutRect</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-autolayoutchildren">function autoLayoutChildren</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 923.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">autoLayoutChildren</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setwheelenabled">function setWheelEnabled</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-layoutrectforsize">function layoutRectForSize</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setWheelEnabled</span><span class="p">(</span>
-    <span class="kt">bool</span> <span class="n">on</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="n">QRectF</span> <span class="n">layoutRectForSize</span><span class="p">(</span> <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-iswheelenabled">function isWheelEnabled</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 933.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">isWheelEnabled</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setfocuspolicy">function setFocusPolicy</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-gesturerect">function gestureRect</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setFocusPolicy</span><span class="p">(</span>
-    <span class="n">Qt</span><span class="o">::</span><span class="n">FocusPolicy</span> <span class="n">policy</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="n">QRectF</span> <span class="n">gestureRect</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-focuspolicy">function focusPolicy</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 939.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Qt</span><span class="o">::</span><span class="n">FocusPolicy</span> <span class="n">focusPolicy</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setsizepolicy">function setSizePolicy</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-focusindicatorrect">function focusIndicatorRect</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setSizePolicy</span><span class="p">(</span>
-    <span class="n">QskSizePolicy</span><span class="o">::</span><span class="n">Policy</span> <span class="n">horizontalPolicy</span><span class="p">,</span>
-    <span class="n">QskSizePolicy</span><span class="o">::</span><span class="n">Policy</span> <span class="n">verticalPolicy</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="n">QRectF</span> <span class="n">focusIndicatorRect</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-setsizepolicy-1">function setSizePolicy</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 944.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setSizePolicy</span><span class="p">(</span>
-    <span class="n">QskSizePolicy</span> <span class="n">policy</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setsizepolicy-2">function setSizePolicy</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-focusindicatorcliprect">function focusIndicatorClipRect</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setSizePolicy</span><span class="p">(</span>
-    <span class="n">Qt</span><span class="o">::</span><span class="n">Orientation</span> <span class="n">orientation</span><span class="p">,</span>
-    <span class="n">QskSizePolicy</span><span class="o">::</span><span class="n">Policy</span> <span class="n">policy</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="n">QRectF</span> <span class="n">focusIndicatorClipRect</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-sizepolicy">function sizePolicy</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 949.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskSizePolicy</span> <span class="n">sizePolicy</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-sizepolicy-1">function sizePolicy</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-subcontrolrect">function subControlRect</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskSizePolicy</span><span class="o">::</span><span class="n">Policy</span> <span class="n">sizePolicy</span><span class="p">(</span>
-    <span class="n">Qt</span><span class="o">::</span><span class="n">Orientation</span> <span class="n">orientation</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">subControlRect</span><span class="p">(</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-setlayoutalignmenthint">function setLayoutAlignmentHint</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 197.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setLayoutAlignmentHint</span><span class="p">(</span>
-    <span class="n">Qt</span><span class="o">::</span><span class="n">Alignment</span> <span class="n">alignment</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-layoutalignmenthint">function layoutAlignmentHint</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-subcontrolrect-1">function subControlRect</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Qt</span><span class="o">::</span><span class="n">Alignment</span> <span class="n">layoutAlignmentHint</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">subControlRect</span><span class="p">(</span> <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span><span class="p">,</span>  <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-setlayouthint">function setLayoutHint</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 202.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setLayoutHint</span><span class="p">(</span>
-    <span class="n">LayoutHint</span> <span class="n">flag</span><span class="p">,</span>
-    <span class="kt">bool</span> <span class="n">on</span> <span class="o">=</span><span class="nb">true</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-testlayouthint">function testLayoutHint</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-subcontrolcontentsrect">function subControlContentsRect</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">testLayoutHint</span><span class="p">(</span>
-    <span class="n">LayoutHint</span> <span class="n">hint</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">subControlContentsRect</span><span class="p">(</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-setlayouthints">function setLayoutHints</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 211.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setLayoutHints</span><span class="p">(</span>
-    <span class="n">LayoutHints</span> <span class="n">hints</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-layouthints">function layoutHints</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-subcontrolcontentsrect-1">function subControlContentsRect</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">LayoutHints</span> <span class="n">layoutHints</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">subControlContentsRect</span><span class="p">(</span> <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span><span class="p">,</span>  <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-isvisibletolayout">function isVisibleToLayout</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 216.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">isVisibleToLayout</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setminimumsize">function setMinimumSize</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setautofillbackground">function setAutoFillBackground</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMinimumSize</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setAutoFillBackground</span><span class="p">(</span> <span class="kt">bool</span> <span class="n">on</span> <span class="p">)</span>
+</code></pre></div>    </div>
 
-<h3 id="function-setminimumsize-1">function setMinimumSize</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 59.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMinimumSize</span><span class="p">(</span>
-    <span class="n">qreal</span> <span class="n">width</span><span class="p">,</span>
-    <span class="n">qreal</span> <span class="n">height</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setminimumwidth">function setMinimumWidth</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-autofillbackground">function autoFillBackground</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMinimumWidth</span><span class="p">(</span>
-    <span class="n">qreal</span> <span class="n">width</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">autoFillBackground</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-setminimumheight">function setMinimumHeight</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 69.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMinimumHeight</span><span class="p">(</span>
-    <span class="n">qreal</span> <span class="n">height</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setmaximumsize">function setMaximumSize</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setautolayoutchildren">function setAutoLayoutChildren</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMaximumSize</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setAutoLayoutChildren</span><span class="p">(</span> <span class="kt">bool</span> <span class="n">on</span> <span class="p">)</span>
+</code></pre></div>    </div>
 
-<h3 id="function-setmaximumsize-1">function setMaximumSize</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 74.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMaximumSize</span><span class="p">(</span>
-    <span class="n">qreal</span> <span class="n">width</span><span class="p">,</span>
-    <span class="n">qreal</span> <span class="n">height</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setmaximumwidth">function setMaximumWidth</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-autolayoutchildren">function autoLayoutChildren</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMaximumWidth</span><span class="p">(</span>
-    <span class="n">qreal</span> <span class="n">width</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">autoLayoutChildren</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-setmaximumheight">function setMaximumHeight</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 85.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMaximumHeight</span><span class="p">(</span>
-    <span class="n">qreal</span> <span class="n">height</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setpreferredsize">function setPreferredSize</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setwheelenabled">function setWheelEnabled</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setPreferredSize</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setWheelEnabled</span><span class="p">(</span> <span class="kt">bool</span> <span class="n">on</span> <span class="p">)</span>
+</code></pre></div>    </div>
 
-<h3 id="function-setpreferredsize-1">function setPreferredSize</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 90.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setPreferredSize</span><span class="p">(</span>
-    <span class="n">qreal</span> <span class="n">width</span><span class="p">,</span>
-    <span class="n">qreal</span> <span class="n">height</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setpreferredwidth">function setPreferredWidth</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-iswheelenabled">function isWheelEnabled</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setPreferredWidth</span><span class="p">(</span>
-    <span class="n">qreal</span> <span class="n">width</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">isWheelEnabled</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-setpreferredheight">function setPreferredHeight</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 100.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setPreferredHeight</span><span class="p">(</span>
-    <span class="n">qreal</span> <span class="n">height</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setfixedsize">function setFixedSize</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setfocuspolicy">function setFocusPolicy</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setFixedSize</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setFocusPolicy</span><span class="p">(</span> <span class="n">Qt</span><span class="o">::</span><span class="n">FocusPolicy</span> <span class="n">policy</span> <span class="p">)</span>
+</code></pre></div>    </div>
 
-<h3 id="function-setfixedsize-1">function setFixedSize</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 105.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setFixedSize</span><span class="p">(</span>
-    <span class="n">qreal</span> <span class="n">width</span><span class="p">,</span>
-    <span class="n">qreal</span> <span class="n">height</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setfixedwidth">function setFixedWidth</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-focuspolicy">function focusPolicy</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setFixedWidth</span><span class="p">(</span>
-    <span class="n">qreal</span> <span class="n">width</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Qt</span><span class="o">::</span><span class="n">FocusPolicy</span> <span class="n">focusPolicy</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-setfixedheight">function setFixedHeight</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 130.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setFixedHeight</span><span class="p">(</span>
-    <span class="n">qreal</span> <span class="n">height</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-setexplicitsizehint">function setExplicitSizeHint</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setsizepolicy">function setSizePolicy</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setExplicitSizeHint</span><span class="p">(</span>
-    <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">whichHint</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setSizePolicy</span><span class="p">(</span> <span class="n">QskSizePolicy</span><span class="o">::</span><span class="n">Policy</span> <span class="n">horizontalPolicy</span><span class="p">,</span>  <span class="n">QskSizePolicy</span><span class="o">::</span><span class="n">Policy</span> <span class="n">verticalPolicy</span> <span class="p">)</span>
+</code></pre></div>    </div>
 
-<h3 id="function-setexplicitsizehint-1">function setExplicitSizeHint</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 295.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setExplicitSizeHint</span><span class="p">(</span>
-    <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">whichHint</span><span class="p">,</span>
-    <span class="n">qreal</span> <span class="n">width</span><span class="p">,</span>
-    <span class="n">qreal</span> <span class="n">height</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-resetexplicitsizehint">function resetExplicitSizeHint</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setsizepolicy-1">function setSizePolicy</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">resetExplicitSizeHint</span><span class="p">(</span>
-    <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">whichHint</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setSizePolicy</span><span class="p">(</span> <span class="n">QskSizePolicy</span> <span class="n">policy</span> <span class="p">)</span>
+</code></pre></div>    </div>
 
-<h3 id="function-minimumsize">function minimumSize</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 278.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QSizeF</span> <span class="n">minimumSize</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-maximumsize">function maximumSize</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setsizepolicy-2">function setSizePolicy</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QSizeF</span> <span class="n">maximumSize</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setSizePolicy</span><span class="p">(</span> <span class="n">Qt</span><span class="o">::</span><span class="n">Orientation</span> <span class="n">orientation</span><span class="p">,</span>  <span class="n">QskSizePolicy</span><span class="o">::</span><span class="n">Policy</span> <span class="n">policy</span> <span class="p">)</span>
+</code></pre></div>    </div>
 
-<h3 id="function-preferredsize">function preferredSize</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 302.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QSizeF</span> <span class="n">preferredSize</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-explicitsizehint">function explicitSizeHint</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-sizepolicy">function sizePolicy</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">explicitSizeHint</span><span class="p">(</span>
-    <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">whichHint</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskSizePolicy</span> <span class="n">sizePolicy</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-implicitsizehint">function implicitSizeHint</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 314.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">implicitSizeHint</span><span class="p">(</span>
-    <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">whichHint</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">constraint</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-sizehint">function sizeHint</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-sizepolicy-1">function sizePolicy</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QSizeF</span> <span class="n">sizeHint</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskSizePolicy</span><span class="o">::</span><span class="n">Policy</span> <span class="n">sizePolicy</span><span class="p">(</span> <span class="n">Qt</span><span class="o">::</span><span class="n">Orientation</span> <span class="n">orientation</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-heightforwidth">function heightForWidth</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 319.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">qreal</span> <span class="n">heightForWidth</span><span class="p">(</span>
-    <span class="n">qreal</span> <span class="n">width</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-widthforheight">function widthForHeight</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setlayoutalignmenthint">function setLayoutAlignmentHint</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">qreal</span> <span class="n">widthForHeight</span><span class="p">(</span>
-    <span class="n">qreal</span> <span class="n">height</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setLayoutAlignmentHint</span><span class="p">(</span> <span class="n">Qt</span><span class="o">::</span><span class="n">Alignment</span> <span class="n">alignment</span> <span class="p">)</span>
+</code></pre></div>    </div>
 
-<h3 id="function-effectivesizehint">function effectiveSizeHint</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 332.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">effectiveSizeHint</span><span class="p">(</span>
-    <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">which</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">constraint</span> <span class="o">=</span><span class="n">QSizeF</span><span class="p">()</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-sizeconstraint">function sizeConstraint</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-layoutalignmenthint">function layoutAlignmentHint</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">sizeConstraint</span><span class="p">(</span>
-    <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">which</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">constraint</span> <span class="o">=</span><span class="n">QSizeF</span><span class="p">()</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Qt</span><span class="o">::</span><span class="n">Alignment</span> <span class="n">layoutAlignmentHint</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
 
-<h3 id="function-sizeconstraint-1">function sizeConstraint</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 343.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QSizeF</span> <span class="n">sizeConstraint</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-locale">function locale</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setlayouthint">function setLayoutHint</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QLocale</span> <span class="n">locale</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setLayoutHint</span><span class="p">(</span> <span class="n">LayoutHint</span> <span class="n">flag</span><span class="p">,</span>  <span class="kt">bool</span> <span class="n">on</span> <span class="o">=</span> <span class="nb">true</span> <span class="p">)</span>
+</code></pre></div>    </div>
 
-<h3 id="function-resetlocale">function resetLocale</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 348.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">resetLocale</span><span class="p">()</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-subcontrols">function subControls</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-testlayouthint">function testLayoutHint</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QVector</span><span class="o">&lt;</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="o">&gt;</span> <span class="n">subControls</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">testLayoutHint</span><span class="p">(</span> <span class="n">LayoutHint</span> <span class="n">hint</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 362.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setlayouthints">function setLayoutHints</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setLayoutHints</span><span class="p">(</span> <span class="n">LayoutHints</span> <span class="n">hints</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 367.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-layouthints">function layoutHints</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">LayoutHints</span> <span class="n">layoutHints</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 377.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-isvisibletolayout">function isVisibleToLayout</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">isVisibleToLayout</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 382.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setminimumsize">function setMinimumSize</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMinimumSize</span><span class="p">(</span> <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 410.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setminimumsize-1">function setMinimumSize</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMinimumSize</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">width</span><span class="p">,</span>  <span class="n">qreal</span> <span class="n">height</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 415.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setminimumwidth">function setMinimumWidth</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMinimumWidth</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">width</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 420.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setminimumheight">function setMinimumHeight</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMinimumHeight</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">height</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 426.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setmaximumsize">function setMaximumSize</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMaximumSize</span><span class="p">(</span> <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 432.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setmaximumsize-1">function setMaximumSize</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMaximumSize</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">width</span><span class="p">,</span>  <span class="n">qreal</span> <span class="n">height</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 437.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setmaximumwidth">function setMaximumWidth</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMaximumWidth</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">width</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 442.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setmaximumheight">function setMaximumHeight</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setMaximumHeight</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">height</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 448.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setpreferredsize">function setPreferredSize</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setPreferredSize</span><span class="p">(</span> <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 388.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setpreferredsize-1">function setPreferredSize</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setPreferredSize</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">width</span><span class="p">,</span>  <span class="n">qreal</span> <span class="n">height</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 393.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setpreferredwidth">function setPreferredWidth</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setPreferredWidth</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">width</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 398.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setpreferredheight">function setPreferredHeight</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setPreferredHeight</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">height</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 404.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setfixedsize">function setFixedSize</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setFixedSize</span><span class="p">(</span> <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 454.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setfixedsize-1">function setFixedSize</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setFixedSize</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">width</span><span class="p">,</span>  <span class="n">qreal</span> <span class="n">height</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 472.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setfixedwidth">function setFixedWidth</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setFixedWidth</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">width</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 477.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setfixedheight">function setFixedHeight</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setFixedHeight</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">height</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 498.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setexplicitsizehint">function setExplicitSizeHint</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setExplicitSizeHint</span><span class="p">(</span> <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">whichHint</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 533.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-setexplicitsizehint-1">function setExplicitSizeHint</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setExplicitSizeHint</span><span class="p">(</span> <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">whichHint</span><span class="p">,</span>  <span class="n">qreal</span> <span class="n">width</span><span class="p">,</span>  <span class="n">qreal</span> <span class="n">height</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 550.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-resetexplicitsizehint">function resetExplicitSizeHint</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">resetExplicitSizeHint</span><span class="p">(</span> <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">whichHint</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 519.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-minimumsize">function minimumSize</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QSizeF</span> <span class="n">minimumSize</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 239.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-maximumsize">function maximumSize</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QSizeF</span> <span class="n">maximumSize</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 244.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-preferredsize">function preferredSize</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QSizeF</span> <span class="n">preferredSize</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 249.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-explicitsizehint">function explicitSizeHint</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">explicitSizeHint</span><span class="p">(</span> <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">whichHint</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 556.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-implicitsizehint">function implicitSizeHint</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">implicitSizeHint</span><span class="p">(</span> <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">whichHint</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">constraint</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 564.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-sizehint">function sizeHint</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QSizeF</span> <span class="n">sizeHint</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 234.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-heightforwidth">function heightForWidth</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">qreal</span> <span class="n">heightForWidth</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">width</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 671.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-widthforheight">function widthForHeight</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">qreal</span> <span class="n">widthForHeight</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">height</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 679.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-effectivesizehint">function effectiveSizeHint</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">effectiveSizeHint</span><span class="p">(</span> <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">which</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">constraint</span> <span class="o">=</span> <span class="n">QSizeF</span><span class="p">()</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 592.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-sizeconstraint">function sizeConstraint</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">sizeConstraint</span><span class="p">(</span> <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">which</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">constraint</span> <span class="o">=</span> <span class="n">QSizeF</span><span class="p">()</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 687.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-sizeconstraint-1">function sizeConstraint</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QSizeF</span> <span class="n">sizeConstraint</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 229.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-locale">function locale</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QLocale</span> <span class="n">locale</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 225.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-resetlocale">function resetLocale</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">resetLocale</span><span class="p">()</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 244.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-subcontrols">function subControls</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QVector</span><span class="o">&lt;</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="o">&gt;</span> <span class="n">subControls</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 1008.
+<br /><br /></p>
+
+  </div>
+</div>
 
 <h2 id="protected-functions-documentation">Protected Functions Documentation</h2>
 
-<h3 id="function-event">function event</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-event">function event</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">event</span><span class="p">(</span>
-    <span class="n">QEvent</span> <span class="o">*</span> <span class="n">event</span>
-<span class="p">)</span> <span class="k">override</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">event</span><span class="p">(</span> <span class="n">QEvent</span> <span class="o">*</span> <span class="n">event</span> <span class="p">)</span> <span class="k">override</span>
+</code></pre></div>    </div>
 
-<h3 id="function-gestureevent">function gestureEvent</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 693.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="kt">void</span> <span class="n">gestureEvent</span><span class="p">(</span>
-    <span class="n">QskGestureEvent</span> <span class="o">*</span> 
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-hoverenterevent">function hoverEnterEvent</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-gestureevent">function gestureEvent</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">hoverEnterEvent</span><span class="p">(</span>
-    <span class="n">QHoverEvent</span> <span class="o">*</span> <span class="n">event</span>
-<span class="p">)</span> <span class="k">override</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="kt">void</span> <span class="n">gestureEvent</span><span class="p">(</span> <span class="n">QskGestureEvent</span> <span class="o">*</span>  <span class="p">)</span>
+</code></pre></div>    </div>
 
-<h3 id="function-hoverleaveevent">function hoverLeaveEvent</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 813.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">hoverLeaveEvent</span><span class="p">(</span>
-    <span class="n">QHoverEvent</span> <span class="o">*</span> <span class="n">event</span>
-<span class="p">)</span> <span class="k">override</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-childmouseeventfilter">function childMouseEventFilter</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-hoverenterevent">function hoverEnterEvent</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">childMouseEventFilter</span><span class="p">(</span>
-    <span class="n">QQuickItem</span> <span class="o">*</span> <span class="n">item</span><span class="p">,</span>
-    <span class="n">QEvent</span> <span class="o">*</span> <span class="n">event</span>
-<span class="p">)</span> <span class="k">override</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">hoverEnterEvent</span><span class="p">(</span> <span class="n">QHoverEvent</span> <span class="o">*</span> <span class="n">event</span> <span class="p">)</span> <span class="k">override</span>
+</code></pre></div>    </div>
 
-<h3 id="function-gesturefilter">function gestureFilter</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 817.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="kt">bool</span> <span class="n">gestureFilter</span><span class="p">(</span>
-    <span class="n">QQuickItem</span> <span class="o">*</span> <span class="p">,</span>
-    <span class="n">QEvent</span> <span class="o">*</span> 
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-itemchange">function itemChange</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-hoverleaveevent">function hoverLeaveEvent</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">itemChange</span><span class="p">(</span>
-    <span class="n">ItemChange</span> <span class="p">,</span>
-    <span class="k">const</span> <span class="n">ItemChangeData</span> <span class="o">&amp;</span> 
-<span class="p">)</span> <span class="k">override</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">hoverLeaveEvent</span><span class="p">(</span> <span class="n">QHoverEvent</span> <span class="o">*</span> <span class="n">event</span> <span class="p">)</span> <span class="k">override</span>
+</code></pre></div>    </div>
 
-<h3 id="function-geometrychange">function geometryChange</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 823.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">geometryChange</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">QRectF</span> <span class="o">&amp;</span> <span class="n">newGeometry</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">QRectF</span> <span class="o">&amp;</span> <span class="n">oldGeometry</span>
-<span class="p">)</span> <span class="k">override</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-initsizepolicy">function initSizePolicy</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-childmouseeventfilter">function childMouseEventFilter</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">initSizePolicy</span><span class="p">(</span>
-    <span class="n">QskSizePolicy</span><span class="o">::</span><span class="n">Policy</span> <span class="n">horizontalPolicy</span><span class="p">,</span>
-    <span class="n">QskSizePolicy</span><span class="o">::</span><span class="n">Policy</span> <span class="n">verticalPolicy</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">childMouseEventFilter</span><span class="p">(</span> <span class="n">QQuickItem</span> <span class="o">*</span> <span class="n">item</span><span class="p">,</span>  <span class="n">QEvent</span> <span class="o">*</span> <span class="n">event</span> <span class="p">)</span> <span class="k">override</span>
+</code></pre></div>    </div>
 
-<h3 id="function-updateresources">function updateResources</h3>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 754.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="kt">void</span> <span class="n">updateResources</span><span class="p">()</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="function-updatelayout">function updateLayout</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-gesturefilter">function gestureFilter</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="kt">void</span> <span class="n">updateLayout</span><span class="p">()</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="kt">bool</span> <span class="n">gestureFilter</span><span class="p">(</span> <span class="n">QQuickItem</span> <span class="o">*</span> <span class="p">,</span>  <span class="n">QEvent</span> <span class="o">*</span>  <span class="p">)</span>
+</code></pre></div>    </div>
 
-<p><strong>Reimplemented by</strong>: <a href="/docs/classes/classQskLinearBox/#function-updatelayout">QskLinearBox::updateLayout</a></p>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 808.
+<br /><br /></p>
 
-<h3 id="function-contentssizehint">function contentsSizeHint</h3>
+  </div>
+</div>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="n">QSizeF</span> <span class="n">contentsSizeHint</span><span class="p">(</span>
-    <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">which</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">constraint</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div></div>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-itemchange">function itemChange</h3>
 
-<h3 id="function-layoutsizehint">function layoutSizeHint</h3>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">itemChange</span><span class="p">(</span> <span class="n">ItemChange</span> <span class="p">,</span>  <span class="k">const</span> <span class="n">ItemChangeData</span> <span class="o">&amp;</span>  <span class="p">)</span> <span class="k">override</span>
+</code></pre></div>    </div>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="n">QSizeF</span> <span class="n">layoutSizeHint</span><span class="p">(</span>
-    <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">which</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">constraint</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div></div>
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 829.
+<br /><br /></p>
 
-<p><strong>Reimplemented by</strong>: <a href="/docs/classes/classQskLinearBox/#function-layoutsizehint">QskLinearBox::layoutSizeHint</a></p>
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-geometrychange">function geometryChange</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">geometryChange</span><span class="p">(</span> <span class="k">const</span> <span class="n">QRectF</span> <span class="o">&amp;</span> <span class="n">newGeometry</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QRectF</span> <span class="o">&amp;</span> <span class="n">oldGeometry</span> <span class="p">)</span> <span class="k">override</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 866.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-initsizepolicy">function initSizePolicy</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">initSizePolicy</span><span class="p">(</span> <span class="n">QskSizePolicy</span><span class="o">::</span><span class="n">Policy</span> <span class="n">horizontalPolicy</span><span class="p">,</span>  <span class="n">QskSizePolicy</span><span class="o">::</span><span class="n">Policy</span> <span class="n">verticalPolicy</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 255.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-updateresources">function updateResources</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="kt">void</span> <span class="n">updateResources</span><span class="p">()</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 958.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-updatelayout">function updateLayout</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="kt">void</span> <span class="n">updateLayout</span><span class="p">()</span>
+</code></pre></div>    </div>
+
+    <p><strong>Reimplemented by</strong>: <a href="/docs/classes/classQskLinearBox/#function-updatelayout">QskLinearBox::updateLayout</a></p>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 954.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-contentssizehint">function contentsSizeHint</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="n">QSizeF</span> <span class="n">contentsSizeHint</span><span class="p">(</span> <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">which</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">constraint</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 962.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-layoutsizehint">function layoutSizeHint</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="n">QSizeF</span> <span class="n">layoutSizeHint</span><span class="p">(</span> <span class="n">Qt</span><span class="o">::</span><span class="n">SizeHint</span> <span class="n">which</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">constraint</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p><strong>Reimplemented by</strong>: <a href="/docs/classes/classQskLinearBox/#function-layoutsizehint">QskLinearBox::layoutSizeHint</a></p>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 968.
+<br /><br /></p>
+
+  </div>
+</div>
 
 <h2 id="public-signals-documentation">Public Signals Documentation</h2>
 
-<h3 id="signal-backgroundchanged">signal backgroundChanged</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-signal" id="signal-backgroundchanged">signal backgroundChanged</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">backgroundChanged</span><span class="p">()</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">backgroundChanged</span><span class="p">()</span>
+</code></pre></div>    </div>
 
-<h3 id="signal-marginschanged">signal marginsChanged</h3>
+    <p><br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">marginsChanged</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">QMarginsF</span> <span class="o">&amp;</span> 
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="signal-focusindicatorrectchanged">signal focusIndicatorRectChanged</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-signal" id="signal-marginschanged">signal marginsChanged</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">focusIndicatorRectChanged</span><span class="p">()</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">marginsChanged</span><span class="p">(</span> <span class="k">const</span> <span class="n">QMarginsF</span> <span class="o">&amp;</span>  <span class="p">)</span>
+</code></pre></div>    </div>
 
-<h3 id="signal-localechanged">signal localeChanged</h3>
+    <p><br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">localeChanged</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">QLocale</span> <span class="o">&amp;</span> 
-<span class="p">)</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="signal-focuspolicychanged">signal focusPolicyChanged</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-signal" id="signal-focusindicatorrectchanged">signal focusIndicatorRectChanged</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">focusPolicyChanged</span><span class="p">()</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">focusIndicatorRectChanged</span><span class="p">()</span>
+</code></pre></div>    </div>
 
-<h3 id="signal-wheelenabledchanged">signal wheelEnabledChanged</h3>
+    <p><br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">wheelEnabledChanged</span><span class="p">()</span>
-</code></pre></div></div>
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-signal" id="signal-localechanged">signal localeChanged</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">localeChanged</span><span class="p">(</span> <span class="k">const</span> <span class="n">QLocale</span> <span class="o">&amp;</span>  <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p><br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-signal" id="signal-focuspolicychanged">signal focusPolicyChanged</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">focusPolicyChanged</span><span class="p">()</span>
+</code></pre></div>    </div>
+
+    <p><br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-signal" id="signal-wheelenabledchanged">signal wheelEnabledChanged</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">wheelEnabledChanged</span><span class="p">()</span>
+</code></pre></div>    </div>
+
+    <p><br /><br /></p>
+
+  </div>
+</div>
 
 <h2 id="public-slots-documentation">Public Slots Documentation</h2>
 
-<h3 id="slot-setlocale">slot setLocale</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-slot" id="slot-setlocale">slot setLocale</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setLocale</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">QLocale</span> <span class="o">&amp;</span> <span class="n">locale</span>
-<span class="p">)</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setLocale</span><span class="p">(</span> <span class="k">const</span> <span class="n">QLocale</span> <span class="o">&amp;</span> <span class="n">locale</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8cpp">QskControl.cpp</a> in line 230.
+<br /><br /></p>
+
+  </div>
+</div>
 
 <h2 id="public-property-documentation">Public Property Documentation</h2>
 
-<h3 id="property-locale">property locale</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-property" id="property-locale">property locale</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QLocale</span> <span class="n">locale</span><span class="p">;</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QLocale</span> <span class="n">locale</span><span class="p">;</span>
+</code></pre></div>    </div>
 
-<h3 id="property-autofillbackground">property autoFillBackground</h3>
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 26.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">autoFillBackground</span><span class="p">;</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="property-autolayoutchildren">property autoLayoutChildren</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-property" id="property-autofillbackground">property autoFillBackground</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">autoLayoutChildren</span><span class="p">;</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">autoFillBackground</span><span class="p">;</span>
+</code></pre></div>    </div>
 
-<h3 id="property-focuspolicy">property focusPolicy</h3>
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 29.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Qt</span><span class="o">::</span><span class="n">FocusPolicy</span> <span class="n">focusPolicy</span><span class="p">;</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="property-wheelenabled">property wheelEnabled</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-property" id="property-autolayoutchildren">property autoLayoutChildren</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">wheelEnabled</span><span class="p">;</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">autoLayoutChildren</span><span class="p">;</span>
+</code></pre></div>    </div>
 
-<h3 id="property-margins">property margins</h3>
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 32.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskMargins</span> <span class="n">margins</span><span class="p">;</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="property-background">property background</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-property" id="property-focuspolicy">property focusPolicy</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskGradient</span> <span class="n">background</span><span class="p">;</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Qt</span><span class="o">::</span><span class="n">FocusPolicy</span> <span class="n">focusPolicy</span><span class="p">;</span>
+</code></pre></div>    </div>
 
-<h3 id="property-sizepolicy">property sizePolicy</h3>
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 35.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskSizePolicy</span> <span class="n">sizePolicy</span><span class="p">;</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="property-minimumsize">property minimumSize</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-property" id="property-wheelenabled">property wheelEnabled</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">minimumSize</span><span class="p">;</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">wheelEnabled</span><span class="p">;</span>
+</code></pre></div>    </div>
 
-<h3 id="property-maximumsize">property maximumSize</h3>
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 38.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">maximumSize</span><span class="p">;</span>
-</code></pre></div></div>
+  </div>
+</div>
 
-<h3 id="property-preferredsize">property preferredSize</h3>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-property" id="property-margins">property margins</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">preferredSize</span><span class="p">;</span>
-</code></pre></div></div>
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskMargins</span> <span class="n">margins</span><span class="p">;</span>
+</code></pre></div>    </div>
 
-<h3 id="property-sizeconstraint">property sizeConstraint</h3>
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 41.
+<br /><br /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">sizeConstraint</span><span class="p">;</span>
-</code></pre></div></div>
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-property" id="property-background">property background</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskGradient</span> <span class="n">background</span><span class="p">;</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 44.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-property" id="property-sizepolicy">property sizePolicy</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskSizePolicy</span> <span class="n">sizePolicy</span><span class="p">;</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 46.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-property" id="property-minimumsize">property minimumSize</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">minimumSize</span><span class="p">;</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 48.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-property" id="property-maximumsize">property maximumSize</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">maximumSize</span><span class="p">;</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 49.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-property" id="property-preferredsize">property preferredSize</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">preferredSize</span><span class="p">;</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 50.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-property" id="property-sizeconstraint">property sizeConstraint</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">sizeConstraint</span><span class="p">;</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskControl_8h">QskControl.h</a> in line 51.
+<br /><br /></p>
+
+  </div>
+</div>
 
 <hr />
 
-<p>Updated on  3 February 2021 at 15:05:45 CET</p>
+<p>Updated on 26 February 2021 at 16:11:55 CET</p>
 
           
           
@@ -2316,8 +4233,11 @@ Even if QQuickItem is part of the public C++ API it has obviously been designed 
 </div><!-- .site -->
 
         <!-- Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="/assets/js/plugins.js"></script>
         <script src="/assets/js/main.js"></script>
         <script src="/assets/js/page-load.js"></script>
-    </body> 
+        <script src="/assets/js/qskinny-search.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    </body>
 </html>
