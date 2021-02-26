@@ -1755,6 +1755,10 @@
     </li>
   
     <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -2478,287 +2482,292 @@
  <span class="mi">344</span><span class="o">:</span>     <span class="k">return</span> <span class="n">m_stops</span><span class="p">;</span>
  <span class="mi">345</span><span class="o">:</span> <span class="p">}</span>
  <span class="mi">346</span><span class="o">:</span> 
- <span class="mi">347</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">setStopAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="n">qreal</span> <span class="n">stop</span> <span class="p">)</span>
+ <span class="mi">347</span><span class="o">:</span> <span class="kt">int</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">stopCount</span><span class="p">()</span> <span class="k">const</span>
  <span class="mi">348</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">349</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">stop</span> <span class="o">&lt;</span> <span class="mf">0.0</span> <span class="o">||</span> <span class="n">stop</span> <span class="o">&gt;</span> <span class="mf">1.0</span> <span class="p">)</span>
- <span class="mi">350</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">351</span><span class="o">:</span>         <span class="n">qWarning</span><span class="p">(</span> <span class="s">"Invalid gradient stop: %g, must be in the range [0,1]"</span><span class="p">,</span> <span class="n">stop</span> <span class="p">);</span>
- <span class="mi">352</span><span class="o">:</span>         <span class="k">return</span><span class="p">;</span>
- <span class="mi">353</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">354</span><span class="o">:</span> 
- <span class="mi">355</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">)</span>
- <span class="mi">356</span><span class="o">:</span>         <span class="n">m_stops</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">);</span>
- <span class="mi">357</span><span class="o">:</span> 
- <span class="mi">358</span><span class="o">:</span>     <span class="n">m_stops</span><span class="p">[</span> <span class="n">index</span> <span class="p">].</span><span class="n">setPosition</span><span class="p">(</span> <span class="n">stop</span> <span class="p">);</span>
- <span class="mi">359</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">360</span><span class="o">:</span> 
- <span class="mi">361</span><span class="o">:</span> <span class="n">qreal</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">stopAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span> <span class="k">const</span>
- <span class="mi">362</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">363</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">)</span>
- <span class="mi">364</span><span class="o">:</span>         <span class="k">return</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">;</span>
+ <span class="mi">349</span><span class="o">:</span>     <span class="k">return</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">count</span><span class="p">();</span>
+ <span class="mi">350</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">351</span><span class="o">:</span> 
+ <span class="mi">352</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">setStopAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="n">qreal</span> <span class="n">stop</span> <span class="p">)</span>
+ <span class="mi">353</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">354</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">stop</span> <span class="o">&lt;</span> <span class="mf">0.0</span> <span class="o">||</span> <span class="n">stop</span> <span class="o">&gt;</span> <span class="mf">1.0</span> <span class="p">)</span>
+ <span class="mi">355</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">356</span><span class="o">:</span>         <span class="n">qWarning</span><span class="p">(</span> <span class="s">"Invalid gradient stop: %g, must be in the range [0,1]"</span><span class="p">,</span> <span class="n">stop</span> <span class="p">);</span>
+ <span class="mi">357</span><span class="o">:</span>         <span class="k">return</span><span class="p">;</span>
+ <span class="mi">358</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">359</span><span class="o">:</span> 
+ <span class="mi">360</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">)</span>
+ <span class="mi">361</span><span class="o">:</span>         <span class="n">m_stops</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">);</span>
+ <span class="mi">362</span><span class="o">:</span> 
+ <span class="mi">363</span><span class="o">:</span>     <span class="n">m_stops</span><span class="p">[</span> <span class="n">index</span> <span class="p">].</span><span class="n">setPosition</span><span class="p">(</span> <span class="n">stop</span> <span class="p">);</span>
+ <span class="mi">364</span><span class="o">:</span> <span class="p">}</span>
  <span class="mi">365</span><span class="o">:</span> 
- <span class="mi">366</span><span class="o">:</span>     <span class="k">return</span> <span class="n">m_stops</span><span class="p">[</span> <span class="n">index</span> <span class="p">].</span><span class="n">position</span><span class="p">();</span>
- <span class="mi">367</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">368</span><span class="o">:</span> 
- <span class="mi">369</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">setColorAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="n">QColor</span><span class="o">&amp;</span> <span class="n">color</span> <span class="p">)</span>
- <span class="mi">370</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">371</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">color</span><span class="p">.</span><span class="n">isValid</span><span class="p">()</span> <span class="p">)</span>
- <span class="mi">372</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">373</span><span class="o">:</span>         <span class="n">qWarning</span><span class="p">(</span> <span class="s">"Invalid gradient color"</span> <span class="p">);</span>
- <span class="mi">374</span><span class="o">:</span>         <span class="k">return</span><span class="p">;</span>
- <span class="mi">375</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">376</span><span class="o">:</span> 
- <span class="mi">377</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">)</span>
- <span class="mi">378</span><span class="o">:</span>         <span class="n">m_stops</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">);</span>
- <span class="mi">379</span><span class="o">:</span> 
- <span class="mi">380</span><span class="o">:</span>     <span class="n">m_stops</span><span class="p">[</span> <span class="n">index</span> <span class="p">].</span><span class="n">setColor</span><span class="p">(</span> <span class="n">color</span> <span class="p">);</span>
- <span class="mi">381</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">382</span><span class="o">:</span> 
- <span class="mi">383</span><span class="o">:</span> <span class="n">QColor</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">colorAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span> <span class="k">const</span>
- <span class="mi">384</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">385</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">)</span>
- <span class="mi">386</span><span class="o">:</span>         <span class="k">return</span> <span class="n">QColor</span><span class="p">();</span>
+ <span class="mi">366</span><span class="o">:</span> <span class="n">qreal</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">stopAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span> <span class="k">const</span>
+ <span class="mi">367</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">368</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">)</span>
+ <span class="mi">369</span><span class="o">:</span>         <span class="k">return</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">;</span>
+ <span class="mi">370</span><span class="o">:</span> 
+ <span class="mi">371</span><span class="o">:</span>     <span class="k">return</span> <span class="n">m_stops</span><span class="p">[</span> <span class="n">index</span> <span class="p">].</span><span class="n">position</span><span class="p">();</span>
+ <span class="mi">372</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">373</span><span class="o">:</span> 
+ <span class="mi">374</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">setColorAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="n">QColor</span><span class="o">&amp;</span> <span class="n">color</span> <span class="p">)</span>
+ <span class="mi">375</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">376</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">color</span><span class="p">.</span><span class="n">isValid</span><span class="p">()</span> <span class="p">)</span>
+ <span class="mi">377</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">378</span><span class="o">:</span>         <span class="n">qWarning</span><span class="p">(</span> <span class="s">"Invalid gradient color"</span> <span class="p">);</span>
+ <span class="mi">379</span><span class="o">:</span>         <span class="k">return</span><span class="p">;</span>
+ <span class="mi">380</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">381</span><span class="o">:</span> 
+ <span class="mi">382</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">)</span>
+ <span class="mi">383</span><span class="o">:</span>         <span class="n">m_stops</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">);</span>
+ <span class="mi">384</span><span class="o">:</span> 
+ <span class="mi">385</span><span class="o">:</span>     <span class="n">m_stops</span><span class="p">[</span> <span class="n">index</span> <span class="p">].</span><span class="n">setColor</span><span class="p">(</span> <span class="n">color</span> <span class="p">);</span>
+ <span class="mi">386</span><span class="o">:</span> <span class="p">}</span>
  <span class="mi">387</span><span class="o">:</span> 
- <span class="mi">388</span><span class="o">:</span>     <span class="k">return</span> <span class="n">m_stops</span><span class="p">[</span> <span class="n">index</span> <span class="p">].</span><span class="n">color</span><span class="p">();</span>
- <span class="mi">389</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">390</span><span class="o">:</span> 
- <span class="mi">391</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">setAlpha</span><span class="p">(</span> <span class="kt">int</span> <span class="n">alpha</span> <span class="p">)</span>
- <span class="mi">392</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">393</span><span class="o">:</span>     <span class="k">for</span> <span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">stop</span> <span class="o">:</span> <span class="n">m_stops</span> <span class="p">)</span>
- <span class="mi">394</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">395</span><span class="o">:</span>         <span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">stop</span><span class="p">.</span><span class="n">color</span><span class="p">();</span>
- <span class="mi">396</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">c</span><span class="p">.</span><span class="n">isValid</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">c</span><span class="p">.</span><span class="n">alpha</span><span class="p">()</span> <span class="p">)</span>
- <span class="mi">397</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">398</span><span class="o">:</span>             <span class="n">c</span><span class="p">.</span><span class="n">setAlpha</span><span class="p">(</span> <span class="n">alpha</span> <span class="p">);</span>
- <span class="mi">399</span><span class="o">:</span>             <span class="n">stop</span><span class="p">.</span><span class="n">setColor</span><span class="p">(</span> <span class="n">c</span> <span class="p">);</span>
- <span class="mi">400</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">401</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">402</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">403</span><span class="o">:</span> 
- <span class="mi">404</span><span class="o">:</span> <span class="kt">bool</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">hasStopAt</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">value</span> <span class="p">)</span> <span class="k">const</span>
- <span class="mi">405</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">406</span><span class="o">:</span>     <span class="c1">// better use binary search TODO ...</span>
- <span class="mi">407</span><span class="o">:</span>     <span class="k">for</span> <span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">stop</span> <span class="o">:</span> <span class="n">m_stops</span> <span class="p">)</span>
- <span class="mi">408</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">409</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">stop</span><span class="p">.</span><span class="n">position</span><span class="p">()</span> <span class="o">==</span> <span class="n">value</span> <span class="p">)</span>
- <span class="mi">410</span><span class="o">:</span>             <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
- <span class="mi">411</span><span class="o">:</span> 
- <span class="mi">412</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">stop</span><span class="p">.</span><span class="n">position</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">value</span> <span class="p">)</span>
- <span class="mi">413</span><span class="o">:</span>             <span class="k">break</span><span class="p">;</span>
- <span class="mi">414</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">415</span><span class="o">:</span> 
- <span class="mi">416</span><span class="o">:</span>     <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
- <span class="mi">417</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">418</span><span class="o">:</span> 
- <span class="mi">419</span><span class="o">:</span> <span class="n">uint</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">hash</span><span class="p">(</span> <span class="n">uint</span> <span class="n">seed</span> <span class="p">)</span> <span class="k">const</span>
- <span class="mi">420</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">421</span><span class="o">:</span>     <span class="k">const</span> <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
- <span class="mi">422</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span>
- <span class="mi">423</span><span class="o">:</span>         <span class="k">return</span> <span class="n">seed</span><span class="p">;</span>
- <span class="mi">424</span><span class="o">:</span> 
- <span class="mi">425</span><span class="o">:</span>     <span class="n">uint</span> <span class="n">hash</span> <span class="o">=</span> <span class="n">qHashBits</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">m_orientation</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span> <span class="n">m_orientation</span> <span class="p">),</span> <span class="n">seed</span> <span class="p">);</span>
- <span class="mi">426</span><span class="o">:</span>     <span class="k">for</span> <span class="p">(</span> <span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">stop</span> <span class="o">:</span> <span class="n">m_stops</span> <span class="p">)</span>
- <span class="mi">427</span><span class="o">:</span>         <span class="n">hash</span> <span class="o">=</span> <span class="n">stop</span><span class="p">.</span><span class="n">hash</span><span class="p">(</span> <span class="n">hash</span> <span class="p">);</span>
- <span class="mi">428</span><span class="o">:</span> 
- <span class="mi">429</span><span class="o">:</span>     <span class="k">return</span> <span class="n">hash</span><span class="p">;</span>
- <span class="mi">430</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">431</span><span class="o">:</span> 
- <span class="mi">432</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">reverse</span><span class="p">()</span>
- <span class="mi">433</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">434</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">isMonochrome</span><span class="p">()</span> <span class="p">)</span>
- <span class="mi">435</span><span class="o">:</span>         <span class="k">return</span><span class="p">;</span>
+ <span class="mi">388</span><span class="o">:</span> <span class="n">QColor</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">colorAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span> <span class="k">const</span>
+ <span class="mi">389</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">390</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">)</span>
+ <span class="mi">391</span><span class="o">:</span>         <span class="k">return</span> <span class="n">QColor</span><span class="p">();</span>
+ <span class="mi">392</span><span class="o">:</span> 
+ <span class="mi">393</span><span class="o">:</span>     <span class="k">return</span> <span class="n">m_stops</span><span class="p">[</span> <span class="n">index</span> <span class="p">].</span><span class="n">color</span><span class="p">();</span>
+ <span class="mi">394</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">395</span><span class="o">:</span> 
+ <span class="mi">396</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">setAlpha</span><span class="p">(</span> <span class="kt">int</span> <span class="n">alpha</span> <span class="p">)</span>
+ <span class="mi">397</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">398</span><span class="o">:</span>     <span class="k">for</span> <span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">stop</span> <span class="o">:</span> <span class="n">m_stops</span> <span class="p">)</span>
+ <span class="mi">399</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">400</span><span class="o">:</span>         <span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">stop</span><span class="p">.</span><span class="n">color</span><span class="p">();</span>
+ <span class="mi">401</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">c</span><span class="p">.</span><span class="n">isValid</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">c</span><span class="p">.</span><span class="n">alpha</span><span class="p">()</span> <span class="p">)</span>
+ <span class="mi">402</span><span class="o">:</span>         <span class="p">{</span>
+ <span class="mi">403</span><span class="o">:</span>             <span class="n">c</span><span class="p">.</span><span class="n">setAlpha</span><span class="p">(</span> <span class="n">alpha</span> <span class="p">);</span>
+ <span class="mi">404</span><span class="o">:</span>             <span class="n">stop</span><span class="p">.</span><span class="n">setColor</span><span class="p">(</span> <span class="n">c</span> <span class="p">);</span>
+ <span class="mi">405</span><span class="o">:</span>         <span class="p">}</span>
+ <span class="mi">406</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">407</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">408</span><span class="o">:</span> 
+ <span class="mi">409</span><span class="o">:</span> <span class="kt">bool</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">hasStopAt</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">value</span> <span class="p">)</span> <span class="k">const</span>
+ <span class="mi">410</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">411</span><span class="o">:</span>     <span class="c1">// better use binary search TODO ...</span>
+ <span class="mi">412</span><span class="o">:</span>     <span class="k">for</span> <span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">stop</span> <span class="o">:</span> <span class="n">m_stops</span> <span class="p">)</span>
+ <span class="mi">413</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">414</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">stop</span><span class="p">.</span><span class="n">position</span><span class="p">()</span> <span class="o">==</span> <span class="n">value</span> <span class="p">)</span>
+ <span class="mi">415</span><span class="o">:</span>             <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+ <span class="mi">416</span><span class="o">:</span> 
+ <span class="mi">417</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">stop</span><span class="p">.</span><span class="n">position</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">value</span> <span class="p">)</span>
+ <span class="mi">418</span><span class="o">:</span>             <span class="k">break</span><span class="p">;</span>
+ <span class="mi">419</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">420</span><span class="o">:</span> 
+ <span class="mi">421</span><span class="o">:</span>     <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+ <span class="mi">422</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">423</span><span class="o">:</span> 
+ <span class="mi">424</span><span class="o">:</span> <span class="n">uint</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">hash</span><span class="p">(</span> <span class="n">uint</span> <span class="n">seed</span> <span class="p">)</span> <span class="k">const</span>
+ <span class="mi">425</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">426</span><span class="o">:</span>     <span class="k">const</span> <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+ <span class="mi">427</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span>
+ <span class="mi">428</span><span class="o">:</span>         <span class="k">return</span> <span class="n">seed</span><span class="p">;</span>
+ <span class="mi">429</span><span class="o">:</span> 
+ <span class="mi">430</span><span class="o">:</span>     <span class="n">uint</span> <span class="n">hash</span> <span class="o">=</span> <span class="n">qHashBits</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">m_orientation</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span> <span class="n">m_orientation</span> <span class="p">),</span> <span class="n">seed</span> <span class="p">);</span>
+ <span class="mi">431</span><span class="o">:</span>     <span class="k">for</span> <span class="p">(</span> <span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">stop</span> <span class="o">:</span> <span class="n">m_stops</span> <span class="p">)</span>
+ <span class="mi">432</span><span class="o">:</span>         <span class="n">hash</span> <span class="o">=</span> <span class="n">stop</span><span class="p">.</span><span class="n">hash</span><span class="p">(</span> <span class="n">hash</span> <span class="p">);</span>
+ <span class="mi">433</span><span class="o">:</span> 
+ <span class="mi">434</span><span class="o">:</span>     <span class="k">return</span> <span class="n">hash</span><span class="p">;</span>
+ <span class="mi">435</span><span class="o">:</span> <span class="p">}</span>
  <span class="mi">436</span><span class="o">:</span> 
- <span class="mi">437</span><span class="o">:</span>     <span class="n">std</span><span class="o">::</span><span class="n">reverse</span><span class="p">(</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="p">);</span>
- <span class="mi">438</span><span class="o">:</span>     <span class="k">for</span><span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">stop</span> <span class="o">:</span> <span class="n">m_stops</span> <span class="p">)</span>
- <span class="mi">439</span><span class="o">:</span>         <span class="n">stop</span><span class="p">.</span><span class="n">setPosition</span><span class="p">(</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">stop</span><span class="p">.</span><span class="n">position</span><span class="p">()</span> <span class="p">);</span>
- <span class="mi">440</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">437</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">reverse</span><span class="p">()</span>
+ <span class="mi">438</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">439</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">isMonochrome</span><span class="p">()</span> <span class="p">)</span>
+ <span class="mi">440</span><span class="o">:</span>         <span class="k">return</span><span class="p">;</span>
  <span class="mi">441</span><span class="o">:</span> 
- <span class="mi">442</span><span class="o">:</span> <span class="n">QskGradient</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">reversed</span><span class="p">()</span> <span class="k">const</span>
- <span class="mi">443</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">444</span><span class="o">:</span>     <span class="k">auto</span> <span class="n">gradient</span> <span class="o">=</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
- <span class="mi">445</span><span class="o">:</span>     <span class="n">gradient</span><span class="p">.</span><span class="n">reverse</span><span class="p">();</span>
+ <span class="mi">442</span><span class="o">:</span>     <span class="n">std</span><span class="o">::</span><span class="n">reverse</span><span class="p">(</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="p">);</span>
+ <span class="mi">443</span><span class="o">:</span>     <span class="k">for</span><span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">stop</span> <span class="o">:</span> <span class="n">m_stops</span> <span class="p">)</span>
+ <span class="mi">444</span><span class="o">:</span>         <span class="n">stop</span><span class="p">.</span><span class="n">setPosition</span><span class="p">(</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">stop</span><span class="p">.</span><span class="n">position</span><span class="p">()</span> <span class="p">);</span>
+ <span class="mi">445</span><span class="o">:</span> <span class="p">}</span>
  <span class="mi">446</span><span class="o">:</span> 
- <span class="mi">447</span><span class="o">:</span>     <span class="k">return</span> <span class="n">gradient</span><span class="p">;</span>
- <span class="mi">448</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">449</span><span class="o">:</span> 
- <span class="mi">450</span><span class="o">:</span> <span class="n">QskGradient</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">extracted</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">from</span><span class="p">,</span> <span class="n">qreal</span> <span class="n">to</span> <span class="p">)</span> <span class="k">const</span>
- <span class="mi">451</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">452</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">from</span> <span class="o">&gt;</span> <span class="n">to</span> <span class="p">)</span>
- <span class="mi">453</span><span class="o">:</span>         <span class="k">return</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">m_orientation</span> <span class="p">);</span>
+ <span class="mi">447</span><span class="o">:</span> <span class="n">QskGradient</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">reversed</span><span class="p">()</span> <span class="k">const</span>
+ <span class="mi">448</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">449</span><span class="o">:</span>     <span class="k">auto</span> <span class="n">gradient</span> <span class="o">=</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+ <span class="mi">450</span><span class="o">:</span>     <span class="n">gradient</span><span class="p">.</span><span class="n">reverse</span><span class="p">();</span>
+ <span class="mi">451</span><span class="o">:</span> 
+ <span class="mi">452</span><span class="o">:</span>     <span class="k">return</span> <span class="n">gradient</span><span class="p">;</span>
+ <span class="mi">453</span><span class="o">:</span> <span class="p">}</span>
  <span class="mi">454</span><span class="o">:</span> 
- <span class="mi">455</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">isMonochrome</span><span class="p">()</span> <span class="o">||</span> <span class="p">(</span> <span class="n">from</span> <span class="o">&lt;=</span> <span class="mf">0.0</span> <span class="o">&amp;&amp;</span> <span class="n">to</span> <span class="o">&gt;=</span> <span class="mf">1.0</span> <span class="p">)</span> <span class="p">)</span>
- <span class="mi">456</span><span class="o">:</span>         <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
- <span class="mi">457</span><span class="o">:</span> 
- <span class="mi">458</span><span class="o">:</span>     <span class="n">from</span> <span class="o">=</span> <span class="n">qMax</span><span class="p">(</span> <span class="n">from</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">);</span>
- <span class="mi">459</span><span class="o">:</span>     <span class="n">to</span> <span class="o">=</span> <span class="n">qMin</span><span class="p">(</span> <span class="n">to</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">);</span>
- <span class="mi">460</span><span class="o">:</span> 
- <span class="mi">461</span><span class="o">:</span>     <span class="k">const</span> <span class="k">auto</span> <span class="n">stops</span> <span class="o">=</span> <span class="n">qskExtractedStops</span><span class="p">(</span> <span class="n">m_stops</span><span class="p">,</span> <span class="n">from</span><span class="p">,</span> <span class="n">to</span> <span class="p">);</span>
- <span class="mi">462</span><span class="o">:</span>     <span class="k">return</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">m_orientation</span><span class="p">,</span> <span class="n">stops</span> <span class="p">);</span>
- <span class="mi">463</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">464</span><span class="o">:</span> 
- <span class="mi">465</span><span class="o">:</span> <span class="n">QskGradient</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">interpolated</span><span class="p">(</span>
- <span class="mi">466</span><span class="o">:</span>     <span class="k">const</span> <span class="n">QskGradient</span><span class="o">&amp;</span> <span class="n">to</span><span class="p">,</span> <span class="n">qreal</span> <span class="n">value</span> <span class="p">)</span> <span class="k">const</span>
- <span class="mi">467</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">468</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="p">(</span> <span class="n">isValid</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">to</span><span class="p">.</span><span class="n">isValid</span><span class="p">()</span> <span class="p">)</span> <span class="p">)</span>
- <span class="mi">469</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">470</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">isValid</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">to</span><span class="p">.</span><span class="n">isValid</span><span class="p">()</span> <span class="p">)</span>
- <span class="mi">471</span><span class="o">:</span>             <span class="k">return</span> <span class="n">to</span><span class="p">;</span>
- <span class="mi">472</span><span class="o">:</span> 
- <span class="mi">473</span><span class="o">:</span>         <span class="n">qreal</span> <span class="n">progress</span><span class="p">;</span>
- <span class="mi">474</span><span class="o">:</span>         <span class="k">const</span> <span class="n">QskGradient</span><span class="o">*</span> <span class="n">gradient</span><span class="p">;</span>
- <span class="mi">475</span><span class="o">:</span> 
- <span class="mi">476</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">to</span><span class="p">.</span><span class="n">isValid</span><span class="p">()</span> <span class="p">)</span>
- <span class="mi">477</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">478</span><span class="o">:</span>             <span class="n">progress</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
- <span class="mi">479</span><span class="o">:</span>             <span class="n">gradient</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">to</span><span class="p">;</span>
- <span class="mi">480</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">481</span><span class="o">:</span>         <span class="k">else</span>
+ <span class="mi">455</span><span class="o">:</span> <span class="n">QskGradient</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">extracted</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">from</span><span class="p">,</span> <span class="n">qreal</span> <span class="n">to</span> <span class="p">)</span> <span class="k">const</span>
+ <span class="mi">456</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">457</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">from</span> <span class="o">&gt;</span> <span class="n">to</span> <span class="p">)</span>
+ <span class="mi">458</span><span class="o">:</span>         <span class="k">return</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">m_orientation</span> <span class="p">);</span>
+ <span class="mi">459</span><span class="o">:</span> 
+ <span class="mi">460</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">isMonochrome</span><span class="p">()</span> <span class="o">||</span> <span class="p">(</span> <span class="n">from</span> <span class="o">&lt;=</span> <span class="mf">0.0</span> <span class="o">&amp;&amp;</span> <span class="n">to</span> <span class="o">&gt;=</span> <span class="mf">1.0</span> <span class="p">)</span> <span class="p">)</span>
+ <span class="mi">461</span><span class="o">:</span>         <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+ <span class="mi">462</span><span class="o">:</span> 
+ <span class="mi">463</span><span class="o">:</span>     <span class="n">from</span> <span class="o">=</span> <span class="n">qMax</span><span class="p">(</span> <span class="n">from</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">);</span>
+ <span class="mi">464</span><span class="o">:</span>     <span class="n">to</span> <span class="o">=</span> <span class="n">qMin</span><span class="p">(</span> <span class="n">to</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">);</span>
+ <span class="mi">465</span><span class="o">:</span> 
+ <span class="mi">466</span><span class="o">:</span>     <span class="k">const</span> <span class="k">auto</span> <span class="n">stops</span> <span class="o">=</span> <span class="n">qskExtractedStops</span><span class="p">(</span> <span class="n">m_stops</span><span class="p">,</span> <span class="n">from</span><span class="p">,</span> <span class="n">to</span> <span class="p">);</span>
+ <span class="mi">467</span><span class="o">:</span>     <span class="k">return</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">m_orientation</span><span class="p">,</span> <span class="n">stops</span> <span class="p">);</span>
+ <span class="mi">468</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">469</span><span class="o">:</span> 
+ <span class="mi">470</span><span class="o">:</span> <span class="n">QskGradient</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">interpolated</span><span class="p">(</span>
+ <span class="mi">471</span><span class="o">:</span>     <span class="k">const</span> <span class="n">QskGradient</span><span class="o">&amp;</span> <span class="n">to</span><span class="p">,</span> <span class="n">qreal</span> <span class="n">value</span> <span class="p">)</span> <span class="k">const</span>
+ <span class="mi">472</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">473</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="p">(</span> <span class="n">isValid</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">to</span><span class="p">.</span><span class="n">isValid</span><span class="p">()</span> <span class="p">)</span> <span class="p">)</span>
+ <span class="mi">474</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">475</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">isValid</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">to</span><span class="p">.</span><span class="n">isValid</span><span class="p">()</span> <span class="p">)</span>
+ <span class="mi">476</span><span class="o">:</span>             <span class="k">return</span> <span class="n">to</span><span class="p">;</span>
+ <span class="mi">477</span><span class="o">:</span> 
+ <span class="mi">478</span><span class="o">:</span>         <span class="n">qreal</span> <span class="n">progress</span><span class="p">;</span>
+ <span class="mi">479</span><span class="o">:</span>         <span class="k">const</span> <span class="n">QskGradient</span><span class="o">*</span> <span class="n">gradient</span><span class="p">;</span>
+ <span class="mi">480</span><span class="o">:</span> 
+ <span class="mi">481</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">to</span><span class="p">.</span><span class="n">isValid</span><span class="p">()</span> <span class="p">)</span>
  <span class="mi">482</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">483</span><span class="o">:</span>             <span class="n">progress</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">value</span><span class="p">;</span>
- <span class="mi">484</span><span class="o">:</span>             <span class="n">gradient</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+ <span class="mi">483</span><span class="o">:</span>             <span class="n">progress</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+ <span class="mi">484</span><span class="o">:</span>             <span class="n">gradient</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">to</span><span class="p">;</span>
  <span class="mi">485</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">486</span><span class="o">:</span> 
- <span class="mi">487</span><span class="o">:</span>         <span class="cm">/*
- 488:             We interpolate as if the invalid gradient would be
- 489:             a transparent version of the valid gradient
- 490:          */</span>
+ <span class="mi">486</span><span class="o">:</span>         <span class="k">else</span>
+ <span class="mi">487</span><span class="o">:</span>         <span class="p">{</span>
+ <span class="mi">488</span><span class="o">:</span>             <span class="n">progress</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">value</span><span class="p">;</span>
+ <span class="mi">489</span><span class="o">:</span>             <span class="n">gradient</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+ <span class="mi">490</span><span class="o">:</span>         <span class="p">}</span>
  <span class="mi">491</span><span class="o">:</span> 
- <span class="mi">492</span><span class="o">:</span>         <span class="k">auto</span> <span class="n">stops</span> <span class="o">=</span> <span class="n">gradient</span><span class="o">-&gt;</span><span class="n">m_stops</span><span class="p">;</span>
- <span class="mi">493</span><span class="o">:</span>         <span class="k">for</span> <span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">stop</span> <span class="o">:</span> <span class="n">stops</span> <span class="p">)</span>
- <span class="mi">494</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">495</span><span class="o">:</span>             <span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">stop</span><span class="p">.</span><span class="n">color</span><span class="p">();</span>
- <span class="mi">496</span><span class="o">:</span>             <span class="n">c</span><span class="p">.</span><span class="n">setAlpha</span><span class="p">(</span> <span class="n">c</span><span class="p">.</span><span class="n">alpha</span><span class="p">()</span> <span class="o">*</span> <span class="n">progress</span> <span class="p">);</span>
- <span class="mi">497</span><span class="o">:</span> 
- <span class="mi">498</span><span class="o">:</span>             <span class="n">stop</span><span class="p">.</span><span class="n">setColor</span><span class="p">(</span> <span class="n">c</span> <span class="p">);</span>
- <span class="mi">499</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">500</span><span class="o">:</span> 
- <span class="mi">501</span><span class="o">:</span>         <span class="k">return</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">gradient</span><span class="o">-&gt;</span><span class="n">m_orientation</span><span class="p">,</span> <span class="n">stops</span> <span class="p">);</span>
- <span class="mi">502</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">503</span><span class="o">:</span> 
- <span class="mi">504</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">qskIsMonochrome</span><span class="p">(</span> <span class="n">m_stops</span> <span class="p">)</span> <span class="p">)</span>
- <span class="mi">505</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">506</span><span class="o">:</span>         <span class="c1">// we can ignore our stops</span>
- <span class="mi">507</span><span class="o">:</span> 
- <span class="mi">508</span><span class="o">:</span>         <span class="k">const</span> <span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">m_stops</span><span class="p">[</span> <span class="mi">0</span> <span class="p">].</span><span class="n">color</span><span class="p">();</span>
- <span class="mi">509</span><span class="o">:</span> 
- <span class="mi">510</span><span class="o">:</span>         <span class="k">auto</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">to</span><span class="p">.</span><span class="n">m_stops</span><span class="p">;</span>
- <span class="mi">511</span><span class="o">:</span>         <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s2</span><span class="p">.</span><span class="n">count</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
- <span class="mi">512</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">513</span><span class="o">:</span>             <span class="k">const</span> <span class="k">auto</span> <span class="n">c2</span> <span class="o">=</span> <span class="n">QskRgb</span><span class="o">::</span><span class="n">interpolated</span><span class="p">(</span> <span class="n">c</span><span class="p">,</span> <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">color</span><span class="p">(),</span> <span class="n">value</span> <span class="p">);</span>
- <span class="mi">514</span><span class="o">:</span>             <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">setColor</span><span class="p">(</span> <span class="n">c2</span> <span class="p">);</span>
- <span class="mi">515</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">516</span><span class="o">:</span> 
- <span class="mi">517</span><span class="o">:</span>         <span class="k">return</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">to</span><span class="p">.</span><span class="n">m_orientation</span><span class="p">,</span> <span class="n">s2</span> <span class="p">);</span>
- <span class="mi">518</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">519</span><span class="o">:</span> 
- <span class="mi">520</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">qskIsMonochrome</span><span class="p">(</span> <span class="n">to</span><span class="p">.</span><span class="n">m_stops</span> <span class="p">)</span> <span class="p">)</span>
- <span class="mi">521</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">522</span><span class="o">:</span>         <span class="c1">// we can ignore the stops of to</span>
- <span class="mi">523</span><span class="o">:</span> 
- <span class="mi">524</span><span class="o">:</span>         <span class="k">const</span> <span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">to</span><span class="p">.</span><span class="n">m_stops</span><span class="p">[</span> <span class="mi">0</span> <span class="p">].</span><span class="n">color</span><span class="p">();</span>
- <span class="mi">525</span><span class="o">:</span> 
- <span class="mi">526</span><span class="o">:</span>         <span class="k">auto</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">m_stops</span><span class="p">;</span>
- <span class="mi">527</span><span class="o">:</span>         <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s2</span><span class="p">.</span><span class="n">count</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
- <span class="mi">528</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">529</span><span class="o">:</span>             <span class="k">const</span> <span class="k">auto</span> <span class="n">c2</span> <span class="o">=</span> <span class="n">QskRgb</span><span class="o">::</span><span class="n">interpolated</span><span class="p">(</span> <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">color</span><span class="p">(),</span> <span class="n">c</span><span class="p">,</span> <span class="n">value</span> <span class="p">);</span>
- <span class="mi">530</span><span class="o">:</span>             <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">setColor</span><span class="p">(</span> <span class="n">c2</span> <span class="p">);</span>
- <span class="mi">531</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">532</span><span class="o">:</span> 
- <span class="mi">533</span><span class="o">:</span>         <span class="k">return</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">m_orientation</span><span class="p">,</span> <span class="n">s2</span> <span class="p">);</span>
- <span class="mi">534</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">535</span><span class="o">:</span> 
- <span class="mi">536</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">m_orientation</span> <span class="o">==</span> <span class="n">to</span><span class="p">.</span><span class="n">m_orientation</span> <span class="p">)</span>
- <span class="mi">537</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">538</span><span class="o">:</span>         <span class="cm">/*
- 539:             we need to have the same number of stops
- 540:             at the same positions
- 541:          */</span>
- <span class="mi">542</span><span class="o">:</span> 
- <span class="mi">543</span><span class="o">:</span>         <span class="k">const</span> <span class="k">auto</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">qskExpandedStops</span><span class="p">(</span> <span class="n">m_stops</span><span class="p">,</span> <span class="n">to</span><span class="p">.</span><span class="n">m_stops</span> <span class="p">);</span>
- <span class="mi">544</span><span class="o">:</span>         <span class="k">auto</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">qskExpandedStops</span><span class="p">(</span> <span class="n">to</span><span class="p">.</span><span class="n">m_stops</span><span class="p">,</span> <span class="n">m_stops</span> <span class="p">);</span>
- <span class="mi">545</span><span class="o">:</span> 
- <span class="mi">546</span><span class="o">:</span>         <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s1</span><span class="p">.</span><span class="n">count</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
- <span class="mi">547</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">548</span><span class="o">:</span>             <span class="k">const</span> <span class="k">auto</span> <span class="n">c2</span> <span class="o">=</span> <span class="n">QskRgb</span><span class="o">::</span><span class="n">interpolated</span><span class="p">(</span>
- <span class="mi">549</span><span class="o">:</span>                 <span class="n">s1</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">color</span><span class="p">(),</span> <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">color</span><span class="p">(),</span> <span class="n">value</span> <span class="p">);</span>
+ <span class="mi">492</span><span class="o">:</span>         <span class="cm">/*
+ 493:             We interpolate as if the invalid gradient would be
+ 494:             a transparent version of the valid gradient
+ 495:          */</span>
+ <span class="mi">496</span><span class="o">:</span> 
+ <span class="mi">497</span><span class="o">:</span>         <span class="k">auto</span> <span class="n">stops</span> <span class="o">=</span> <span class="n">gradient</span><span class="o">-&gt;</span><span class="n">m_stops</span><span class="p">;</span>
+ <span class="mi">498</span><span class="o">:</span>         <span class="k">for</span> <span class="p">(</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">stop</span> <span class="o">:</span> <span class="n">stops</span> <span class="p">)</span>
+ <span class="mi">499</span><span class="o">:</span>         <span class="p">{</span>
+ <span class="mi">500</span><span class="o">:</span>             <span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">stop</span><span class="p">.</span><span class="n">color</span><span class="p">();</span>
+ <span class="mi">501</span><span class="o">:</span>             <span class="n">c</span><span class="p">.</span><span class="n">setAlpha</span><span class="p">(</span> <span class="n">c</span><span class="p">.</span><span class="n">alpha</span><span class="p">()</span> <span class="o">*</span> <span class="n">progress</span> <span class="p">);</span>
+ <span class="mi">502</span><span class="o">:</span> 
+ <span class="mi">503</span><span class="o">:</span>             <span class="n">stop</span><span class="p">.</span><span class="n">setColor</span><span class="p">(</span> <span class="n">c</span> <span class="p">);</span>
+ <span class="mi">504</span><span class="o">:</span>         <span class="p">}</span>
+ <span class="mi">505</span><span class="o">:</span> 
+ <span class="mi">506</span><span class="o">:</span>         <span class="k">return</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">gradient</span><span class="o">-&gt;</span><span class="n">m_orientation</span><span class="p">,</span> <span class="n">stops</span> <span class="p">);</span>
+ <span class="mi">507</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">508</span><span class="o">:</span> 
+ <span class="mi">509</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">qskIsMonochrome</span><span class="p">(</span> <span class="n">m_stops</span> <span class="p">)</span> <span class="p">)</span>
+ <span class="mi">510</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">511</span><span class="o">:</span>         <span class="c1">// we can ignore our stops</span>
+ <span class="mi">512</span><span class="o">:</span> 
+ <span class="mi">513</span><span class="o">:</span>         <span class="k">const</span> <span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">m_stops</span><span class="p">[</span> <span class="mi">0</span> <span class="p">].</span><span class="n">color</span><span class="p">();</span>
+ <span class="mi">514</span><span class="o">:</span> 
+ <span class="mi">515</span><span class="o">:</span>         <span class="k">auto</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">to</span><span class="p">.</span><span class="n">m_stops</span><span class="p">;</span>
+ <span class="mi">516</span><span class="o">:</span>         <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s2</span><span class="p">.</span><span class="n">count</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+ <span class="mi">517</span><span class="o">:</span>         <span class="p">{</span>
+ <span class="mi">518</span><span class="o">:</span>             <span class="k">const</span> <span class="k">auto</span> <span class="n">c2</span> <span class="o">=</span> <span class="n">QskRgb</span><span class="o">::</span><span class="n">interpolated</span><span class="p">(</span> <span class="n">c</span><span class="p">,</span> <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">color</span><span class="p">(),</span> <span class="n">value</span> <span class="p">);</span>
+ <span class="mi">519</span><span class="o">:</span>             <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">setColor</span><span class="p">(</span> <span class="n">c2</span> <span class="p">);</span>
+ <span class="mi">520</span><span class="o">:</span>         <span class="p">}</span>
+ <span class="mi">521</span><span class="o">:</span> 
+ <span class="mi">522</span><span class="o">:</span>         <span class="k">return</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">to</span><span class="p">.</span><span class="n">m_orientation</span><span class="p">,</span> <span class="n">s2</span> <span class="p">);</span>
+ <span class="mi">523</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">524</span><span class="o">:</span> 
+ <span class="mi">525</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">qskIsMonochrome</span><span class="p">(</span> <span class="n">to</span><span class="p">.</span><span class="n">m_stops</span> <span class="p">)</span> <span class="p">)</span>
+ <span class="mi">526</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">527</span><span class="o">:</span>         <span class="c1">// we can ignore the stops of to</span>
+ <span class="mi">528</span><span class="o">:</span> 
+ <span class="mi">529</span><span class="o">:</span>         <span class="k">const</span> <span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">to</span><span class="p">.</span><span class="n">m_stops</span><span class="p">[</span> <span class="mi">0</span> <span class="p">].</span><span class="n">color</span><span class="p">();</span>
+ <span class="mi">530</span><span class="o">:</span> 
+ <span class="mi">531</span><span class="o">:</span>         <span class="k">auto</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">m_stops</span><span class="p">;</span>
+ <span class="mi">532</span><span class="o">:</span>         <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s2</span><span class="p">.</span><span class="n">count</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+ <span class="mi">533</span><span class="o">:</span>         <span class="p">{</span>
+ <span class="mi">534</span><span class="o">:</span>             <span class="k">const</span> <span class="k">auto</span> <span class="n">c2</span> <span class="o">=</span> <span class="n">QskRgb</span><span class="o">::</span><span class="n">interpolated</span><span class="p">(</span> <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">color</span><span class="p">(),</span> <span class="n">c</span><span class="p">,</span> <span class="n">value</span> <span class="p">);</span>
+ <span class="mi">535</span><span class="o">:</span>             <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">setColor</span><span class="p">(</span> <span class="n">c2</span> <span class="p">);</span>
+ <span class="mi">536</span><span class="o">:</span>         <span class="p">}</span>
+ <span class="mi">537</span><span class="o">:</span> 
+ <span class="mi">538</span><span class="o">:</span>         <span class="k">return</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">m_orientation</span><span class="p">,</span> <span class="n">s2</span> <span class="p">);</span>
+ <span class="mi">539</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">540</span><span class="o">:</span> 
+ <span class="mi">541</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">m_orientation</span> <span class="o">==</span> <span class="n">to</span><span class="p">.</span><span class="n">m_orientation</span> <span class="p">)</span>
+ <span class="mi">542</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">543</span><span class="o">:</span>         <span class="cm">/*
+ 544:             we need to have the same number of stops
+ 545:             at the same positions
+ 546:          */</span>
+ <span class="mi">547</span><span class="o">:</span> 
+ <span class="mi">548</span><span class="o">:</span>         <span class="k">const</span> <span class="k">auto</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">qskExpandedStops</span><span class="p">(</span> <span class="n">m_stops</span><span class="p">,</span> <span class="n">to</span><span class="p">.</span><span class="n">m_stops</span> <span class="p">);</span>
+ <span class="mi">549</span><span class="o">:</span>         <span class="k">auto</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">qskExpandedStops</span><span class="p">(</span> <span class="n">to</span><span class="p">.</span><span class="n">m_stops</span><span class="p">,</span> <span class="n">m_stops</span> <span class="p">);</span>
  <span class="mi">550</span><span class="o">:</span> 
- <span class="mi">551</span><span class="o">:</span>             <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">setColor</span><span class="p">(</span> <span class="n">c2</span> <span class="p">);</span>
- <span class="mi">552</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">553</span><span class="o">:</span> 
- <span class="mi">554</span><span class="o">:</span>         <span class="k">return</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">m_orientation</span><span class="p">,</span> <span class="n">s2</span> <span class="p">);</span>
- <span class="mi">555</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">556</span><span class="o">:</span>     <span class="k">else</span>
- <span class="mi">557</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">558</span><span class="o">:</span>         <span class="cm">/*
- 559:             The interpolation is devided into 2 steps. First we
- 560:             interpolate into a monochrome gradient and then change
- 561:             the orientation before we continue in direction of the
- 562:             final gradient.
- 563:          */</span>
- <span class="mi">564</span><span class="o">:</span> 
- <span class="mi">565</span><span class="o">:</span>         <span class="k">const</span> <span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">m_stops</span><span class="p">[</span> <span class="mi">0</span> <span class="p">].</span><span class="n">color</span><span class="p">();</span>
- <span class="mi">566</span><span class="o">:</span> 
- <span class="mi">567</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="mf">0.5</span> <span class="p">)</span>
- <span class="mi">568</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">569</span><span class="o">:</span>             <span class="k">auto</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">m_stops</span><span class="p">;</span>
- <span class="mi">570</span><span class="o">:</span> 
- <span class="mi">571</span><span class="o">:</span>             <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s2</span><span class="p">.</span><span class="n">count</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
- <span class="mi">572</span><span class="o">:</span>             <span class="p">{</span>
- <span class="mi">573</span><span class="o">:</span>                 <span class="k">const</span> <span class="k">auto</span> <span class="n">c2</span> <span class="o">=</span> <span class="n">QskRgb</span><span class="o">::</span><span class="n">interpolated</span><span class="p">(</span>
- <span class="mi">574</span><span class="o">:</span>                     <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">color</span><span class="p">(),</span> <span class="n">c</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">value</span> <span class="p">);</span>
+ <span class="mi">551</span><span class="o">:</span>         <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s1</span><span class="p">.</span><span class="n">count</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+ <span class="mi">552</span><span class="o">:</span>         <span class="p">{</span>
+ <span class="mi">553</span><span class="o">:</span>             <span class="k">const</span> <span class="k">auto</span> <span class="n">c2</span> <span class="o">=</span> <span class="n">QskRgb</span><span class="o">::</span><span class="n">interpolated</span><span class="p">(</span>
+ <span class="mi">554</span><span class="o">:</span>                 <span class="n">s1</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">color</span><span class="p">(),</span> <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">color</span><span class="p">(),</span> <span class="n">value</span> <span class="p">);</span>
+ <span class="mi">555</span><span class="o">:</span> 
+ <span class="mi">556</span><span class="o">:</span>             <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">setColor</span><span class="p">(</span> <span class="n">c2</span> <span class="p">);</span>
+ <span class="mi">557</span><span class="o">:</span>         <span class="p">}</span>
+ <span class="mi">558</span><span class="o">:</span> 
+ <span class="mi">559</span><span class="o">:</span>         <span class="k">return</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">m_orientation</span><span class="p">,</span> <span class="n">s2</span> <span class="p">);</span>
+ <span class="mi">560</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">561</span><span class="o">:</span>     <span class="k">else</span>
+ <span class="mi">562</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">563</span><span class="o">:</span>         <span class="cm">/*
+ 564:             The interpolation is devided into 2 steps. First we
+ 565:             interpolate into a monochrome gradient and then change
+ 566:             the orientation before we continue in direction of the
+ 567:             final gradient.
+ 568:          */</span>
+ <span class="mi">569</span><span class="o">:</span> 
+ <span class="mi">570</span><span class="o">:</span>         <span class="k">const</span> <span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">m_stops</span><span class="p">[</span> <span class="mi">0</span> <span class="p">].</span><span class="n">color</span><span class="p">();</span>
+ <span class="mi">571</span><span class="o">:</span> 
+ <span class="mi">572</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="mf">0.5</span> <span class="p">)</span>
+ <span class="mi">573</span><span class="o">:</span>         <span class="p">{</span>
+ <span class="mi">574</span><span class="o">:</span>             <span class="k">auto</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">m_stops</span><span class="p">;</span>
  <span class="mi">575</span><span class="o">:</span> 
- <span class="mi">576</span><span class="o">:</span>                 <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">setColor</span><span class="p">(</span> <span class="n">c2</span> <span class="p">);</span>
- <span class="mi">577</span><span class="o">:</span>             <span class="p">}</span>
- <span class="mi">578</span><span class="o">:</span> 
- <span class="mi">579</span><span class="o">:</span>             <span class="k">return</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">m_orientation</span><span class="p">,</span> <span class="n">s2</span> <span class="p">);</span>
- <span class="mi">580</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">581</span><span class="o">:</span>         <span class="k">else</span>
- <span class="mi">582</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">583</span><span class="o">:</span>             <span class="k">auto</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">to</span><span class="p">.</span><span class="n">m_stops</span><span class="p">;</span>
- <span class="mi">584</span><span class="o">:</span> 
- <span class="mi">585</span><span class="o">:</span>             <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s2</span><span class="p">.</span><span class="n">count</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
- <span class="mi">586</span><span class="o">:</span>             <span class="p">{</span>
- <span class="mi">587</span><span class="o">:</span>                 <span class="k">const</span> <span class="k">auto</span> <span class="n">c2</span> <span class="o">=</span> <span class="n">QskRgb</span><span class="o">::</span><span class="n">interpolated</span><span class="p">(</span>
- <span class="mi">588</span><span class="o">:</span>                     <span class="n">c</span><span class="p">,</span> <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">color</span><span class="p">(),</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span> <span class="n">value</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="p">)</span> <span class="p">);</span>
+ <span class="mi">576</span><span class="o">:</span>             <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s2</span><span class="p">.</span><span class="n">count</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+ <span class="mi">577</span><span class="o">:</span>             <span class="p">{</span>
+ <span class="mi">578</span><span class="o">:</span>                 <span class="k">const</span> <span class="k">auto</span> <span class="n">c2</span> <span class="o">=</span> <span class="n">QskRgb</span><span class="o">::</span><span class="n">interpolated</span><span class="p">(</span>
+ <span class="mi">579</span><span class="o">:</span>                     <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">color</span><span class="p">(),</span> <span class="n">c</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">value</span> <span class="p">);</span>
+ <span class="mi">580</span><span class="o">:</span> 
+ <span class="mi">581</span><span class="o">:</span>                 <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">setColor</span><span class="p">(</span> <span class="n">c2</span> <span class="p">);</span>
+ <span class="mi">582</span><span class="o">:</span>             <span class="p">}</span>
+ <span class="mi">583</span><span class="o">:</span> 
+ <span class="mi">584</span><span class="o">:</span>             <span class="k">return</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">m_orientation</span><span class="p">,</span> <span class="n">s2</span> <span class="p">);</span>
+ <span class="mi">585</span><span class="o">:</span>         <span class="p">}</span>
+ <span class="mi">586</span><span class="o">:</span>         <span class="k">else</span>
+ <span class="mi">587</span><span class="o">:</span>         <span class="p">{</span>
+ <span class="mi">588</span><span class="o">:</span>             <span class="k">auto</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">to</span><span class="p">.</span><span class="n">m_stops</span><span class="p">;</span>
  <span class="mi">589</span><span class="o">:</span> 
- <span class="mi">590</span><span class="o">:</span>                 <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">setColor</span><span class="p">(</span> <span class="n">c2</span> <span class="p">);</span>
- <span class="mi">591</span><span class="o">:</span>             <span class="p">}</span>
- <span class="mi">592</span><span class="o">:</span> 
- <span class="mi">593</span><span class="o">:</span>             <span class="k">return</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">to</span><span class="p">.</span><span class="n">m_orientation</span><span class="p">,</span> <span class="n">s2</span> <span class="p">);</span>
- <span class="mi">594</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">595</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">596</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">590</span><span class="o">:</span>             <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s2</span><span class="p">.</span><span class="n">count</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+ <span class="mi">591</span><span class="o">:</span>             <span class="p">{</span>
+ <span class="mi">592</span><span class="o">:</span>                 <span class="k">const</span> <span class="k">auto</span> <span class="n">c2</span> <span class="o">=</span> <span class="n">QskRgb</span><span class="o">::</span><span class="n">interpolated</span><span class="p">(</span>
+ <span class="mi">593</span><span class="o">:</span>                     <span class="n">c</span><span class="p">,</span> <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">color</span><span class="p">(),</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span> <span class="n">value</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="p">)</span> <span class="p">);</span>
+ <span class="mi">594</span><span class="o">:</span> 
+ <span class="mi">595</span><span class="o">:</span>                 <span class="n">s2</span><span class="p">[</span> <span class="n">i</span> <span class="p">].</span><span class="n">setColor</span><span class="p">(</span> <span class="n">c2</span> <span class="p">);</span>
+ <span class="mi">596</span><span class="o">:</span>             <span class="p">}</span>
  <span class="mi">597</span><span class="o">:</span> 
- <span class="mi">598</span><span class="o">:</span> <span class="n">QVariant</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">interpolate</span><span class="p">(</span>
- <span class="mi">599</span><span class="o">:</span>     <span class="k">const</span> <span class="n">QskGradient</span><span class="o">&amp;</span> <span class="n">from</span><span class="p">,</span> <span class="k">const</span> <span class="n">QskGradient</span><span class="o">&amp;</span> <span class="n">to</span><span class="p">,</span> <span class="n">qreal</span> <span class="n">progress</span> <span class="p">)</span>
- <span class="mi">600</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">601</span><span class="o">:</span>     <span class="k">return</span> <span class="n">QVariant</span><span class="o">::</span><span class="n">fromValue</span><span class="p">(</span> <span class="n">from</span><span class="p">.</span><span class="n">interpolated</span><span class="p">(</span> <span class="n">to</span><span class="p">,</span> <span class="n">progress</span> <span class="p">)</span> <span class="p">);</span>
- <span class="mi">602</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">603</span><span class="o">:</span> 
- <span class="mi">604</span><span class="o">:</span> <span class="err">#</span><span class="n">ifndef</span> <span class="n">QT_NO_DEBUG_STREAM</span>
- <span class="mi">605</span><span class="o">:</span> 
- <span class="mi">606</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">qdebug</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
- <span class="mi">607</span><span class="o">:</span> 
- <span class="mi">608</span><span class="o">:</span> <span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="n">QDebug</span> <span class="n">debug</span><span class="p">,</span> <span class="k">const</span> <span class="n">QskGradientStop</span><span class="o">&amp;</span> <span class="n">stop</span> <span class="p">)</span>
- <span class="mi">609</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">610</span><span class="o">:</span>     <span class="n">debug</span> <span class="o">&lt;&lt;</span> <span class="n">stop</span><span class="p">.</span><span class="n">position</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">": "</span> <span class="o">&lt;&lt;</span> <span class="n">stop</span><span class="p">.</span><span class="n">color</span><span class="p">();</span>
- <span class="mi">611</span><span class="o">:</span>     <span class="k">return</span> <span class="n">debug</span><span class="p">;</span>
- <span class="mi">612</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">613</span><span class="o">:</span> 
- <span class="mi">614</span><span class="o">:</span> <span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="n">QDebug</span> <span class="n">debug</span><span class="p">,</span> <span class="k">const</span> <span class="n">QskGradient</span><span class="o">&amp;</span> <span class="n">gradient</span> <span class="p">)</span>
- <span class="mi">615</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">616</span><span class="o">:</span>     <span class="n">debug</span> <span class="o">&lt;&lt;</span> <span class="s">"GR:"</span> <span class="o">&lt;&lt;</span> <span class="n">gradient</span><span class="p">.</span><span class="n">orientation</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">gradient</span><span class="p">.</span><span class="n">stops</span><span class="p">().</span><span class="n">count</span><span class="p">();</span>
- <span class="mi">617</span><span class="o">:</span>     <span class="k">return</span> <span class="n">debug</span><span class="p">;</span>
- <span class="mi">618</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">619</span><span class="o">:</span> 
- <span class="mi">620</span><span class="o">:</span> <span class="err">#</span><span class="n">endif</span>
- <span class="mi">621</span><span class="o">:</span> 
- <span class="mi">622</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="s">"moc_QskGradient.cpp"</span>
+ <span class="mi">598</span><span class="o">:</span>             <span class="k">return</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">to</span><span class="p">.</span><span class="n">m_orientation</span><span class="p">,</span> <span class="n">s2</span> <span class="p">);</span>
+ <span class="mi">599</span><span class="o">:</span>         <span class="p">}</span>
+ <span class="mi">600</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">601</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">602</span><span class="o">:</span> 
+ <span class="mi">603</span><span class="o">:</span> <span class="n">QVariant</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">interpolate</span><span class="p">(</span>
+ <span class="mi">604</span><span class="o">:</span>     <span class="k">const</span> <span class="n">QskGradient</span><span class="o">&amp;</span> <span class="n">from</span><span class="p">,</span> <span class="k">const</span> <span class="n">QskGradient</span><span class="o">&amp;</span> <span class="n">to</span><span class="p">,</span> <span class="n">qreal</span> <span class="n">progress</span> <span class="p">)</span>
+ <span class="mi">605</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">606</span><span class="o">:</span>     <span class="k">return</span> <span class="n">QVariant</span><span class="o">::</span><span class="n">fromValue</span><span class="p">(</span> <span class="n">from</span><span class="p">.</span><span class="n">interpolated</span><span class="p">(</span> <span class="n">to</span><span class="p">,</span> <span class="n">progress</span> <span class="p">)</span> <span class="p">);</span>
+ <span class="mi">607</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">608</span><span class="o">:</span> 
+ <span class="mi">609</span><span class="o">:</span> <span class="err">#</span><span class="n">ifndef</span> <span class="n">QT_NO_DEBUG_STREAM</span>
+ <span class="mi">610</span><span class="o">:</span> 
+ <span class="mi">611</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">qdebug</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
+ <span class="mi">612</span><span class="o">:</span> 
+ <span class="mi">613</span><span class="o">:</span> <span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="n">QDebug</span> <span class="n">debug</span><span class="p">,</span> <span class="k">const</span> <span class="n">QskGradientStop</span><span class="o">&amp;</span> <span class="n">stop</span> <span class="p">)</span>
+ <span class="mi">614</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">615</span><span class="o">:</span>     <span class="n">debug</span> <span class="o">&lt;&lt;</span> <span class="n">stop</span><span class="p">.</span><span class="n">position</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">": "</span> <span class="o">&lt;&lt;</span> <span class="n">stop</span><span class="p">.</span><span class="n">color</span><span class="p">();</span>
+ <span class="mi">616</span><span class="o">:</span>     <span class="k">return</span> <span class="n">debug</span><span class="p">;</span>
+ <span class="mi">617</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">618</span><span class="o">:</span> 
+ <span class="mi">619</span><span class="o">:</span> <span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="n">QDebug</span> <span class="n">debug</span><span class="p">,</span> <span class="k">const</span> <span class="n">QskGradient</span><span class="o">&amp;</span> <span class="n">gradient</span> <span class="p">)</span>
+ <span class="mi">620</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">621</span><span class="o">:</span>     <span class="n">debug</span> <span class="o">&lt;&lt;</span> <span class="s">"GR:"</span> <span class="o">&lt;&lt;</span> <span class="n">gradient</span><span class="p">.</span><span class="n">orientation</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">gradient</span><span class="p">.</span><span class="n">stops</span><span class="p">().</span><span class="n">count</span><span class="p">();</span>
+ <span class="mi">622</span><span class="o">:</span>     <span class="k">return</span> <span class="n">debug</span><span class="p">;</span>
+ <span class="mi">623</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">624</span><span class="o">:</span> 
+ <span class="mi">625</span><span class="o">:</span> <span class="err">#</span><span class="n">endif</span>
+ <span class="mi">626</span><span class="o">:</span> 
+ <span class="mi">627</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="s">"moc_QskGradient.cpp"</span>
 </code></pre></div></div>
 
 <hr />
 
-<p>Updated on 26 February 2021 at 17:46:48 CET</p>
+<p>Updated on 26 February 2021 at 18:17:46 CET</p>
 
           
           

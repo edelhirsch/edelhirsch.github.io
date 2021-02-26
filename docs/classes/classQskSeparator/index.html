@@ -1755,6 +1755,10 @@
     </li>
   
     <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -2203,7 +2207,7 @@
       <td><strong><a href="/docs/classes/classQskSeparator/#function-extent">extent</a></strong>() const</td>
     </tr>
     <tr>
-      <td>QskAspect::Placement</td>
+      <td>virtual QskAspect::Placement</td>
       <td><strong><a href="/docs/classes/classQskSeparator/#function-effectiveplacement">effectivePlacement</a></strong>() const override</td>
     </tr>
   </tbody>
@@ -2415,8 +2419,16 @@
   <h3 class="qskinny-function" id="function-effectiveplacement">function effectivePlacement</h3>
 
   <div class="qskinny-inner-block">
-    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">effectivePlacement</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">effectivePlacement</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
 </code></pre></div>    </div>
+
+    <p>The placements bits are added to an unresolved aspect when inserting or looking up values in the hint table.</p>
+
+    <p><strong>Returns</strong>: The default implementation returns QskAspect::NoPlacement;</p>
+
+    <p><strong>See also</strong>: QskAspect::Placement, <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a></p>
+
+    <p><strong>Reimplements</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveplacement">QskSkinnable::effectivePlacement</a></p>
 
     <p>Defined in <a href="../../files/QskSeparator_8cpp">QskSeparator.cpp</a> in line 73.
 <br /><br /></p>
@@ -2491,7 +2503,7 @@
 
 <hr />
 
-<p>Updated on 26 February 2021 at 17:46:46 CET</p>
+<p>Updated on 26 February 2021 at 18:17:43 CET</p>
 
           
           

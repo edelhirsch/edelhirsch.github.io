@@ -1755,6 +1755,10 @@
     </li>
   
     <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -2178,7 +2182,7 @@
       <td><strong><a href="/docs/classes/classQskScaleTickmarks/#function-tickcount">tickCount</a></strong>() const</td>
     </tr>
     <tr>
-      <td>int</td>
+      <td>Q_INVOKABLE int</td>
       <td><strong><a href="/docs/classes/classQskScaleTickmarks/#function-tickcount">tickCount</a></strong>(TickType type) const</td>
     </tr>
     <tr>
@@ -2212,6 +2216,10 @@
     <tr>
       <td>QVector&lt; qreal &gt;</td>
       <td><strong><a href="/docs/classes/classQskScaleTickmarks/#function-majorticks">majorTicks</a></strong>() const</td>
+    </tr>
+    <tr>
+      <td>Q_INVOKABLE qreal</td>
+      <td><strong><a href="/docs/classes/classQskScaleTickmarks/#function-tickat">tickAt</a></strong>(TickType type, int index) const</td>
     </tr>
     <tr>
       <td>void</td>
@@ -2346,7 +2354,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskScaleTickmarks</span> <span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 62.
+    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 75.
 <br /><br /></p>
 
   </div>
@@ -2359,7 +2367,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskScaleTickmarks</span> <span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskScaleTickmarks_8h">QskScaleTickmarks.h</a> in line 90.
+    <p>Defined in <a href="../../files/QskScaleTickmarks_8h">QskScaleTickmarks.h</a> in line 92.
 <br /><br /></p>
 
   </div>
@@ -2372,7 +2380,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">tickCount</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 9.
+    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 24.
 <br /><br /></p>
 
   </div>
@@ -2382,10 +2390,10 @@
   <h3 class="qskinny-function" id="function-tickcount-1">function tickCount</h3>
 
   <div class="qskinny-inner-block">
-    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">tickCount</span><span class="p">(</span> <span class="n">TickType</span> <span class="n">type</span> <span class="p">)</span> <span class="k">const</span>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Q_INVOKABLE</span> <span class="kt">int</span> <span class="n">tickCount</span><span class="p">(</span> <span class="n">TickType</span> <span class="n">type</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 24.
+    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 32.
 <br /><br /></p>
 
   </div>
@@ -2398,7 +2406,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QVector</span><span class="o">&lt;</span> <span class="n">qreal</span> <span class="o">&gt;</span> <span class="n">ticks</span><span class="p">(</span> <span class="n">TickType</span> <span class="n">type</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 29.
+    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 37.
 <br /><br /></p>
 
   </div>
@@ -2411,7 +2419,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setTicks</span><span class="p">(</span> <span class="n">TickType</span> <span class="n">type</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QVector</span><span class="o">&lt;</span> <span class="n">qreal</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">ticks</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 34.
+    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 42.
 <br /><br /></p>
 
   </div>
@@ -2424,7 +2432,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="kt">void</span> <span class="n">setMinorTicks</span><span class="p">(</span> <span class="k">const</span> <span class="n">QVector</span><span class="o">&lt;</span> <span class="n">qreal</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">ticks</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskScaleTickmarks_8h">QskScaleTickmarks.h</a> in line 60.
+    <p>Defined in <a href="../../files/QskScaleTickmarks_8h">QskScaleTickmarks.h</a> in line 62.
 <br /><br /></p>
 
   </div>
@@ -2437,7 +2445,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QVector</span><span class="o">&lt;</span> <span class="n">qreal</span> <span class="o">&gt;</span> <span class="n">minorTicks</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskScaleTickmarks_8h">QskScaleTickmarks.h</a> in line 65.
+    <p>Defined in <a href="../../files/QskScaleTickmarks_8h">QskScaleTickmarks.h</a> in line 67.
 <br /><br /></p>
 
   </div>
@@ -2450,7 +2458,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="kt">void</span> <span class="n">setMediumTicks</span><span class="p">(</span> <span class="k">const</span> <span class="n">QVector</span><span class="o">&lt;</span> <span class="n">qreal</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">ticks</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskScaleTickmarks_8h">QskScaleTickmarks.h</a> in line 70.
+    <p>Defined in <a href="../../files/QskScaleTickmarks_8h">QskScaleTickmarks.h</a> in line 72.
 <br /><br /></p>
 
   </div>
@@ -2463,7 +2471,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QVector</span><span class="o">&lt;</span> <span class="n">qreal</span> <span class="o">&gt;</span> <span class="n">mediumTicks</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskScaleTickmarks_8h">QskScaleTickmarks.h</a> in line 75.
+    <p>Defined in <a href="../../files/QskScaleTickmarks_8h">QskScaleTickmarks.h</a> in line 77.
 <br /><br /></p>
 
   </div>
@@ -2476,7 +2484,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="kt">void</span> <span class="n">setMajorTicks</span><span class="p">(</span> <span class="k">const</span> <span class="n">QVector</span><span class="o">&lt;</span> <span class="n">qreal</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">ticks</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskScaleTickmarks_8h">QskScaleTickmarks.h</a> in line 80.
+    <p>Defined in <a href="../../files/QskScaleTickmarks_8h">QskScaleTickmarks.h</a> in line 82.
 <br /><br /></p>
 
   </div>
@@ -2489,7 +2497,20 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QVector</span><span class="o">&lt;</span> <span class="n">qreal</span> <span class="o">&gt;</span> <span class="n">majorTicks</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskScaleTickmarks_8h">QskScaleTickmarks.h</a> in line 85.
+    <p>Defined in <a href="../../files/QskScaleTickmarks_8h">QskScaleTickmarks.h</a> in line 87.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-tickat">function tickAt</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Q_INVOKABLE</span> <span class="n">qreal</span> <span class="n">tickAt</span><span class="p">(</span> <span class="n">TickType</span> <span class="n">type</span><span class="p">,</span>  <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 47.
 <br /><br /></p>
 
   </div>
@@ -2502,7 +2523,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">invert</span><span class="p">()</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 46.
+    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 59.
 <br /><br /></p>
 
   </div>
@@ -2515,7 +2536,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">reset</span><span class="p">()</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 39.
+    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 52.
 <br /><br /></p>
 
   </div>
@@ -2528,7 +2549,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">uint</span> <span class="n">hash</span><span class="p">(</span> <span class="n">uint</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 53.
+    <p>Defined in <a href="../../files/QskScaleTickmarks_8cpp">QskScaleTickmarks.cpp</a> in line 66.
 <br /><br /></p>
 
   </div>
@@ -2577,7 +2598,7 @@
 
 <hr />
 
-<p>Updated on 26 February 2021 at 17:46:46 CET</p>
+<p>Updated on 26 February 2021 at 18:17:43 CET</p>
 
           
           

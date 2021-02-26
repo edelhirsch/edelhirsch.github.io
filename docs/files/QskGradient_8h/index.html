@@ -1755,6 +1755,10 @@
     </li>
   
     <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -2259,94 +2263,95 @@
  <span class="mi">125</span><span class="o">:</span> 
  <span class="mi">126</span><span class="o">:</span>     <span class="n">Q_INVOKABLE</span> <span class="n">qreal</span> <span class="n">stopAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span> <span class="k">const</span><span class="p">;</span>
  <span class="mi">127</span><span class="o">:</span>     <span class="n">Q_INVOKABLE</span> <span class="n">QColor</span> <span class="n">colorAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span> <span class="k">const</span><span class="p">;</span>
- <span class="mi">128</span><span class="o">:</span> 
- <span class="mi">129</span><span class="o">:</span>   <span class="k">private</span><span class="o">:</span>
- <span class="mi">130</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">setStopAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="n">qreal</span> <span class="n">stop</span> <span class="p">);</span>
- <span class="mi">131</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">setColorAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="n">QColor</span><span class="o">&amp;</span> <span class="n">color</span> <span class="p">);</span>
- <span class="mi">132</span><span class="o">:</span> 
- <span class="mi">133</span><span class="o">:</span>     <span class="n">Orientation</span> <span class="n">m_orientation</span><span class="p">;</span>
- <span class="mi">134</span><span class="o">:</span>     <span class="n">QVector</span><span class="o">&lt;</span> <span class="n">QskGradientStop</span> <span class="o">&gt;</span> <span class="n">m_stops</span><span class="p">;</span>
- <span class="mi">135</span><span class="o">:</span> <span class="p">};</span>
- <span class="mi">136</span><span class="o">:</span> 
- <span class="mi">137</span><span class="o">:</span> <span class="kr">inline</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">QskGradient</span><span class="p">(</span> <span class="n">Qt</span><span class="o">::</span><span class="n">GlobalColor</span> <span class="n">color</span> <span class="p">)</span>
- <span class="mi">138</span><span class="o">:</span>     <span class="o">:</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">QColor</span><span class="p">(</span> <span class="n">color</span> <span class="p">)</span> <span class="p">)</span>
- <span class="mi">139</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">140</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">141</span><span class="o">:</span> 
- <span class="mi">142</span><span class="o">:</span> <span class="kr">inline</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">QskGradient</span><span class="p">(</span> <span class="n">QRgb</span> <span class="n">rgb</span> <span class="p">)</span>
- <span class="mi">143</span><span class="o">:</span>     <span class="o">:</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">QColor</span><span class="o">::</span><span class="n">fromRgba</span><span class="p">(</span> <span class="n">rgb</span> <span class="p">)</span> <span class="p">)</span>
- <span class="mi">144</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">145</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">146</span><span class="o">:</span> 
- <span class="mi">147</span><span class="o">:</span> <span class="kr">inline</span> <span class="n">QColor</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">startColor</span><span class="p">()</span> <span class="k">const</span>
- <span class="mi">148</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">149</span><span class="o">:</span>     <span class="k">return</span> <span class="p">(</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">?</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">first</span><span class="p">().</span><span class="n">color</span><span class="p">()</span> <span class="o">:</span> <span class="n">QColor</span><span class="p">();</span>
- <span class="mi">150</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">151</span><span class="o">:</span> 
- <span class="mi">152</span><span class="o">:</span> <span class="kr">inline</span> <span class="n">QColor</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">endColor</span><span class="p">()</span> <span class="k">const</span>
- <span class="mi">153</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">154</span><span class="o">:</span>     <span class="k">return</span> <span class="p">(</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">?</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">last</span><span class="p">().</span><span class="n">color</span><span class="p">()</span> <span class="o">:</span> <span class="n">QColor</span><span class="p">();</span>
- <span class="mi">155</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">156</span><span class="o">:</span> 
- <span class="mi">157</span><span class="o">:</span> <span class="kr">inline</span> <span class="n">QskGradientStop</span><span class="o">::</span><span class="n">QskGradientStop</span><span class="p">()</span>
- <span class="mi">158</span><span class="o">:</span>     <span class="o">:</span> <span class="n">m_position</span><span class="p">(</span> <span class="o">-</span><span class="mf">1.0</span> <span class="p">)</span>
- <span class="mi">159</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">160</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">161</span><span class="o">:</span> 
- <span class="mi">162</span><span class="o">:</span> <span class="kr">inline</span> <span class="n">QskGradientStop</span><span class="o">::</span><span class="n">QskGradientStop</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">position</span><span class="p">,</span> <span class="k">const</span> <span class="n">QColor</span><span class="o">&amp;</span> <span class="n">color</span> <span class="p">)</span>
- <span class="mi">163</span><span class="o">:</span>     <span class="o">:</span> <span class="n">m_position</span><span class="p">(</span> <span class="n">position</span> <span class="p">)</span>
- <span class="mi">164</span><span class="o">:</span>     <span class="p">,</span> <span class="n">m_color</span><span class="p">(</span> <span class="n">color</span> <span class="p">)</span>
- <span class="mi">165</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">166</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">167</span><span class="o">:</span> 
- <span class="mi">168</span><span class="o">:</span> <span class="kr">inline</span> <span class="n">qreal</span> <span class="n">QskGradientStop</span><span class="o">::</span><span class="n">position</span><span class="p">()</span> <span class="k">const</span>
- <span class="mi">169</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">170</span><span class="o">:</span>     <span class="k">return</span> <span class="n">m_position</span><span class="p">;</span>
- <span class="mi">171</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">172</span><span class="o">:</span> 
- <span class="mi">173</span><span class="o">:</span> <span class="kr">inline</span> <span class="k">const</span> <span class="n">QColor</span><span class="o">&amp;</span> <span class="n">QskGradientStop</span><span class="o">::</span><span class="n">color</span><span class="p">()</span> <span class="k">const</span>
- <span class="mi">174</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">175</span><span class="o">:</span>     <span class="k">return</span> <span class="n">m_color</span><span class="p">;</span>
- <span class="mi">176</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">177</span><span class="o">:</span> 
- <span class="mi">178</span><span class="o">:</span> <span class="kr">inline</span> <span class="kt">bool</span> <span class="n">QskGradientStop</span><span class="o">::</span><span class="k">operator</span><span class="o">==</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskGradientStop</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">const</span>
- <span class="mi">179</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">180</span><span class="o">:</span>     <span class="k">return</span> <span class="p">(</span> <span class="n">m_position</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">m_position</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span> <span class="n">m_color</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">m_color</span> <span class="p">);</span>
- <span class="mi">181</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">182</span><span class="o">:</span> 
- <span class="mi">183</span><span class="o">:</span> <span class="kr">inline</span> <span class="kt">bool</span> <span class="n">QskGradientStop</span><span class="o">::</span><span class="k">operator</span><span class="o">!=</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskGradientStop</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">const</span>
- <span class="mi">184</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">185</span><span class="o">:</span>     <span class="k">return</span> <span class="p">(</span> <span class="o">!</span><span class="p">(</span> <span class="o">*</span><span class="k">this</span> <span class="o">==</span> <span class="n">other</span> <span class="p">)</span> <span class="p">);</span>
- <span class="mi">186</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">187</span><span class="o">:</span> 
- <span class="mi">188</span><span class="o">:</span> <span class="kr">inline</span> <span class="kt">bool</span> <span class="n">QskGradient</span><span class="o">::</span><span class="k">operator</span><span class="o">==</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskGradient</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">const</span>
- <span class="mi">189</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">190</span><span class="o">:</span>     <span class="k">return</span> <span class="p">(</span> <span class="n">m_orientation</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">m_orientation</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span> <span class="n">m_stops</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">m_stops</span> <span class="p">);</span>
- <span class="mi">191</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">192</span><span class="o">:</span> 
- <span class="mi">193</span><span class="o">:</span> <span class="kr">inline</span> <span class="kt">bool</span> <span class="n">QskGradient</span><span class="o">::</span><span class="k">operator</span><span class="o">!=</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskGradient</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">const</span>
- <span class="mi">194</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">195</span><span class="o">:</span>     <span class="k">return</span> <span class="p">(</span> <span class="o">!</span><span class="p">(</span> <span class="o">*</span><span class="k">this</span> <span class="o">==</span> <span class="n">other</span> <span class="p">)</span> <span class="p">);</span>
- <span class="mi">196</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">197</span><span class="o">:</span> 
- <span class="mi">198</span><span class="o">:</span> <span class="n">Q_DECLARE_TYPEINFO</span><span class="p">(</span> <span class="n">QskGradientStop</span><span class="p">,</span> <span class="n">Q_MOVABLE_TYPE</span> <span class="p">);</span>
- <span class="mi">199</span><span class="o">:</span> 
- <span class="mi">200</span><span class="o">:</span> <span class="n">Q_DECLARE_METATYPE</span><span class="p">(</span> <span class="n">QskGradientStop</span> <span class="p">)</span>
- <span class="mi">201</span><span class="o">:</span> <span class="n">Q_DECLARE_METATYPE</span><span class="p">(</span> <span class="n">QskGradient</span> <span class="p">)</span>
- <span class="mi">202</span><span class="o">:</span> 
- <span class="mi">203</span><span class="o">:</span> <span class="err">#</span><span class="n">ifndef</span> <span class="n">QT_NO_DEBUG_STREAM</span>
- <span class="mi">204</span><span class="o">:</span> 
- <span class="mi">205</span><span class="o">:</span> <span class="n">QSK_EXPORT</span> <span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="n">QDebug</span><span class="p">,</span> <span class="k">const</span> <span class="n">QskGradientStop</span><span class="o">&amp;</span> <span class="p">);</span>
- <span class="mi">206</span><span class="o">:</span> <span class="n">QSK_EXPORT</span> <span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="n">QDebug</span><span class="p">,</span> <span class="k">const</span> <span class="n">QskGradient</span><span class="o">&amp;</span> <span class="p">);</span>
- <span class="mi">207</span><span class="o">:</span> 
- <span class="mi">208</span><span class="o">:</span> <span class="err">#</span><span class="n">endif</span>
- <span class="mi">209</span><span class="o">:</span> 
- <span class="mi">210</span><span class="o">:</span> <span class="err">#</span><span class="n">endif</span>
+ <span class="mi">128</span><span class="o">:</span>     <span class="n">Q_INVOKABLE</span> <span class="kt">int</span> <span class="n">stopCount</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+ <span class="mi">129</span><span class="o">:</span> 
+ <span class="mi">130</span><span class="o">:</span>   <span class="k">private</span><span class="o">:</span>
+ <span class="mi">131</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">setStopAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="n">qreal</span> <span class="n">stop</span> <span class="p">);</span>
+ <span class="mi">132</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">setColorAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="n">QColor</span><span class="o">&amp;</span> <span class="n">color</span> <span class="p">);</span>
+ <span class="mi">133</span><span class="o">:</span> 
+ <span class="mi">134</span><span class="o">:</span>     <span class="n">Orientation</span> <span class="n">m_orientation</span><span class="p">;</span>
+ <span class="mi">135</span><span class="o">:</span>     <span class="n">QVector</span><span class="o">&lt;</span> <span class="n">QskGradientStop</span> <span class="o">&gt;</span> <span class="n">m_stops</span><span class="p">;</span>
+ <span class="mi">136</span><span class="o">:</span> <span class="p">};</span>
+ <span class="mi">137</span><span class="o">:</span> 
+ <span class="mi">138</span><span class="o">:</span> <span class="kr">inline</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">QskGradient</span><span class="p">(</span> <span class="n">Qt</span><span class="o">::</span><span class="n">GlobalColor</span> <span class="n">color</span> <span class="p">)</span>
+ <span class="mi">139</span><span class="o">:</span>     <span class="o">:</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">QColor</span><span class="p">(</span> <span class="n">color</span> <span class="p">)</span> <span class="p">)</span>
+ <span class="mi">140</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">141</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">142</span><span class="o">:</span> 
+ <span class="mi">143</span><span class="o">:</span> <span class="kr">inline</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">QskGradient</span><span class="p">(</span> <span class="n">QRgb</span> <span class="n">rgb</span> <span class="p">)</span>
+ <span class="mi">144</span><span class="o">:</span>     <span class="o">:</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">QColor</span><span class="o">::</span><span class="n">fromRgba</span><span class="p">(</span> <span class="n">rgb</span> <span class="p">)</span> <span class="p">)</span>
+ <span class="mi">145</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">146</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">147</span><span class="o">:</span> 
+ <span class="mi">148</span><span class="o">:</span> <span class="kr">inline</span> <span class="n">QColor</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">startColor</span><span class="p">()</span> <span class="k">const</span>
+ <span class="mi">149</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">150</span><span class="o">:</span>     <span class="k">return</span> <span class="p">(</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">?</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">first</span><span class="p">().</span><span class="n">color</span><span class="p">()</span> <span class="o">:</span> <span class="n">QColor</span><span class="p">();</span>
+ <span class="mi">151</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">152</span><span class="o">:</span> 
+ <span class="mi">153</span><span class="o">:</span> <span class="kr">inline</span> <span class="n">QColor</span> <span class="n">QskGradient</span><span class="o">::</span><span class="n">endColor</span><span class="p">()</span> <span class="k">const</span>
+ <span class="mi">154</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">155</span><span class="o">:</span>     <span class="k">return</span> <span class="p">(</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">?</span> <span class="n">m_stops</span><span class="p">.</span><span class="n">last</span><span class="p">().</span><span class="n">color</span><span class="p">()</span> <span class="o">:</span> <span class="n">QColor</span><span class="p">();</span>
+ <span class="mi">156</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">157</span><span class="o">:</span> 
+ <span class="mi">158</span><span class="o">:</span> <span class="kr">inline</span> <span class="n">QskGradientStop</span><span class="o">::</span><span class="n">QskGradientStop</span><span class="p">()</span>
+ <span class="mi">159</span><span class="o">:</span>     <span class="o">:</span> <span class="n">m_position</span><span class="p">(</span> <span class="o">-</span><span class="mf">1.0</span> <span class="p">)</span>
+ <span class="mi">160</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">161</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">162</span><span class="o">:</span> 
+ <span class="mi">163</span><span class="o">:</span> <span class="kr">inline</span> <span class="n">QskGradientStop</span><span class="o">::</span><span class="n">QskGradientStop</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">position</span><span class="p">,</span> <span class="k">const</span> <span class="n">QColor</span><span class="o">&amp;</span> <span class="n">color</span> <span class="p">)</span>
+ <span class="mi">164</span><span class="o">:</span>     <span class="o">:</span> <span class="n">m_position</span><span class="p">(</span> <span class="n">position</span> <span class="p">)</span>
+ <span class="mi">165</span><span class="o">:</span>     <span class="p">,</span> <span class="n">m_color</span><span class="p">(</span> <span class="n">color</span> <span class="p">)</span>
+ <span class="mi">166</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">167</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">168</span><span class="o">:</span> 
+ <span class="mi">169</span><span class="o">:</span> <span class="kr">inline</span> <span class="n">qreal</span> <span class="n">QskGradientStop</span><span class="o">::</span><span class="n">position</span><span class="p">()</span> <span class="k">const</span>
+ <span class="mi">170</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">171</span><span class="o">:</span>     <span class="k">return</span> <span class="n">m_position</span><span class="p">;</span>
+ <span class="mi">172</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">173</span><span class="o">:</span> 
+ <span class="mi">174</span><span class="o">:</span> <span class="kr">inline</span> <span class="k">const</span> <span class="n">QColor</span><span class="o">&amp;</span> <span class="n">QskGradientStop</span><span class="o">::</span><span class="n">color</span><span class="p">()</span> <span class="k">const</span>
+ <span class="mi">175</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">176</span><span class="o">:</span>     <span class="k">return</span> <span class="n">m_color</span><span class="p">;</span>
+ <span class="mi">177</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">178</span><span class="o">:</span> 
+ <span class="mi">179</span><span class="o">:</span> <span class="kr">inline</span> <span class="kt">bool</span> <span class="n">QskGradientStop</span><span class="o">::</span><span class="k">operator</span><span class="o">==</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskGradientStop</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">const</span>
+ <span class="mi">180</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">181</span><span class="o">:</span>     <span class="k">return</span> <span class="p">(</span> <span class="n">m_position</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">m_position</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span> <span class="n">m_color</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">m_color</span> <span class="p">);</span>
+ <span class="mi">182</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">183</span><span class="o">:</span> 
+ <span class="mi">184</span><span class="o">:</span> <span class="kr">inline</span> <span class="kt">bool</span> <span class="n">QskGradientStop</span><span class="o">::</span><span class="k">operator</span><span class="o">!=</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskGradientStop</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">const</span>
+ <span class="mi">185</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">186</span><span class="o">:</span>     <span class="k">return</span> <span class="p">(</span> <span class="o">!</span><span class="p">(</span> <span class="o">*</span><span class="k">this</span> <span class="o">==</span> <span class="n">other</span> <span class="p">)</span> <span class="p">);</span>
+ <span class="mi">187</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">188</span><span class="o">:</span> 
+ <span class="mi">189</span><span class="o">:</span> <span class="kr">inline</span> <span class="kt">bool</span> <span class="n">QskGradient</span><span class="o">::</span><span class="k">operator</span><span class="o">==</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskGradient</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">const</span>
+ <span class="mi">190</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">191</span><span class="o">:</span>     <span class="k">return</span> <span class="p">(</span> <span class="n">m_orientation</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">m_orientation</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span> <span class="n">m_stops</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">m_stops</span> <span class="p">);</span>
+ <span class="mi">192</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">193</span><span class="o">:</span> 
+ <span class="mi">194</span><span class="o">:</span> <span class="kr">inline</span> <span class="kt">bool</span> <span class="n">QskGradient</span><span class="o">::</span><span class="k">operator</span><span class="o">!=</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskGradient</span><span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">const</span>
+ <span class="mi">195</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">196</span><span class="o">:</span>     <span class="k">return</span> <span class="p">(</span> <span class="o">!</span><span class="p">(</span> <span class="o">*</span><span class="k">this</span> <span class="o">==</span> <span class="n">other</span> <span class="p">)</span> <span class="p">);</span>
+ <span class="mi">197</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">198</span><span class="o">:</span> 
+ <span class="mi">199</span><span class="o">:</span> <span class="n">Q_DECLARE_TYPEINFO</span><span class="p">(</span> <span class="n">QskGradientStop</span><span class="p">,</span> <span class="n">Q_MOVABLE_TYPE</span> <span class="p">);</span>
+ <span class="mi">200</span><span class="o">:</span> 
+ <span class="mi">201</span><span class="o">:</span> <span class="n">Q_DECLARE_METATYPE</span><span class="p">(</span> <span class="n">QskGradientStop</span> <span class="p">)</span>
+ <span class="mi">202</span><span class="o">:</span> <span class="n">Q_DECLARE_METATYPE</span><span class="p">(</span> <span class="n">QskGradient</span> <span class="p">)</span>
+ <span class="mi">203</span><span class="o">:</span> 
+ <span class="mi">204</span><span class="o">:</span> <span class="err">#</span><span class="n">ifndef</span> <span class="n">QT_NO_DEBUG_STREAM</span>
+ <span class="mi">205</span><span class="o">:</span> 
+ <span class="mi">206</span><span class="o">:</span> <span class="n">QSK_EXPORT</span> <span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="n">QDebug</span><span class="p">,</span> <span class="k">const</span> <span class="n">QskGradientStop</span><span class="o">&amp;</span> <span class="p">);</span>
+ <span class="mi">207</span><span class="o">:</span> <span class="n">QSK_EXPORT</span> <span class="n">QDebug</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="n">QDebug</span><span class="p">,</span> <span class="k">const</span> <span class="n">QskGradient</span><span class="o">&amp;</span> <span class="p">);</span>
+ <span class="mi">208</span><span class="o">:</span> 
+ <span class="mi">209</span><span class="o">:</span> <span class="err">#</span><span class="n">endif</span>
+ <span class="mi">210</span><span class="o">:</span> 
+ <span class="mi">211</span><span class="o">:</span> <span class="err">#</span><span class="n">endif</span>
 </code></pre></div></div>
 
 <hr />
 
-<p>Updated on 26 February 2021 at 17:46:48 CET</p>
+<p>Updated on 26 February 2021 at 18:17:46 CET</p>
 
           
           

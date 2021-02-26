@@ -1755,6 +1755,10 @@
     </li>
   
     <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -2325,6 +2329,18 @@
     </tr>
     <tr>
       <td>void</td>
+      <td><strong><a href="/docs/classes/classQskQuickItem/#function-mouseungrabevent">mouseUngrabEvent</a></strong>() override</td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/docs/classes/classQskQuickItem/#function-touchungrabevent">touchUngrabEvent</a></strong>() override</td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/docs/classes/classQskQuickItem/#function-windowdeactivateevent">windowDeactivateEvent</a></strong>() override</td>
+    </tr>
+    <tr>
+      <td>void</td>
       <td><strong><a href="/docs/classes/classQskQuickItem/#function-itemchange">itemChange</a></strong>(ItemChange , const ItemChangeData &amp; ) override</td>
     </tr>
     <tr>
@@ -2383,7 +2399,11 @@
     </tr>
     <tr>
       <td>void</td>
-      <td><strong><a href="/docs/classes/classQskQuickItem/#slot-setvisible">setVisible</a></strong>(bool on)</td>
+      <td><strong><a href="/docs/classes/classQskQuickItem/#slot-sethidden">setHidden</a></strong>(bool on)</td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/docs/classes/classQskQuickItem/#slot-setdisabled">setDisabled</a></strong>(bool on)</td>
     </tr>
     <tr>
       <td>void</td>
@@ -2473,7 +2493,7 @@
       </tbody>
     </table>
 
-    <p>Creating of sceme graph nodes is blocked when being invisible.</p>
+    <p>Creating of scene graph nodes is blocked when being invisible.</p>
 
     <p>The default implementation of Qt/Quick creates scene graph nodes for all items
 in the scene what might become a significant factor for the startup performance
@@ -2523,7 +2543,7 @@ happen during polishing.</p>
       </tbody>
     </table>
 
-    <p>Recalculations of the implicitSize are blocked until being explicitely requested.</p>
+    <p>Recalculations of the implicitSize are blocked until being explicitly requested.</p>
 
     <p>When being enabled the item indicates layout relevant changes by
 sending a QEvent::LayoutRequest ( similar to QWidget ) to its parent item
@@ -2659,7 +2679,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: <a href="/docs/classes/classQskQuickItem/#property-visibletoparent">visibleToParent</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 237.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 241.
 <br /><br /></p>
 
   </div>
@@ -2683,7 +2703,7 @@ engine over the OpenGL paint engine.</p>
       <li>QQuickItem::setVisible()</li>
     </ul>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 242.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 246.
 <br /><br /></p>
 
   </div>
@@ -2700,7 +2720,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: <a href="/docs/classes/classQskQuickItem/#property-haschilditems">hasChildItems</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8h">QskQuickItem.h</a> in line 160.
+    <p>Defined in <a href="../../files/QskQuickItem_8h">QskQuickItem.h</a> in line 172.
 <br /><br /></p>
 
   </div>
@@ -2717,7 +2737,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: <a href="/docs/classes/classQskQuickItem/#property-geometry">geometry</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 300.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 304.
 <br /><br /></p>
 
   </div>
@@ -2745,7 +2765,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>Note</strong>: Layout code that relies on property bindings of the implicit width a height needs to disable the <a href="/docs/classes/classQskQuickItem/#enumvalue-deferredlayout">QskQuickItem::DeferredLayout</a> flag</p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8h">QskQuickItem.h</a> in line 179.
+    <p>Defined in <a href="../../files/QskQuickItem_8h">QskQuickItem.h</a> in line 191.
 <br /><br /></p>
 
   </div>
@@ -2775,7 +2795,7 @@ engine over the OpenGL paint engine.</p>
       <li>QQuickItem::size(), QQuickItem::position()</li>
     </ul>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 247.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 251.
 <br /><br /></p>
 
   </div>
@@ -2792,7 +2812,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: <a href="/docs/classes/classQskQuickItem/#property-geometry">geometry</a>, <a href="/docs/classes/classQskQuickItem/#function-setgeometry">setGeometry()</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 306.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 310.
 <br /><br /></p>
 
   </div>
@@ -2809,7 +2829,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: <a href="/docs/classes/classQskQuickItem/#property-polishonresize">polishOnResize</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 342.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 346.
 <br /><br /></p>
 
   </div>
@@ -2826,7 +2846,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: <a href="/docs/classes/classQskQuickItem/#function-setpolishonresize">setPolishOnResize()</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 354.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 358.
 <br /><br /></p>
 
   </div>
@@ -2843,7 +2863,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: <a href="/docs/classes/classQskQuickItem/#function-istransparentforpositioner">isTransparentForPositioner()</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 312.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 316.
 <br /><br /></p>
 
   </div>
@@ -2860,7 +2880,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: transparentForPositioner</p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 322.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 326.
 <br /><br /></p>
 
   </div>
@@ -2877,7 +2897,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: <a href="/docs/classes/classQskQuickItem/#function-istabfence">isTabFence()</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 327.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 331.
 <br /><br /></p>
 
   </div>
@@ -2894,7 +2914,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: <a href="/docs/classes/classQskQuickItem/#function-settransparentforpositioner">setTransparentForPositioner()</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 337.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 341.
 <br /><br /></p>
 
   </div>
@@ -2907,7 +2927,7 @@ engine over the OpenGL paint engine.</p>
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setLayoutMirroring</span><span class="p">(</span> <span class="kt">bool</span> <span class="n">on</span><span class="p">,</span>  <span class="kt">bool</span> <span class="n">childrenInherit</span> <span class="o">=</span> <span class="nb">false</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Change the direction how the content is layed out horizontally.</p>
+    <p>Change the direction how the content is laid out horizontally.</p>
 
     <p>Changes of this property will be indicated by a QEvent::LayoutDirectionChange.</p>
 
@@ -2921,7 +2941,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>Note</strong>: In Qml the parameters are routed through the attached LayoutMirroring property to have something declarative</p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 373.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 377.
 <br /><br /></p>
 
   </div>
@@ -2938,7 +2958,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: <a href="/docs/classes/classQskQuickItem/#function-setlayoutmirroring">setLayoutMirroring()</a>, <a href="/docs/classes/classQskQuickItem/#function-layoutmirroring">layoutMirroring</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 401.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 405.
 <br /><br /></p>
 
   </div>
@@ -2971,7 +2991,7 @@ engine over the OpenGL paint engine.</p>
       <li>In Qml the parameters are routed through the attached LayoutMirroring property to have something declarative</li>
     </ul>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 359.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 363.
 <br /><br /></p>
 
   </div>
@@ -2988,7 +3008,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: QskSetup::itemUpdateFlags(), <a href="/docs/classes/classQskQuickItem/#property-updateflags">updateFlags()</a>, <a href="/docs/classes/classQskQuickItem/#property-updateflags">updateFlags</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 456.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 460.
 <br /><br /></p>
 
   </div>
@@ -3005,7 +3025,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: <a href="/docs/classes/classQskQuickItem/#function-testupdateflag">testUpdateFlag()</a>, <a href="/docs/classes/classQskQuickItem/#function-setupdateflag">setUpdateFlag()</a>, <a href="/docs/classes/classQskQuickItem/#property-updateflags">updateFlags</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 451.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 455.
 <br /><br /></p>
 
   </div>
@@ -3030,7 +3050,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: QskSetup::itemUpdateFlags(), <a href="/docs/classes/classQskQuickItem/#function-testupdateflag">testUpdateFlag()</a>. <a href="/docs/classes/classQskQuickItem/#property-updateflags">updateFlags</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 465.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 469.
 <br /><br /></p>
 
   </div>
@@ -3052,7 +3072,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: QskSetup::itemUpdateFlags(), <a href="/docs/classes/classQskQuickItem/#property-updateflags">updateFlags()</a>, <a href="/docs/classes/classQskQuickItem/#function-testupdateflag">testUpdateFlag()</a>, <a href="/docs/classes/classQskQuickItem/#property-updateflags">updateFlags</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 478.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 482.
 <br /><br /></p>
 
   </div>
@@ -3074,7 +3094,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: <a href="/docs/classes/classQskQuickItem/#function-setupdateflag">setUpdateFlag()</a>, QskSetup::itemUpdateFlag(), <a href="/docs/classes/classQskQuickItem/#property-updateflags">updateFlags</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 493.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 497.
 <br /><br /></p>
 
   </div>
@@ -3087,7 +3107,7 @@ engine over the OpenGL paint engine.</p>
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">classBegin</span><span class="p">()</span> <span class="k">override</span>
 </code></pre></div>    </div>
 
-    <p>The QML engine initilizes an item as being incomplete by explicitely calling <a href="/docs/classes/classQskQuickItem/#function-classbegin">classBegin()</a>. Once the item has been constructed <a href="/docs/classes/classQskQuickItem/#function-componentcomplete">componentComplete()</a> is called. This way temporary operations during the construction can be avoided.</p>
+    <p>The QML engine initializes an item as being incomplete by explicitly calling <a href="/docs/classes/classQskQuickItem/#function-classbegin">classBegin()</a>. Once the item has been constructed <a href="/docs/classes/classQskQuickItem/#function-componentcomplete">componentComplete()</a> is called. This way temporary operations during the construction can be avoided.</p>
 
     <p>In the C++ case the item indicates being complete from the beginning and both hooks are never called.</p>
 
@@ -3113,7 +3133,7 @@ engine over the OpenGL paint engine.</p>
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">componentComplete</span><span class="p">()</span> <span class="k">override</span>
 </code></pre></div>    </div>
 
-    <p>The QML engine initilizes an item as being incomplete by explicitely calling QQuickItem::classBegin(). Once the item has been constructed <a href="/docs/classes/classQskQuickItem/#function-componentcomplete">componentComplete()</a> is called. This way temporary operations during the construction can be avoided.</p>
+    <p>The QML engine initilizes an item as being incomplete by explicitly calling QQuickItem::classBegin(). Once the item has been constructed <a href="/docs/classes/classQskQuickItem/#function-componentcomplete">componentComplete()</a> is called. This way temporary operations during the construction can be avoided.</p>
 
     <p>In the C++ case the item indicates being complete from the beginning and both hooks are never called.</p>
 
@@ -3167,7 +3187,7 @@ engine over the OpenGL paint engine.</p>
       <li>QQuickItem::polish()</li>
     </ul>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 413.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 417.
 <br /><br /></p>
 
   </div>
@@ -3182,7 +3202,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>Returns</strong>: True, if the item will update the paint node in the next scene graph update cycle</p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 418.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 422.
 <br /><br /></p>
 
   </div>
@@ -3195,11 +3215,11 @@ engine over the OpenGL paint engine.</p>
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">isInitiallyPainted</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p><strong>Returns</strong>: Value of the initiallyPainted propertyk</p>
+    <p><strong>Returns</strong>: Value of the initiallyPainted property</p>
 
     <p><strong>See also</strong>: <a href="/docs/classes/classQskQuickItem/#property-initiallypainted">initiallyPainted</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 426.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 430.
 <br /><br /></p>
 
   </div>
@@ -3218,7 +3238,7 @@ engine over the OpenGL paint engine.</p>
 
     <p>Some of these situations can be avoided by ignoring these requests depending on the maybeUnresized flag.</p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 431.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 435.
 <br /><br /></p>
 
   </div>
@@ -3255,7 +3275,7 @@ engine over the OpenGL paint engine.</p>
       <li><strong>event</strong> Qt event</li>
     </ul>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 585.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 589.
 <br /><br /></p>
 
   </div>
@@ -3281,7 +3301,7 @@ engine over the OpenGL paint engine.</p>
       <li>QEvent::ParentChange</li>
     </ul>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 660.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 684.
 <br /><br /></p>
 
   </div>
@@ -3312,7 +3332,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>Reimplemented by</strong>: <a href="/docs/classes/classQskLinearBox/#function-geometrychangeevent">QskLinearBox::geometryChangeEvent</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 656.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 680.
 <br /><br /></p>
 
   </div>
@@ -3337,7 +3357,46 @@ engine over the OpenGL paint engine.</p>
       <li><strong>event</strong> Event with the old/new windows</li>
     </ul>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 652.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 676.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-mouseungrabevent">function mouseUngrabEvent</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">mouseUngrabEvent</span><span class="p">()</span> <span class="k">override</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 853.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-touchungrabevent">function touchUngrabEvent</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">touchUngrabEvent</span><span class="p">()</span> <span class="k">override</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 858.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-windowdeactivateevent">function windowDeactivateEvent</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">windowDeactivateEvent</span><span class="p">()</span> <span class="k">override</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 863.
 <br /><br /></p>
 
   </div>
@@ -3372,7 +3431,7 @@ engine over the OpenGL paint engine.</p>
       <li>If you re-implement this method in a subclass, be sure to call the overloaded method of the base class.</li>
     </ul>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 664.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 688.
 <br /><br /></p>
 
   </div>
@@ -3389,7 +3448,7 @@ engine over the OpenGL paint engine.</p>
 
     <p><strong>See also</strong>: <a href="/docs/classes/classQskQuickItem/#function-geometrychangeevent">geometryChangeEvent()</a>, <a href="/docs/classes/classQskQuickItem/#property-polishonresize">polishOnResize()</a></p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 808.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 833.
 <br /><br /></p>
 
   </div>
@@ -3402,7 +3461,7 @@ engine over the OpenGL paint engine.</p>
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="kt">void</span> <span class="n">aboutToShow</span><span class="p">()</span>
 </code></pre></div>    </div>
 
-    <p>A specific hook that is intended to be overloaded by controls that need to do some specific operations, when an item is painted the first time after becoming visisble.</p>
+    <p>A specific hook that is intended to be overloaded by controls that need to do some specific operations, when an item is painted the first time after becoming visible.</p>
 
     <p>The default implementation is a no operation.</p>
 
@@ -3413,7 +3472,7 @@ engine over the OpenGL paint engine.</p>
       <li>QQuickItem::setVisible()</li>
     </ul>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 856.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 896.
 <br /><br /></p>
 
   </div>
@@ -3484,7 +3543,7 @@ engine over the OpenGL paint engine.</p>
       <li>QQuickItem::size(), QQuickItem::position()</li>
     </ul>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8h">QskQuickItem.h</a> in line 165.
+    <p>Defined in <a href="../../files/QskQuickItem_8h">QskQuickItem.h</a> in line 177.
 <br /><br /></p>
 
   </div>
@@ -3499,9 +3558,14 @@ engine over the OpenGL paint engine.</p>
 
     <p>An alternative way to call setVisible( true ). Useful for signal/slot connections</p>
 
-    <p><strong>See also</strong>: <a href="/docs/classes/classQskQuickItem/#slot-hide">hide()</a>, <a href="/docs/classes/classQskQuickItem/#slot-setvisible">setVisible()</a></p>
+    <p><strong>See also</strong>:</p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 227.
+    <ul>
+      <li><a href="/docs/classes/classQskQuickItem/#slot-hide">hide()</a></li>
+      <li>QQuickItem::setVisible()</li>
+    </ul>
+
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 231.
 <br /><br /></p>
 
   </div>
@@ -3516,34 +3580,46 @@ engine over the OpenGL paint engine.</p>
 
     <p>An alternative way to call setVisible( false ). Useful for signal/slot connections</p>
 
-    <p><strong>See also</strong>: <a href="/docs/classes/classQskQuickItem/#slot-show">show()</a>, <a href="/docs/classes/classQskQuickItem/#slot-setvisible">setVisible()</a></p>
+    <p><strong>See also</strong>:</p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 232.
+    <ul>
+      <li><a href="/docs/classes/classQskQuickItem/#slot-show">show()</a></li>
+      <li>QQuickItem::setVisible()</li>
+    </ul>
+
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 236.
 <br /><br /></p>
 
   </div>
 </div>
 
 <div class="qskinny-outter-block">
-  <h3 class="qskinny-slot" id="slot-setvisible">slot setVisible</h3>
+  <h3 class="qskinny-slot" id="slot-sethidden">slot setHidden</h3>
 
   <div class="qskinny-inner-block">
-    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setVisible</span><span class="p">(</span> <span class="kt">bool</span> <span class="n">on</span> <span class="p">)</span>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setHidden</span><span class="p">(</span> <span class="kt">bool</span> <span class="n">on</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>QQuickItem::setVisible() has been forgotten to be declared as slot.</p>
+    <p>Convenience function, equivalent to setVisible( !on ).
+\sa 
+  QQuickItem::setVisible()</p>
 
-    <p><strong>Parameters</strong>:</p>
-    <ul>
-      <li><strong>on</strong> If true the item becomes visible if its parent is visible. Otherwise the item is hidden.</li>
-    </ul>
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 226.
+<br /><br /></p>
 
-    <p><strong>See also</strong>:</p>
+  </div>
+</div>
 
-    <ul>
-      <li><a href="/docs/classes/classQskQuickItem/#property-visibletoparent">visibleToParent</a></li>
-      <li>QQuickItem::isVisible(), <a href="/docs/classes/classQskQuickItem/#property-visibletoparent">visibleToParent</a></li>
-    </ul>
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-slot" id="slot-setdisabled">slot setDisabled</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setDisabled</span><span class="p">(</span> <span class="kt">bool</span> <span class="n">on</span> <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Convenience function, equivalent to setEnabled( !on ).</p>
+
+    <p><strong>See also</strong>: QQuickItem::setEnabled()</p>
 
     <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 221.
 <br /><br /></p>
@@ -3564,7 +3640,7 @@ engine over the OpenGL paint engine.</p>
 
     <p>Otherwise the <a href="/docs/classes/classQskQuickItem/#function-implicitsize">implicitSize()</a> gets recalculated and layout updates can be executed using property bindings.</p>
 
-    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 565.
+    <p>Defined in <a href="../../files/QskQuickItem_8cpp">QskQuickItem.cpp</a> in line 569.
 <br /><br /></p>
 
   </div>
@@ -3654,7 +3730,7 @@ engine over the OpenGL paint engine.</p>
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">polishOnResize</span><span class="p">;</span>
 </code></pre></div>    </div>
 
-    <p>When polishOnResize is set QQuickItem::polish() will be called automatically whenevent the size of the item has been changed. This is usually necessary when the item is a container and the layout of its children depends on the size of the container.</p>
+    <p>When polishOnResize is set QQuickItem::polish() will be called automatically whenever the size of the item has been changed. This is usually necessary when the item is a container and the layout of its children depends on the size of the container.</p>
 
     <p><strong>See also</strong>: QskControl::updateLayout(), QskControl::autoLayoutChildren</p>
 
@@ -3745,7 +3821,7 @@ engine over the OpenGL paint engine.</p>
 
 <hr />
 
-<p>Updated on 26 February 2021 at 17:46:46 CET</p>
+<p>Updated on 26 February 2021 at 18:17:43 CET</p>
 
           
           

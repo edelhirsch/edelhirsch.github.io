@@ -1755,6 +1755,10 @@
     </li>
   
     <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -2290,6 +2294,10 @@
       <td><strong><a href="/docs/classes/classQskGradient/#function-colorat">colorAt</a></strong>(int index) const</td>
     </tr>
     <tr>
+      <td>Q_INVOKABLE int</td>
+      <td><strong><a href="/docs/classes/classQskGradient/#function-stopcount">stopCount</a></strong>() const</td>
+    </tr>
+    <tr>
       <td>QVariant</td>
       <td><strong><a href="/docs/classes/classQskGradient/#function-interpolate">interpolate</a></strong>(const QskGradient &amp; from, const QskGradient &amp; to, qreal progress)</td>
     </tr>
@@ -2409,7 +2417,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">Qt</span><span class="o">::</span><span class="n">GlobalColor</span> <span class="n">color</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskGradient_8h">QskGradient.h</a> in line 137.
+    <p>Defined in <a href="../../files/QskGradient_8h">QskGradient.h</a> in line 138.
 <br /><br /></p>
 
   </div>
@@ -2422,7 +2430,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QskGradient</span><span class="p">(</span> <span class="n">QRgb</span> <span class="n">rgb</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskGradient_8h">QskGradient.h</a> in line 142.
+    <p>Defined in <a href="../../files/QskGradient_8h">QskGradient.h</a> in line 143.
 <br /><br /></p>
 
   </div>
@@ -2578,7 +2586,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskGradient</span> <span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskGradient_8h">QskGradient.h</a> in line 188.
+    <p>Defined in <a href="../../files/QskGradient_8h">QskGradient.h</a> in line 189.
 <br /><br /></p>
 
   </div>
@@ -2591,7 +2599,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskGradient</span> <span class="o">&amp;</span> <span class="n">other</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskGradient_8h">QskGradient.h</a> in line 193.
+    <p>Defined in <a href="../../files/QskGradient_8h">QskGradient.h</a> in line 194.
 <br /><br /></p>
 
   </div>
@@ -2630,7 +2638,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">Q_INVOKABLE</span> <span class="n">QColor</span> <span class="n">startColor</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskGradient_8h">QskGradient.h</a> in line 147.
+    <p>Defined in <a href="../../files/QskGradient_8h">QskGradient.h</a> in line 148.
 <br /><br /></p>
 
   </div>
@@ -2643,7 +2651,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">Q_INVOKABLE</span> <span class="n">QColor</span> <span class="n">endColor</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskGradient_8h">QskGradient.h</a> in line 152.
+    <p>Defined in <a href="../../files/QskGradient_8h">QskGradient.h</a> in line 153.
 <br /><br /></p>
 
   </div>
@@ -2682,7 +2690,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Q_INVOKABLE</span> <span class="kt">bool</span> <span class="n">hasStopAt</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">value</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 404.
+    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 409.
 <br /><br /></p>
 
   </div>
@@ -2695,7 +2703,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setAlpha</span><span class="p">(</span> <span class="kt">int</span> <span class="n">alpha</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 391.
+    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 396.
 <br /><br /></p>
 
   </div>
@@ -2734,7 +2742,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">reverse</span><span class="p">()</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 432.
+    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 437.
 <br /><br /></p>
 
   </div>
@@ -2747,7 +2755,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskGradient</span> <span class="n">reversed</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 442.
+    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 447.
 <br /><br /></p>
 
   </div>
@@ -2760,7 +2768,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskGradient</span> <span class="n">extracted</span><span class="p">(</span> <span class="n">qreal</span> <span class="n">from</span><span class="p">,</span>  <span class="n">qreal</span> <span class="n">start</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 450.
+    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 455.
 <br /><br /></p>
 
   </div>
@@ -2773,7 +2781,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskGradient</span> <span class="n">interpolated</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskGradient</span> <span class="o">&amp;</span> <span class="n">to</span><span class="p">,</span>  <span class="n">qreal</span> <span class="n">value</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 465.
+    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 470.
 <br /><br /></p>
 
   </div>
@@ -2786,7 +2794,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">uint</span> <span class="n">hash</span><span class="p">(</span> <span class="n">uint</span> <span class="n">seed</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 419.
+    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 424.
 <br /><br /></p>
 
   </div>
@@ -2799,7 +2807,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Q_INVOKABLE</span> <span class="n">qreal</span> <span class="n">stopAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 361.
+    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 366.
 <br /><br /></p>
 
   </div>
@@ -2812,7 +2820,20 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Q_INVOKABLE</span> <span class="n">QColor</span> <span class="n">colorAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 383.
+    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 388.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-stopcount">function stopCount</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Q_INVOKABLE</span> <span class="kt">int</span> <span class="n">stopCount</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 347.
 <br /><br /></p>
 
   </div>
@@ -2825,7 +2846,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="n">QVariant</span> <span class="n">interpolate</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskGradient</span> <span class="o">&amp;</span> <span class="n">from</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QskGradient</span> <span class="o">&amp;</span> <span class="n">to</span><span class="p">,</span>  <span class="n">qreal</span> <span class="n">progress</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 598.
+    <p>Defined in <a href="../../files/QskGradient_8cpp">QskGradient.cpp</a> in line 603.
 <br /><br /></p>
 
   </div>
@@ -2900,7 +2921,7 @@
 
 <hr />
 
-<p>Updated on 26 February 2021 at 17:46:47 CET</p>
+<p>Updated on 26 February 2021 at 18:17:45 CET</p>
 
           
           

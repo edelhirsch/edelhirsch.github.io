@@ -1755,6 +1755,10 @@
     </li>
   
     <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -2130,7 +2134,11 @@
           <h1 class="post-title line-left">QskSkinHintStatus</h1>
         </header><!-- .post-header -->
         <div class="post-content">
-          <h2 id="public-types">Public Types</h2>
+          <p><a href="#detailed-description">More…</a></p>
+
+<p><code class="highlighter-rouge">#include &lt;QskSkinnable.h&gt;</code></p>
+
+<h2 id="public-types">Public Types</h2>
 
 <table>
   <thead>
@@ -2179,7 +2187,7 @@
   </thead>
   <tbody>
     <tr>
-      <td>Source</td>
+      <td><a href="/docs/classes/classQskSkinHintStatus/#enum-source">Source</a></td>
       <td><strong><a href="/docs/classes/classQskSkinHintStatus/#variable-source">source</a></strong></td>
     </tr>
     <tr>
@@ -2188,6 +2196,18 @@
     </tr>
   </tbody>
 </table>
+
+<h2 id="detailed-description">Detailed Description</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">QskSkinHintStatus</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a> provides the information how a lookup for a skin hint had been resolved and where the value has been found.</p>
+
+<p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">QskSkinnable::effectiveSkinHint()</a></p>
+
+<p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 37.
+<br /><br /></p>
 
 <h2 id="public-types-documentation">Public Types Documentation</h2>
 
@@ -2211,6 +2231,8 @@
       </tbody>
     </table>
 
+    <p>The lookup had failed to find a valid hint</p>
+
     <table>
       <thead>
         <tr>
@@ -2225,6 +2247,10 @@
         </tr>
       </tbody>
     </table>
+
+    <p>The hint has been found in the local table of the skinnable</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-hinttable">QskSkinnable::hintTable()</a></p>
 
     <table>
       <thead>
@@ -2241,6 +2267,10 @@
       </tbody>
     </table>
 
+    <p>The hint has been found in the table of the skin</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskin">QskSkinnable::effectiveSkin()</a>, QskSkin::hintTable()</p>
+
     <table>
       <thead>
         <tr>
@@ -2255,6 +2285,11 @@
         </tr>
       </tbody>
     </table>
+
+    <p>The hint has been taken from an animator, that is in the process
+of interpolating between values of different states</p>
+
+    <p><strong>See also</strong>: QskHintAnimator, <a href="/docs/classes/classQskSkinnable/#function-setskinstate">QskSkinnable::setSkinState()</a></p>
 
     <p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 40.
 <br /><br /></p>
@@ -2271,6 +2306,10 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">QskSkinHintStatus</span><span class="p">()</span>
 </code></pre></div>    </div>
 
+    <p>Initializes the status to be invalid, by setting the source to <a href="/docs/classes/classQskSkinHintStatus/#enumvalue-nosource">QskSkinHintStatus::NoSource</a></p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinHintStatus/#function-isvalid">isValid()</a></p>
+
     <p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 48.
 <br /><br /></p>
 
@@ -2283,6 +2322,8 @@
   <div class="qskinny-inner-block">
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="kt">bool</span> <span class="n">isValid</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>    </div>
+
+    <p><strong>Returns</strong>: True, when having a source &gt; <a href="/docs/classes/classQskSkinHintStatus/#enumvalue-nosource">QskSkinHintStatus::NoSource</a></p>
 
     <p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 53.
 <br /><br /></p>
@@ -2299,6 +2340,10 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Source</span> <span class="n">source</span><span class="p">;</span>
 </code></pre></div>    </div>
 
+    <p>Source, where the hint has been found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinHintStatus/#enum-source">QskSkinHintStatus::Source</a></p>
+
     <p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 58.
 <br /><br /></p>
 
@@ -2312,6 +2357,13 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">;</span>
 </code></pre></div>    </div>
 
+    <p>Resolved aspect, that lead to a successful match in one of the
+available sources</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskAspect/">QskAspect</a></p>
+
+    <p><strong>Note</strong>: The resolved apsect usually differs from the aspect that has been passed as input parameter for <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">QskSkinnable::effectiveSkinHint()</a></p>
+
     <p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 59.
 <br /><br /></p>
 
@@ -2320,7 +2372,7 @@
 
 <hr />
 
-<p>Updated on 26 February 2021 at 17:46:46 CET</p>
+<p>Updated on 26 February 2021 at 18:17:43 CET</p>
 
           
           

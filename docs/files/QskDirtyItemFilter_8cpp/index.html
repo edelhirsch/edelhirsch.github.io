@@ -1755,6 +1755,10 @@
     </li>
   
     <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -2138,7 +2142,7 @@
    4:  *****************************************************************************/</span>
    <span class="mi">5</span><span class="o">:</span> 
    <span class="mi">6</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="s">"QskDirtyItemFilter.h"</span>
-   <span class="mi">7</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="s">"QskControl.h"</span>
+   <span class="mi">7</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="s">"QskQuickItem.h"</span>
    <span class="mi">8</span><span class="o">:</span> 
    <span class="mi">9</span><span class="o">:</span> <span class="n">QSK_QT_PRIVATE_BEGIN</span>
   <span class="mi">10</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="k">private</span><span class="o">/</span><span class="n">qquickitem_p</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
@@ -2149,8 +2153,8 @@
   <span class="mi">15</span><span class="o">:</span> <span class="p">{</span>
   <span class="mi">16</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">item</span><span class="o">-&gt;</span><span class="n">isVisible</span><span class="p">()</span> <span class="p">)</span>
   <span class="mi">17</span><span class="o">:</span>     <span class="p">{</span>
-  <span class="mi">18</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="k">const</span> <span class="k">auto</span> <span class="n">control</span> <span class="o">=</span> <span class="n">qskControlCast</span><span class="p">(</span> <span class="n">item</span> <span class="p">)</span> <span class="p">)</span>
-  <span class="mi">19</span><span class="o">:</span>             <span class="k">return</span> <span class="n">control</span><span class="o">-&gt;</span><span class="n">testUpdateFlag</span><span class="p">(</span> <span class="n">QskControl</span><span class="o">::</span><span class="n">DeferredUpdate</span> <span class="p">);</span>
+  <span class="mi">18</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="k">auto</span> <span class="n">qskItem</span> <span class="o">=</span> <span class="n">qobject_cast</span><span class="o">&lt;</span> <span class="k">const</span> <span class="n">QskQuickItem</span><span class="o">*</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">item</span> <span class="p">)</span> <span class="p">)</span>
+  <span class="mi">19</span><span class="o">:</span>             <span class="k">return</span> <span class="n">qskItem</span><span class="o">-&gt;</span><span class="n">testUpdateFlag</span><span class="p">(</span> <span class="n">QskQuickItem</span><span class="o">::</span><span class="n">DeferredUpdate</span> <span class="p">);</span>
   <span class="mi">20</span><span class="o">:</span>     <span class="p">}</span>
   <span class="mi">21</span><span class="o">:</span> 
   <span class="mi">22</span><span class="o">:</span> <span class="err">#</span><span class="k">if</span> <span class="mi">0</span>
@@ -2275,7 +2279,7 @@
 
 <hr />
 
-<p>Updated on 26 February 2021 at 17:46:49 CET</p>
+<p>Updated on 26 February 2021 at 18:17:47 CET</p>
 
           
           

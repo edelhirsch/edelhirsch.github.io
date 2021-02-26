@@ -1755,6 +1755,10 @@
     </li>
   
     <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -2487,6 +2491,14 @@
     <tr>
       <td>QVector&lt; QskAspect::Subcontrol &gt;</td>
       <td><strong><a href="/docs/classes/classQskControl/#function-subcontrols">subControls</a></strong>() const</td>
+    </tr>
+    <tr>
+      <td>QRectF</td>
+      <td><strong><a href="/docs/classes/classQskControl/#function-subcontrolrect">subControlRect</a></strong>(const QRectF &amp; , QskAspect::Subcontrol )<br />Calculate position and size of a subControl.</td>
+    </tr>
+    <tr>
+      <td>QRectF</td>
+      <td><strong><a href="/docs/classes/classQskControl/#function-subcontrolcontentsrect">subControlContentsRect</a></strong>(const QRectF &amp; , QskAspect::Subcontrol )<br />Calculate the inner rectangle subControl.</td>
     </tr>
   </tbody>
 </table>
@@ -3735,6 +3747,60 @@ Even if QQuickItem is part of the public C++ API it has obviously been designed 
   </div>
 </div>
 
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-subcontrolrect-2">function subControlRect</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">subControlRect</span><span class="p">(</span> <span class="k">const</span> <span class="n">QRectF</span> <span class="o">&amp;</span> <span class="p">,</span>  <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span>  <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Calculate position and size of a subControl.</p>
+
+    <p>A convenience method that forwards the calculation to the skinlet</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>contentsRect</strong> Bounding rectangle for laying out the nodes of the skinnable</li>
+      <li><strong>subControl</strong> Unsubstituted subcontrol</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Geometry for the subControl</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinlet">effectiveSkinlet()</a>, QskSkinlet::subControlRect(), QskControl::contentsRect()</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 950.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-subcontrolcontentsrect-2">function subControlContentsRect</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">subControlContentsRect</span><span class="p">(</span> <span class="k">const</span> <span class="n">QRectF</span> <span class="o">&amp;</span> <span class="p">,</span>  <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span>  <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Calculate the inner rectangle subControl.</p>
+
+    <p>The inner rectangle a subcontrol is its geometry with paddings, indentations being subtracted. F.e. the inner rectangle of QskPushButton::Panel is the bounding rectangle for laying out the QskPushButton::Text and QskPushButton::Graphic subcontrols.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>contentsRect</strong> Bounding rectangle for laying out the nodes of the skinnable</li>
+      <li><strong>subControl</strong> Unsubstituted subcontrol</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Geometry for contents inside the subControl</p>
+
+    <p><strong>See also</strong>: QskSkinlet::subControlRect(), <a href="/docs/classes/classQskSkinnable/#function-innerbox">innerBox()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 956.
+<br /><br /></p>
+
+  </div>
+</div>
+
 <h2 id="protected-functions-documentation">Protected Functions Documentation</h2>
 
 <div class="qskinny-outter-block">
@@ -4159,7 +4225,7 @@ Even if QQuickItem is part of the public C++ API it has obviously been designed 
 
 <hr />
 
-<p>Updated on 26 February 2021 at 17:46:48 CET</p>
+<p>Updated on 26 February 2021 at 18:17:45 CET</p>
 
           
           

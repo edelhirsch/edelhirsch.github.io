@@ -1755,6 +1755,10 @@
     </li>
   
     <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -2232,34 +2236,36 @@
   <span class="mi">98</span><span class="o">:</span> 
   <span class="mi">99</span><span class="o">:</span>   <span class="n">Q_SIGNALS</span><span class="o">:</span>
  <span class="mi">100</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">currentIndexChanged</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">);</span>
- <span class="mi">101</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">countChanged</span><span class="p">(</span> <span class="kt">int</span> <span class="p">);</span>
- <span class="mi">102</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">textOptionsChanged</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskTextOptions</span><span class="o">&amp;</span> <span class="p">);</span>
- <span class="mi">103</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">tabPositionChanged</span><span class="p">(</span> <span class="n">Qsk</span><span class="o">::</span><span class="n">Position</span> <span class="p">);</span>
- <span class="mi">104</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">autoScrollFocusedButtonChanged</span><span class="p">(</span> <span class="kt">bool</span> <span class="p">);</span>
- <span class="mi">105</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">autoFitTabsChanged</span><span class="p">(</span> <span class="kt">bool</span> <span class="p">);</span>
- <span class="mi">106</span><span class="o">:</span> 
- <span class="mi">107</span><span class="o">:</span>   <span class="k">protected</span><span class="o">:</span>
- <span class="mi">108</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">componentComplete</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
- <span class="mi">109</span><span class="o">:</span> 
- <span class="mi">110</span><span class="o">:</span>   <span class="k">private</span><span class="o">:</span>
- <span class="mi">111</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">adjustCurrentIndex</span><span class="p">();</span>
- <span class="mi">112</span><span class="o">:</span> 
- <span class="mi">113</span><span class="o">:</span>     <span class="k">class</span> <span class="nc">PrivateData</span><span class="p">;</span>
- <span class="mi">114</span><span class="o">:</span>     <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span> <span class="n">PrivateData</span> <span class="o">&gt;</span> <span class="n">m_data</span><span class="p">;</span>
- <span class="mi">115</span><span class="o">:</span> <span class="p">};</span>
- <span class="mi">116</span><span class="o">:</span> 
- <span class="mi">117</span><span class="o">:</span> <span class="c1">// Qml does not like const versions</span>
- <span class="mi">118</span><span class="o">:</span> <span class="kr">inline</span> <span class="kt">int</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">indexOf</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="n">tabButton</span> <span class="p">)</span> <span class="k">const</span>
- <span class="mi">119</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">120</span><span class="o">:</span>     <span class="k">return</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">indexOf</span><span class="p">(</span> <span class="k">const_cast</span><span class="o">&lt;</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">tabButton</span> <span class="p">)</span> <span class="p">);</span>
- <span class="mi">121</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">122</span><span class="o">:</span> 
- <span class="mi">123</span><span class="o">:</span> <span class="err">#</span><span class="n">endif</span>
+ <span class="mi">101</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">buttonClicked</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">);</span>
+ <span class="mi">102</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">countChanged</span><span class="p">(</span> <span class="kt">int</span> <span class="p">);</span>
+ <span class="mi">103</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">textOptionsChanged</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskTextOptions</span><span class="o">&amp;</span> <span class="p">);</span>
+ <span class="mi">104</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">tabPositionChanged</span><span class="p">(</span> <span class="n">Qsk</span><span class="o">::</span><span class="n">Position</span> <span class="p">);</span>
+ <span class="mi">105</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">autoScrollFocusedButtonChanged</span><span class="p">(</span> <span class="kt">bool</span> <span class="p">);</span>
+ <span class="mi">106</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">autoFitTabsChanged</span><span class="p">(</span> <span class="kt">bool</span> <span class="p">);</span>
+ <span class="mi">107</span><span class="o">:</span> 
+ <span class="mi">108</span><span class="o">:</span>   <span class="k">protected</span><span class="o">:</span>
+ <span class="mi">109</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">componentComplete</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+ <span class="mi">110</span><span class="o">:</span> 
+ <span class="mi">111</span><span class="o">:</span>   <span class="k">private</span><span class="o">:</span>
+ <span class="mi">112</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">adjustCurrentIndex</span><span class="p">();</span>
+ <span class="mi">113</span><span class="o">:</span>     <span class="kt">void</span> <span class="n">handleButtonClick</span><span class="p">();</span>
+ <span class="mi">114</span><span class="o">:</span> 
+ <span class="mi">115</span><span class="o">:</span>     <span class="k">class</span> <span class="nc">PrivateData</span><span class="p">;</span>
+ <span class="mi">116</span><span class="o">:</span>     <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span> <span class="n">PrivateData</span> <span class="o">&gt;</span> <span class="n">m_data</span><span class="p">;</span>
+ <span class="mi">117</span><span class="o">:</span> <span class="p">};</span>
+ <span class="mi">118</span><span class="o">:</span> 
+ <span class="mi">119</span><span class="o">:</span> <span class="c1">// Qml does not like const versions</span>
+ <span class="mi">120</span><span class="o">:</span> <span class="kr">inline</span> <span class="kt">int</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">indexOf</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="n">tabButton</span> <span class="p">)</span> <span class="k">const</span>
+ <span class="mi">121</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">122</span><span class="o">:</span>     <span class="k">return</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">indexOf</span><span class="p">(</span> <span class="k">const_cast</span><span class="o">&lt;</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">tabButton</span> <span class="p">)</span> <span class="p">);</span>
+ <span class="mi">123</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">124</span><span class="o">:</span> 
+ <span class="mi">125</span><span class="o">:</span> <span class="err">#</span><span class="n">endif</span>
 </code></pre></div></div>
 
 <hr />
 
-<p>Updated on 26 February 2021 at 17:46:49 CET</p>
+<p>Updated on 26 February 2021 at 18:17:47 CET</p>
 
           
           

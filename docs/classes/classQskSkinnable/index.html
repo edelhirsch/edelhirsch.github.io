@@ -1755,6 +1755,10 @@
     </li>
   
     <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -2130,7 +2134,11 @@
           <h1 class="post-title line-left">QskSkinnable</h1>
         </header><!-- .post-header -->
         <div class="post-content">
-          <object type="image/svg+xml" data="../svg/classQskSkinnable__inherit__graph_org.svg">
+          <p><a href="#detailed-description">More…</a></p>
+
+<p><code class="highlighter-rouge">#include &lt;QskSkinnable.h&gt;</code></p>
+
+<object type="image/svg+xml" data="../svg/classQskSkinnable__inherit__graph_org.svg">
 </object>
 <p><br /></p>
 
@@ -2156,7 +2164,7 @@
     </tr>
     <tr>
       <td>void</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setskinlet">setSkinlet</a></strong>(const <a href="/docs/classes/classQskSkinlet/">QskSkinlet</a> * skinlet)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setskinlet">setSkinlet</a></strong>(const <a href="/docs/classes/classQskSkinlet/">QskSkinlet</a> * skinlet)<br />Set an individual skinlet to render/display the content.</td>
     </tr>
     <tr>
       <td>const <a href="/docs/classes/classQskSkinlet/">QskSkinlet</a> *</td>
@@ -2172,75 +2180,63 @@
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setanimationhint">setAnimationHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QskAnimationHint animation)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setanimationhint">setAnimationHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QskAnimationHint hint)</td>
     </tr>
     <tr>
       <td>QskAnimationHint</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-animationhint">animationHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QskSkinHintStatus * status =nullptr) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-animationhint">animationHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, <a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a> * status =nullptr) const</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QVariant &amp; hint)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QVariant &amp; hint)<br />Insert a hint into the local hint table.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)<br />Remove a hint from the local hint table.</td>
     </tr>
     <tr>
       <td>QskAnimationHint</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-effectiveanimation">effectiveAnimation</a></strong>(<a href="/docs/classes/classQskAspect/#enum-type">QskAspect::Type</a> type, QskAspect::Subcontrol subControl, QskAspect::State state, QskSkinHintStatus * status =nullptr) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-effectiveanimation">effectiveAnimation</a></strong>(<a href="/docs/classes/classQskAspect/#enum-type">QskAspect::Type</a> type, QskAspect::Subcontrol subControl, QskAspect::State state, <a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a> * status =nullptr) const</td>
     </tr>
     <tr>
       <td>QVariant</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QskSkinHintStatus * status =nullptr) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, <a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a> * status =nullptr) const<br />Find the value for a specific aspect.</td>
     </tr>
     <tr>
       <td>virtual QskAspect::Placement</td>
       <td><strong><a href="/docs/classes/classQskSkinnable/#function-effectiveplacement">effectivePlacement</a></strong>() const</td>
     </tr>
     <tr>
-      <td>QskSkinHintStatus</td>
+      <td><a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a></td>
       <td><strong><a href="/docs/classes/classQskSkinnable/#function-hintstatus">hintStatus</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect) const</td>
     </tr>
     <tr>
-      <td>QskAspect::State</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-skinstate">skinState</a></strong>() const</td>
-    </tr>
-    <tr>
-      <td>const char *</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-skinstateasprintable">skinStateAsPrintable</a></strong>() const</td>
-    </tr>
-    <tr>
-      <td>const char *</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-skinstateasprintable">skinStateAsPrintable</a></strong>(QskAspect::State state) const</td>
+      <td>QRectF</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-subcontrolrect">subControlRect</a></strong>(const QRectF &amp; contentsRect, QskAspect::Subcontrol subControl) const<br />Calculate position and size of a subControl.</td>
     </tr>
     <tr>
       <td>QRectF</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-subcontrolrect">subControlRect</a></strong>(const QRectF &amp; contentsRect, QskAspect::Subcontrol subControl) const</td>
-    </tr>
-    <tr>
-      <td>QRectF</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-subcontrolcontentsrect">subControlContentsRect</a></strong>(const QRectF &amp; contentsRect, QskAspect::Subcontrol subControl) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-subcontrolcontentsrect">subControlContentsRect</a></strong>(const QRectF &amp; contentsRect, QskAspect::Subcontrol subControl) const<br />Calculate the inner rectangle subControl.</td>
     </tr>
     <tr>
       <td>QSizeF</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-outerboxsize">outerBoxSize</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QSizeF &amp; innerBoxSize) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-outerboxsize">outerBoxSize</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QSizeF &amp; innerBoxSize) const<br />Calculate the size, when being expanded by paddings, indentations.</td>
     </tr>
     <tr>
       <td>QSizeF</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-innerboxsize">innerBoxSize</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QSizeF &amp; outerBoxSize) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-innerboxsize">innerBoxSize</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QSizeF &amp; outerBoxSize) const<br />Calculate the size, with paddings, indentations being subtracted.</td>
     </tr>
     <tr>
       <td>QRectF</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-innerbox">innerBox</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QRectF &amp; outerBox) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-innerbox">innerBox</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QRectF &amp; outerBox) const<br />Calculate the rectangle, whith paddings, indentations being subtracted.</td>
     </tr>
     <tr>
       <td>QRectF</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-outerbox">outerBox</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QRectF &amp; innerBox) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-outerbox">outerBox</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QRectF &amp; innerBox) const<br />Calculate the rectangle, when being expanded by paddings, indentations.</td>
     </tr>
     <tr>
       <td>QMarginsF</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-innerpadding">innerPadding</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QSizeF &amp; outerBoxSize) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-innerpadding">innerPadding</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QSizeF &amp; outerBoxSize) const<br />Calculate the padding from attributes for the given aspect.</td>
     </tr>
     <tr>
       <td>const <a href="/docs/classes/classQskSkinlet/">QskSkinlet</a> *</td>
@@ -2299,192 +2295,204 @@
       <td><strong><a href="/docs/classes/classQskSkinnable/#function-setskinstateflag">setSkinStateFlag</a></strong>(QskAspect::State stateFlag, bool on =true)</td>
     </tr>
     <tr>
-      <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setcolor">setColor</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, Qt::GlobalColor color)</td>
+      <td>QskAspect::State</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-skinstate">skinState</a></strong>() const</td>
+    </tr>
+    <tr>
+      <td>const char *</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-skinstateasprintable">skinStateAsPrintable</a></strong>() const</td>
+    </tr>
+    <tr>
+      <td>const char *</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-skinstateasprintable">skinStateAsPrintable</a></strong>(QskAspect::State state) const</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setcolor">setColor</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QRgb rgb)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setcolor">setColor</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, Qt::GlobalColor color)<br />Sets a color hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setcolor">setColor</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QColor &amp; color)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setcolor">setColor</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QRgb rgb)<br />Sets a color hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetcolor">resetColor</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setcolor">setColor</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QColor &amp; color)<br />Sets a color hint.</td>
+    </tr>
+    <tr>
+      <td>bool</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetcolor">resetColor</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)<br />Removes a color hint from the local table.</td>
     </tr>
     <tr>
       <td>QColor</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-color">color</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QskSkinHintStatus * status =nullptr) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-color">color</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, <a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a> * status =nullptr) const<br />Retrieves a color hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setmetric">setMetric</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, qreal metric)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setmetric">setMetric</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, qreal metric)<br />Sets a metric hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetmetric">resetMetric</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetmetric">resetMetric</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)<br />Removes a metric hint from the local table.</td>
     </tr>
     <tr>
       <td>qreal</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-metric">metric</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QskSkinHintStatus * status =nullptr) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-metric">metric</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, <a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a> * status =nullptr) const<br />Retrieves a metric hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setflaghint">setFlagHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, int flag)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setflaghint">setFlagHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, int flag)<br />Sets a flag hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetflaghint">resetFlagHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetflaghint">resetFlagHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)<br />Removes a flag hint from the local table.</td>
     </tr>
     <tr>
       <td>int</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-flaghint">flagHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-flaghint">flagHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect) const<br />Retrieves a flag hint.</td>
     </tr>
     <tr>
       <td>template &lt;typename T &gt; <br />T</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-flaghint">flagHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, T defaultValue =T()) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-flaghint">flagHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, T defaultValue =T()) const<br />Retrieves a flag hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setstrutsizehint">setStrutSizeHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QSizeF &amp; strut)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setstrutsizehint">setStrutSizeHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QSizeF &amp; size)<br />Sets a metric hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setstrutsizehint">setStrutSizeHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, qreal width, qreal height)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setstrutsizehint">setStrutSizeHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, qreal width, qreal height)<br />Sets a strut size hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetstrutsizehint">resetStrutSizeHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetstrutsizehint">resetStrutSizeHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)<br />Removes a strut size hint from the local table.</td>
     </tr>
     <tr>
       <td>QSizeF</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-strutsizehint">strutSizeHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QskSkinHintStatus * status =nullptr) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-strutsizehint">strutSizeHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, <a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a> * status =nullptr) const<br />Retrieves a strut size hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setmarginhint">setMarginHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, qreal margins)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setmarginhint">setMarginHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, qreal margins)<br />Sets a margin hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setmarginhint">setMarginHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QMarginsF &amp; margins)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setmarginhint">setMarginHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QMarginsF &amp; margins)<br />Sets a margin hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetmarginhint">resetMarginHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetmarginhint">resetMarginHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)<br />Removes a margin hint from the local table.</td>
     </tr>
     <tr>
       <td>QMarginsF</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-marginhint">marginHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QskSkinHintStatus * status =nullptr) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-marginhint">marginHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, <a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a> * status =nullptr) const<br />Retrieves a margin hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setpaddinghint">setPaddingHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, qreal padding)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setpaddinghint">setPaddingHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, qreal padding)<br />Sets a padding hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setpaddinghint">setPaddingHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QMarginsF &amp; padding)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setpaddinghint">setPaddingHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QMarginsF &amp; padding)<br />Sets a padding hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetpaddinghint">resetPaddingHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetpaddinghint">resetPaddingHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)<br />Removes a padding hint from the local table.</td>
     </tr>
     <tr>
       <td>QMarginsF</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-paddinghint">paddingHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QskSkinHintStatus * status =nullptr) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-paddinghint">paddingHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, <a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a> * status =nullptr) const<br />Retrieves a padding hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setgradienthint">setGradientHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QskGradient &amp; gradient)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setgradienthint">setGradientHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QskGradient &amp; gradient)<br />Sets a gradient as color hint.</td>
     </tr>
     <tr>
       <td>QskGradient</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-gradienthint">gradientHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QskSkinHintStatus * status =nullptr) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-gradienthint">gradientHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, <a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a> * status =nullptr) const<br />Retrieves a color hint as gradient.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setboxshapehint">setBoxShapeHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QskBoxShapeMetrics &amp; shape)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setboxshapehint">setBoxShapeHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QskBoxShapeMetrics &amp; shape)<br />Sets a shape hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetboxshapehint">resetBoxShapeHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetboxshapehint">resetBoxShapeHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)<br />Removes a shape hint from the local table.</td>
     </tr>
     <tr>
       <td>QskBoxShapeMetrics</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-boxshapehint">boxShapeHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QskSkinHintStatus * status =nullptr) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-boxshapehint">boxShapeHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, <a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a> * status =nullptr) const<br />Retrieves a shape hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setboxbordermetricshint">setBoxBorderMetricsHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QskBoxBorderMetrics &amp; border)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setboxbordermetricshint">setBoxBorderMetricsHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QskBoxBorderMetrics &amp; border)<br />Sets a border metrics hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetboxbordermetricshint">resetBoxBorderMetricsHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetboxbordermetricshint">resetBoxBorderMetricsHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)<br />Removes a border metrics hint from the local table.</td>
     </tr>
     <tr>
       <td>QskBoxBorderMetrics</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-boxbordermetricshint">boxBorderMetricsHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QskSkinHintStatus * status =nullptr) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-boxbordermetricshint">boxBorderMetricsHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, <a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a> * status =nullptr) const<br />Retrieves a border hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setboxbordercolorshint">setBoxBorderColorsHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QskBoxBorderColors &amp; colors)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setboxbordercolorshint">setBoxBorderColorsHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QskBoxBorderColors &amp; colors)<br />Sets a border colors hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetboxbordercolorshint">resetBoxBorderColorsHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetboxbordercolorshint">resetBoxBorderColorsHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)<br />Removes a border colors hint from the local table.</td>
     </tr>
     <tr>
       <td>QskBoxBorderColors</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-boxbordercolorshint">boxBorderColorsHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QskSkinHintStatus * status =nullptr) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-boxbordercolorshint">boxBorderColorsHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, <a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a> * status =nullptr) const<br />Retrieves border colors hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setspacinghint">setSpacingHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, qreal spacing)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setspacinghint">setSpacingHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, qreal spacing)<br />Sets a spacing hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetspacinghint">resetSpacingHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetspacinghint">resetSpacingHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)<br />Removes a spacing hint from the local table.</td>
     </tr>
     <tr>
       <td>qreal</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-spacinghint">spacingHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QskSkinHintStatus * status =nullptr) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-spacinghint">spacingHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, <a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a> * status =nullptr) const<br />Retrieves a spacing hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setalignmenthint">setAlignmentHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, Qt::Alignment alignment)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setalignmenthint">setAlignmentHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, Qt::Alignment alignment)<br />Sets an alignment hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetalignmenthint">resetAlignmentHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetalignmenthint">resetAlignmentHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)<br />Removes an alignment hint from the local table.</td>
     </tr>
     <tr>
       <td>Qt::Alignment</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-alignmenthint">alignmentHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, Qt::Alignment defaultAlignment =Qt::Alignment()) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-alignmenthint">alignmentHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, Qt::Alignment defaultAlignment =Qt::Alignment()) const<br />Retrieves an alignment hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setfontrolehint">setFontRoleHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, int role)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setfontrolehint">setFontRoleHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, int role)<br />Sets a font role hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetfontrolehint">resetFontRoleHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetfontrolehint">resetFontRoleHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)<br />Removes a font role hint from the local table.</td>
     </tr>
     <tr>
       <td>int</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-fontrolehint">fontRoleHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QskSkinHintStatus * status =nullptr) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-fontrolehint">fontRoleHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, <a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a> * status =nullptr) const<br />Retrieves a font role hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setgraphicrolehint">setGraphicRoleHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, int role)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-setgraphicrolehint">setGraphicRoleHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, int role)<br />Sets a graphic role hint.</td>
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetgraphicrolehint">resetGraphicRoleHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-resetgraphicrolehint">resetGraphicRoleHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect)<br />Removes a graphic role hint from the local table.</td>
     </tr>
     <tr>
       <td>int</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-graphicrolehint">graphicRoleHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, QskSkinHintStatus * status =nullptr) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-graphicrolehint">graphicRoleHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, <a href="/docs/classes/classQskSkinHintStatus/">QskSkinHintStatus</a> * status =nullptr) const<br />A Retrieves a graphic role hint.</td>
     </tr>
   </tbody>
 </table>
@@ -2505,18 +2513,32 @@
     </tr>
     <tr>
       <td>virtual bool</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-istransitionaccepted">isTransitionAccepted</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-istransitionaccepted">isTransitionAccepted</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect) const<br />Additional check if an transition should be started.</td>
     </tr>
     <tr>
       <td>QskSkinHintTable &amp;</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-hinttable">hintTable</a></strong>()</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-hinttable">hintTable</a></strong>()<br />Accessor for local skin hint table.</td>
     </tr>
     <tr>
       <td>const QskSkinHintTable &amp;</td>
-      <td><strong><a href="/docs/classes/classQskSkinnable/#function-hinttable">hintTable</a></strong>() const</td>
+      <td><strong><a href="/docs/classes/classQskSkinnable/#function-hinttable">hintTable</a></strong>() const<br />Accessor for local skin hint table.</td>
     </tr>
   </tbody>
 </table>
+
+<h2 id="detailed-description">Detailed Description</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">QskSkinnable</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> is the base for all objects, that can be configured by skin hints and are displayed by a skinlet. The configuration from the skin can be overwritten by adding values to the local skin hint table - it is even possible to replace the skinlet individually.</p>
+
+<p>In most cases a skinnable is a <a href="/docs/classes/classQskControl/">QskControl</a>, but conceptually it is possible to have controls, that consist of many skinnables.</p>
+
+<p><strong>See also</strong>: QskSkin, <a href="/docs/classes/classQskSkinlet/">QskSkinlet</a>, <a href="/docs/classes/classQskControl/">QskControl</a>, QskSkinHintTable</p>
+
+<p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 70.
+<br /><br /></p>
 
 <h2 id="public-functions-documentation">Public Functions Documentation</h2>
 
@@ -2526,6 +2548,10 @@
   <div class="qskinny-inner-block">
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskSkinnable</span><span class="p">()</span>
 </code></pre></div>    </div>
+
+    <p>Constructs a skinnable where all settings will be resolved from the skin</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskin">effectiveSkin()</a>, <a href="/docs/classes/classQskSkinnable/#function-effectiveskinlet">effectiveSkinlet</a>, <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint</a></p>
 
     <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 234.
 <br /><br /></p>
@@ -2540,6 +2566,8 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="o">~</span><span class="n">QskSkinnable</span><span class="p">()</span>
 </code></pre></div>    </div>
 
+    <p>Called when the skinnable is destroyed.</p>
+
     <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 239.
 <br /><br /></p>
 
@@ -2553,7 +2581,20 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setSkinlet</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskSkinlet</span> <span class="o">*</span> <span class="n">skinlet</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Allows overriding the QskControl::Skin used by this control to render its contents.</p>
+    <p>Set an individual skinlet to render/display the content.</p>
+
+    <p>Usually all skinnables of the same type are rendered by the same instance of a skinlet. For rare situations it can be useful to assign a different skinlet.</p>
+
+    <p>When QskSkinlet::isOwnedBySkinnable() is true, the skinlet will be deleted, when the skinnable is deleted or a different skinlet gets assigned.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>skinlet</strong> Skinlet to render/layout the skinnable.</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-skinlet">skinlet()</a>, <a href="/docs/classes/classQskSkinnable/#function-effectiveskinlet">effectiveSkinlet()</a>, resetSkinlet(), QskSkin::declareSkinlet, QskSkinlet::isOwnedBySkinnable()</p>
+
+    <p><strong>Note</strong>: Overriding the skinlet that has been registered in the skin breaks the themeability of the skinnable.</p>
 
     <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 243.
 <br /><br /></p>
@@ -2568,11 +2609,11 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">const</span> <span class="n">QskSkinlet</span> <span class="o">*</span> <span class="n">skinlet</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p><strong>Returns</strong>: Skinlet assigned by setSkinlet().</p>
+    <p><strong>Returns</strong>: Skinlet, that has been assigned by <a href="/docs/classes/classQskSkinnable/#function-setskinlet">setSkinlet()</a>. Usually the skinnable is coupled to a default skinlet from the skin and the result is a nullptr.</p>
 
-    <p><strong>See also</strong>: effectiveSkinlet()</p>
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinlet">setSkinlet()</a>, <a href="/docs/classes/classQskSkinnable/#function-effectiveskinlet">effectiveSkinlet()</a>, <a href="/docs/classes/classQskSkinnable/#function-effectiveskin">effectiveSkin()</a></p>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 264.
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 271.
 <br /><br /></p>
 
   </div>
@@ -2585,7 +2626,18 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QFont</span> <span class="n">effectiveFont</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 502.
+    <p>Finds the font role for the given aspect and returns the corresponding font from the font table of the skin.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Font, corresponding to the resolved aspect</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-fontrolehint">fontRoleHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, QskSkin::font()</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 509.
 <br /><br /></p>
 
   </div>
@@ -2598,7 +2650,18 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskColorFilter</span> <span class="n">effectiveGraphicFilter</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 523.
+    <p>Finds the graphic role for the given aspect and returns the corresponding color filter from the skin</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Color filter, corresponding to the resolved aspect</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-graphicrolehint">graphicRoleHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, QskSkin::graphicFilter()</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 530.
 <br /><br /></p>
 
   </div>
@@ -2608,10 +2671,20 @@
   <h3 class="qskinny-function" id="function-setanimationhint">function setAnimationHint</h3>
 
   <div class="qskinny-inner-block">
-    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setAnimationHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskAnimationHint</span> <span class="n">animation</span> <span class="p">)</span>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setAnimationHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskAnimationHint</span> <span class="n">hint</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 567.
+    <p>Insert an animation hint into the local hint table</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>hint</strong> Animation hint</li>
+    </ul>
+
+    <p><strong>See also</strong>: animationHint(), <a href="/docs/classes/classQskSkinnable/#function-effectiveanimation">effectiveAnimation()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 574.
 <br /><br /></p>
 
   </div>
@@ -2624,7 +2697,7 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskAnimationHint</span> <span class="n">animationHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskSkinHintStatus</span> <span class="o">*</span> <span class="n">status</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 574.
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 581.
 <br /><br /></p>
 
   </div>
@@ -2637,7 +2710,21 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setSkinHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QVariant</span> <span class="o">&amp;</span> <span class="n">hint</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 626.
+    <p>Insert a hint into the local hint table.</p>
+
+    <p>Presentation, beheviour and layout of the scene graph nodes are affected by specific attributes - skin hints - that are configured in a table of the skin. Each skinnable has its own table where these attributes can be overloaded. Hints from the local table have precedence over those from the skin.</p>
+
+    <p>The subControl bits of the aspect might be substituted, depending on the implementation of <a href="/docs/classes/classQskSkinnable/#function-effectivesubcontrol">effectiveSubcontrol()</a>. By inserting the hint directly into the <a href="/docs/classes/classQskSkinnable/#function-hinttable">hintTable()</a> the substitution can be avoided.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unsubstituted aspect</li>
+      <li><strong>hint</strong> Hint, might be anything that fits into a QVariant and is understood by the skinlet consuming it.</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-hinttable">hintTable()</a>, QskSkinHintTableEditor()</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 638.
 <br /><br /></p>
 
   </div>
@@ -2650,7 +2737,18 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">resetSkinHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 639.
+    <p>Remove a hint from the local hint table.</p>
+
+    <p>After removing the hint from the local table the hint will be resolved fro the hint table of the skin.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unsubstituted aspect</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 651.
 <br /><br /></p>
 
   </div>
@@ -2663,7 +2761,21 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskAnimationHint</span> <span class="n">effectiveAnimation</span><span class="p">(</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Type</span> <span class="n">type</span><span class="p">,</span>  <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span><span class="p">,</span>  <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">state</span><span class="p">,</span>  <span class="n">QskSkinHintStatus</span> <span class="o">*</span> <span class="n">status</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 581.
+    <p>Retrieve the configuration of the animator for reaching a specific state.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>type</strong> Metric, color or something else</li>
+      <li><strong>subControl</strong> Unsubstituted subControl</li>
+      <li><strong>state</strong> State bits</li>
+      <li><strong>status</strong> If status != nullptr additional information about where the hint has been found is returned</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Value from the hint tables</p>
+
+    <p><strong>See also</strong>: animationHint()</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 588.
 <br /><br /></p>
 
   </div>
@@ -2676,7 +2788,21 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QVariant</span> <span class="n">effectiveSkinHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskSkinHintStatus</span> <span class="o">*</span> <span class="n">status</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 652.
+    <p>Find the value for a specific aspect.</p>
+
+    <p>If an animation is running for the given aspect its value will be returned as hint. Then <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a> tries to find a hint in the local table and finally tries to resolve the aspect from the hint table of the skin.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Initial aspect, to feed the skin hint lookup algorithm.</li>
+      <li><strong>status</strong> Optional status information</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Hint value, or an invalid QVariant if no value was found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectivesubcontrol">effectiveSubcontrol()</a>, <a href="/docs/classes/classQskSkinnable/#function-effectiveplacement">effectivePlacement()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 664.
 <br /><br /></p>
 
   </div>
@@ -2689,7 +2815,15 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">effectivePlacement</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1136.
+    <p>The placements bits are added to an unresolved aspect when inserting or looking up values in the hint table.</p>
+
+    <p><strong>Returns</strong>: The default implementation returns QskAspect::NoPlacement;</p>
+
+    <p><strong>See also</strong>: QskAspect::Placement, <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a></p>
+
+    <p><strong>Reimplemented by</strong>: <a href="/docs/classes/classQskSeparator/#function-effectiveplacement">QskSeparator::effectivePlacement</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1148.
 <br /><br /></p>
 
   </div>
@@ -2702,46 +2836,16 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskSkinHintStatus</span> <span class="n">hintStatus</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 671.
-<br /><br /></p>
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+    </ul>
 
-  </div>
-</div>
+    <p><strong>Returns</strong>: Informations about how the aspect would be resolved</p>
 
-<div class="qskinny-outter-block">
-  <h3 class="qskinny-function" id="function-skinstate">function skinState</h3>
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a></p>
 
-  <div class="qskinny-inner-block">
-    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">skinState</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div>    </div>
-
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 833.
-<br /><br /></p>
-
-  </div>
-</div>
-
-<div class="qskinny-outter-block">
-  <h3 class="qskinny-function" id="function-skinstateasprintable">function skinStateAsPrintable</h3>
-
-  <div class="qskinny-inner-block">
-    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">skinStateAsPrintable</span><span class="p">()</span> <span class="k">const</span>
-</code></pre></div>    </div>
-
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 838.
-<br /><br /></p>
-
-  </div>
-</div>
-
-<div class="qskinny-outter-block">
-  <h3 class="qskinny-function" id="function-skinstateasprintable-1">function skinStateAsPrintable</h3>
-
-  <div class="qskinny-inner-block">
-    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">skinStateAsPrintable</span><span class="p">(</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">state</span> <span class="p">)</span> <span class="k">const</span>
-</code></pre></div>    </div>
-
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 843.
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 683.
 <br /><br /></p>
 
   </div>
@@ -2754,7 +2858,21 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">subControlRect</span><span class="p">(</span> <span class="k">const</span> <span class="n">QRectF</span> <span class="o">&amp;</span> <span class="n">contentsRect</span><span class="p">,</span>  <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 938.
+    <p>Calculate position and size of a subControl.</p>
+
+    <p>A convenience method that forwards the calculation to the skinlet</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>contentsRect</strong> Bounding rectangle for laying out the nodes of the skinnable</li>
+      <li><strong>subControl</strong> Unsubstituted subcontrol</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Geometry for the subControl</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinlet">effectiveSkinlet()</a>, QskSkinlet::subControlRect(), QskControl::contentsRect()</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 950.
 <br /><br /></p>
 
   </div>
@@ -2767,7 +2885,21 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">subControlContentsRect</span><span class="p">(</span> <span class="k">const</span> <span class="n">QRectF</span> <span class="o">&amp;</span> <span class="n">contentsRect</span><span class="p">,</span>  <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 944.
+    <p>Calculate the inner rectangle subControl.</p>
+
+    <p>The inner rectangle a subcontrol is its geometry with paddings, indentations being subtracted. F.e. the inner rectangle of QskPushButton::Panel is the bounding rectangle for laying out the QskPushButton::Text and QskPushButton::Graphic subcontrols.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>contentsRect</strong> Bounding rectangle for laying out the nodes of the skinnable</li>
+      <li><strong>subControl</strong> Unsubstituted subcontrol</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Geometry for contents inside the subControl</p>
+
+    <p><strong>See also</strong>: QskSkinlet::subControlRect(), <a href="/docs/classes/classQskSkinnable/#function-innerbox">innerBox()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 956.
 <br /><br /></p>
 
   </div>
@@ -2780,7 +2912,23 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">outerBoxSize</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">innerBoxSize</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 921.
+    <p>Calculate the size, when being expanded by paddings, indentations.</p>
+
+    <p>Paddings, indentations depend on attributes for the given aspect.</p>
+
+    <p>The size hint for a “container” node usually depend on the hints of its inner nodes. F.e the size hint for QskPushButton::Panel depends on the size hints of QskPushButton::Text and QskPushButton::Graphic.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>innerBoxSize</strong> Size to be expanded</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Expanded size</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-innerboxsize">innerBoxSize()</a>, <a href="/docs/classes/classQskSkinnable/#function-outerbox">outerBox()</a>, <a href="/docs/classes/classQskSkinnable/#function-innerbox">innerBox()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 933.
 <br /><br /></p>
 
   </div>
@@ -2793,7 +2941,21 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">innerBoxSize</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">outerBoxSize</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 905.
+    <p>Calculate the size, with paddings, indentations being subtracted.</p>
+
+    <p>Paddings, indentations depend on attributes for the given aspect.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>outerBoxSize</strong> Size to be shrunk</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Shrunk size</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-outerboxsize">outerBoxSize()</a>, <a href="/docs/classes/classQskSkinnable/#function-innerbox">innerBox()</a>, <a href="/docs/classes/classQskSkinnable/#function-outerbox">outerBox()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 917.
 <br /><br /></p>
 
   </div>
@@ -2806,7 +2968,21 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">innerBox</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QRectF</span> <span class="o">&amp;</span> <span class="n">outerBox</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 914.
+    <p>Calculate the rectangle, whith paddings, indentations being subtracted.</p>
+
+    <p>Paddings, indentations depend on attributes for the given aspect.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>outerBox</strong> Rectangle to be shrunk</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Shrunk rectangle</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-innerboxsize">innerBoxSize()</a>, <a href="/docs/classes/classQskSkinnable/#function-outerbox">outerBox()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 926.
 <br /><br /></p>
 
   </div>
@@ -2819,7 +2995,23 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QRectF</span> <span class="n">outerBox</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QRectF</span> <span class="o">&amp;</span> <span class="n">innerBox</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 931.
+    <p>Calculate the rectangle, when being expanded by paddings, indentations.</p>
+
+    <p>Paddings, indentations depend on attributes for the given aspect.</p>
+
+    <p>The size hint for a “container” node usually depend on the hints of its inner nodes. F.e the size hint for QskPushButton::Panel depends on the size hints of QskPushButton::Text and QskPushButton::Graphic.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>innerBox</strong> Rectangle to be expanded</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Expanded rectangle</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-outerboxsize">outerBoxSize()</a>, <a href="/docs/classes/classQskSkinnable/#function-innerbox">innerBox()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 943.
 <br /><br /></p>
 
   </div>
@@ -2832,7 +3024,19 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QMarginsF</span> <span class="n">innerPadding</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">outerBoxSize</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 899.
+    <p>Calculate the padding from attributes for the given aspect.</p>
+
+    <p>Beside padding hints, the radii of the shape might have an effect</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>outerBoxSize</strong> Size of the box</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Effective padding</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 911.
 <br /><br /></p>
 
   </div>
@@ -2845,7 +3049,9 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">const</span> <span class="n">QskSkinlet</span> <span class="o">*</span> <span class="n">effectiveSkinlet</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 269.
+    <p><strong>Returns</strong>: Skinlet that has been set with <a href="/docs/classes/classQskSkinnable/#function-setskinlet">setSkinlet()</a> - or the default skinlet from the skin, that had been registered for <a href="/docs/classes/classQskSkinnable/#function-metaobject">metaObject()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 276.
 <br /><br /></p>
 
   </div>
@@ -2858,7 +3064,11 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskSkin</span> <span class="o">*</span> <span class="n">effectiveSkin</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1126.
+    <p><strong>Returns</strong>: Almost always the current skin. The only exception is when manually setting a skinlet being created from a different skin.</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSetup/#function-skin">QskSetup::skin()</a>, QskSkinlet::skin()</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1138.
 <br /><br /></p>
 
   </div>
@@ -2871,7 +3081,19 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">startTransition</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskAnimationHint</span> <span class="n">animationHint</span><span class="p">,</span>  <span class="n">QVariant</span> <span class="n">from</span><span class="p">,</span>  <span class="n">QVariant</span> <span class="n">to</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 965.
+    <p>Start a transition for a specific aspect, that interpolates between 2 values. While the transition is in process a look up for the aspect will return the current value of the interpolation.</p>
+
+    <p>In most cases <a href="/docs/classes/classQskSkinnable/#function-starttransition">startTransition()</a> is called automatically, when the <a href="/docs/classes/classQskSkinnable/#function-skinstate">skinState()</a> changes and am animation is found for the new state.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect, only subcontrol substitution will be done</li>
+      <li><strong>from</strong> Start value of the transition</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveanimation">effectiveAnimation()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 977.
 <br /><br /></p>
 
   </div>
@@ -2884,7 +3106,22 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">effectiveSubcontrol</span><span class="p">(</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1146.
+    <p>Subcontrol substitution is a mechanism, that is used when a variation of an existing control needs to have skin hints, that can be configured individually without having to reimplement a new skinlet.</p>
+
+    <p>F.e. a button on a toolbar is often flat with a hovering effect. In this case a tool button could be derived from QskPushButton, where the QskPushButton::Panel subcontrol gets substituted by a new subcontrol that is defined for the tool button.</p>
+
+    <p>Subcontrol substitution is part of a concept that is known as aspect resolving “aspect resolving”.</p>
+
+    <p>The default implementation is a no operation and does not substitute</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>subControl</strong> Subcontrol</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Substituted subcontrol</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1158.
 <br /><br /></p>
 
   </div>
@@ -2897,7 +3134,13 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskControl</span> <span class="o">*</span> <span class="n">controlCast</span><span class="p">()</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1153.
+    <p>Safe casting of the skinnable to a <a href="/docs/classes/classQskControl/">QskControl</a></p>
+
+    <p>The operation is based on comparing <a href="/docs/classes/classQskSkinnable/#function-metaobject">metaObject()</a> with QskControl::staticMetaObject() ( similar to what qobject_cast() does )</p>
+
+    <p><strong>Returns</strong>: Control if successful, or a nullptr otherwise</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1165.
 <br /><br /></p>
 
   </div>
@@ -2910,7 +3153,13 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">const</span> <span class="n">QskControl</span> <span class="o">*</span> <span class="n">controlCast</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1159.
+    <p>Safe casting of the skinnable to a <a href="/docs/classes/classQskControl/">QskControl</a></p>
+
+    <p>The operation is based on comparing <a href="/docs/classes/classQskSkinnable/#function-metaobject">metaObject()</a> with QskControl::staticMetaObject() ( similar to what qobject_cast() does )</p>
+
+    <p><strong>Returns</strong>: Control if successful, or a nullptr otherwise</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1171.
 <br /><br /></p>
 
   </div>
@@ -2922,6 +3171,12 @@
   <div class="qskinny-inner-block">
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="n">QskControl</span> <span class="o">*</span> <span class="n">owningControl</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span>
 </code></pre></div>    </div>
+
+    <p>In most cases a skinnable is one of the base classes of <a href="/docs/classes/classQskControl/">QskControl</a> and the owning control is the derived control. But in case of a control, that is built from several skinnables this pure virtual method needs to be implemented.</p>
+
+    <p><strong>Returns</strong>: <a href="/docs/classes/classQskControl/">QskControl</a>, that is owner of the skinnable. In most cases the skinnable is inherited</p>
+
+    <p><strong>Reimplemented by</strong>: <a href="/docs/classes/classQskControl/#function-owningcontrol">QskControl::owningControl</a></p>
 
     <p><br /><br /></p>
 
@@ -2935,7 +3190,10 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="k">const</span> <span class="n">QMetaObject</span> <span class="o">*</span> <span class="n">metaObject</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span>
 </code></pre></div>    </div>
 
-    <p><br /><br /></p>
+    <p><strong>Returns</strong>: Usually the metaObject of the owning control</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-owningcontrol">owningControl()</a>
+<br /><br /></p>
 
   </div>
 </div>
@@ -2947,7 +3205,16 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">debug</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1175.
+    <p>Writes an aspect to qDebug() using the string conversions for <a href="/docs/classes/classQskSkinnable/#function-metaobject">metaObject()</a></p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Aspect to be printed</li>
+    </ul>
+
+    <p><strong>See also</strong>: qskDebugAspect()</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1187.
 <br /><br /></p>
 
   </div>
@@ -2960,7 +3227,16 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">debug</span><span class="p">(</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">state</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1180.
+    <p>Writes a state to qDebug() using the string conversions for <a href="/docs/classes/classQskSkinnable/#function-metaobject">metaObject()</a></p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>state</strong> State to be printed</li>
+    </ul>
+
+    <p><strong>See also</strong>: qskDebugState()</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1192.
 <br /><br /></p>
 
   </div>
@@ -2973,7 +3249,17 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">debug</span><span class="p">(</span> <span class="n">QDebug</span> <span class="n">debug</span><span class="p">,</span>  <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1165.
+    <p>Writes an aspect to a stream using the string conversions for <a href="/docs/classes/classQskSkinnable/#function-metaobject">metaObject()</a></p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>debug</strong> Debug stream</li>
+      <li><strong>aspect</strong> Aspect to be printed</li>
+    </ul>
+
+    <p><strong>See also</strong>: qskDebugAspect()</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1177.
 <br /><br /></p>
 
   </div>
@@ -2986,7 +3272,17 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">debug</span><span class="p">(</span> <span class="n">QDebug</span> <span class="n">debug</span><span class="p">,</span>  <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">state</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1170.
+    <p>Writes a state to a stream using the string conversions for <a href="/docs/classes/classQskSkinnable/#function-metaobject">metaObject()</a></p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>debug</strong> Debug stream</li>
+      <li><strong>state</strong> State to be printed</li>
+    </ul>
+
+    <p><strong>See also</strong>: qskDebugState()</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1182.
 <br /><br /></p>
 
   </div>
@@ -2999,7 +3295,19 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setSkinState</span><span class="p">(</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">newState</span><span class="p">,</span>  <span class="kt">bool</span> <span class="n">animated</span> <span class="o">=</span> <span class="nb">true</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1033.
+    <p>Set the state bits of the skinnable</p>
+
+    <p>Depending on the state a skinnable might have different hints affecting its representation and/or behaviour.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>newState</strong> State bits</li>
+      <li><strong>animated</strong> If true, animators, that have been defined in the skin for newState will be started</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskAspect/">QskAspect</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1045.
 <br /><br /></p>
 
   </div>
@@ -3012,7 +3320,75 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setSkinStateFlag</span><span class="p">(</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">stateFlag</span><span class="p">,</span>  <span class="kt">bool</span> <span class="n">on</span> <span class="o">=</span> <span class="nb">true</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1024.
+    <p>Set/Clear a state in the state bits</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>stateFlag</strong> State bit</li>
+      <li><strong>on</strong> true or false</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinstate">setSkinState()</a>, <a href="/docs/classes/classQskSkinnable/#function-skinstate">skinState()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1036.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-skinstate">function skinState</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">skinState</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p>The state bits are added to an unresolved aspect when inserting or looking up values in the hint table.</p>
+
+    <p><strong>Returns</strong>: Current state</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinstateflag">setSkinStateFlag()</a>, <a href="/docs/classes/classQskSkinnable/#function-setskinstate">setSkinState()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 845.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-skinstateasprintable">function skinStateAsPrintable</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">skinStateAsPrintable</span><span class="p">()</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p><strong>Returns</strong>: Current state as printable for debugging purposes</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-skinstateasprintable">skinStateAsPrintable( QskAspect::State ) const</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 850.
+<br /><br /></p>
+
+  </div>
+</div>
+
+<div class="qskinny-outter-block">
+  <h3 class="qskinny-function" id="function-skinstateasprintable-1">function skinStateAsPrintable</h3>
+
+  <div class="qskinny-inner-block">
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">skinStateAsPrintable</span><span class="p">(</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">State</span> <span class="n">state</span> <span class="p">)</span> <span class="k">const</span>
+</code></pre></div>    </div>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>state</strong> State bits</li>
+    </ul>
+
+    <p><strong>Returns</strong>: state as printable for debugging purposes</p>
+
+    <p><strong>Note</strong>: A pointer to an internal buffer is returned, that might be overwritten by subsequent calls.</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 855.
 <br /><br /></p>
 
   </div>
@@ -3025,7 +3401,19 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setColor</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">Qt</span><span class="o">::</span><span class="n">GlobalColor</span> <span class="n">color</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 315.
+    <p>Sets a color hint.</p>
+
+    <p><a href="/docs/classes/classQskAspect/#enumvalue-color">QskAspect::Color</a> will be added to aspect.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>color</strong> Color hint</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-color">QskAspect::Color</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 322.
 <br /><br /></p>
 
   </div>
@@ -3038,7 +3426,19 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setColor</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QRgb</span> <span class="n">rgb</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 320.
+    <p>Sets a color hint.</p>
+
+    <p><a href="/docs/classes/classQskAspect/#enumvalue-color">QskAspect::Color</a> will be added to aspect.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>rgb</strong> Color hint</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-color">QskAspect::Color</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 327.
 <br /><br /></p>
 
   </div>
@@ -3051,7 +3451,19 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setColor</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QColor</span> <span class="o">&amp;</span> <span class="n">color</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 310.
+    <p>Sets a color hint.</p>
+
+    <p><a href="/docs/classes/classQskAspect/#enumvalue-color">QskAspect::Color</a> will be added to aspect.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>color</strong> Color hint</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-color">QskAspect::Color</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 317.
 <br /><br /></p>
 
   </div>
@@ -3064,7 +3476,20 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="kt">bool</span> <span class="n">resetColor</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 231.
+    <p>Removes a color hint from the local table.</p>
+
+    <p><a href="/docs/classes/classQskAspect/#enumvalue-color">QskAspect::Color</a> will be added to aspect.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+    </ul>
+
+    <p><strong>Returns</strong>: true, if an entry in the local hint table was found and removed.</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setcolor">setColor()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 232.
 <br /><br /></p>
 
   </div>
@@ -3077,7 +3502,21 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QColor</span> <span class="n">color</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskSkinHintStatus</span> <span class="o">*</span> <span class="n">status</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 325.
+    <p>Retrieves a color hint.</p>
+
+    <p><a href="/docs/classes/classQskAspect/#enumvalue-color">QskAspect::Color</a> will be added to aspect.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>status</strong> Optional status information</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Color hint, or QColor() if no value has been found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setcolor">setColor()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 332.
 <br /><br /></p>
 
   </div>
@@ -3090,7 +3529,19 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setMetric</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">qreal</span> <span class="n">metric</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 330.
+    <p>Sets a metric hint.</p>
+
+    <p><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a> will be added to aspect.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>metric</strong> Metric hint</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 337.
 <br /><br /></p>
 
   </div>
@@ -3103,7 +3554,20 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="kt">bool</span> <span class="n">resetMetric</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 236.
+    <p>Removes a metric hint from the local table.</p>
+
+    <p><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a> will be added to aspect.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+    </ul>
+
+    <p><strong>Returns</strong>: true, if an entry in the local hint table was found and removed.</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setmetric">setMetric()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 237.
 <br /><br /></p>
 
   </div>
@@ -3116,9 +3580,21 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">qreal</span> <span class="n">metric</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskSkinHintStatus</span> <span class="o">*</span> <span class="n">status</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>A convenience method equivalent to skinHint( aspect ).metric. The QskSkinHint::TypeMask is set to QskSkinHint::Metric.</p>
+    <p>Retrieves a metric hint.</p>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 335.
+    <p><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a> will be added to aspect.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>status</strong> Optional status information</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Metric, or 0 if no value was found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setmetric">setMetric()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 342.
 <br /><br /></p>
 
   </div>
@@ -3131,7 +3607,17 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setFlagHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="kt">int</span> <span class="n">flag</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 290.
+    <p>Sets a flag hint.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>flag</strong> Flag hint</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-flag">QskAspect::Flag</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 297.
 <br /><br /></p>
 
   </div>
@@ -3144,7 +3630,18 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="kt">bool</span> <span class="n">resetFlagHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 241.
+    <p>Removes a flag hint from the local table.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+    </ul>
+
+    <p><strong>Returns</strong>: true, if an entry in the local hint table was found and removed.</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint()</a>, setFlag()</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 242.
 <br /><br /></p>
 
   </div>
@@ -3157,7 +3654,19 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">flagHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 295.
+    <p>Retrieves a flag hint.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>status</strong> Optional status information</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Flag, or an invalid QVariant in case no value was found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, setFlag()</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 302.
 <br /><br /></p>
 
   </div>
@@ -3171,7 +3680,19 @@
 <span class="kr">inline</span> <span class="n">T</span> <span class="n">flagHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">T</span> <span class="n">defaultValue</span> <span class="o">=</span> <span class="n">T</span><span class="p">()</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 216.
+    <p>Retrieves a flag hint.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>defaultValue</strong> Default result, when no entry can be found in the hint tables</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Flag - or defaultValue if no value had been found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint()</a>, setFlag()</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 217.
 <br /><br /></p>
 
   </div>
@@ -3181,10 +3702,29 @@
   <h3 class="qskinny-function" id="function-setstrutsizehint">function setStrutSizeHint</h3>
 
   <div class="qskinny-inner-block">
-    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setStrutSizeHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">strut</span> <span class="p">)</span>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setStrutSizeHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QSizeF</span> <span class="o">&amp;</span> <span class="n">size</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 346.
+    <p>Sets a metric hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::StrutSize will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>size</strong> Strut size hint</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a>, QskAspect::StrutSize</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 353.
 <br /><br /></p>
 
   </div>
@@ -3197,7 +3737,27 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setStrutSizeHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">qreal</span> <span class="n">width</span><span class="p">,</span>  <span class="n">qreal</span> <span class="n">height</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 340.
+    <p>Sets a strut size hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::StrutSize will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>width</strong> Width of the strut size</li>
+      <li><strong>height</strong> Height of the strut size</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a>, QskAspect::StrutSize</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 347.
 <br /><br /></p>
 
   </div>
@@ -3210,7 +3770,27 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">resetStrutSizeHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 351.
+    <p>Removes a strut size hint from the local table.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::StrutSize will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+    </ul>
+
+    <p><strong>Returns</strong>: true, if an entry in the local hint table was found and removed.</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setstrutsizehint">setStrutSizeHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 358.
 <br /><br /></p>
 
   </div>
@@ -3223,7 +3803,28 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QSizeF</span> <span class="n">strutSizeHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskSkinHintStatus</span> <span class="o">*</span> <span class="n">status</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 356.
+    <p>Retrieves a strut size hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::StrutSize will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>status</strong> Optional status information</li>
+    </ul>
+
+    <p><strong>Returns</strong>: Strut size, or QSizeF() if no value was found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setstrutsizehint">setStrutSizeHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 363.
 <br /><br /></p>
 
   </div>
@@ -3236,7 +3837,26 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setMarginHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">qreal</span> <span class="n">margins</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 362.
+    <p>Sets a margin hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Margin will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>margin</strong> Margin</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a>, QskAspect::Margin</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 369.
 <br /><br /></p>
 
   </div>
@@ -3249,7 +3869,26 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setMarginHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QMarginsF</span> <span class="o">&amp;</span> <span class="n">margins</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 367.
+    <p>Sets a margin hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Margin will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>margin</strong> Margin</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a>, QskAspect::Margin</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 374.
 <br /><br /></p>
 
   </div>
@@ -3262,7 +3901,27 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">resetMarginHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 372.
+    <p>Removes a margin hint from the local table.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Margin will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+    </ul>
+
+    <p><strong>Returns</strong>: true, if an entry in the local hint table was found and removed.</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setmarginhint">setMarginHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 379.
 <br /><br /></p>
 
   </div>
@@ -3275,7 +3934,28 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QMarginsF</span> <span class="n">marginHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskSkinHintStatus</span> <span class="o">*</span> <span class="n">status</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 377.
+    <p>Retrieves a margin hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Margin will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>status</strong> Optional status information</li>
+    </ul>
+
+    <p><strong>Returns</strong>: margin, or QMarginsF() if no value was found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setmarginhint">setMarginHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 384.
 <br /><br /></p>
 
   </div>
@@ -3288,7 +3968,26 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setPaddingHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">qreal</span> <span class="n">padding</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 383.
+    <p>Sets a padding hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Padding will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>padding</strong> Padding</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a>, QskAspect::Padding</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 390.
 <br /><br /></p>
 
   </div>
@@ -3301,7 +4000,26 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setPaddingHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QMarginsF</span> <span class="o">&amp;</span> <span class="n">padding</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 388.
+    <p>Sets a padding hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Padding will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>padding</strong> Padding</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a>, QskAspect::Padding</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 395.
 <br /><br /></p>
 
   </div>
@@ -3314,7 +4032,27 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">resetPaddingHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 393.
+    <p>Removes a padding hint from the local table.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Padding will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+    </ul>
+
+    <p><strong>Returns</strong>: true, if an entry in the local hint table was found and removed.</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setpaddinghint">setPaddingHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 400.
 <br /><br /></p>
 
   </div>
@@ -3327,7 +4065,28 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QMarginsF</span> <span class="n">paddingHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskSkinHintStatus</span> <span class="o">*</span> <span class="n">status</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 398.
+    <p>Retrieves a padding hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Padding will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>status</strong> Optional status information</li>
+    </ul>
+
+    <p><strong>Returns</strong>: padding, or QMarginsF() if no value was found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setpaddinghint">setPaddingHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 405.
 <br /><br /></p>
 
   </div>
@@ -3340,7 +4099,19 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setGradientHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QskGradient</span> <span class="o">&amp;</span> <span class="n">gradient</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 404.
+    <p>Sets a gradient as color hint.</p>
+
+    <p><a href="/docs/classes/classQskAspect/#enumvalue-color">QskAspect::Color</a> will be added to aspect.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>gradient</strong> Gradint</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-color">QskAspect::Color</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 411.
 <br /><br /></p>
 
   </div>
@@ -3353,7 +4124,21 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskGradient</span> <span class="n">gradientHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskSkinHintStatus</span> <span class="o">*</span> <span class="n">status</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 410.
+    <p>Retrieves a color hint as gradient.</p>
+
+    <p><a href="/docs/classes/classQskAspect/#enumvalue-color">QskAspect::Color</a> will be added to aspect.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>status</strong> Optional status information</li>
+    </ul>
+
+    <p><strong>Returns</strong>: gradient, or QskGraient() if no value was found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setgradienthint">setGradientHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 417.
 <br /><br /></p>
 
   </div>
@@ -3366,7 +4151,26 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setBoxShapeHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QskBoxShapeMetrics</span> <span class="o">&amp;</span> <span class="n">shape</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 416.
+    <p>Sets a shape hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Shape will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>shape</strong> Shape</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a>, QskAspect::Shape</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 423.
 <br /><br /></p>
 
   </div>
@@ -3379,7 +4183,27 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">resetBoxShapeHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 422.
+    <p>Removes a shape hint from the local table.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Shape will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+    </ul>
+
+    <p><strong>Returns</strong>: true, if an entry in the local hint table was found and removed.</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setboxshapehint">setBoxShapeHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 429.
 <br /><br /></p>
 
   </div>
@@ -3392,7 +4216,28 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskBoxShapeMetrics</span> <span class="n">boxShapeHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskSkinHintStatus</span> <span class="o">*</span> <span class="n">status</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 427.
+    <p>Retrieves a shape hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Shape will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>status</strong> Optional status information</li>
+    </ul>
+
+    <p><strong>Returns</strong>: shape, or QskBoxShapeMetrics() if no value was found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setboxshapehint">setBoxShapeHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 434.
 <br /><br /></p>
 
   </div>
@@ -3405,7 +4250,26 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setBoxBorderMetricsHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QskBoxBorderMetrics</span> <span class="o">&amp;</span> <span class="n">border</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 434.
+    <p>Sets a border metrics hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Border will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>border</strong> Border metrics</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a>, QskAspect::Border</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 441.
 <br /><br /></p>
 
   </div>
@@ -3418,7 +4282,27 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">resetBoxBorderMetricsHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 440.
+    <p>Removes a border metrics hint from the local table.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Border will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+    </ul>
+
+    <p><strong>Returns</strong>: true, if an entry in the local hint table was found and removed.</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setboxbordermetricshint">setBoxBorderMetricsHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 447.
 <br /><br /></p>
 
   </div>
@@ -3431,7 +4315,28 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskBoxBorderMetrics</span> <span class="n">boxBorderMetricsHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskSkinHintStatus</span> <span class="o">*</span> <span class="n">status</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 445.
+    <p>Retrieves a border hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Border will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>status</strong> Optional status information</li>
+    </ul>
+
+    <p><strong>Returns</strong>: border metrics, or QskBoxBorderMetrics() if no value was found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setboxbordermetricshint">setBoxBorderMetricsHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 452.
 <br /><br /></p>
 
   </div>
@@ -3444,7 +4349,26 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setBoxBorderColorsHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="k">const</span> <span class="n">QskBoxBorderColors</span> <span class="o">&amp;</span> <span class="n">colors</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 452.
+    <p>Sets a border colors hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-color">QskAspect::Color</a></td>
+          <td>QskAspect::Border will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>border</strong> Border colors</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-color">QskAspect::Color</a>, QskAspect::Border</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 459.
 <br /><br /></p>
 
   </div>
@@ -3457,7 +4381,27 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">resetBoxBorderColorsHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 458.
+    <p>Removes a border colors hint from the local table.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-color">QskAspect::Color</a></td>
+          <td>QskAspect::Border will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+    </ul>
+
+    <p><strong>Returns</strong>: true, if an entry in the local hint table was found and removed.</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setboxbordercolorshint">setBoxBorderColorsHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 465.
 <br /><br /></p>
 
   </div>
@@ -3470,7 +4414,28 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskBoxBorderColors</span> <span class="n">boxBorderColorsHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskSkinHintStatus</span> <span class="o">*</span> <span class="n">status</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 463.
+    <p>Retrieves border colors hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-color">QskAspect::Color</a></td>
+          <td>QskAspect::Border will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>status</strong> Optional status information</li>
+    </ul>
+
+    <p><strong>Returns</strong>: border colors, or QskBoxBorderColors() if no value was found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setboxbordercolorshint">setBoxBorderColorsHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 470.
 <br /><br /></p>
 
   </div>
@@ -3483,7 +4448,26 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setSpacingHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">qreal</span> <span class="n">spacing</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 470.
+    <p>Sets a spacing hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Spacing will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>spacing</strong> Spacing</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a>, QskAspect::Spacing</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 477.
 <br /><br /></p>
 
   </div>
@@ -3496,7 +4480,27 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">resetSpacingHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 475.
+    <p>Removes a spacing hint from the local table.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Spacing will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+    </ul>
+
+    <p><strong>Returns</strong>: true, if an entry in the local hint table was found and removed.</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setspacinghint">setSpacingHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 482.
 <br /><br /></p>
 
   </div>
@@ -3509,7 +4513,28 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">qreal</span> <span class="n">spacingHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskSkinHintStatus</span> <span class="o">*</span> <span class="n">status</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 480.
+    <p>Retrieves a spacing hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-metric">QskAspect::Metric</a></td>
+          <td>QskAspect::Spacing will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>status</strong> Optional status information</li>
+    </ul>
+
+    <p><strong>Returns</strong>: spacing, or 0 if no value was found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setspacinghint">setSpacingHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 487.
 <br /><br /></p>
 
   </div>
@@ -3522,7 +4547,26 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setAlignmentHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">Qt</span><span class="o">::</span><span class="n">Alignment</span> <span class="n">alignment</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 300.
+    <p>Sets an alignment hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-flag">QskAspect::Flag</a></td>
+          <td>QskAspect::Alignment will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>alignment</strong> Alignment hint</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-flag">QskAspect::Flag</a>, QskAspect::Alignment</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 307.
 <br /><br /></p>
 
   </div>
@@ -3535,7 +4579,27 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">resetAlignmentHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 305.
+    <p>Removes an alignment hint from the local table.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-flag">QskAspect::Flag</a></td>
+          <td>QskAspect::Alignment will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+    </ul>
+
+    <p><strong>Returns</strong>: true, if an entry in the local hint table was found and removed.</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setalignmenthint">setAlignmentHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 312.
 <br /><br /></p>
 
   </div>
@@ -3548,7 +4612,28 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="n">Qt</span><span class="o">::</span><span class="n">Alignment</span> <span class="n">alignmentHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">Qt</span><span class="o">::</span><span class="n">Alignment</span> <span class="n">defaultAlignment</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">::</span><span class="n">Alignment</span><span class="p">()</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 225.
+    <p>Retrieves an alignment hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-flag">QskAspect::Flag</a></td>
+          <td>QskAspect::Alignment will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>defaultAlignment</strong> Default value</li>
+    </ul>
+
+    <p><strong>Returns</strong>: alignment, or defaultAlignment if no value was found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setalignmenthint">setAlignmentHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8h">QskSkinnable.h</a> in line 226.
 <br /><br /></p>
 
   </div>
@@ -3561,7 +4646,26 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setFontRoleHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="kt">int</span> <span class="n">role</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 486.
+    <p>Sets a font role hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-flag">QskAspect::Flag</a></td>
+          <td>QskAspect::FontRole will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>role</strong> Font role</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-flag">QskAspect::Flag</a>, QskAspect::FontRole</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 493.
 <br /><br /></p>
 
   </div>
@@ -3574,7 +4678,27 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">resetFontRoleHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 491.
+    <p>Removes a font role hint from the local table.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-flag">QskAspect::Flag</a></td>
+          <td>QskAspect::FontRole will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+    </ul>
+
+    <p><strong>Returns</strong>: true, if an entry in the local hint table was found and removed.</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setfontrolehint">setFontRoleHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 498.
 <br /><br /></p>
 
   </div>
@@ -3587,7 +4711,28 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">fontRoleHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskSkinHintStatus</span> <span class="o">*</span> <span class="n">status</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 496.
+    <p>Retrieves a font role hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-flag">QskAspect::Flag</a></td>
+          <td>QskAspect::FontRole will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>status</strong> Optional status information</li>
+    </ul>
+
+    <p><strong>Returns</strong>: font role, or 0 if no value was found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setfontrolehint">setFontRoleHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 503.
 <br /><br /></p>
 
   </div>
@@ -3600,7 +4745,26 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">setGraphicRoleHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="kt">int</span> <span class="n">role</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 507.
+    <p>Sets a graphic role hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-flag">QskAspect::Flag</a></td>
+          <td>QskAspect::GraphicRole will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>role</strong> Graphic role</li>
+    </ul>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, <a href="/docs/classes/classQskAspect/#enumvalue-flag">QskAspect::Flag</a>, QskAspect::GraphicRole</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 514.
 <br /><br /></p>
 
   </div>
@@ -3613,7 +4777,27 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">resetGraphicRoleHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 512.
+    <p>Removes a graphic role hint from the local table.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-flag">QskAspect::Flag</a></td>
+          <td>QskAspect::GraphicRole will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+    </ul>
+
+    <p><strong>Returns</strong>: true, if an entry in the local hint table was found and removed.</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-resetskinhint">resetSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setgraphicrolehint">setGraphicRoleHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 519.
 <br /><br /></p>
 
   </div>
@@ -3626,7 +4810,28 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">graphicRoleHint</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span><span class="p">,</span>  <span class="n">QskSkinHintStatus</span> <span class="o">*</span> <span class="n">status</span> <span class="o">=</span> <span class="nb">nullptr</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 517.
+    <p>A Retrieves a graphic role hint.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="/docs/classes/classQskAspect/#enumvalue-flag">QskAspect::Flag</a></td>
+          <td>QskAspect::GraphicRole will be added to aspect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Unresolved aspect</li>
+      <li><strong>status</strong> Optional status information</li>
+    </ul>
+
+    <p><strong>Returns</strong>: graphic role, or 0 if no value was found</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinhint">effectiveSkinHint()</a>, <a href="/docs/classes/classQskSkinnable/#function-setgraphicrolehint">setGraphicRoleHint()</a></p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 524.
 <br /><br /></p>
 
   </div>
@@ -3641,18 +4846,20 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="kt">void</span> <span class="n">updateNode</span><span class="p">(</span> <span class="n">QSGNode</span> <span class="o">*</span> <span class="n">parentNode</span> <span class="p">)</span>
 </code></pre></div>    </div>
 
-    <p>This method replaces the QQuickItem::updatePaintNode method as the preferred paint method to override when subclassing <a href="/docs/classes/classQskControl/">QskControl</a>. This allows <a href="/docs/classes/classQskControl/">QskControl</a> to perform some additional steps before calling updateNode(), and provides a consistent parent node which subclasses can rely on.</p>
+    <p>This method replaces the QQuickItem::updatePaintNode method as the preferred paint method to override when subclassing <a href="/docs/classes/classQskControl/">QskControl</a>. This allows <a href="/docs/classes/classQskControl/">QskControl</a> to perform some additional steps before calling <a href="/docs/classes/classQskSkinnable/#function-updatenode">updateNode()</a>, and provides a consistent parent node which subclasses can rely on.</p>
 
-    <p>Subclasses should call their Skin’s updateNode() method inside this method.</p>
+    <p>The default implementation simply forwards the operation to the skinlet,</p>
 
     <p><strong>Parameters</strong>:</p>
     <ul>
       <li><strong>parentNode</strong> The parent of the nodes to be added in this method.</li>
     </ul>
 
-    <p><strong>Returns</strong>: The parent node.</p>
+    <p><strong>See also</strong>: QskSkinlet::updateSubNode()</p>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1141.
+    <p><strong>Note</strong>: Overriding <a href="/docs/classes/classQskSkinnable/#function-updatenode">updateNode()</a> might break the themeability and the usual strategy to implement custom painting is to customize or replace the skinlet.</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 1153.
 <br /><br /></p>
 
   </div>
@@ -3665,7 +4872,18 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">virtual</span> <span class="kt">bool</span> <span class="n">isTransitionAccepted</span><span class="p">(</span> <span class="n">QskAspect</span> <span class="n">aspect</span> <span class="p">)</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 950.
+    <p>Additional check if an transition should be started.</p>
+
+    <p>In certain situations a transition initiated from state depending hints needs to be avoided.</p>
+
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+      <li><strong>aspect</strong> Aspect</li>
+    </ul>
+
+    <p><strong>Returns</strong>: true, when <a href="/docs/classes/classQskSkinnable/#function-owningcontrol">owningControl()</a>-&gt;isInitiallyPainted() is true</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 962.
 <br /><br /></p>
 
   </div>
@@ -3678,7 +4896,15 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QskSkinHintTable</span> <span class="o">&amp;</span> <span class="n">hintTable</span><span class="p">()</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 280.
+    <p>Accessor for local skin hint table.</p>
+
+    <p>Definitions in the local hint table have precedence over those from the table of the skin. Initially the local table is empty.</p>
+
+    <p><strong>Returns</strong>: Reference to the local hint table</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, QskSkinHintTableEditor</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 287.
 <br /><br /></p>
 
   </div>
@@ -3691,7 +4917,15 @@
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">const</span> <span class="n">QskSkinHintTable</span> <span class="o">&amp;</span> <span class="n">hintTable</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>    </div>
 
-    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 285.
+    <p>Accessor for local skin hint table.</p>
+
+    <p>Definitions in the local hint table have precedence over those from the table of the skin. Initially the local table is empty.</p>
+
+    <p><strong>Returns</strong>: Reference to the local hint table</p>
+
+    <p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-setskinhint">setSkinHint()</a>, QskSkinHintTableEditor</p>
+
+    <p>Defined in <a href="../../files/QskSkinnable_8cpp">QskSkinnable.cpp</a> in line 292.
 <br /><br /></p>
 
   </div>
@@ -3699,7 +4933,7 @@
 
 <hr />
 
-<p>Updated on 26 February 2021 at 17:46:45 CET</p>
+<p>Updated on 26 February 2021 at 18:17:43 CET</p>
 
           
           

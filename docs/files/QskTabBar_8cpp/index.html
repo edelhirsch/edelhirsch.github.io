@@ -1755,6 +1755,10 @@
     </li>
   
     <li class="docs-menu-item">
+      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
+    </li>
+  
+    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -2582,250 +2586,264 @@
  <span class="mi">448</span><span class="o">:</span> 
  <span class="mi">449</span><span class="o">:</span>     <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">connectButton</span><span class="p">(</span> <span class="n">button</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="nb">true</span> <span class="p">);</span>
  <span class="mi">450</span><span class="o">:</span> 
- <span class="mi">451</span><span class="o">:</span>     <span class="n">Q_EMIT</span> <span class="n">countChanged</span><span class="p">(</span> <span class="n">count</span><span class="p">()</span> <span class="p">);</span>
- <span class="mi">452</span><span class="o">:</span> 
- <span class="mi">453</span><span class="o">:</span>     <span class="k">return</span> <span class="n">index</span><span class="p">;</span>
- <span class="mi">454</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">451</span><span class="o">:</span>     <span class="n">connect</span><span class="p">(</span> <span class="n">button</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">QskAbstractButton</span><span class="o">::</span><span class="n">clicked</span><span class="p">,</span>
+ <span class="mi">452</span><span class="o">:</span>        <span class="k">this</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">QskTabBar</span><span class="o">::</span><span class="n">handleButtonClick</span> <span class="p">);</span>
+ <span class="mi">453</span><span class="o">:</span> 
+ <span class="mi">454</span><span class="o">:</span>     <span class="n">Q_EMIT</span> <span class="n">countChanged</span><span class="p">(</span> <span class="n">count</span><span class="p">()</span> <span class="p">);</span>
  <span class="mi">455</span><span class="o">:</span> 
- <span class="mi">456</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">removeTab</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span>
- <span class="mi">457</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">458</span><span class="o">:</span>     <span class="k">auto</span> <span class="n">item</span> <span class="o">=</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">buttonBox</span><span class="o">-&gt;</span><span class="n">itemAtIndex</span><span class="p">(</span> <span class="n">index</span> <span class="p">);</span>
- <span class="mi">459</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">item</span> <span class="o">==</span> <span class="nb">nullptr</span> <span class="p">)</span>
- <span class="mi">460</span><span class="o">:</span>         <span class="k">return</span><span class="p">;</span>
- <span class="mi">461</span><span class="o">:</span> 
- <span class="mi">462</span><span class="o">:</span>     <span class="k">delete</span> <span class="n">item</span><span class="p">;</span>
- <span class="mi">463</span><span class="o">:</span> 
- <span class="mi">464</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="p">)</span>
- <span class="mi">465</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">466</span><span class="o">:</span>         <span class="n">Q_EMIT</span> <span class="n">countChanged</span><span class="p">(</span> <span class="n">count</span><span class="p">()</span> <span class="p">);</span>
- <span class="mi">467</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">468</span><span class="o">:</span>     <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="p">)</span>
- <span class="mi">469</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">470</span><span class="o">:</span>         <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span><span class="o">--</span><span class="p">;</span>
- <span class="mi">471</span><span class="o">:</span> 
- <span class="mi">472</span><span class="o">:</span>         <span class="n">Q_EMIT</span> <span class="n">countChanged</span><span class="p">(</span> <span class="n">count</span><span class="p">()</span> <span class="p">);</span>
- <span class="mi">473</span><span class="o">:</span>         <span class="n">Q_EMIT</span> <span class="n">currentIndexChanged</span><span class="p">(</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="p">);</span>
- <span class="mi">474</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">475</span><span class="o">:</span>     <span class="k">else</span>
- <span class="mi">476</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">477</span><span class="o">:</span>         <span class="n">QskTabButton</span><span class="o">*</span> <span class="n">nextButton</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
- <span class="mi">478</span><span class="o">:</span>         <span class="kt">int</span> <span class="n">nextIndex</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
- <span class="mi">479</span><span class="o">:</span> 
- <span class="mi">480</span><span class="o">:</span>         <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span> <span class="p">)</span>
- <span class="mi">481</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">482</span><span class="o">:</span>             <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">i</span> <span class="p">);</span>
- <span class="mi">483</span><span class="o">:</span>             <span class="k">if</span> <span class="p">(</span> <span class="n">button</span> <span class="o">&amp;&amp;</span> <span class="n">button</span><span class="o">-&gt;</span><span class="n">isEnabled</span><span class="p">()</span> <span class="p">)</span>
- <span class="mi">484</span><span class="o">:</span>             <span class="p">{</span>
- <span class="mi">485</span><span class="o">:</span>                 <span class="n">nextButton</span> <span class="o">=</span> <span class="n">button</span><span class="p">;</span>
- <span class="mi">486</span><span class="o">:</span>                 <span class="n">nextIndex</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
- <span class="mi">487</span><span class="o">:</span> 
- <span class="mi">488</span><span class="o">:</span>                 <span class="k">break</span><span class="p">;</span>
- <span class="mi">489</span><span class="o">:</span>             <span class="p">}</span>
- <span class="mi">490</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">491</span><span class="o">:</span> 
- <span class="mi">492</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">nextButton</span> <span class="o">==</span> <span class="nb">nullptr</span> <span class="p">)</span>
- <span class="mi">493</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">494</span><span class="o">:</span>             <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">count</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
- <span class="mi">495</span><span class="o">:</span>             <span class="p">{</span>
- <span class="mi">496</span><span class="o">:</span>                 <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">i</span> <span class="p">);</span>
- <span class="mi">497</span><span class="o">:</span>                 <span class="k">if</span> <span class="p">(</span> <span class="n">button</span> <span class="o">&amp;&amp;</span> <span class="n">button</span><span class="o">-&gt;</span><span class="n">isEnabled</span><span class="p">()</span> <span class="p">)</span>
- <span class="mi">498</span><span class="o">:</span>                 <span class="p">{</span>
- <span class="mi">499</span><span class="o">:</span>                     <span class="n">nextButton</span> <span class="o">=</span> <span class="n">button</span><span class="p">;</span>
- <span class="mi">500</span><span class="o">:</span>                     <span class="n">nextIndex</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
- <span class="mi">501</span><span class="o">:</span> 
- <span class="mi">502</span><span class="o">:</span>                     <span class="k">break</span><span class="p">;</span>
- <span class="mi">503</span><span class="o">:</span>                 <span class="p">}</span>
- <span class="mi">504</span><span class="o">:</span>             <span class="p">}</span>
- <span class="mi">505</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">506</span><span class="o">:</span> 
- <span class="mi">507</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">nextButton</span> <span class="p">)</span>
- <span class="mi">508</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">509</span><span class="o">:</span>             <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">connectButton</span><span class="p">(</span> <span class="n">nextButton</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="nb">false</span> <span class="p">);</span>
- <span class="mi">510</span><span class="o">:</span>             <span class="n">nextButton</span><span class="o">-&gt;</span><span class="n">setChecked</span><span class="p">(</span> <span class="nb">true</span> <span class="p">);</span>
- <span class="mi">511</span><span class="o">:</span>             <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">connectButton</span><span class="p">(</span> <span class="n">nextButton</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="nb">true</span> <span class="p">);</span>
- <span class="mi">512</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">513</span><span class="o">:</span> 
- <span class="mi">514</span><span class="o">:</span>         <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="o">=</span> <span class="n">nextIndex</span><span class="p">;</span>
- <span class="mi">515</span><span class="o">:</span> 
- <span class="mi">516</span><span class="o">:</span>         <span class="n">Q_EMIT</span> <span class="n">countChanged</span><span class="p">(</span> <span class="n">count</span><span class="p">()</span> <span class="p">);</span>
- <span class="mi">517</span><span class="o">:</span>         <span class="n">Q_EMIT</span> <span class="n">currentIndexChanged</span><span class="p">(</span> <span class="n">nextIndex</span> <span class="p">);</span>
- <span class="mi">518</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">519</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">520</span><span class="o">:</span> 
- <span class="mi">521</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">clear</span><span class="p">(</span> <span class="kt">bool</span> <span class="n">autoDelete</span> <span class="p">)</span>
- <span class="mi">522</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">523</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">count</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span>
- <span class="mi">524</span><span class="o">:</span>         <span class="k">return</span><span class="p">;</span>
- <span class="mi">525</span><span class="o">:</span> 
- <span class="mi">526</span><span class="o">:</span>     <span class="k">const</span> <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">currentIndex</span><span class="p">();</span>
- <span class="mi">527</span><span class="o">:</span>     <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">buttonBox</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">(</span> <span class="n">autoDelete</span> <span class="p">);</span>
+ <span class="mi">456</span><span class="o">:</span>     <span class="k">return</span> <span class="n">index</span><span class="p">;</span>
+ <span class="mi">457</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">458</span><span class="o">:</span> 
+ <span class="mi">459</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">removeTab</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span>
+ <span class="mi">460</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">461</span><span class="o">:</span>     <span class="k">auto</span> <span class="n">item</span> <span class="o">=</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">buttonBox</span><span class="o">-&gt;</span><span class="n">itemAtIndex</span><span class="p">(</span> <span class="n">index</span> <span class="p">);</span>
+ <span class="mi">462</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">item</span> <span class="o">==</span> <span class="nb">nullptr</span> <span class="p">)</span>
+ <span class="mi">463</span><span class="o">:</span>         <span class="k">return</span><span class="p">;</span>
+ <span class="mi">464</span><span class="o">:</span> 
+ <span class="mi">465</span><span class="o">:</span>     <span class="k">delete</span> <span class="n">item</span><span class="p">;</span>
+ <span class="mi">466</span><span class="o">:</span> 
+ <span class="mi">467</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="p">)</span>
+ <span class="mi">468</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">469</span><span class="o">:</span>         <span class="n">Q_EMIT</span> <span class="n">countChanged</span><span class="p">(</span> <span class="n">count</span><span class="p">()</span> <span class="p">);</span>
+ <span class="mi">470</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">471</span><span class="o">:</span>     <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="p">)</span>
+ <span class="mi">472</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">473</span><span class="o">:</span>         <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span><span class="o">--</span><span class="p">;</span>
+ <span class="mi">474</span><span class="o">:</span> 
+ <span class="mi">475</span><span class="o">:</span>         <span class="n">Q_EMIT</span> <span class="n">countChanged</span><span class="p">(</span> <span class="n">count</span><span class="p">()</span> <span class="p">);</span>
+ <span class="mi">476</span><span class="o">:</span>         <span class="n">Q_EMIT</span> <span class="n">currentIndexChanged</span><span class="p">(</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="p">);</span>
+ <span class="mi">477</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">478</span><span class="o">:</span>     <span class="k">else</span>
+ <span class="mi">479</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">480</span><span class="o">:</span>         <span class="n">QskTabButton</span><span class="o">*</span> <span class="n">nextButton</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+ <span class="mi">481</span><span class="o">:</span>         <span class="kt">int</span> <span class="n">nextIndex</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+ <span class="mi">482</span><span class="o">:</span> 
+ <span class="mi">483</span><span class="o">:</span>         <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span> <span class="p">)</span>
+ <span class="mi">484</span><span class="o">:</span>         <span class="p">{</span>
+ <span class="mi">485</span><span class="o">:</span>             <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">i</span> <span class="p">);</span>
+ <span class="mi">486</span><span class="o">:</span>             <span class="k">if</span> <span class="p">(</span> <span class="n">button</span> <span class="o">&amp;&amp;</span> <span class="n">button</span><span class="o">-&gt;</span><span class="n">isEnabled</span><span class="p">()</span> <span class="p">)</span>
+ <span class="mi">487</span><span class="o">:</span>             <span class="p">{</span>
+ <span class="mi">488</span><span class="o">:</span>                 <span class="n">nextButton</span> <span class="o">=</span> <span class="n">button</span><span class="p">;</span>
+ <span class="mi">489</span><span class="o">:</span>                 <span class="n">nextIndex</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+ <span class="mi">490</span><span class="o">:</span> 
+ <span class="mi">491</span><span class="o">:</span>                 <span class="k">break</span><span class="p">;</span>
+ <span class="mi">492</span><span class="o">:</span>             <span class="p">}</span>
+ <span class="mi">493</span><span class="o">:</span>         <span class="p">}</span>
+ <span class="mi">494</span><span class="o">:</span> 
+ <span class="mi">495</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">nextButton</span> <span class="o">==</span> <span class="nb">nullptr</span> <span class="p">)</span>
+ <span class="mi">496</span><span class="o">:</span>         <span class="p">{</span>
+ <span class="mi">497</span><span class="o">:</span>             <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">count</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+ <span class="mi">498</span><span class="o">:</span>             <span class="p">{</span>
+ <span class="mi">499</span><span class="o">:</span>                 <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">i</span> <span class="p">);</span>
+ <span class="mi">500</span><span class="o">:</span>                 <span class="k">if</span> <span class="p">(</span> <span class="n">button</span> <span class="o">&amp;&amp;</span> <span class="n">button</span><span class="o">-&gt;</span><span class="n">isEnabled</span><span class="p">()</span> <span class="p">)</span>
+ <span class="mi">501</span><span class="o">:</span>                 <span class="p">{</span>
+ <span class="mi">502</span><span class="o">:</span>                     <span class="n">nextButton</span> <span class="o">=</span> <span class="n">button</span><span class="p">;</span>
+ <span class="mi">503</span><span class="o">:</span>                     <span class="n">nextIndex</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+ <span class="mi">504</span><span class="o">:</span> 
+ <span class="mi">505</span><span class="o">:</span>                     <span class="k">break</span><span class="p">;</span>
+ <span class="mi">506</span><span class="o">:</span>                 <span class="p">}</span>
+ <span class="mi">507</span><span class="o">:</span>             <span class="p">}</span>
+ <span class="mi">508</span><span class="o">:</span>         <span class="p">}</span>
+ <span class="mi">509</span><span class="o">:</span> 
+ <span class="mi">510</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">nextButton</span> <span class="p">)</span>
+ <span class="mi">511</span><span class="o">:</span>         <span class="p">{</span>
+ <span class="mi">512</span><span class="o">:</span>             <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">connectButton</span><span class="p">(</span> <span class="n">nextButton</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="nb">false</span> <span class="p">);</span>
+ <span class="mi">513</span><span class="o">:</span>             <span class="n">nextButton</span><span class="o">-&gt;</span><span class="n">setChecked</span><span class="p">(</span> <span class="nb">true</span> <span class="p">);</span>
+ <span class="mi">514</span><span class="o">:</span>             <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">connectButton</span><span class="p">(</span> <span class="n">nextButton</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="nb">true</span> <span class="p">);</span>
+ <span class="mi">515</span><span class="o">:</span>         <span class="p">}</span>
+ <span class="mi">516</span><span class="o">:</span> 
+ <span class="mi">517</span><span class="o">:</span>         <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="o">=</span> <span class="n">nextIndex</span><span class="p">;</span>
+ <span class="mi">518</span><span class="o">:</span> 
+ <span class="mi">519</span><span class="o">:</span>         <span class="n">Q_EMIT</span> <span class="n">countChanged</span><span class="p">(</span> <span class="n">count</span><span class="p">()</span> <span class="p">);</span>
+ <span class="mi">520</span><span class="o">:</span>         <span class="n">Q_EMIT</span> <span class="n">currentIndexChanged</span><span class="p">(</span> <span class="n">nextIndex</span> <span class="p">);</span>
+ <span class="mi">521</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">522</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">523</span><span class="o">:</span> 
+ <span class="mi">524</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">clear</span><span class="p">(</span> <span class="kt">bool</span> <span class="n">autoDelete</span> <span class="p">)</span>
+ <span class="mi">525</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">526</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">count</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span>
+ <span class="mi">527</span><span class="o">:</span>         <span class="k">return</span><span class="p">;</span>
  <span class="mi">528</span><span class="o">:</span> 
- <span class="mi">529</span><span class="o">:</span>     <span class="n">Q_EMIT</span> <span class="n">countChanged</span><span class="p">(</span> <span class="n">count</span><span class="p">()</span> <span class="p">);</span>
- <span class="mi">530</span><span class="o">:</span> 
- <span class="mi">531</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">idx</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">)</span>
- <span class="mi">532</span><span class="o">:</span>         <span class="n">Q_EMIT</span> <span class="n">currentIndexChanged</span><span class="p">(</span> <span class="o">-</span><span class="mi">1</span> <span class="p">);</span>
- <span class="mi">533</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">534</span><span class="o">:</span> 
- <span class="mi">535</span><span class="o">:</span> <span class="kt">bool</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">isTabEnabled</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span> <span class="k">const</span>
- <span class="mi">536</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">537</span><span class="o">:</span>     <span class="k">const</span> <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">index</span> <span class="p">);</span>
- <span class="mi">538</span><span class="o">:</span>     <span class="k">return</span> <span class="n">button</span> <span class="o">?</span> <span class="n">button</span><span class="o">-&gt;</span><span class="n">isEnabled</span><span class="p">()</span> <span class="o">:</span> <span class="nb">false</span><span class="p">;</span>
- <span class="mi">539</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">540</span><span class="o">:</span> 
- <span class="mi">541</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">setTabEnabled</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">enabled</span> <span class="p">)</span>
- <span class="mi">542</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">543</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">index</span> <span class="p">)</span> <span class="p">)</span>
- <span class="mi">544</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">545</span><span class="o">:</span>         <span class="c1">// what happens, when it is the current button ???</span>
- <span class="mi">546</span><span class="o">:</span>         <span class="n">button</span><span class="o">-&gt;</span><span class="n">setEnabled</span><span class="p">(</span> <span class="n">enabled</span> <span class="p">);</span>
- <span class="mi">547</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">548</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">549</span><span class="o">:</span> 
- <span class="mi">550</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">setCurrentIndex</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span>
- <span class="mi">551</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">552</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">!=</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="p">)</span>
- <span class="mi">553</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">554</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">isComponentComplete</span><span class="p">()</span> <span class="p">)</span>
- <span class="mi">555</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">556</span><span class="o">:</span>             <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">index</span> <span class="p">);</span>
- <span class="mi">557</span><span class="o">:</span>             <span class="k">if</span> <span class="p">(</span> <span class="n">button</span> <span class="o">&amp;&amp;</span> <span class="n">button</span><span class="o">-&gt;</span><span class="n">isEnabled</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">button</span><span class="o">-&gt;</span><span class="n">isChecked</span><span class="p">()</span> <span class="p">)</span>
- <span class="mi">558</span><span class="o">:</span>                 <span class="n">button</span><span class="o">-&gt;</span><span class="n">setChecked</span><span class="p">(</span> <span class="nb">true</span> <span class="p">);</span>
- <span class="mi">559</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">560</span><span class="o">:</span>         <span class="k">else</span>
- <span class="mi">561</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">562</span><span class="o">:</span>             <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="o">=</span> <span class="n">index</span><span class="p">;</span>
- <span class="mi">563</span><span class="o">:</span>             <span class="n">Q_EMIT</span> <span class="n">currentIndexChanged</span><span class="p">(</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="p">);</span>
- <span class="mi">564</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">565</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">566</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">567</span><span class="o">:</span> 
- <span class="mi">568</span><span class="o">:</span> <span class="kt">int</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">currentIndex</span><span class="p">()</span> <span class="k">const</span>
- <span class="mi">569</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">570</span><span class="o">:</span>     <span class="k">return</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span><span class="p">;</span>
- <span class="mi">571</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">572</span><span class="o">:</span> 
- <span class="mi">573</span><span class="o">:</span> <span class="kt">int</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">count</span><span class="p">()</span> <span class="k">const</span>
- <span class="mi">574</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">575</span><span class="o">:</span>     <span class="k">return</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">buttonBox</span><span class="o">-&gt;</span><span class="n">elementCount</span><span class="p">();</span>
- <span class="mi">576</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">577</span><span class="o">:</span> 
- <span class="mi">578</span><span class="o">:</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">buttonAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">position</span> <span class="p">)</span>
- <span class="mi">579</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">580</span><span class="o">:</span>     <span class="k">return</span> <span class="n">qobject_cast</span><span class="o">&lt;</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="o">&gt;</span><span class="p">(</span>
- <span class="mi">581</span><span class="o">:</span>         <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">buttonBox</span><span class="o">-&gt;</span><span class="n">itemAtIndex</span><span class="p">(</span> <span class="n">position</span> <span class="p">)</span> <span class="p">);</span>
- <span class="mi">582</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">583</span><span class="o">:</span> 
- <span class="mi">584</span><span class="o">:</span> <span class="k">const</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">buttonAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">position</span> <span class="p">)</span> <span class="k">const</span>
- <span class="mi">585</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">586</span><span class="o">:</span>     <span class="k">auto</span> <span class="n">that</span> <span class="o">=</span> <span class="k">const_cast</span><span class="o">&lt;</span> <span class="n">QskTabBar</span><span class="o">*</span> <span class="o">&gt;</span><span class="p">(</span> <span class="k">this</span> <span class="p">);</span>
- <span class="mi">587</span><span class="o">:</span>     <span class="k">return</span> <span class="n">that</span><span class="o">-&gt;</span><span class="n">buttonAt</span><span class="p">(</span> <span class="n">position</span> <span class="p">);</span>
- <span class="mi">588</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">589</span><span class="o">:</span> 
- <span class="mi">590</span><span class="o">:</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">currentButton</span><span class="p">()</span>
- <span class="mi">591</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">592</span><span class="o">:</span>     <span class="k">return</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">currentIndex</span><span class="p">()</span> <span class="p">);</span>
- <span class="mi">593</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">594</span><span class="o">:</span> 
- <span class="mi">595</span><span class="o">:</span> <span class="k">const</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">currentButton</span><span class="p">()</span> <span class="k">const</span>
- <span class="mi">596</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">597</span><span class="o">:</span>     <span class="k">return</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">currentIndex</span><span class="p">()</span> <span class="p">);</span>
- <span class="mi">598</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">599</span><span class="o">:</span> 
- <span class="mi">600</span><span class="o">:</span> <span class="n">QString</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">currentButtonText</span><span class="p">()</span> <span class="k">const</span>
- <span class="mi">601</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">602</span><span class="o">:</span>     <span class="k">return</span> <span class="n">buttonTextAt</span><span class="p">(</span> <span class="n">currentIndex</span><span class="p">()</span> <span class="p">);</span>
- <span class="mi">603</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">604</span><span class="o">:</span> 
- <span class="mi">605</span><span class="o">:</span> <span class="n">QString</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">buttonTextAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span> <span class="k">const</span>
- <span class="mi">606</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">607</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="k">const</span> <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">index</span> <span class="p">)</span> <span class="p">)</span>
- <span class="mi">608</span><span class="o">:</span>         <span class="k">return</span> <span class="n">button</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
- <span class="mi">609</span><span class="o">:</span> 
- <span class="mi">610</span><span class="o">:</span>     <span class="k">return</span> <span class="n">QString</span><span class="p">();</span>
- <span class="mi">611</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">529</span><span class="o">:</span>     <span class="k">const</span> <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">currentIndex</span><span class="p">();</span>
+ <span class="mi">530</span><span class="o">:</span>     <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">buttonBox</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">(</span> <span class="n">autoDelete</span> <span class="p">);</span>
+ <span class="mi">531</span><span class="o">:</span> 
+ <span class="mi">532</span><span class="o">:</span>     <span class="n">Q_EMIT</span> <span class="n">countChanged</span><span class="p">(</span> <span class="n">count</span><span class="p">()</span> <span class="p">);</span>
+ <span class="mi">533</span><span class="o">:</span> 
+ <span class="mi">534</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">idx</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">)</span>
+ <span class="mi">535</span><span class="o">:</span>         <span class="n">Q_EMIT</span> <span class="n">currentIndexChanged</span><span class="p">(</span> <span class="o">-</span><span class="mi">1</span> <span class="p">);</span>
+ <span class="mi">536</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">537</span><span class="o">:</span> 
+ <span class="mi">538</span><span class="o">:</span> <span class="kt">bool</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">isTabEnabled</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span> <span class="k">const</span>
+ <span class="mi">539</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">540</span><span class="o">:</span>     <span class="k">const</span> <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">index</span> <span class="p">);</span>
+ <span class="mi">541</span><span class="o">:</span>     <span class="k">return</span> <span class="n">button</span> <span class="o">?</span> <span class="n">button</span><span class="o">-&gt;</span><span class="n">isEnabled</span><span class="p">()</span> <span class="o">:</span> <span class="nb">false</span><span class="p">;</span>
+ <span class="mi">542</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">543</span><span class="o">:</span> 
+ <span class="mi">544</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">setTabEnabled</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">enabled</span> <span class="p">)</span>
+ <span class="mi">545</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">546</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">index</span> <span class="p">)</span> <span class="p">)</span>
+ <span class="mi">547</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">548</span><span class="o">:</span>         <span class="c1">// what happens, when it is the current button ???</span>
+ <span class="mi">549</span><span class="o">:</span>         <span class="n">button</span><span class="o">-&gt;</span><span class="n">setEnabled</span><span class="p">(</span> <span class="n">enabled</span> <span class="p">);</span>
+ <span class="mi">550</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">551</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">552</span><span class="o">:</span> 
+ <span class="mi">553</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">setCurrentIndex</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span>
+ <span class="mi">554</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">555</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">!=</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="p">)</span>
+ <span class="mi">556</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">557</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">isComponentComplete</span><span class="p">()</span> <span class="p">)</span>
+ <span class="mi">558</span><span class="o">:</span>         <span class="p">{</span>
+ <span class="mi">559</span><span class="o">:</span>             <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">index</span> <span class="p">);</span>
+ <span class="mi">560</span><span class="o">:</span>             <span class="k">if</span> <span class="p">(</span> <span class="n">button</span> <span class="o">&amp;&amp;</span> <span class="n">button</span><span class="o">-&gt;</span><span class="n">isEnabled</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">button</span><span class="o">-&gt;</span><span class="n">isChecked</span><span class="p">()</span> <span class="p">)</span>
+ <span class="mi">561</span><span class="o">:</span>                 <span class="n">button</span><span class="o">-&gt;</span><span class="n">setChecked</span><span class="p">(</span> <span class="nb">true</span> <span class="p">);</span>
+ <span class="mi">562</span><span class="o">:</span>         <span class="p">}</span>
+ <span class="mi">563</span><span class="o">:</span>         <span class="k">else</span>
+ <span class="mi">564</span><span class="o">:</span>         <span class="p">{</span>
+ <span class="mi">565</span><span class="o">:</span>             <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="o">=</span> <span class="n">index</span><span class="p">;</span>
+ <span class="mi">566</span><span class="o">:</span>             <span class="n">Q_EMIT</span> <span class="n">currentIndexChanged</span><span class="p">(</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="p">);</span>
+ <span class="mi">567</span><span class="o">:</span>         <span class="p">}</span>
+ <span class="mi">568</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">569</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">570</span><span class="o">:</span> 
+ <span class="mi">571</span><span class="o">:</span> <span class="kt">int</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">currentIndex</span><span class="p">()</span> <span class="k">const</span>
+ <span class="mi">572</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">573</span><span class="o">:</span>     <span class="k">return</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span><span class="p">;</span>
+ <span class="mi">574</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">575</span><span class="o">:</span> 
+ <span class="mi">576</span><span class="o">:</span> <span class="kt">int</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">count</span><span class="p">()</span> <span class="k">const</span>
+ <span class="mi">577</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">578</span><span class="o">:</span>     <span class="k">return</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">buttonBox</span><span class="o">-&gt;</span><span class="n">elementCount</span><span class="p">();</span>
+ <span class="mi">579</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">580</span><span class="o">:</span> 
+ <span class="mi">581</span><span class="o">:</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">buttonAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">position</span> <span class="p">)</span>
+ <span class="mi">582</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">583</span><span class="o">:</span>     <span class="k">return</span> <span class="n">qobject_cast</span><span class="o">&lt;</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="o">&gt;</span><span class="p">(</span>
+ <span class="mi">584</span><span class="o">:</span>         <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">buttonBox</span><span class="o">-&gt;</span><span class="n">itemAtIndex</span><span class="p">(</span> <span class="n">position</span> <span class="p">)</span> <span class="p">);</span>
+ <span class="mi">585</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">586</span><span class="o">:</span> 
+ <span class="mi">587</span><span class="o">:</span> <span class="k">const</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">buttonAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">position</span> <span class="p">)</span> <span class="k">const</span>
+ <span class="mi">588</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">589</span><span class="o">:</span>     <span class="k">auto</span> <span class="n">that</span> <span class="o">=</span> <span class="k">const_cast</span><span class="o">&lt;</span> <span class="n">QskTabBar</span><span class="o">*</span> <span class="o">&gt;</span><span class="p">(</span> <span class="k">this</span> <span class="p">);</span>
+ <span class="mi">590</span><span class="o">:</span>     <span class="k">return</span> <span class="n">that</span><span class="o">-&gt;</span><span class="n">buttonAt</span><span class="p">(</span> <span class="n">position</span> <span class="p">);</span>
+ <span class="mi">591</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">592</span><span class="o">:</span> 
+ <span class="mi">593</span><span class="o">:</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">currentButton</span><span class="p">()</span>
+ <span class="mi">594</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">595</span><span class="o">:</span>     <span class="k">return</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">currentIndex</span><span class="p">()</span> <span class="p">);</span>
+ <span class="mi">596</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">597</span><span class="o">:</span> 
+ <span class="mi">598</span><span class="o">:</span> <span class="k">const</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">currentButton</span><span class="p">()</span> <span class="k">const</span>
+ <span class="mi">599</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">600</span><span class="o">:</span>     <span class="k">return</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">currentIndex</span><span class="p">()</span> <span class="p">);</span>
+ <span class="mi">601</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">602</span><span class="o">:</span> 
+ <span class="mi">603</span><span class="o">:</span> <span class="n">QString</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">currentButtonText</span><span class="p">()</span> <span class="k">const</span>
+ <span class="mi">604</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">605</span><span class="o">:</span>     <span class="k">return</span> <span class="n">buttonTextAt</span><span class="p">(</span> <span class="n">currentIndex</span><span class="p">()</span> <span class="p">);</span>
+ <span class="mi">606</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">607</span><span class="o">:</span> 
+ <span class="mi">608</span><span class="o">:</span> <span class="n">QString</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">buttonTextAt</span><span class="p">(</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">)</span> <span class="k">const</span>
+ <span class="mi">609</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">610</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="k">const</span> <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">index</span> <span class="p">)</span> <span class="p">)</span>
+ <span class="mi">611</span><span class="o">:</span>         <span class="k">return</span> <span class="n">button</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">();</span>
  <span class="mi">612</span><span class="o">:</span> 
- <span class="mi">613</span><span class="o">:</span> <span class="kt">int</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">indexOf</span><span class="p">(</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="n">button</span> <span class="p">)</span> <span class="k">const</span>
- <span class="mi">614</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">615</span><span class="o">:</span>     <span class="k">return</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">buttonBox</span><span class="o">-&gt;</span><span class="n">indexOf</span><span class="p">(</span> <span class="n">button</span> <span class="p">);</span>
- <span class="mi">616</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">617</span><span class="o">:</span> 
- <span class="mi">618</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">ensureButtonVisible</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="n">button</span> <span class="p">)</span>
- <span class="mi">619</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">620</span><span class="o">:</span>     <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">scrollBox</span><span class="o">-&gt;</span><span class="n">ensureItemVisible</span><span class="p">(</span> <span class="n">button</span> <span class="p">);</span>
- <span class="mi">621</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">622</span><span class="o">:</span> 
- <span class="mi">623</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">componentComplete</span><span class="p">()</span>
- <span class="mi">624</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">625</span><span class="o">:</span>     <span class="n">Inherited</span><span class="o">::</span><span class="n">componentComplete</span><span class="p">();</span>
- <span class="mi">626</span><span class="o">:</span> 
- <span class="mi">627</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">count</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">)</span>
- <span class="mi">628</span><span class="o">:</span>         <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="mi">613</span><span class="o">:</span>     <span class="k">return</span> <span class="n">QString</span><span class="p">();</span>
+ <span class="mi">614</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">615</span><span class="o">:</span> 
+ <span class="mi">616</span><span class="o">:</span> <span class="kt">int</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">indexOf</span><span class="p">(</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="n">button</span> <span class="p">)</span> <span class="k">const</span>
+ <span class="mi">617</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">618</span><span class="o">:</span>     <span class="k">return</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">buttonBox</span><span class="o">-&gt;</span><span class="n">indexOf</span><span class="p">(</span> <span class="n">button</span> <span class="p">);</span>
+ <span class="mi">619</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">620</span><span class="o">:</span> 
+ <span class="mi">621</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">ensureButtonVisible</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="n">button</span> <span class="p">)</span>
+ <span class="mi">622</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">623</span><span class="o">:</span>     <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">scrollBox</span><span class="o">-&gt;</span><span class="n">ensureItemVisible</span><span class="p">(</span> <span class="n">button</span> <span class="p">);</span>
+ <span class="mi">624</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">625</span><span class="o">:</span> 
+ <span class="mi">626</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">componentComplete</span><span class="p">()</span>
+ <span class="mi">627</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">628</span><span class="o">:</span>     <span class="n">Inherited</span><span class="o">::</span><span class="n">componentComplete</span><span class="p">();</span>
  <span class="mi">629</span><span class="o">:</span> 
- <span class="mi">630</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="p">)</span> <span class="p">)</span>
- <span class="mi">631</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">632</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">button</span><span class="o">-&gt;</span><span class="n">isEnabled</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">button</span><span class="o">-&gt;</span><span class="n">isChecked</span><span class="p">()</span> <span class="p">)</span>
- <span class="mi">633</span><span class="o">:</span>             <span class="n">button</span><span class="o">-&gt;</span><span class="n">setChecked</span><span class="p">(</span> <span class="nb">true</span> <span class="p">);</span>
- <span class="mi">634</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">635</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">636</span><span class="o">:</span> 
- <span class="mi">637</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">adjustCurrentIndex</span><span class="p">()</span>
- <span class="mi">638</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">639</span><span class="o">:</span>     <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
- <span class="mi">640</span><span class="o">:</span> 
- <span class="mi">641</span><span class="o">:</span>     <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">count</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
- <span class="mi">642</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">643</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">i</span> <span class="p">)</span> <span class="p">)</span>
- <span class="mi">644</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">645</span><span class="o">:</span>             <span class="k">if</span> <span class="p">(</span> <span class="n">button</span><span class="o">-&gt;</span><span class="n">isChecked</span><span class="p">()</span> <span class="p">)</span>
- <span class="mi">646</span><span class="o">:</span>             <span class="p">{</span>
- <span class="mi">647</span><span class="o">:</span>                 <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
- <span class="mi">648</span><span class="o">:</span>                 <span class="k">break</span><span class="p">;</span>
- <span class="mi">649</span><span class="o">:</span>             <span class="p">}</span>
- <span class="mi">650</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">651</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">652</span><span class="o">:</span> 
- <span class="mi">653</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">!=</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="p">)</span>
- <span class="mi">654</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">655</span><span class="o">:</span>         <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="o">=</span> <span class="n">index</span><span class="p">;</span>
- <span class="mi">656</span><span class="o">:</span>         <span class="n">Q_EMIT</span> <span class="n">currentIndexChanged</span><span class="p">(</span> <span class="n">index</span> <span class="p">);</span>
- <span class="mi">657</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">658</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">659</span><span class="o">:</span> 
- <span class="mi">660</span><span class="o">:</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">effectiveSubcontrol</span><span class="p">(</span>
- <span class="mi">661</span><span class="o">:</span>     <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">const</span>
- <span class="mi">662</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">663</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">subControl</span> <span class="o">==</span> <span class="n">QskBox</span><span class="o">::</span><span class="n">Panel</span> <span class="p">)</span>
- <span class="mi">664</span><span class="o">:</span>         <span class="k">return</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">Panel</span><span class="p">;</span>
- <span class="mi">665</span><span class="o">:</span> 
- <span class="mi">666</span><span class="o">:</span>     <span class="k">return</span> <span class="n">Inherited</span><span class="o">::</span><span class="n">effectiveSubcontrol</span><span class="p">(</span> <span class="n">subControl</span> <span class="p">);</span>
- <span class="mi">667</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">630</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">count</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">)</span>
+ <span class="mi">631</span><span class="o">:</span>         <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="mi">632</span><span class="o">:</span> 
+ <span class="mi">633</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="p">)</span> <span class="p">)</span>
+ <span class="mi">634</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">635</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">button</span><span class="o">-&gt;</span><span class="n">isEnabled</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">button</span><span class="o">-&gt;</span><span class="n">isChecked</span><span class="p">()</span> <span class="p">)</span>
+ <span class="mi">636</span><span class="o">:</span>             <span class="n">button</span><span class="o">-&gt;</span><span class="n">setChecked</span><span class="p">(</span> <span class="nb">true</span> <span class="p">);</span>
+ <span class="mi">637</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">638</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">639</span><span class="o">:</span> 
+ <span class="mi">640</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">adjustCurrentIndex</span><span class="p">()</span>
+ <span class="mi">641</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">642</span><span class="o">:</span>     <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+ <span class="mi">643</span><span class="o">:</span> 
+ <span class="mi">644</span><span class="o">:</span>     <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">count</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+ <span class="mi">645</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">646</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">buttonAt</span><span class="p">(</span> <span class="n">i</span> <span class="p">)</span> <span class="p">)</span>
+ <span class="mi">647</span><span class="o">:</span>         <span class="p">{</span>
+ <span class="mi">648</span><span class="o">:</span>             <span class="k">if</span> <span class="p">(</span> <span class="n">button</span><span class="o">-&gt;</span><span class="n">isChecked</span><span class="p">()</span> <span class="p">)</span>
+ <span class="mi">649</span><span class="o">:</span>             <span class="p">{</span>
+ <span class="mi">650</span><span class="o">:</span>                 <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+ <span class="mi">651</span><span class="o">:</span>                 <span class="k">break</span><span class="p">;</span>
+ <span class="mi">652</span><span class="o">:</span>             <span class="p">}</span>
+ <span class="mi">653</span><span class="o">:</span>         <span class="p">}</span>
+ <span class="mi">654</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">655</span><span class="o">:</span> 
+ <span class="mi">656</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">!=</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="p">)</span>
+ <span class="mi">657</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">658</span><span class="o">:</span>         <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">currentIndex</span> <span class="o">=</span> <span class="n">index</span><span class="p">;</span>
+ <span class="mi">659</span><span class="o">:</span>         <span class="n">Q_EMIT</span> <span class="n">currentIndexChanged</span><span class="p">(</span> <span class="n">index</span> <span class="p">);</span>
+ <span class="mi">660</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">661</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">662</span><span class="o">:</span> 
+ <span class="mi">663</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">handleButtonClick</span><span class="p">()</span>
+ <span class="mi">664</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">665</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="k">auto</span> <span class="n">button</span> <span class="o">=</span> <span class="n">qobject_cast</span><span class="o">&lt;</span> <span class="k">const</span> <span class="n">QskTabButton</span><span class="o">*</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">sender</span><span class="p">()</span> <span class="p">)</span> <span class="p">)</span>
+ <span class="mi">666</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">667</span><span class="o">:</span>         <span class="k">const</span> <span class="k">auto</span> <span class="n">index</span> <span class="o">=</span> <span class="n">indexOf</span><span class="p">(</span> <span class="n">button</span> <span class="p">);</span>
  <span class="mi">668</span><span class="o">:</span> 
- <span class="mi">669</span><span class="o">:</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">effectivePlacement</span><span class="p">()</span> <span class="k">const</span>
- <span class="mi">670</span><span class="o">:</span> <span class="p">{</span>
- <span class="mi">671</span><span class="o">:</span>     <span class="k">switch</span> <span class="p">(</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">position</span> <span class="p">)</span>
- <span class="mi">672</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">673</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qsk</span><span class="p">:</span><span class="o">:</span><span class="n">Left</span><span class="o">:</span>
- <span class="mi">674</span><span class="o">:</span>             <span class="k">return</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Left</span><span class="p">;</span>
- <span class="mi">675</span><span class="o">:</span> 
- <span class="mi">676</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qsk</span><span class="p">:</span><span class="o">:</span><span class="n">Right</span><span class="o">:</span>
- <span class="mi">677</span><span class="o">:</span>             <span class="k">return</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Right</span><span class="p">;</span>
- <span class="mi">678</span><span class="o">:</span> 
- <span class="mi">679</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qsk</span><span class="p">:</span><span class="o">:</span><span class="n">Top</span><span class="o">:</span>
- <span class="mi">680</span><span class="o">:</span>             <span class="k">return</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Top</span><span class="p">;</span>
- <span class="mi">681</span><span class="o">:</span> 
- <span class="mi">682</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qsk</span><span class="p">:</span><span class="o">:</span><span class="n">Bottom</span><span class="o">:</span>
- <span class="mi">683</span><span class="o">:</span>             <span class="k">return</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Bottom</span><span class="p">;</span>
- <span class="mi">684</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">685</span><span class="o">:</span> 
- <span class="mi">686</span><span class="o">:</span>     <span class="k">return</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">NoPlacement</span><span class="p">;</span>
- <span class="mi">687</span><span class="o">:</span> <span class="p">}</span>
- <span class="mi">688</span><span class="o">:</span> 
- <span class="mi">689</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="s">"moc_QskTabBar.cpp"</span>
+ <span class="mi">669</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">)</span>
+ <span class="mi">670</span><span class="o">:</span>             <span class="n">Q_EMIT</span> <span class="n">buttonClicked</span><span class="p">(</span> <span class="n">index</span> <span class="p">);</span>
+ <span class="mi">671</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">672</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">673</span><span class="o">:</span> 
+ <span class="mi">674</span><span class="o">:</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">effectiveSubcontrol</span><span class="p">(</span>
+ <span class="mi">675</span><span class="o">:</span>     <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span> <span class="k">const</span>
+ <span class="mi">676</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">677</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="n">subControl</span> <span class="o">==</span> <span class="n">QskBox</span><span class="o">::</span><span class="n">Panel</span> <span class="p">)</span>
+ <span class="mi">678</span><span class="o">:</span>         <span class="k">return</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">Panel</span><span class="p">;</span>
+ <span class="mi">679</span><span class="o">:</span> 
+ <span class="mi">680</span><span class="o">:</span>     <span class="k">return</span> <span class="n">Inherited</span><span class="o">::</span><span class="n">effectiveSubcontrol</span><span class="p">(</span> <span class="n">subControl</span> <span class="p">);</span>
+ <span class="mi">681</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">682</span><span class="o">:</span> 
+ <span class="mi">683</span><span class="o">:</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Placement</span> <span class="n">QskTabBar</span><span class="o">::</span><span class="n">effectivePlacement</span><span class="p">()</span> <span class="k">const</span>
+ <span class="mi">684</span><span class="o">:</span> <span class="p">{</span>
+ <span class="mi">685</span><span class="o">:</span>     <span class="k">switch</span> <span class="p">(</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">position</span> <span class="p">)</span>
+ <span class="mi">686</span><span class="o">:</span>     <span class="p">{</span>
+ <span class="mi">687</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qsk</span><span class="p">:</span><span class="o">:</span><span class="n">Left</span><span class="o">:</span>
+ <span class="mi">688</span><span class="o">:</span>             <span class="k">return</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Left</span><span class="p">;</span>
+ <span class="mi">689</span><span class="o">:</span> 
+ <span class="mi">690</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qsk</span><span class="p">:</span><span class="o">:</span><span class="n">Right</span><span class="o">:</span>
+ <span class="mi">691</span><span class="o">:</span>             <span class="k">return</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Right</span><span class="p">;</span>
+ <span class="mi">692</span><span class="o">:</span> 
+ <span class="mi">693</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qsk</span><span class="p">:</span><span class="o">:</span><span class="n">Top</span><span class="o">:</span>
+ <span class="mi">694</span><span class="o">:</span>             <span class="k">return</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Top</span><span class="p">;</span>
+ <span class="mi">695</span><span class="o">:</span> 
+ <span class="mi">696</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qsk</span><span class="p">:</span><span class="o">:</span><span class="n">Bottom</span><span class="o">:</span>
+ <span class="mi">697</span><span class="o">:</span>             <span class="k">return</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Bottom</span><span class="p">;</span>
+ <span class="mi">698</span><span class="o">:</span>     <span class="p">}</span>
+ <span class="mi">699</span><span class="o">:</span> 
+ <span class="mi">700</span><span class="o">:</span>     <span class="k">return</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">NoPlacement</span><span class="p">;</span>
+ <span class="mi">701</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">702</span><span class="o">:</span> 
+ <span class="mi">703</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="s">"moc_QskTabBar.cpp"</span>
 </code></pre></div></div>
 
 <hr />
 
-<p>Updated on 26 February 2021 at 17:46:49 CET</p>
+<p>Updated on 26 February 2021 at 18:17:47 CET</p>
 
           
           
