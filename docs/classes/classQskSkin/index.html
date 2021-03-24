@@ -2,7 +2,7 @@
 <html lang="en">
     <head>    
 
-        <title>QskSkin - Stackbit Libris Theme</title>
+        <title>QskSkin - The QSkinny UI framework</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="A documentation theme"/>
@@ -907,10 +907,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskAspect_8dox/">QskAspect.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskAspect_8h/">common/QskAspect.h</a>
     </li>
   
@@ -1032,10 +1028,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskControl_8cpp/">controls/QskControl.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskControl_8dox/">QskControl.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1247,10 +1239,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskGraphic_8dox/">QskGraphic.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskGraphic_8h/">graphic/QskGraphic.h</a>
     </li>
   
@@ -1280,10 +1268,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskIndexedLayoutBox_8cpp/">layouts/QskIndexedLayoutBox.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskIndexedLayoutBox_8dox/">QskIndexedLayoutBox.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1364,10 +1348,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskLinearBox_8cpp/">layouts/QskLinearBox.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskLinearBox_8dox/">QskLinearBox.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1563,10 +1543,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskQuickItem_8dox/">QskQuickItem.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskQuickItem_8h/">controls/QskQuickItem.h</a>
     </li>
   
@@ -1695,19 +1671,11 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSeparator_8dox/">QskSeparator.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSeparator_8h/">controls/QskSeparator.h</a>
     </li>
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskSetup_8cpp/">controls/QskSetup.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskSetup_8dox/">QskSetup.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1755,10 +1723,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -1803,19 +1767,11 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinlet_8dox/">QskSkinlet.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinlet_8h/">controls/QskSkinlet.h</a>
     </li>
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskSkinnable_8cpp/">controls/QskSkinnable.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinnable_8dox/">QskSkinnable.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -2091,10 +2047,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/dir_642c141dc41d50796cd757b87656e351/">classes</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/dir_68267d1309a1af8e8297ef4c3efbcdba/">src</a>
     </li>
   
@@ -2153,7 +2105,7 @@
   <tbody>
     <tr>
       <td>enum</td>
-      <td><strong><a href="/docs/classes/classQskSkin/#enum-skinfontrole">SkinFontRole</a></strong> { DefaultFont = 0<br />TinyFont<br />SmallFont<br />MediumFont<br />LargeFont<br />HugeFont}</td>
+      <td><strong><a href="/docs/classes/classQskSkin/#enum-skinfontrole">SkinFontRole</a></strong> {<br />    DefaultFont = 0,<br />    TinyFont,<br />    SmallFont,<br />    MediumFont,<br />    LargeFont,<br />    HugeFont<br />}</td>
     </tr>
   </tbody>
 </table>
@@ -2186,11 +2138,11 @@
     </tr>
     <tr>
       <td>void</td>
-      <td><strong><a href="/docs/classes/classQskSkin/#function-setskinhint">setSkinHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect, const QVariant &amp; hint)</td>
+      <td><strong><a href="/docs/classes/classQskSkin/#function-setskinhint">setSkinHint</a></strong>(QskAspect aspect, const QVariant &amp; hint)</td>
     </tr>
     <tr>
       <td>const QVariant &amp;</td>
-      <td><strong><a href="/docs/classes/classQskSkin/#function-skinhint">skinHint</a></strong>(<a href="/docs/classes/classQskAspect/">QskAspect</a> aspect) const</td>
+      <td><strong><a href="/docs/classes/classQskSkin/#function-skinhint">skinHint</a></strong>(QskAspect aspect) const</td>
     </tr>
     <tr>
       <td>void</td>
@@ -2221,7 +2173,7 @@
       <td><strong><a href="/docs/classes/classQskSkin/#function-setupfonts">setupFonts</a></strong>(const QString &amp; family, int weight =-1, bool italic =false)</td>
     </tr>
     <tr>
-      <td>virtual <a href="/docs/classes/classQskGraphic/">QskGraphic</a></td>
+      <td>virtual QskGraphic</td>
       <td><strong><a href="/docs/classes/classQskSkin/#function-symbol">symbol</a></strong>(int symbolType) const</td>
     </tr>
     <tr>
@@ -2249,7 +2201,7 @@
       <td><strong><a href="/docs/classes/classQskSkin/#function-statemask">stateMask</a></strong>() const</td>
     </tr>
     <tr>
-      <td><a href="/docs/classes/classQskSkinlet/">QskSkinlet</a> *</td>
+      <td>QskSkinlet *</td>
       <td><strong><a href="/docs/classes/classQskSkin/#function-skinlet">skinlet</a></strong>(const QMetaObject * metaObject)</td>
     </tr>
     <tr>
@@ -2406,8 +2358,8 @@
   <h3 class="qskinny-function" id="function-declareskinlet">function declareSkinlet</h3>
 
   <div class="qskinny-inner-block">
-    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Control</span> <span class="p">,</span>
-<span class="k">typename</span> <span class="n">Skinlet</span> <span class="o">&gt;</span>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Control</span> <span class="p">,</span>
+<span class="k">typename</span> <span class="nc">Skinlet</span> <span class="p">&gt;</span>
 <span class="kr">inline</span> <span class="kt">void</span> <span class="n">declareSkinlet</span><span class="p">()</span>
 </code></pre></div>    </div>
 
@@ -2705,7 +2657,7 @@
 
 <hr />
 
-<p>Updated on 26 February 2021 at 18:17:43 CET</p>
+<p>Updated on 24 March 2021 at 15:57:06 CET</p>
 
           
           

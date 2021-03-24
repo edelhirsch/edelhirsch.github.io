@@ -2,7 +2,7 @@
 <html lang="en">
     <head>    
 
-        <title>QskSkinlet - Stackbit Libris Theme</title>
+        <title>QskSkinlet - The QSkinny UI framework</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="A documentation theme"/>
@@ -907,10 +907,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskAspect_8dox/">QskAspect.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskAspect_8h/">common/QskAspect.h</a>
     </li>
   
@@ -1032,10 +1028,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskControl_8cpp/">controls/QskControl.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskControl_8dox/">QskControl.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1247,10 +1239,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskGraphic_8dox/">QskGraphic.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskGraphic_8h/">graphic/QskGraphic.h</a>
     </li>
   
@@ -1280,10 +1268,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskIndexedLayoutBox_8cpp/">layouts/QskIndexedLayoutBox.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskIndexedLayoutBox_8dox/">QskIndexedLayoutBox.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1364,10 +1348,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskLinearBox_8cpp/">layouts/QskLinearBox.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskLinearBox_8dox/">QskLinearBox.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1563,10 +1543,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskQuickItem_8dox/">QskQuickItem.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskQuickItem_8h/">controls/QskQuickItem.h</a>
     </li>
   
@@ -1695,19 +1671,11 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSeparator_8dox/">QskSeparator.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSeparator_8h/">controls/QskSeparator.h</a>
     </li>
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskSetup_8cpp/">controls/QskSetup.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskSetup_8dox/">QskSetup.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1755,10 +1723,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -1803,19 +1767,11 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinlet_8dox/">QskSkinlet.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinlet_8h/">controls/QskSkinlet.h</a>
     </li>
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskSkinnable_8cpp/">controls/QskSkinnable.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinnable_8dox/">QskSkinnable.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -2091,10 +2047,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/dir_642c141dc41d50796cd757b87656e351/">classes</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/dir_68267d1309a1af8e8297ef4c3efbcdba/">src</a>
     </li>
   
@@ -2134,11 +2086,7 @@
           <h1 class="post-title line-left">QskSkinlet</h1>
         </header><!-- .post-header -->
         <div class="post-content">
-          <p>Describes the rendering interface of a <a href="">QskControl</a>. Change the skinlet to change the appearance of the control using the low-level scene graph API.  <a href="#detailed-description">More…</a></p>
-
-<p><code class="highlighter-rouge">#include &lt;QskSkinlet.h&gt;</code></p>
-
-<object type="image/svg+xml" data="../svg/classQskSkinlet__inherit__graph_org.svg">
+          <object type="image/svg+xml" data="../svg/classQskSkinlet__inherit__graph_org.svg">
 </object>
 <p><br /></p>
 
@@ -2168,15 +2116,15 @@
     </tr>
     <tr>
       <td>virtual void</td>
-      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updatenode">updateNode</a></strong>(<a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * skinnable, QSGNode * parent) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updatenode">updateNode</a></strong>(QskSkinnable * skinnable, QSGNode * parent) const</td>
     </tr>
     <tr>
       <td>virtual QRectF</td>
-      <td><strong><a href="/docs/classes/classQskSkinlet/#function-subcontrolrect">subControlRect</a></strong>(const <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * , const QRectF &amp; , QskAspect::Subcontrol ) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinlet/#function-subcontrolrect">subControlRect</a></strong>(const QskSkinnable * , const QRectF &amp; , QskAspect::Subcontrol ) const</td>
     </tr>
     <tr>
       <td>virtual QSizeF</td>
-      <td><strong><a href="/docs/classes/classQskSkinlet/#function-sizehint">sizeHint</a></strong>(const <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * , Qt::SizeHint , const QSizeF &amp; ) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinlet/#function-sizehint">sizeHint</a></strong>(const QskSkinnable * , Qt::SizeHint , const QSizeF &amp; ) const</td>
     </tr>
     <tr>
       <td>const QVector&lt; quint8 &gt; &amp;</td>
@@ -2192,27 +2140,27 @@
     </tr>
     <tr>
       <td>QSGNode *</td>
-      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updateboxnode">updateBoxNode</a></strong>(const <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * skinnable, QSGNode * node, const QRectF &amp; rect, QskAspect::Subcontrol subControl)</td>
+      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updateboxnode">updateBoxNode</a></strong>(const QskSkinnable * skinnable, QSGNode * node, const QRectF &amp; rect, QskAspect::Subcontrol subControl)</td>
     </tr>
     <tr>
       <td>QSGNode *</td>
-      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updateboxnode">updateBoxNode</a></strong>(const <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * skinnable, QSGNode * node, const QRectF &amp; rect, const QskGradient &amp; fillGradient, QskAspect::Subcontrol subControl)</td>
+      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updateboxnode">updateBoxNode</a></strong>(const QskSkinnable * skinnable, QSGNode * node, const QRectF &amp; rect, const QskGradient &amp; fillGradient, QskAspect::Subcontrol subControl)</td>
     </tr>
     <tr>
       <td>QSGNode *</td>
-      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updatetextnode">updateTextNode</a></strong>(const <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * skinnable, QSGNode * node, const QRectF &amp; rect, Qt::Alignment alignment, const QString &amp; text, const QskTextOptions &amp; textOptions, QskAspect::Subcontrol subControl)</td>
+      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updatetextnode">updateTextNode</a></strong>(const QskSkinnable * skinnable, QSGNode * node, const QRectF &amp; rect, Qt::Alignment alignment, const QString &amp; text, const QskTextOptions &amp; textOptions, QskAspect::Subcontrol subControl)</td>
     </tr>
     <tr>
       <td>QSGNode *</td>
-      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updategraphicnode">updateGraphicNode</a></strong>(const <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * skinnable, QSGNode * node, const <a href="/docs/classes/classQskGraphic/">QskGraphic</a> &amp; graphic, const QskColorFilter &amp; colorFilter, const QRectF &amp; rect, Qt::Alignment alignment, Qt::Orientations mirrored =Qt::Orientations())</td>
+      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updategraphicnode">updateGraphicNode</a></strong>(const QskSkinnable * skinnable, QSGNode * node, const QskGraphic &amp; graphic, const QskColorFilter &amp; colorFilter, const QRectF &amp; rect, Qt::Alignment alignment, Qt::Orientations mirrored =Qt::Orientations())</td>
     </tr>
     <tr>
       <td>QSGNode *</td>
-      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updategraphicnode">updateGraphicNode</a></strong>(const <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * skinnable, QSGNode * node, const <a href="/docs/classes/classQskGraphic/">QskGraphic</a> &amp; graphic, const QskColorFilter &amp; colorFilter, const QRectF &amp; rect, Qt::Orientations mirrored =Qt::Orientations())</td>
+      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updategraphicnode">updateGraphicNode</a></strong>(const QskSkinnable * skinnable, QSGNode * node, const QskGraphic &amp; graphic, const QskColorFilter &amp; colorFilter, const QRectF &amp; rect, Qt::Orientations mirrored =Qt::Orientations())</td>
     </tr>
     <tr>
       <td>QSGNode *</td>
-      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updateboxclipnode">updateBoxClipNode</a></strong>(const <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * skinnable, QSGNode * node, const QRectF &amp; rect, QskAspect::Subcontrol subControl)</td>
+      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updateboxclipnode">updateBoxClipNode</a></strong>(const QskSkinnable * skinnable, QSGNode * node, const QRectF &amp; rect, QskAspect::Subcontrol subControl)</td>
     </tr>
   </tbody>
 </table>
@@ -2237,31 +2185,31 @@
     </tr>
     <tr>
       <td>virtual QSGNode *</td>
-      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updatesubnode">updateSubNode</a></strong>(const <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * , quint8 nodeRole, QSGNode * ) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updatesubnode">updateSubNode</a></strong>(const QskSkinnable * , quint8 nodeRole, QSGNode * ) const</td>
     </tr>
     <tr>
       <td>virtual QSGNode *</td>
-      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updatebackgroundnode">updateBackgroundNode</a></strong>(const <a href="/docs/classes/classQskControl/">QskControl</a> * control, QSGNode * node) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updatebackgroundnode">updateBackgroundNode</a></strong>(const QskControl * control, QSGNode * node) const</td>
     </tr>
     <tr>
       <td>virtual QSGNode *</td>
-      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updatedebugnode">updateDebugNode</a></strong>(const <a href="/docs/classes/classQskControl/">QskControl</a> * control, QSGNode * node) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updatedebugnode">updateDebugNode</a></strong>(const QskControl * control, QSGNode * node) const</td>
     </tr>
     <tr>
       <td>QSGNode *</td>
-      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updateboxnode">updateBoxNode</a></strong>(const <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * skinnable, QSGNode * node, QskAspect::Subcontrol subControl) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updateboxnode">updateBoxNode</a></strong>(const QskSkinnable * skinnable, QSGNode * node, QskAspect::Subcontrol subControl) const</td>
     </tr>
     <tr>
       <td>QSGNode *</td>
-      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updateboxclipnode">updateBoxClipNode</a></strong>(const <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * skinnable, QSGNode * node, QskAspect::Subcontrol subControl) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updateboxclipnode">updateBoxClipNode</a></strong>(const QskSkinnable * skinnable, QSGNode * node, QskAspect::Subcontrol subControl) const</td>
     </tr>
     <tr>
       <td>QSGNode *</td>
-      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updatetextnode">updateTextNode</a></strong>(const <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * skinnable, QSGNode * node, const QString &amp; text, const QskTextOptions &amp; textOptions, QskAspect::Subcontrol subControl) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updatetextnode">updateTextNode</a></strong>(const QskSkinnable * skinnable, QSGNode * node, const QString &amp; text, const QskTextOptions &amp; textOptions, QskAspect::Subcontrol subControl) const</td>
     </tr>
     <tr>
       <td>QSGNode *</td>
-      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updategraphicnode">updateGraphicNode</a></strong>(const <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * skinnable, QSGNode * node, const <a href="/docs/classes/classQskGraphic/">QskGraphic</a> &amp; graphic, QskAspect::Subcontrol subcontrol, Qt::Orientations mirrored =Qt::Orientations()) const</td>
+      <td><strong><a href="/docs/classes/classQskSkinlet/#function-updategraphicnode">updateGraphicNode</a></strong>(const QskSkinnable * skinnable, QSGNode * node, const QskGraphic &amp; graphic, QskAspect::Subcontrol subcontrol, Qt::Orientations mirrored =Qt::Orientations()) const</td>
     </tr>
     <tr>
       <td>void</td>
@@ -2269,18 +2217,6 @@
     </tr>
   </tbody>
 </table>
-
-<h2 id="detailed-description">Detailed Description</h2>
-
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">QskSkinlet</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>Describes the rendering interface of a <a href="">QskControl</a>. Change the skinlet to change the appearance of the control using the low-level scene graph API.</p>
-
-<p><strong>See also</strong>: <a href="/docs/classes/classQskSkinnable/#function-effectiveskinlet">QskSkinnable::effectiveSkinlet()</a>, <a href="/docs/classes/classQskSkinnable/#function-setskinlet">QskSkinnable::setSkinlet()</a>, QskSkin::declareSkinlet(), QskSkin::skinlet()</p>
-
-<p>Defined in <a href="../../files/QskSkinlet_8h">QskSkinlet.h</a> in line 27.
-<br /><br /></p>
 
 <h2 id="public-functions-documentation">Public Functions Documentation</h2>
 
@@ -2613,7 +2549,7 @@
 
 <hr />
 
-<p>Updated on 26 February 2021 at 18:17:43 CET</p>
+<p>Updated on 24 March 2021 at 15:57:06 CET</p>
 
           
           

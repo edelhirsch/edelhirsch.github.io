@@ -2,7 +2,7 @@
 <html lang="en">
     <head>    
 
-        <title>QskPushButtonSkinlet - Stackbit Libris Theme</title>
+        <title>QskPushButtonSkinlet - The QSkinny UI framework</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="A documentation theme"/>
@@ -907,10 +907,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskAspect_8dox/">QskAspect.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskAspect_8h/">common/QskAspect.h</a>
     </li>
   
@@ -1032,10 +1028,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskControl_8cpp/">controls/QskControl.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskControl_8dox/">QskControl.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1247,10 +1239,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskGraphic_8dox/">QskGraphic.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskGraphic_8h/">graphic/QskGraphic.h</a>
     </li>
   
@@ -1280,10 +1268,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskIndexedLayoutBox_8cpp/">layouts/QskIndexedLayoutBox.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskIndexedLayoutBox_8dox/">QskIndexedLayoutBox.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1364,10 +1348,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskLinearBox_8cpp/">layouts/QskLinearBox.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskLinearBox_8dox/">QskLinearBox.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1563,10 +1543,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskQuickItem_8dox/">QskQuickItem.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskQuickItem_8h/">controls/QskQuickItem.h</a>
     </li>
   
@@ -1695,19 +1671,11 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSeparator_8dox/">QskSeparator.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSeparator_8h/">controls/QskSeparator.h</a>
     </li>
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskSetup_8cpp/">controls/QskSetup.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskSetup_8dox/">QskSetup.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1755,10 +1723,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -1803,19 +1767,11 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinlet_8dox/">QskSkinlet.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinlet_8h/">controls/QskSkinlet.h</a>
     </li>
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskSkinnable_8cpp/">controls/QskSkinnable.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinnable_8dox/">QskSkinnable.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -2091,10 +2047,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/dir_642c141dc41d50796cd757b87656e351/">classes</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/dir_68267d1309a1af8e8297ef4c3efbcdba/">src</a>
     </li>
   
@@ -2155,7 +2107,7 @@
   <tbody>
     <tr>
       <td>enum</td>
-      <td><strong><a href="/docs/classes/classQskPushButtonSkinlet/#enum-noderole">NodeRole</a></strong> { PanelRole<br />TextRole<br />GraphicRole}</td>
+      <td><strong><a href="/docs/classes/classQskPushButtonSkinlet/#enum-noderole">NodeRole</a></strong> {<br />    PanelRole,<br />    TextRole,<br />    GraphicRole<br />}</td>
     </tr>
   </tbody>
 </table>
@@ -2180,11 +2132,11 @@
     </tr>
     <tr>
       <td>QRectF</td>
-      <td><strong><a href="/docs/classes/classQskPushButtonSkinlet/#function-subcontrolrect">subControlRect</a></strong>(const <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * skinnable, const QRectF &amp; contentsRect, QskAspect::Subcontrol subControl) const override</td>
+      <td><strong><a href="/docs/classes/classQskPushButtonSkinlet/#function-subcontrolrect">subControlRect</a></strong>(const QskSkinnable * skinnable, const QRectF &amp; contentsRect, QskAspect::Subcontrol subControl) const override</td>
     </tr>
     <tr>
       <td>QSizeF</td>
-      <td><strong><a href="/docs/classes/classQskPushButtonSkinlet/#function-sizehint">sizeHint</a></strong>(const <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * skinnable, Qt::SizeHint which, const QSizeF &amp; ) const override</td>
+      <td><strong><a href="/docs/classes/classQskPushButtonSkinlet/#function-sizehint">sizeHint</a></strong>(const QskSkinnable * skinnable, Qt::SizeHint which, const QSizeF &amp; ) const override</td>
     </tr>
   </tbody>
 </table>
@@ -2201,7 +2153,7 @@
   <tbody>
     <tr>
       <td>QSGNode *</td>
-      <td><strong><a href="/docs/classes/classQskPushButtonSkinlet/#function-updatesubnode">updateSubNode</a></strong>(const <a href="/docs/classes/classQskSkinnable/">QskSkinnable</a> * skinnable, quint8 nodeRole, QSGNode * node) const override</td>
+      <td><strong><a href="/docs/classes/classQskPushButtonSkinlet/#function-updatesubnode">updateSubNode</a></strong>(const QskSkinnable * skinnable, quint8 nodeRole, QSGNode * node) const override</td>
     </tr>
   </tbody>
 </table>
@@ -2334,7 +2286,7 @@
 
 <hr />
 
-<p>Updated on 26 February 2021 at 18:17:43 CET</p>
+<p>Updated on 24 March 2021 at 15:57:06 CET</p>
 
           
           

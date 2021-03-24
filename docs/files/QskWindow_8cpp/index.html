@@ -2,7 +2,7 @@
 <html lang="en">
     <head>    
 
-        <title>controls/QskWindow.cpp - Stackbit Libris Theme</title>
+        <title>controls/QskWindow.cpp - The QSkinny UI framework</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="A documentation theme"/>
@@ -907,10 +907,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskAspect_8dox/">QskAspect.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskAspect_8h/">common/QskAspect.h</a>
     </li>
   
@@ -1032,10 +1028,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskControl_8cpp/">controls/QskControl.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskControl_8dox/">QskControl.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1247,10 +1239,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskGraphic_8dox/">QskGraphic.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskGraphic_8h/">graphic/QskGraphic.h</a>
     </li>
   
@@ -1280,10 +1268,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskIndexedLayoutBox_8cpp/">layouts/QskIndexedLayoutBox.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskIndexedLayoutBox_8dox/">QskIndexedLayoutBox.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1364,10 +1348,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskLinearBox_8cpp/">layouts/QskLinearBox.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskLinearBox_8dox/">QskLinearBox.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1563,10 +1543,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskQuickItem_8dox/">QskQuickItem.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskQuickItem_8h/">controls/QskQuickItem.h</a>
     </li>
   
@@ -1695,19 +1671,11 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSeparator_8dox/">QskSeparator.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSeparator_8h/">controls/QskSeparator.h</a>
     </li>
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskSetup_8cpp/">controls/QskSetup.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskSetup_8dox/">QskSetup.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1755,10 +1723,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -1803,19 +1767,11 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinlet_8dox/">QskSkinlet.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinlet_8h/">controls/QskSkinlet.h</a>
     </li>
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskSkinnable_8cpp/">controls/QskSkinnable.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinnable_8dox/">QskSkinnable.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -2091,10 +2047,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/dir_642c141dc41d50796cd757b87656e351/">classes</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/dir_68267d1309a1af8e8297ef4c3efbcdba/">src</a>
     </li>
   
@@ -2136,7 +2088,7 @@
         <div class="post-content">
           <h2 id="source-code">Source code</h2>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="mi">1</span><span class="o">:</span> <span class="cm">/******************************************************************************
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">   <span class="mi">1</span><span class="o">:</span> <span class="cm">/******************************************************************************
    2:  * QSkinny - Copyright (C) 2016 Uwe Rathmann
    3:  * This file may be used under the terms of the QSkinny License, Version 1.0
    4:  *****************************************************************************/</span>
@@ -2150,12 +2102,12 @@
   <span class="mi">12</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">qmath</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
   <span class="mi">13</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">qpointer</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
   <span class="mi">14</span><span class="o">:</span> 
-  <span class="mi">15</span><span class="o">:</span> <span class="n">QSK_QT_PRIVATE_BEGIN</span>
+  <span class="mi">15</span><span class="o">:</span> 
   <span class="mi">16</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="k">private</span><span class="o">/</span><span class="n">qquickitem_p</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
   <span class="mi">17</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="k">private</span><span class="o">/</span><span class="n">qquickitemchangelistener_p</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
   <span class="mi">18</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="k">private</span><span class="o">/</span><span class="n">qquickwindow_p</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
   <span class="mi">19</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="k">private</span><span class="o">/</span><span class="n">qsgrenderer_p</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
-  <span class="mi">20</span><span class="o">:</span> <span class="n">QSK_QT_PRIVATE_END</span>
+  <span class="mi">20</span><span class="o">:</span> 
   <span class="mi">21</span><span class="o">:</span> 
   <span class="mi">22</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">qpa</span><span class="o">/</span><span class="n">qwindowsysteminterface</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
   <span class="mi">23</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">QGuiApplication</span><span class="o">&gt;</span>
@@ -2171,23 +2123,23 @@
   <span class="mi">33</span><span class="o">:</span> <span class="n">Q_LOGGING_CATEGORY</span><span class="p">(</span> <span class="n">logTiming</span><span class="p">,</span> <span class="s">"qsk.window.timing"</span><span class="p">,</span> <span class="n">QtCriticalMsg</span> <span class="p">)</span>
   <span class="mi">34</span><span class="o">:</span> 
   <span class="mi">35</span><span class="o">:</span> <span class="err">#</span><span class="k">if</span> <span class="n">QT_VERSION</span> <span class="o">&gt;=</span> <span class="n">QT_VERSION_CHECK</span><span class="p">(</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span>
-  <span class="mi">36</span><span class="o">:</span> <span class="n">QSK_QT_PRIVATE_BEGIN</span>
+  <span class="mi">36</span><span class="o">:</span> 
   <span class="mi">37</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">qpa</span><span class="o">/</span><span class="n">qplatformwindow_p</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
-  <span class="mi">38</span><span class="o">:</span> <span class="n">QSK_QT_PRIVATE_END</span>
+  <span class="mi">38</span><span class="o">:</span> 
   <span class="mi">39</span><span class="o">:</span> <span class="err">#</span><span class="n">endif</span>
   <span class="mi">40</span><span class="o">:</span> 
   <span class="mi">41</span><span class="o">:</span> <span class="err">#</span><span class="n">endif</span>
   <span class="mi">42</span><span class="o">:</span> 
-  <span class="mi">43</span><span class="o">:</span> <span class="k">static</span> <span class="kt">void</span> <span class="n">qskResolveLocale</span><span class="p">(</span> <span class="n">QskWindow</span><span class="o">*</span> <span class="p">);</span>
+  <span class="mi">43</span><span class="o">:</span> <span class="k">static</span> <span class="kt">void</span> <span class="nf">qskResolveLocale</span><span class="p">(</span> <span class="n">QskWindow</span><span class="o">*</span> <span class="p">);</span>
   <span class="mi">44</span><span class="o">:</span> <span class="k">static</span> <span class="kt">bool</span> <span class="n">qskEnforcedSkin</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
   <span class="mi">45</span><span class="o">:</span> 
-  <span class="mi">46</span><span class="o">:</span> <span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="n">qskSendEventTo</span><span class="p">(</span> <span class="n">QObject</span><span class="o">*</span> <span class="n">object</span><span class="p">,</span> <span class="n">QEvent</span><span class="o">::</span><span class="n">Type</span> <span class="n">type</span> <span class="p">)</span>
+  <span class="mi">46</span><span class="o">:</span> <span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">qskSendEventTo</span><span class="p">(</span> <span class="n">QObject</span><span class="o">*</span> <span class="n">object</span><span class="p">,</span> <span class="n">QEvent</span><span class="o">::</span><span class="n">Type</span> <span class="n">type</span> <span class="p">)</span>
   <span class="mi">47</span><span class="o">:</span> <span class="p">{</span>
   <span class="mi">48</span><span class="o">:</span>     <span class="n">QEvent</span> <span class="n">event</span><span class="p">(</span> <span class="n">type</span> <span class="p">);</span>
   <span class="mi">49</span><span class="o">:</span>     <span class="n">QCoreApplication</span><span class="o">::</span><span class="n">sendEvent</span><span class="p">(</span> <span class="n">object</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">event</span> <span class="p">);</span>
-  <span class="mi">50</span><span class="o">:</span> <span class="p">}</span>
+  <span class="mi">50</span><span class="o">:</span> <span class="err">}</span>
   <span class="mi">51</span><span class="o">:</span> 
-  <span class="mi">52</span><span class="o">:</span> <span class="k">static</span> <span class="n">QQuickItem</span><span class="o">*</span> <span class="n">qskDefaultFocusItem</span><span class="p">(</span> <span class="n">QQuickWindow</span><span class="o">*</span> <span class="n">window</span> <span class="p">)</span>
+  <span class="mi">52</span><span class="o">:</span> <span class="k">static</span> <span class="n">QQuickItem</span><span class="o">*</span> <span class="nf">qskDefaultFocusItem</span><span class="p">(</span> <span class="n">QQuickWindow</span><span class="o">*</span> <span class="n">window</span> <span class="p">)</span>
   <span class="mi">53</span><span class="o">:</span> <span class="p">{</span>
   <span class="mi">54</span><span class="o">:</span>     <span class="k">const</span> <span class="k">auto</span> <span class="n">children</span> <span class="o">=</span> <span class="n">qskPaintOrderChildItems</span><span class="p">(</span> <span class="n">window</span><span class="o">-&gt;</span><span class="n">contentItem</span><span class="p">()</span> <span class="p">);</span>
   <span class="mi">55</span><span class="o">:</span>     <span class="k">for</span> <span class="p">(</span> <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">children</span><span class="p">.</span><span class="n">crbegin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">children</span><span class="p">.</span><span class="n">crend</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span> <span class="p">)</span>
@@ -2202,10 +2154,10 @@
   <span class="mi">64</span><span class="o">:</span>     <span class="p">}</span>
   <span class="mi">65</span><span class="o">:</span> 
   <span class="mi">66</span><span class="o">:</span>     <span class="k">return</span> <span class="n">window</span><span class="o">-&gt;</span><span class="n">contentItem</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">nextItemInFocusChain</span><span class="p">(</span> <span class="nb">true</span> <span class="p">);</span>
-  <span class="mi">67</span><span class="o">:</span> <span class="p">}</span>
+  <span class="mi">67</span><span class="o">:</span> <span class="err">}</span>
   <span class="mi">68</span><span class="o">:</span> 
   <span class="mi">69</span><span class="o">:</span> <span class="err">#</span><span class="n">ifdef</span> <span class="n">QSK_DEBUG_RENDER_TIMING</span>
-  <span class="mi">70</span><span class="o">:</span> <span class="k">static</span> <span class="kr">inline</span> <span class="kt">int</span> <span class="n">qskUpdateTimerId</span><span class="p">(</span> <span class="k">const</span> <span class="n">QWindow</span><span class="o">*</span> <span class="n">window</span> <span class="p">)</span>
+  <span class="mi">70</span><span class="o">:</span> <span class="k">static</span> <span class="kr">inline</span> <span class="kt">int</span> <span class="nf">qskUpdateTimerId</span><span class="p">(</span> <span class="k">const</span> <span class="n">QWindow</span><span class="o">*</span> <span class="n">window</span> <span class="p">)</span>
   <span class="mi">71</span><span class="o">:</span> <span class="p">{</span>
   <span class="mi">72</span><span class="o">:</span> <span class="err">#</span><span class="k">if</span> <span class="n">QT_VERSION</span> <span class="o">&gt;=</span> <span class="n">QT_VERSION_CHECK</span><span class="p">(</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span>
   <span class="mi">73</span><span class="o">:</span>     <span class="k">class</span> <span class="nc">PlatformWindow</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QPlatformWindow</span>
@@ -2214,8 +2166,8 @@
   <span class="mi">76</span><span class="o">:</span>         <span class="kt">int</span> <span class="n">updateTimerId</span><span class="p">()</span> <span class="k">const</span>
   <span class="mi">77</span><span class="o">:</span>         <span class="p">{</span>
   <span class="mi">78</span><span class="o">:</span>             <span class="k">return</span> <span class="n">d_ptr</span><span class="o">-&gt;</span><span class="n">updateTimer</span><span class="p">.</span><span class="n">timerId</span><span class="p">();</span>
-  <span class="mi">79</span><span class="o">:</span>         <span class="p">}</span>
-  <span class="mi">80</span><span class="o">:</span>     <span class="p">};</span>
+  <span class="mi">79</span><span class="o">:</span>         <span class="err">}</span>
+  <span class="mi">80</span><span class="o">:</span>     <span class="err">}</span><span class="p">;</span>
   <span class="mi">81</span><span class="o">:</span> 
   <span class="mi">82</span><span class="o">:</span>     <span class="k">auto</span> <span class="n">platformWindow</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span> <span class="k">const</span> <span class="n">PlatformWindow</span><span class="o">*</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">window</span><span class="o">-&gt;</span><span class="n">handle</span><span class="p">()</span> <span class="p">);</span>
   <span class="mi">83</span><span class="o">:</span>     <span class="k">return</span> <span class="n">platformWindow</span><span class="o">-&gt;</span><span class="n">updateTimerId</span><span class="p">();</span>
@@ -2223,7 +2175,7 @@
   <span class="mi">85</span><span class="o">:</span>     <span class="k">auto</span> <span class="n">w</span> <span class="o">=</span> <span class="k">const_cast</span><span class="o">&lt;</span> <span class="n">QWindow</span><span class="o">*</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">window</span> <span class="p">);</span>
   <span class="mi">86</span><span class="o">:</span>     <span class="k">return</span> <span class="n">QWindowPrivate</span><span class="o">::</span><span class="n">get</span><span class="p">(</span> <span class="n">w</span> <span class="p">)</span><span class="o">-&gt;</span><span class="n">updateTimer</span><span class="p">;</span>
   <span class="mi">87</span><span class="o">:</span> <span class="err">#</span><span class="n">endif</span>
-  <span class="mi">88</span><span class="o">:</span> <span class="p">}</span>
+  <span class="mi">88</span><span class="o">:</span> <span class="err">}</span>
   <span class="mi">89</span><span class="o">:</span> <span class="err">#</span><span class="n">endif</span>
   <span class="mi">90</span><span class="o">:</span> 
   <span class="mi">91</span><span class="o">:</span> <span class="k">namespace</span>
@@ -2274,7 +2226,7 @@
  <span class="mi">136</span><span class="o">:</span>     <span class="k">return</span> <span class="n">value</span><span class="p">;</span>
  <span class="mi">137</span><span class="o">:</span> <span class="p">}</span>
  <span class="mi">138</span><span class="o">:</span> 
- <span class="mi">139</span><span class="o">:</span> <span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="n">qskSetVisualizationMode</span><span class="p">(</span>
+ <span class="mi">139</span><span class="o">:</span> <span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">qskSetVisualizationMode</span><span class="p">(</span>
  <span class="mi">140</span><span class="o">:</span>     <span class="n">QQuickWindow</span><span class="o">*</span> <span class="n">window</span><span class="p">,</span> <span class="k">const</span> <span class="n">QByteArray</span><span class="o">&amp;</span> <span class="n">mode</span> <span class="p">)</span>
  <span class="mi">141</span><span class="o">:</span> <span class="p">{</span>
  <span class="mi">142</span><span class="o">:</span>     <span class="k">auto</span> <span class="n">d</span> <span class="o">=</span> <span class="n">QQuickWindowPrivate</span><span class="o">::</span><span class="n">get</span><span class="p">(</span> <span class="n">window</span> <span class="p">);</span>
@@ -2283,9 +2235,9 @@
  <span class="mi">145</span><span class="o">:</span> <span class="err">#</span><span class="k">else</span>
  <span class="mi">146</span><span class="o">:</span>     <span class="n">d</span><span class="o">-&gt;</span><span class="n">customRenderMode</span> <span class="o">=</span> <span class="n">mode</span><span class="p">;</span>
  <span class="mi">147</span><span class="o">:</span> <span class="err">#</span><span class="n">endif</span>
- <span class="mi">148</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">148</span><span class="o">:</span> <span class="err">}</span>
  <span class="mi">149</span><span class="o">:</span> 
- <span class="mi">150</span><span class="o">:</span> <span class="k">static</span> <span class="kr">inline</span> <span class="n">QByteArray</span> <span class="n">qskVisualizationMode</span><span class="p">(</span> <span class="k">const</span> <span class="n">QQuickWindow</span><span class="o">*</span> <span class="n">window</span> <span class="p">)</span>
+ <span class="mi">150</span><span class="o">:</span> <span class="k">static</span> <span class="kr">inline</span> <span class="n">QByteArray</span> <span class="nf">qskVisualizationMode</span><span class="p">(</span> <span class="k">const</span> <span class="n">QQuickWindow</span><span class="o">*</span> <span class="n">window</span> <span class="p">)</span>
  <span class="mi">151</span><span class="o">:</span> <span class="p">{</span>
  <span class="mi">152</span><span class="o">:</span>     <span class="k">auto</span> <span class="n">d</span> <span class="o">=</span> <span class="n">QQuickWindowPrivate</span><span class="o">::</span><span class="n">get</span><span class="p">(</span> <span class="k">const_cast</span><span class="o">&lt;</span> <span class="n">QQuickWindow</span><span class="o">*</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">window</span> <span class="p">)</span> <span class="p">);</span>
  <span class="mi">153</span><span class="o">:</span> <span class="err">#</span><span class="k">if</span> <span class="n">QT_VERSION</span> <span class="o">&gt;=</span> <span class="n">QT_VERSION_CHECK</span><span class="p">(</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span>
@@ -2293,7 +2245,7 @@
  <span class="mi">155</span><span class="o">:</span> <span class="err">#</span><span class="k">else</span>
  <span class="mi">156</span><span class="o">:</span>     <span class="k">return</span> <span class="n">d</span><span class="o">-&gt;</span><span class="n">customRenderMode</span><span class="p">;</span>
  <span class="mi">157</span><span class="o">:</span> <span class="err">#</span><span class="n">endif</span>
- <span class="mi">158</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">158</span><span class="o">:</span> <span class="err">}</span>
  <span class="mi">159</span><span class="o">:</span> <span class="k">class</span> <span class="nc">QskWindowPrivate</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QQuickWindowPrivate</span>
  <span class="mi">160</span><span class="o">:</span> <span class="p">{</span>
  <span class="mi">161</span><span class="o">:</span>     <span class="n">Q_DECLARE_PUBLIC</span><span class="p">(</span> <span class="n">QskWindow</span> <span class="p">)</span>
@@ -2326,7 +2278,7 @@
  <span class="mi">188</span><span class="o">:</span> <span class="p">};</span>
  <span class="mi">189</span><span class="o">:</span> 
  <span class="mi">190</span><span class="o">:</span> <span class="n">QskWindow</span><span class="o">::</span><span class="n">QskWindow</span><span class="p">(</span> <span class="n">QWindow</span><span class="o">*</span> <span class="n">parent</span> <span class="p">)</span>
- <span class="mi">191</span><span class="o">:</span>     <span class="o">:</span> <span class="n">Inherited</span><span class="p">(</span> <span class="o">*</span><span class="p">(</span> <span class="k">new</span> <span class="n">QskWindowPrivate</span><span class="p">()</span> <span class="p">),</span> <span class="n">parent</span> <span class="p">)</span>
+ <span class="mi">191</span><span class="o">:</span>     <span class="o">:</span> <span class="n">Inherited</span><span class="p">(</span> <span class="o">*</span><span class="p">(</span> <span class="k">new</span> <span class="nf">QskWindowPrivate</span><span class="p">()</span> <span class="p">),</span> <span class="n">parent</span> <span class="p">)</span>
  <span class="mi">192</span><span class="o">:</span> <span class="p">{</span>
  <span class="mi">193</span><span class="o">:</span>     <span class="n">QSurfaceFormat</span> <span class="n">fmt</span> <span class="o">=</span> <span class="n">format</span><span class="p">();</span>
  <span class="mi">194</span><span class="o">:</span>     <span class="n">fmt</span><span class="p">.</span><span class="n">setSamples</span><span class="p">(</span> <span class="mi">4</span> <span class="p">);</span>
@@ -2352,7 +2304,7 @@
  <span class="mi">214</span><span class="o">:</span> 
  <span class="mi">215</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">qskEnforcedSkin</span> <span class="p">)</span>
  <span class="mi">216</span><span class="o">:</span>         <span class="n">connect</span><span class="p">(</span> <span class="k">this</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">QQuickWindow</span><span class="o">::</span><span class="n">afterAnimating</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">QskWindow</span><span class="o">::</span><span class="n">enforceSkin</span> <span class="p">);</span>
- <span class="mi">217</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">217</span><span class="o">:</span> <span class="err">}</span>
  <span class="mi">218</span><span class="o">:</span> 
  <span class="mi">219</span><span class="o">:</span> <span class="n">QskWindow</span><span class="o">::</span><span class="n">QskWindow</span><span class="p">(</span> <span class="n">QQuickRenderControl</span><span class="o">*</span> <span class="n">renderControl</span><span class="p">,</span> <span class="n">QWindow</span><span class="o">*</span> <span class="n">parent</span> <span class="p">)</span>
  <span class="mi">220</span><span class="o">:</span>     <span class="o">:</span> <span class="n">QskWindow</span><span class="p">(</span> <span class="n">parent</span> <span class="p">)</span>
@@ -2477,7 +2429,7 @@
  <span class="mi">339</span><span class="o">:</span> 
  <span class="mi">340</span><span class="o">:</span>     <span class="k">switch</span> <span class="p">(</span> <span class="n">event</span><span class="o">-&gt;</span><span class="n">type</span><span class="p">()</span> <span class="p">)</span>
  <span class="mi">341</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">342</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QEvent</span><span class="p">:</span><span class="o">:</span><span class="n">Show</span><span class="o">:</span>
+ <span class="mi">342</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QEvent</span><span class="o">::</span><span class="n">Show</span><span class="p">:</span>
  <span class="mi">343</span><span class="o">:</span>         <span class="p">{</span>
  <span class="mi">344</span><span class="o">:</span>             <span class="k">if</span> <span class="p">(</span> <span class="n">size</span><span class="p">().</span><span class="n">isEmpty</span><span class="p">()</span> <span class="p">)</span>
  <span class="mi">345</span><span class="o">:</span>             <span class="p">{</span>
@@ -2493,18 +2445,18 @@
  <span class="mi">355</span><span class="o">:</span> 
  <span class="mi">356</span><span class="o">:</span>             <span class="k">break</span><span class="p">;</span>
  <span class="mi">357</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">358</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QEvent</span><span class="p">:</span><span class="o">:</span><span class="n">LayoutRequest</span><span class="o">:</span>
+ <span class="mi">358</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QEvent</span><span class="o">::</span><span class="n">LayoutRequest</span><span class="p">:</span>
  <span class="mi">359</span><span class="o">:</span>         <span class="p">{</span>
  <span class="mi">360</span><span class="o">:</span>             <span class="k">if</span> <span class="p">(</span> <span class="n">isExposed</span><span class="p">()</span> <span class="p">)</span>
  <span class="mi">361</span><span class="o">:</span>                 <span class="n">layoutItems</span><span class="p">();</span>
  <span class="mi">362</span><span class="o">:</span>             <span class="k">break</span><span class="p">;</span>
  <span class="mi">363</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">364</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QEvent</span><span class="p">:</span><span class="o">:</span><span class="n">LocaleChange</span><span class="o">:</span>
+ <span class="mi">364</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QEvent</span><span class="o">::</span><span class="n">LocaleChange</span><span class="p">:</span>
  <span class="mi">365</span><span class="o">:</span>         <span class="p">{</span>
  <span class="mi">366</span><span class="o">:</span>             <span class="n">Q_EMIT</span> <span class="n">localeChanged</span><span class="p">(</span> <span class="n">locale</span><span class="p">()</span> <span class="p">);</span>
  <span class="mi">367</span><span class="o">:</span>             <span class="k">break</span><span class="p">;</span>
  <span class="mi">368</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">369</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QEvent</span><span class="p">:</span><span class="o">:</span><span class="n">Close</span><span class="o">:</span>
+ <span class="mi">369</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QEvent</span><span class="o">::</span><span class="n">Close</span><span class="p">:</span>
  <span class="mi">370</span><span class="o">:</span>         <span class="p">{</span>
  <span class="mi">371</span><span class="o">:</span>             <span class="k">if</span> <span class="p">(</span> <span class="n">event</span><span class="o">-&gt;</span><span class="n">isAccepted</span><span class="p">()</span> <span class="p">)</span>
  <span class="mi">372</span><span class="o">:</span>             <span class="p">{</span>
@@ -2514,7 +2466,7 @@
  <span class="mi">376</span><span class="o">:</span>             <span class="k">break</span><span class="p">;</span>
  <span class="mi">377</span><span class="o">:</span>         <span class="p">}</span>
  <span class="mi">378</span><span class="o">:</span> <span class="err">#</span><span class="n">ifdef</span> <span class="n">QSK_DEBUG_RENDER_TIMING</span>
- <span class="mi">379</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QEvent</span><span class="p">:</span><span class="o">:</span><span class="n">Timer</span><span class="o">:</span>
+ <span class="mi">379</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QEvent</span><span class="o">::</span><span class="n">Timer</span><span class="p">:</span>
  <span class="mi">380</span><span class="o">:</span>         <span class="p">{</span>
  <span class="mi">381</span><span class="o">:</span>             <span class="k">if</span> <span class="p">(</span> <span class="n">logTiming</span><span class="p">().</span><span class="n">isDebugEnabled</span><span class="p">()</span> <span class="p">)</span>
  <span class="mi">382</span><span class="o">:</span>             <span class="p">{</span>
@@ -2620,7 +2572,7 @@
  <span class="mi">482</span><span class="o">:</span>     <span class="n">qskResolveLocale</span><span class="p">(</span> <span class="k">this</span> <span class="p">);</span>
  <span class="mi">483</span><span class="o">:</span> <span class="p">}</span>
  <span class="mi">484</span><span class="o">:</span> 
- <span class="mi">485</span><span class="o">:</span> <span class="kt">bool</span> <span class="n">qskInheritLocale</span><span class="p">(</span> <span class="n">QskWindow</span><span class="o">*</span> <span class="n">window</span><span class="p">,</span> <span class="k">const</span> <span class="n">QLocale</span><span class="o">&amp;</span> <span class="n">locale</span> <span class="p">)</span>
+ <span class="mi">485</span><span class="o">:</span> <span class="kt">bool</span> <span class="nf">qskInheritLocale</span><span class="p">(</span> <span class="n">QskWindow</span><span class="o">*</span> <span class="n">window</span><span class="p">,</span> <span class="k">const</span> <span class="n">QLocale</span><span class="o">&amp;</span> <span class="n">locale</span> <span class="p">)</span>
  <span class="mi">486</span><span class="o">:</span> <span class="p">{</span>
  <span class="mi">487</span><span class="o">:</span>     <span class="k">auto</span> <span class="n">d</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span> <span class="n">QskWindowPrivate</span><span class="o">*</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">QQuickWindowPrivate</span><span class="o">::</span><span class="n">get</span><span class="p">(</span> <span class="n">window</span> <span class="p">)</span> <span class="p">);</span>
  <span class="mi">488</span><span class="o">:</span> 
@@ -2631,9 +2583,9 @@
  <span class="mi">493</span><span class="o">:</span>     <span class="n">qskSendEventTo</span><span class="p">(</span> <span class="n">window</span><span class="p">,</span> <span class="n">QEvent</span><span class="o">::</span><span class="n">LocaleChange</span> <span class="p">);</span>
  <span class="mi">494</span><span class="o">:</span> 
  <span class="mi">495</span><span class="o">:</span>     <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
- <span class="mi">496</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">496</span><span class="o">:</span> <span class="err">}</span>
  <span class="mi">497</span><span class="o">:</span> 
- <span class="mi">498</span><span class="o">:</span> <span class="k">static</span> <span class="kt">void</span> <span class="n">qskResolveLocale</span><span class="p">(</span> <span class="n">QskWindow</span><span class="o">*</span> <span class="n">window</span> <span class="p">)</span>
+ <span class="mi">498</span><span class="o">:</span> <span class="k">static</span> <span class="kt">void</span> <span class="nf">qskResolveLocale</span><span class="p">(</span> <span class="n">QskWindow</span><span class="o">*</span> <span class="n">window</span> <span class="p">)</span>
  <span class="mi">499</span><span class="o">:</span> <span class="p">{</span>
  <span class="mi">500</span><span class="o">:</span>     <span class="k">auto</span> <span class="n">d</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span> <span class="n">QskWindowPrivate</span><span class="o">*</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">QQuickWindowPrivate</span><span class="o">::</span><span class="n">get</span><span class="p">(</span> <span class="n">window</span> <span class="p">)</span> <span class="p">);</span>
  <span class="mi">501</span><span class="o">:</span> 
@@ -2646,7 +2598,7 @@
  <span class="mi">508</span><span class="o">:</span> 
  <span class="mi">509</span><span class="o">:</span>         <span class="n">qskSetup</span><span class="o">-&gt;</span><span class="n">inheritLocale</span><span class="p">(</span> <span class="n">window</span><span class="p">,</span> <span class="n">locale</span> <span class="p">);</span>
  <span class="mi">510</span><span class="o">:</span>     <span class="p">}</span>
- <span class="mi">511</span><span class="o">:</span> <span class="p">}</span>
+ <span class="mi">511</span><span class="o">:</span> <span class="err">}</span>
  <span class="mi">512</span><span class="o">:</span> 
  <span class="mi">513</span><span class="o">:</span> <span class="kt">void</span> <span class="n">QskWindow</span><span class="o">::</span><span class="n">setPreferredSize</span><span class="p">(</span> <span class="k">const</span> <span class="n">QSize</span><span class="o">&amp;</span> <span class="n">size</span> <span class="p">)</span>
  <span class="mi">514</span><span class="o">:</span> <span class="p">{</span>
@@ -2817,12 +2769,11 @@
  <span class="mi">679</span><span class="o">:</span>     <span class="k">return</span> <span class="n">d_func</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">eventAcceptance</span><span class="p">;</span>
  <span class="mi">680</span><span class="o">:</span> <span class="p">}</span>
  <span class="mi">681</span><span class="o">:</span> 
- <span class="mi">682</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="s">"moc_QskWindow.cpp"</span>
-</code></pre></div></div>
+ <span class="mi">682</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="s">"moc_QskWindow.cpp"</span></code></pre></figure>
 
 <hr />
 
-<p>Updated on 26 February 2021 at 18:17:48 CET</p>
+<p>Updated on 24 March 2021 at 15:57:10 CET</p>
 
           
           

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>    
 
-        <title>controls/QskSkinlet.cpp - Stackbit Libris Theme</title>
+        <title>controls/QskSkinlet.cpp - The QSkinny UI framework</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="A documentation theme"/>
@@ -907,10 +907,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskAspect_8dox/">QskAspect.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskAspect_8h/">common/QskAspect.h</a>
     </li>
   
@@ -1032,10 +1028,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskControl_8cpp/">controls/QskControl.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskControl_8dox/">QskControl.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1247,10 +1239,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskGraphic_8dox/">QskGraphic.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskGraphic_8h/">graphic/QskGraphic.h</a>
     </li>
   
@@ -1280,10 +1268,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskIndexedLayoutBox_8cpp/">layouts/QskIndexedLayoutBox.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskIndexedLayoutBox_8dox/">QskIndexedLayoutBox.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1364,10 +1348,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskLinearBox_8cpp/">layouts/QskLinearBox.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskLinearBox_8dox/">QskLinearBox.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1563,10 +1543,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskQuickItem_8dox/">QskQuickItem.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskQuickItem_8h/">controls/QskQuickItem.h</a>
     </li>
   
@@ -1695,19 +1671,11 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSeparator_8dox/">QskSeparator.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSeparator_8h/">controls/QskSeparator.h</a>
     </li>
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskSetup_8cpp/">controls/QskSetup.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskSetup_8dox/">QskSetup.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1755,10 +1723,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -1803,19 +1767,11 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinlet_8dox/">QskSkinlet.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinlet_8h/">controls/QskSkinlet.h</a>
     </li>
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskSkinnable_8cpp/">controls/QskSkinnable.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinnable_8dox/">QskSkinnable.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -2091,10 +2047,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/dir_642c141dc41d50796cd757b87656e351/">classes</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/dir_68267d1309a1af8e8297ef4c3efbcdba/">src</a>
     </li>
   
@@ -2136,7 +2088,7 @@
         <div class="post-content">
           <h2 id="source-code">Source code</h2>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="mi">1</span><span class="o">:</span> <span class="cm">/******************************************************************************
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">   <span class="mi">1</span><span class="o">:</span> <span class="cm">/******************************************************************************
    2:  * QSkinny - Copyright (C) 2016 Uwe Rathmann
    3:  * This file may be used under the terms of the QSkinny License, Version 1.0
    4:  *****************************************************************************/</span>
@@ -2163,17 +2115,17 @@
   <span class="mi">25</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">qquickwindow</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
   <span class="mi">26</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">qsgsimplerectnode</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
   <span class="mi">27</span><span class="o">:</span> 
-  <span class="mi">28</span><span class="o">:</span> <span class="k">static</span> <span class="kr">inline</span> <span class="n">QRectF</span> <span class="n">qskSubControlRect</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskSkinlet</span><span class="o">*</span> <span class="n">skinlet</span><span class="p">,</span>
+  <span class="mi">28</span><span class="o">:</span> <span class="k">static</span> <span class="kr">inline</span> <span class="n">QRectF</span> <span class="nf">qskSubControlRect</span><span class="p">(</span> <span class="k">const</span> <span class="n">QskSkinlet</span><span class="o">*</span> <span class="n">skinlet</span><span class="p">,</span>
   <span class="mi">29</span><span class="o">:</span>     <span class="k">const</span> <span class="n">QskSkinnable</span><span class="o">*</span> <span class="n">skinnable</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">Subcontrol</span> <span class="n">subControl</span> <span class="p">)</span>
   <span class="mi">30</span><span class="o">:</span> <span class="p">{</span>
   <span class="mi">31</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span> <span class="k">auto</span> <span class="n">control</span> <span class="o">=</span> <span class="n">skinnable</span><span class="o">-&gt;</span><span class="n">controlCast</span><span class="p">()</span> <span class="p">)</span>
   <span class="mi">32</span><span class="o">:</span>     <span class="p">{</span>
   <span class="mi">33</span><span class="o">:</span>         <span class="k">const</span> <span class="k">auto</span> <span class="n">r</span> <span class="o">=</span> <span class="n">control</span><span class="o">-&gt;</span><span class="n">contentsRect</span><span class="p">();</span>
   <span class="mi">34</span><span class="o">:</span>         <span class="k">return</span> <span class="n">skinlet</span><span class="o">-&gt;</span><span class="n">subControlRect</span><span class="p">(</span> <span class="n">skinnable</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">subControl</span> <span class="p">);</span>
-  <span class="mi">35</span><span class="o">:</span>     <span class="p">}</span>
+  <span class="mi">35</span><span class="o">:</span>     <span class="err">}</span>
   <span class="mi">36</span><span class="o">:</span> 
-  <span class="mi">37</span><span class="o">:</span>     <span class="k">return</span> <span class="n">QRectF</span><span class="p">();</span>
-  <span class="mi">38</span><span class="o">:</span> <span class="p">}</span>
+  <span class="mi">37</span><span class="o">:</span>     <span class="k">return</span> <span class="nf">QRectF</span><span class="p">();</span>
+  <span class="mi">38</span><span class="o">:</span> <span class="err">}</span>
   <span class="mi">39</span><span class="o">:</span> 
   <span class="mi">40</span><span class="o">:</span> <span class="k">static</span> <span class="kr">inline</span> <span class="n">QSGNode</span><span class="o">*</span> <span class="n">qskUpdateGraphicNode</span><span class="p">(</span>
   <span class="mi">41</span><span class="o">:</span>     <span class="k">const</span> <span class="n">QskSkinnable</span><span class="o">*</span> <span class="n">skinnable</span><span class="p">,</span> <span class="n">QSGNode</span><span class="o">*</span> <span class="n">node</span><span class="p">,</span>
@@ -2513,18 +2465,18 @@
  <span class="mi">375</span><span class="o">:</span> 
  <span class="mi">376</span><span class="o">:</span>     <span class="k">switch</span> <span class="p">(</span> <span class="n">textOptions</span><span class="p">.</span><span class="n">fontSizeMode</span><span class="p">()</span> <span class="p">)</span>
  <span class="mi">377</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">378</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QskTextOptions</span><span class="p">:</span><span class="o">:</span><span class="n">FixedSize</span><span class="o">:</span>
+ <span class="mi">378</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QskTextOptions</span><span class="o">::</span><span class="n">FixedSize</span><span class="p">:</span>
  <span class="mi">379</span><span class="o">:</span>             <span class="k">break</span><span class="p">;</span>
  <span class="mi">380</span><span class="o">:</span> 
- <span class="mi">381</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QskTextOptions</span><span class="p">:</span><span class="o">:</span><span class="n">HorizontalFit</span><span class="o">:</span>
+ <span class="mi">381</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QskTextOptions</span><span class="o">::</span><span class="n">HorizontalFit</span><span class="p">:</span>
  <span class="mi">382</span><span class="o">:</span>             <span class="n">Q_UNIMPLEMENTED</span><span class="p">();</span>
  <span class="mi">383</span><span class="o">:</span>             <span class="k">break</span><span class="p">;</span>
  <span class="mi">384</span><span class="o">:</span> 
- <span class="mi">385</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QskTextOptions</span><span class="p">:</span><span class="o">:</span><span class="n">VerticalFit</span><span class="o">:</span>
+ <span class="mi">385</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QskTextOptions</span><span class="o">::</span><span class="n">VerticalFit</span><span class="p">:</span>
  <span class="mi">386</span><span class="o">:</span>             <span class="n">font</span><span class="p">.</span><span class="n">setPixelSize</span><span class="p">(</span> <span class="k">static_cast</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span><span class="p">(</span> <span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="p">)</span> <span class="p">);</span>
  <span class="mi">387</span><span class="o">:</span>             <span class="k">break</span><span class="p">;</span>
  <span class="mi">388</span><span class="o">:</span> 
- <span class="mi">389</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QskTextOptions</span><span class="p">:</span><span class="o">:</span><span class="n">Fit</span><span class="o">:</span>
+ <span class="mi">389</span><span class="o">:</span>         <span class="k">case</span> <span class="n">QskTextOptions</span><span class="o">::</span><span class="n">Fit</span><span class="p">:</span>
  <span class="mi">390</span><span class="o">:</span>             <span class="n">Q_UNIMPLEMENTED</span><span class="p">();</span>
  <span class="mi">391</span><span class="o">:</span>             <span class="k">break</span><span class="p">;</span>
  <span class="mi">392</span><span class="o">:</span>     <span class="p">}</span>
@@ -2586,12 +2538,11 @@
  <span class="mi">448</span><span class="o">:</span>     <span class="k">return</span> <span class="n">qskUpdateGraphicNode</span><span class="p">(</span> <span class="n">skinnable</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">graphic</span><span class="p">,</span> <span class="n">colorFilter</span><span class="p">,</span> <span class="n">rect</span><span class="p">,</span> <span class="n">mirrored</span> <span class="p">);</span>
  <span class="mi">449</span><span class="o">:</span> <span class="p">}</span>
  <span class="mi">450</span><span class="o">:</span> 
- <span class="mi">451</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="s">"moc_QskSkinlet.cpp"</span>
-</code></pre></div></div>
+ <span class="mi">451</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="s">"moc_QskSkinlet.cpp"</span></code></pre></figure>
 
 <hr />
 
-<p>Updated on 26 February 2021 at 18:17:47 CET</p>
+<p>Updated on 24 March 2021 at 15:57:10 CET</p>
 
           
           

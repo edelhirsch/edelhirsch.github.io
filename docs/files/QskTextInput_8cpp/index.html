@@ -2,7 +2,7 @@
 <html lang="en">
     <head>    
 
-        <title>controls/QskTextInput.cpp - Stackbit Libris Theme</title>
+        <title>controls/QskTextInput.cpp - The QSkinny UI framework</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="A documentation theme"/>
@@ -907,10 +907,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskAspect_8dox/">QskAspect.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskAspect_8h/">common/QskAspect.h</a>
     </li>
   
@@ -1032,10 +1028,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskControl_8cpp/">controls/QskControl.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskControl_8dox/">QskControl.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1247,10 +1239,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskGraphic_8dox/">QskGraphic.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskGraphic_8h/">graphic/QskGraphic.h</a>
     </li>
   
@@ -1280,10 +1268,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskIndexedLayoutBox_8cpp/">layouts/QskIndexedLayoutBox.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskIndexedLayoutBox_8dox/">QskIndexedLayoutBox.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1364,10 +1348,6 @@
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskLinearBox_8cpp/">layouts/QskLinearBox.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskLinearBox_8dox/">QskLinearBox.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1563,10 +1543,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskQuickItem_8dox/">QskQuickItem.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskQuickItem_8h/">controls/QskQuickItem.h</a>
     </li>
   
@@ -1695,19 +1671,11 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSeparator_8dox/">QskSeparator.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSeparator_8h/">controls/QskSeparator.h</a>
     </li>
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskSetup_8cpp/">controls/QskSetup.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskSetup_8dox/">QskSetup.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -1755,10 +1723,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinHintStatus_8dox/">QskSkinHintStatus.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinHintTableEditor_8cpp/">controls/QskSkinHintTableEditor.cpp</a>
     </li>
   
@@ -1803,19 +1767,11 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinlet_8dox/">QskSkinlet.dox</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/QskSkinlet_8h/">controls/QskSkinlet.h</a>
     </li>
   
     <li class="docs-menu-item">
       <a href="/docs/files/QskSkinnable_8cpp/">controls/QskSkinnable.cpp</a>
-    </li>
-  
-    <li class="docs-menu-item">
-      <a href="/docs/files/QskSkinnable_8dox/">QskSkinnable.dox</a>
     </li>
   
     <li class="docs-menu-item">
@@ -2091,10 +2047,6 @@
     </li>
   
     <li class="docs-menu-item">
-      <a href="/docs/files/dir_642c141dc41d50796cd757b87656e351/">classes</a>
-    </li>
-  
-    <li class="docs-menu-item">
       <a href="/docs/files/dir_68267d1309a1af8e8297ef4c3efbcdba/">src</a>
     </li>
   
@@ -2136,7 +2088,7 @@
         <div class="post-content">
           <h2 id="source-code">Source code</h2>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="mi">1</span><span class="o">:</span> <span class="cm">/******************************************************************************
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">   <span class="mi">1</span><span class="o">:</span> <span class="cm">/******************************************************************************
    2:  * QSkinny - Copyright (C) 2016 Uwe Rathmann
    3:  * This file may be used under the terms of the QSkinny License, Version 1.0
    4:  *****************************************************************************/</span>
@@ -2144,10 +2096,10 @@
    <span class="mi">6</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="s">"QskTextInput.h"</span>
    <span class="mi">7</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="s">"QskQuick.h"</span>
    <span class="mi">8</span><span class="o">:</span> 
-   <span class="mi">9</span><span class="o">:</span> <span class="n">QSK_QT_PRIVATE_BEGIN</span>
+   <span class="mi">9</span><span class="o">:</span> 
   <span class="mi">10</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="k">private</span><span class="o">/</span><span class="n">qquicktextinput_p</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
   <span class="mi">11</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="k">private</span><span class="o">/</span><span class="n">qquicktextinput_p_p</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
-  <span class="mi">12</span><span class="o">:</span> <span class="n">QSK_QT_PRIVATE_END</span>
+  <span class="mi">12</span><span class="o">:</span> 
   <span class="mi">13</span><span class="o">:</span> 
   <span class="mi">14</span><span class="o">:</span> <span class="n">QSK_SUBCONTROL</span><span class="p">(</span> <span class="n">QskTextInput</span><span class="p">,</span> <span class="n">Panel</span> <span class="p">)</span>
   <span class="mi">15</span><span class="o">:</span> <span class="n">QSK_SUBCONTROL</span><span class="p">(</span> <span class="n">QskTextInput</span><span class="p">,</span> <span class="n">Text</span> <span class="p">)</span>
@@ -2157,19 +2109,19 @@
   <span class="mi">19</span><span class="o">:</span> <span class="n">QSK_SYSTEM_STATE</span><span class="p">(</span> <span class="n">QskTextInput</span><span class="p">,</span> <span class="n">ReadOnly</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">FirstSystemState</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span> <span class="p">)</span>
   <span class="mi">20</span><span class="o">:</span> <span class="n">QSK_SYSTEM_STATE</span><span class="p">(</span> <span class="n">QskTextInput</span><span class="p">,</span> <span class="n">Editing</span><span class="p">,</span> <span class="n">QskAspect</span><span class="o">::</span><span class="n">FirstSystemState</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span> <span class="p">)</span>
   <span class="mi">21</span><span class="o">:</span> 
-  <span class="mi">22</span><span class="o">:</span> <span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="n">qskPropagateReadOnly</span><span class="p">(</span> <span class="n">QskTextInput</span><span class="o">*</span> <span class="n">input</span> <span class="p">)</span>
+  <span class="mi">22</span><span class="o">:</span> <span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">qskPropagateReadOnly</span><span class="p">(</span> <span class="n">QskTextInput</span><span class="o">*</span> <span class="n">input</span> <span class="p">)</span>
   <span class="mi">23</span><span class="o">:</span> <span class="p">{</span>
   <span class="mi">24</span><span class="o">:</span>     <span class="n">Q_EMIT</span> <span class="n">input</span><span class="o">-&gt;</span><span class="n">readOnlyChanged</span><span class="p">(</span> <span class="n">input</span><span class="o">-&gt;</span><span class="n">isReadOnly</span><span class="p">()</span> <span class="p">);</span>
   <span class="mi">25</span><span class="o">:</span> 
-  <span class="mi">26</span><span class="o">:</span>     <span class="n">QEvent</span> <span class="n">event</span><span class="p">(</span> <span class="n">QEvent</span><span class="o">::</span><span class="n">ReadOnlyChange</span> <span class="p">);</span>
+  <span class="mi">26</span><span class="o">:</span>     <span class="n">QEvent</span> <span class="nf">event</span><span class="p">(</span> <span class="n">QEvent</span><span class="o">::</span><span class="n">ReadOnlyChange</span> <span class="p">);</span>
   <span class="mi">27</span><span class="o">:</span>     <span class="n">QCoreApplication</span><span class="o">::</span><span class="n">sendEvent</span><span class="p">(</span> <span class="n">input</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">event</span> <span class="p">);</span>
-  <span class="mi">28</span><span class="o">:</span> <span class="p">}</span>
+  <span class="mi">28</span><span class="o">:</span> <span class="err">}</span>
   <span class="mi">29</span><span class="o">:</span> 
-  <span class="mi">30</span><span class="o">:</span> <span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="n">qskBindSignals</span><span class="p">(</span>
+  <span class="mi">30</span><span class="o">:</span> <span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">qskBindSignals</span><span class="p">(</span>
   <span class="mi">31</span><span class="o">:</span>     <span class="k">const</span> <span class="n">QQuickTextInput</span><span class="o">*</span> <span class="n">wrappedInput</span><span class="p">,</span> <span class="n">QskTextInput</span><span class="o">*</span> <span class="n">input</span> <span class="p">)</span>
   <span class="mi">32</span><span class="o">:</span> <span class="p">{</span>
   <span class="mi">33</span><span class="o">:</span>     <span class="n">QObject</span><span class="o">::</span><span class="n">connect</span><span class="p">(</span> <span class="n">wrappedInput</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">QQuickTextInput</span><span class="o">::</span><span class="n">textChanged</span><span class="p">,</span>
-  <span class="mi">34</span><span class="o">:</span>         <span class="n">input</span><span class="p">,</span> <span class="p">[</span> <span class="n">input</span> <span class="p">]</span> <span class="p">{</span> <span class="n">Q_EMIT</span> <span class="n">input</span><span class="o">-&gt;</span><span class="n">textChanged</span><span class="p">(</span> <span class="n">input</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">()</span> <span class="p">);</span> <span class="p">}</span> <span class="p">);</span>
+  <span class="mi">34</span><span class="o">:</span>         <span class="n">input</span><span class="p">,</span> <span class="p">[</span> <span class="n">input</span> <span class="p">]</span> <span class="p">{</span> <span class="n">Q_EMIT</span> <span class="n">input</span><span class="o">-&gt;</span><span class="n">textChanged</span><span class="p">(</span> <span class="n">input</span><span class="o">-&gt;</span><span class="n">text</span><span class="p">()</span> <span class="p">);</span> <span class="err">}</span> <span class="p">);</span>
   <span class="mi">35</span><span class="o">:</span> 
   <span class="mi">36</span><span class="o">:</span> <span class="err">#</span><span class="k">if</span> <span class="n">QT_VERSION</span> <span class="o">&gt;=</span> <span class="n">QT_VERSION_CHECK</span><span class="p">(</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span>
   <span class="mi">37</span><span class="o">:</span>     <span class="n">QObject</span><span class="o">::</span><span class="n">connect</span><span class="p">(</span> <span class="n">wrappedInput</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">QQuickTextInput</span><span class="o">::</span><span class="n">textEdited</span><span class="p">,</span>
@@ -2207,7 +2159,7 @@
   <span class="mi">69</span><span class="o">:</span> 
   <span class="mi">70</span><span class="o">:</span>     <span class="n">QObject</span><span class="o">::</span><span class="n">connect</span><span class="p">(</span> <span class="n">wrappedInput</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">QQuickItem</span><span class="o">::</span><span class="n">implicitHeightChanged</span><span class="p">,</span>
   <span class="mi">71</span><span class="o">:</span>         <span class="n">input</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">QskControl</span><span class="o">::</span><span class="n">resetImplicitSize</span> <span class="p">);</span>
-  <span class="mi">72</span><span class="o">:</span> <span class="p">}</span>
+  <span class="mi">72</span><span class="o">:</span> <span class="err">}</span>
   <span class="mi">73</span><span class="o">:</span> 
   <span class="mi">74</span><span class="o">:</span> <span class="k">namespace</span>
   <span class="mi">75</span><span class="o">:</span> <span class="p">{</span>
@@ -2484,8 +2436,8 @@
  <span class="mi">346</span><span class="o">:</span>     <span class="p">{</span>
  <span class="mi">347</span><span class="o">:</span>         <span class="k">switch</span> <span class="p">(</span> <span class="n">event</span><span class="o">-&gt;</span><span class="n">key</span><span class="p">()</span> <span class="p">)</span>
  <span class="mi">348</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">349</span><span class="o">:</span>             <span class="k">case</span> <span class="n">Qt</span><span class="p">:</span><span class="o">:</span><span class="n">Key_Enter</span><span class="o">:</span>
- <span class="mi">350</span><span class="o">:</span>             <span class="k">case</span> <span class="n">Qt</span><span class="p">:</span><span class="o">:</span><span class="n">Key_Return</span><span class="o">:</span>
+ <span class="mi">349</span><span class="o">:</span>             <span class="k">case</span> <span class="n">Qt</span><span class="o">::</span><span class="n">Key_Enter</span><span class="p">:</span>
+ <span class="mi">350</span><span class="o">:</span>             <span class="k">case</span> <span class="n">Qt</span><span class="o">::</span><span class="n">Key_Return</span><span class="p">:</span>
  <span class="mi">351</span><span class="o">:</span>             <span class="p">{</span>
  <span class="mi">352</span><span class="o">:</span>                 <span class="k">if</span> <span class="p">(</span> <span class="n">hasAcceptableInput</span><span class="p">()</span> <span class="o">||</span> <span class="n">fixup</span><span class="p">()</span> <span class="p">)</span>
  <span class="mi">353</span><span class="o">:</span>                 <span class="p">{</span>
@@ -2497,7 +2449,7 @@
  <span class="mi">359</span><span class="o">:</span>                 <span class="k">break</span><span class="p">;</span>
  <span class="mi">360</span><span class="o">:</span>             <span class="p">}</span>
  <span class="mi">361</span><span class="o">:</span> <span class="err">#</span><span class="k">if</span> <span class="mi">1</span>
- <span class="mi">362</span><span class="o">:</span>             <span class="k">case</span> <span class="n">Qt</span><span class="p">:</span><span class="o">:</span><span class="n">Key_Escape</span><span class="o">:</span>
+ <span class="mi">362</span><span class="o">:</span>             <span class="k">case</span> <span class="n">Qt</span><span class="o">::</span><span class="n">Key_Escape</span><span class="p">:</span>
  <span class="mi">363</span><span class="o">:</span>             <span class="p">{</span>
  <span class="mi">364</span><span class="o">:</span>                 <span class="n">setEditing</span><span class="p">(</span> <span class="nb">false</span> <span class="p">);</span>
  <span class="mi">365</span><span class="o">:</span>                 <span class="k">break</span><span class="p">;</span>
@@ -2566,8 +2518,8 @@
  <span class="mi">428</span><span class="o">:</span>     <span class="p">{</span>
  <span class="mi">429</span><span class="o">:</span>         <span class="k">switch</span> <span class="p">(</span> <span class="n">event</span><span class="o">-&gt;</span><span class="n">reason</span><span class="p">()</span> <span class="p">)</span>
  <span class="mi">430</span><span class="o">:</span>         <span class="p">{</span>
- <span class="mi">431</span><span class="o">:</span>             <span class="k">case</span> <span class="n">Qt</span><span class="p">:</span><span class="o">:</span><span class="n">ActiveWindowFocusReason</span><span class="o">:</span>
- <span class="mi">432</span><span class="o">:</span>             <span class="k">case</span> <span class="n">Qt</span><span class="p">:</span><span class="o">:</span><span class="n">PopupFocusReason</span><span class="o">:</span>
+ <span class="mi">431</span><span class="o">:</span>             <span class="k">case</span> <span class="n">Qt</span><span class="o">::</span><span class="n">ActiveWindowFocusReason</span><span class="p">:</span>
+ <span class="mi">432</span><span class="o">:</span>             <span class="k">case</span> <span class="n">Qt</span><span class="o">::</span><span class="n">PopupFocusReason</span><span class="p">:</span>
  <span class="mi">433</span><span class="o">:</span>                 <span class="k">break</span><span class="p">;</span>
  <span class="mi">434</span><span class="o">:</span> 
  <span class="mi">435</span><span class="o">:</span>             <span class="k">default</span><span class="o">:</span>
@@ -2582,8 +2534,8 @@
  <span class="mi">444</span><span class="o">:</span> <span class="p">{</span>
  <span class="mi">445</span><span class="o">:</span>     <span class="k">switch</span> <span class="p">(</span> <span class="n">event</span><span class="o">-&gt;</span><span class="n">reason</span><span class="p">()</span> <span class="p">)</span>
  <span class="mi">446</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">447</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qt</span><span class="p">:</span><span class="o">:</span><span class="n">ActiveWindowFocusReason</span><span class="o">:</span>
- <span class="mi">448</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qt</span><span class="p">:</span><span class="o">:</span><span class="n">PopupFocusReason</span><span class="o">:</span>
+ <span class="mi">447</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qt</span><span class="o">::</span><span class="n">ActiveWindowFocusReason</span><span class="p">:</span>
+ <span class="mi">448</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qt</span><span class="o">::</span><span class="n">PopupFocusReason</span><span class="p">:</span>
  <span class="mi">449</span><span class="o">:</span>         <span class="p">{</span>
  <span class="mi">450</span><span class="o">:</span>             <span class="k">break</span><span class="p">;</span>
  <span class="mi">451</span><span class="o">:</span>         <span class="p">}</span>
@@ -2930,22 +2882,22 @@
  <span class="mi">792</span><span class="o">:</span> <span class="p">{</span>
  <span class="mi">793</span><span class="o">:</span>     <span class="k">switch</span> <span class="p">(</span> <span class="n">query</span> <span class="p">)</span>
  <span class="mi">794</span><span class="o">:</span>     <span class="p">{</span>
- <span class="mi">795</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qt</span><span class="p">:</span><span class="o">:</span><span class="n">ImEnabled</span><span class="o">:</span>
+ <span class="mi">795</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qt</span><span class="o">::</span><span class="n">ImEnabled</span><span class="p">:</span>
  <span class="mi">796</span><span class="o">:</span>         <span class="p">{</span>
  <span class="mi">797</span><span class="o">:</span>             <span class="k">return</span> <span class="n">QVariant</span><span class="p">(</span> <span class="p">(</span> <span class="kt">bool</span> <span class="p">)</span> <span class="p">(</span> <span class="n">flags</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">ItemAcceptsInputMethod</span> <span class="p">)</span> <span class="p">);</span>
  <span class="mi">798</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">799</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qt</span><span class="p">:</span><span class="o">:</span><span class="n">ImFont</span><span class="o">:</span>
+ <span class="mi">799</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qt</span><span class="o">::</span><span class="n">ImFont</span><span class="p">:</span>
  <span class="mi">800</span><span class="o">:</span>         <span class="p">{</span>
  <span class="mi">801</span><span class="o">:</span>             <span class="k">return</span> <span class="n">font</span><span class="p">();</span>
  <span class="mi">802</span><span class="o">:</span>         <span class="p">}</span>
- <span class="mi">803</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qt</span><span class="p">:</span><span class="o">:</span><span class="n">ImPreferredLanguage</span><span class="o">:</span>
+ <span class="mi">803</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qt</span><span class="o">::</span><span class="n">ImPreferredLanguage</span><span class="p">:</span>
  <span class="mi">804</span><span class="o">:</span>         <span class="p">{</span>
  <span class="mi">805</span><span class="o">:</span>             <span class="k">return</span> <span class="n">locale</span><span class="p">();</span>
  <span class="mi">806</span><span class="o">:</span>         <span class="p">}</span>
  <span class="mi">807</span><span class="o">:</span> <span class="err">#</span><span class="k">if</span> <span class="n">QT_VERSION</span> <span class="o">&gt;=</span> <span class="n">QT_VERSION_CHECK</span><span class="p">(</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span>
- <span class="mi">808</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qt</span><span class="p">:</span><span class="o">:</span><span class="n">ImInputItemClipRectangle</span><span class="o">:</span>
+ <span class="mi">808</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qt</span><span class="o">::</span><span class="n">ImInputItemClipRectangle</span><span class="p">:</span>
  <span class="mi">809</span><span class="o">:</span> <span class="err">#</span><span class="n">endif</span>
- <span class="mi">810</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qt</span><span class="p">:</span><span class="o">:</span><span class="n">ImCursorRectangle</span><span class="o">:</span>
+ <span class="mi">810</span><span class="o">:</span>         <span class="k">case</span> <span class="n">Qt</span><span class="o">::</span><span class="n">ImCursorRectangle</span><span class="p">:</span>
  <span class="mi">811</span><span class="o">:</span>         <span class="p">{</span>
  <span class="mi">812</span><span class="o">:</span>             <span class="n">QVariant</span> <span class="n">v</span> <span class="o">=</span> <span class="n">m_data</span><span class="o">-&gt;</span><span class="n">textInput</span><span class="o">-&gt;</span><span class="n">inputMethodQuery</span><span class="p">(</span> <span class="n">query</span><span class="p">,</span> <span class="n">argument</span> <span class="p">);</span>
  <span class="mi">813</span><span class="o">:</span> <span class="err">#</span><span class="k">if</span> <span class="mi">1</span>
@@ -3086,12 +3038,11 @@
  <span class="mi">948</span><span class="o">:</span>     <span class="n">setEchoMode</span><span class="p">(</span> <span class="n">echoMode</span> <span class="p">);</span>
  <span class="mi">949</span><span class="o">:</span> <span class="p">}</span>
  <span class="mi">950</span><span class="o">:</span> 
- <span class="mi">951</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="s">"moc_QskTextInput.cpp"</span>
-</code></pre></div></div>
+ <span class="mi">951</span><span class="o">:</span> <span class="err">#</span><span class="n">include</span> <span class="s">"moc_QskTextInput.cpp"</span></code></pre></figure>
 
 <hr />
 
-<p>Updated on 26 February 2021 at 18:17:47 CET</p>
+<p>Updated on 24 March 2021 at 15:57:10 CET</p>
 
           
           
