@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Classifying brain tumors with machine learning</title>
+  <meta name='description' content='This blog post shows the findings of a brain tumor classification problem, which was conducted for the talk "Machine Learning in medicine" for the [ENEA 2020...'>
+
+  <link rel="canonical" href="/classifying-brain-tumors-with-machine-learning">
+  <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Classifying brain tumors with machine learning – Edelhirsch Software">
+  <meta name="twitter:description" content="This blog post shows the findings of a brain tumor classification problem, which was conducted for the talk &quot;Machine Learning in medicine&quot; for the [ENEA 2020 conference](http://enea2020.com/) (the yearly conference of the [European Neuroendocrine Association](https://eneassoc.org/)).">
+  <meta name="twitter:image:src" content="/images/posts/ml-brain-tumors-data-set.png">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="Classifying brain tumors with machine learning – Edelhirsch Software">
+  <meta property="og:description" content="This blog post shows the findings of a brain tumor classification problem, which was conducted for the talk &quot;Machine Learning in medicine&quot; for the [ENEA 2020 conference](http://enea2020.com/) (the yearly conference of the [European Neuroendocrine Association](https://eneassoc.org/)).">
+  <meta property="og:image" content="/images/posts/ml-brain-tumors-data-set.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+
+  <script>
+    const defaultTheme = "light";
+    const isToggleEnabled = true;
+    const userTheme = localStorage.getItem("theme");
+
+    function setTheme(mode) {
+      if (mode === "dark") {
+        document.documentElement.setAttribute("dark", "");
+        document.documentElement.classList.add("dark-mode");
+      } else if (mode === "light") {
+        document.documentElement.removeAttribute("dark");
+        document.documentElement.classList.remove("dark-mode");
+      }
+    }
+
+    if (isToggleEnabled) {
+      if (userTheme) {
+        setTheme(userTheme);
+      } else {
+        setTheme(defaultTheme);
+      }
+    } else {
+      setTheme(defaultTheme);
+    }
+
+    if (localStorage.getItem("classView") === "list") {
+      document.documentElement.setAttribute("list", "");
+      document.documentElement.classList.add('view-list');
+    }
+  </script>
+  <script defer src="https://chirpy.dev/bootstrapper.js" data-chirpy-domain="edelhirsch.io"></script>
+
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+
+<body>
+
+  
+
+  <!-- begin global wrap -->
+  <div class="global-wrap">
+    <!-- begin header -->
+<header class="header">
+  <div class="container-big">
+    <div class="row">
+      <div class="header__inner col col-12">
+
+        <div class="logo">
+          <a class="logo__link" href="/">
+          
+          <img class="logo__image" src="/images/logo-transparent.png" alt="Edelhirsch Software">
+          <img class="logo__image__dark" src="/images/logo-transparent.png" alt="Edelhirsch Software">
+          
+            Edelhirsch Software
+          </a>
+        </div>
+
+        <div class="hamburger">
+          <div></div>
+        </div>
+
+        <nav class="main-nav" aria-label="Main menu">
+          <div class="main-nav__box">
+            <ul class="nav__list list-reset">
+              
+              
+              <li class="nav__item">
+                <a href="/" class="nav__link">Home</a>
+              </li>
+              
+              
+              
+              <li class="nav__item">
+                <a href="/#about" class="nav__link">About</a>
+              </li>
+              
+              
+              
+              <li class="nav__item">
+                <a href="/#wasm" class="nav__link">Demo</a>
+              </li>
+              
+              
+              
+              <li class="nav__item">
+                <a href="/contact/" class="nav__link">Contact</a>
+              </li>
+              
+              
+              
+              <li class="nav__item dropdown">
+                <div class="dropdown-toggle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="4" fill="none">
+                    <circle cx="2" cy="2" r="2" fill="var(--link-color)"/>
+                    <circle cx="10" cy="2" r="2" fill="var(--link-color)"/>
+                    <circle cx="18" cy="2" r="2" fill="var(--link-color)"/>
+                  </svg>
+                </div>
+                <div class="dropdown-menu">
+                  
+                  <a href="/videos/" class="nav__link">Videos</a>
+                  
+                  <a href="/archive/" class="nav__link">Archive</a>
+                  
+                </div>
+              </li>
+              
+              
+            </ul>
+          </div>
+        </nav>
+
+        <div class="nav-button">
+          
+          <div class="color-scheme-button">
+            <div class="toggle-theme">
+              <div class="toggle-moon" title="Enable dark mode" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 1472 1536" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M1464 1090q-94 203-283 323.5T768 1536q-157-1-299-62t-244.5-163.5T61 1066T0 768q0-205 97.5-378t267-276.5T738 2q43-2 62 38q17 42-16 72q-176 164-176 400q0 111 43 211.5t115 173t172.5 116T1151 1056q119 0 228-51q41-18 72 13t13 72"/>
+                </svg>
+              </div>
+              <div class="toggle-sun" title="Enable light mode" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4">
+                    <path stroke-linecap="round" d="m9.15 9.15l2.228 2.228M3 24h3.15m3 14.85l2.228-2.228M38.85 38.85l-2.228-2.228M45 24h-3.15m-3-14.85l-2.228 2.228M24 3v3.15"/>
+                    <path fill="currentColor" d="M24 36c6.627 0 12-5.373 12-12s-5.373-12-12-12s-12 5.373-12 12s5.373 12 12 12Z"/>
+                    <path stroke-linecap="round" d="M24 45v-3.15"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <div class="search-button">
+            <svg class="search-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>
+            <span class="search-button__text">Search posts...</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end header -->
+
+<!-- begin search -->
+<div class="search">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="search__box">
+          <div class="search__group">
+            <i class="search__close fa-solid fa-xmark"></i>
+            <label for="js-search-input" class="screen-reader-text">Search for Blog</label>
+            <input type="text" id="js-search-input" class="search__text" autocomplete="off"
+              placeholder="Type to search...">
+          </div>
+          <div class="search-results-list view-list" id="js-results-container"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="search__overlay"></div>
+</div>
+<!-- end search -->
+
+
+    <!-- begin content -->
+    <main class="content" aria-label="Content">
+      <!-- begin post -->
+<div class="container">
+
+  <div class="row">
+    <div class="col col-8 col-d-12">
+
+      <div class="post-head">
+
+        
+        
+        <div class="post-image">
+          <img class="lazy" data-src="/images/posts/ml-brain-tumors-data-set.png" alt="Classifying brain tumors with machine learning">
+        </div>
+        
+        
+
+        <div class="post-info">
+          
+          <div class="post-tags">
+            
+            <a href="/tags/?tag=ai" class="post-tag"
+              style="background: #4643ec;">AI</a>
+            
+          </div>
+          
+
+          <h1 class="post-title">Classifying brain tumors with machine learning</h1>
+
+          <div class="post-meta">
+            <a href="/about/" class="post-meta__image">
+              <img class="lazy" data-src="/images/logo-transparent-padding.png"
+                alt="Peter Hartmann">
+            </a>
+
+            <div class="post-meta__content">
+              <a class="post-meta__author" href="/about/">Peter Hartmann</a>
+              <div class="post-meta__bottom">
+                <time class="post-date" datetime="2020-12-11T01:00:00+01:00">11 Dec, 2020</time> –
+                <span class="post-minutes">
+                  
+                   3 min read  </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <article class="post">
+        <div class="post__content">
+          <p>This blog post shows the findings of a brain tumor classification problem, which was conducted for the talk “Machine Learning in medicine” for the ENEA 2020 conference (the yearly conference of the European Neuroendocrine Association).</p>
+
+<h2 id="hardware">Hardware</h2>
+
+<p><img src="/images/posts/ml-brain-tumors-hardware.jpg" alt="Hardware" /></p>
+
+<p>For this problem a NVidia Jetson TX2 developer kit was used. Probably that board was more designed to be used for inference on the edge, but it turned out to be fast enough to train the whole model.</p>
+
+<p>The reason for doing this with the board instead of a desktop computer with even better GPU was that when trying to use GPU-accelerated machine learning it can be tricky to get all the software package installation right: E.g. the combination of Ubuntu / NVidia’s cuDNN library / GPU-accelerated Tensorflow / Keras needs  specific versions of each package and might or might not work with other versions.</p>
+
+<p>The Jetson developer board comes pre-installed with working software, and other needed parts like pythons’ tensorflow-gpu package can be installed from a desktop system with NVidia’s Jetpack installer (as of this writing that installer needs Ubuntu 18.04 and will not run on 20.04, so it had to be used from inside a VMPlayer instance).</p>
+
+<h2 id="data-set">Data set</h2>
+
+<p><img src="/images/posts/ml-brain-tumors-data-set.png" alt="Data set" /></p>
+
+<p>Kaggle is a great resource for free data sets with interesting problems to learn from. The data set used here is “Brain Tumor Classification (MRI)” and consists of ~ 3200 MRI images, each one belonging to four different tumor classes (see above): Glioma, meningioma, pituitary tumor and no tumor.</p>
+
+<p>This data set comes with the data already split into a training and a test set, each of them containing one subdirectory for each tumor category. So when using the right Keras functions, there is little preparation to do with the data before training the model.</p>
+
+<h2 id="machine-learning-model">Machine learning model</h2>
+
+<p>The 3200 images from the data set is already quite a high number, but not something that would guarantee a good accuracy without overfitting. However, data augmentation, i.e. artificially creating more data by flipping, rotating etc. the training data, did not help that much in this case, interestingly.</p>
+
+<p>A rather recent trend in machine learning is transfer learning: A model that was used to train other images is used for the problem at hand, and while training for the new problem (in our case: MRI images), the weights of the old model can be used and carefully adapted.</p>
+
+<p>The learning rate here should be low, and depending on the similarity of the models, a specific amount of layers should be frozen. These articles provide some further reading: Transfer learning and fine-tuning and A Simple Guide to Using Keras Pretrained Models.</p>
+
+<p>The code for the brain tumor classification is using Keras and Tensorflow with weights pre-trained from another model (ImageNet).</p>
+
+<p>The code can be found here: https://github.com/edelhirsch/brain-tumor-classification</p>
+
+<h2 id="results">Results</h2>
+
+<p>When using transfer learning, the model doesn’t need many epochs to achieve a good accuracy and low loss: In the case at hand, something around 10 epochs or even less is enough, see below. There is a better accuracy of 97.6% after 14 epochs, but this also seems to pose a bigger risk on overfitting the model.</p>
+
+<p><img src="/images/posts/ml-brain-tumors-results.png" alt="Results" /></p>
+
+<p>Evaluating the model with the test data shows that there is still room for improvement: The accuracy is 79.4% with a loss of 1.3. This hints at some overfitting during the training.</p>
+
+<h2 id="next-steps">Next steps</h2>
+
+<p>There are still some things left to do:</p>
+
+<ul>
+  <li>It would be nice to turn the code above into a jupyter notebook and upload it to the Kaggle site, happening hopefully soon (™).</li>
+  <li>It seems unlikely that another image model might provide better results, but might be worth a try. There are several ones available on Tensorflow hub.</li>
+  <li>Since the images from the original model and the MRI images are quite different, it would be interesting to try generating a model from other MRI images and transfer the weights from that model.</li>
+</ul>
+
+<p>Hints on how to further improve the code or merge requests are always appreciated.</p>
+
+        </div>
+      </article>
+
+      <div class="share">
+  <div class="share__title">Share this:</div>
+  <ul class="share__list list-reset">
+    <li class="share__item">
+      <a class="share__link share__facebook" href="https://www.facebook.com/sharer/sharer.php?u=/classifying-brain-tumors-with-machine-learning"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Facebook" rel="nofollow"><i class="fa-brands fa-facebook-f"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__twitter"
+        href="https://twitter.com/intent/tweet?text=Classifying%20brain%20tumors%20with%20machine%20learning&url=/classifying-brain-tumors-with-machine-learning"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Twitter" rel="nofollow"><i class="fa-brands fa-x-twitter"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=/classifying-brain-tumors-with-machine-learning&title=Classifying%20brain%20tumors%20with%20machine%20learning&summary=This%20blog%20post%20shows%20the%20findings%20of%20a%20brain%20tumor%20classification%20problem,%20which%20was%20conducted%20for%20the%20talk%20%22Machine%20Learning%20in%20medicine%22%20for%20the%20[ENEA%202020%20conference](http://enea2020.com/)%20(the%20yearly%20conference%20of%20the%20[European%20Neuroendocrine%20Association](https://eneassoc.org/)).&source="
+      onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn" rel="nofollow"><i class="fa-brands fa-linkedin-in"></i></a>
+    </li>
+  </ul>
+</div>
+
+      <div class="post__navigation">
+  
+  <div class="post__prev">
+    
+    <a href="/QSkinny-a-new-QtQuick-framework" class="prev__image">
+      
+      <div class="video-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <polygon points="40,30 70,50 40,70"></polygon>
+        </svg>
+      </div>
+      
+      <img class="lazy" data-src="/images/posts/video-QSkinny-qtws19.png" alt="Classifying brain tumors with machine learning">
+    </a>
+    
+    <div class="prev__box">
+      <span class="post__nav__prev">Older post</span>
+      <h2 class="post__nav__title"><a href="/QSkinny-a-new-QtQuick-framework">QSkinny - A new approach for a QtQuick framework</a></h2>
+    </div>
+  </div>
+  
+
+  
+  <div class="post__next">
+    <div class="next__box">
+      <span class="post__nav__next">Newer post</span>
+      <h2 class="post__nav__title"><a href="/Fendt-QSkinny-UI-demo">Fendt QSkinny UI demo</a></h2>
+    </div>
+    
+    <a href="/Fendt-QSkinny-UI-demo" class="next__image">
+      
+      <div class="video-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <polygon points="40,30 70,50 40,70"></polygon>
+        </svg>
+      </div>
+      
+      <img class="lazy" data-src="/images/posts/video-Fendt-QSkinny.png" alt="Classifying brain tumors with machine learning">
+    </a>
+    
+  </div>
+  
+</div>
+      
+
+      <!--
+        The widget follows "system" settings for light/dark mode
+        by default, but you can manually select "light" or "dark"
+        mode for a consistent display
+      -->
+      <div
+        data-chirpy-theme="system"
+        data-chirpy-comment="true"
+        id="chirpy-comment"
+      ></div>
+      
+
+
+
+
+
+<div class="related-posts ">
+  <div class="section__info">
+    <div class="section__head">
+      <h2 class="section__title">Related</h2>
+    </div>
+  </div>
+  <div class="view-list">
+
+  
+    
+    
+
+    
+
+    
+    
+    
+    
+
+    
+
+    
+    
+    
+    
+
+    
+
+    
+    
+    
+    
+
+    
+
+    
+    
+    
+    
+
+    
+
+    
+    
+    
+    
+
+    
+
+    
+    
+    
+    
+
+    
+
+    
+    
+    
+    
+
+    
+
+    
+    
+  </div>
+</div>
+    </div>
+
+    <div class="col col-4 col-d-12">
+      <aside class="sidebar">
+        
+
+
+
+
+<div class="widget widget-featured-posts">
+  <div class="widget-sidebar-head">
+    <h2 class="widget-sidebar-title">Featured posts</h2>
+  </div>
+  
+    
+
+    
+    
+    <div class="post-featured-content">
+      
+      <a href="/QML-caching-loader-caching-loaded-pages" class="post-featured-image">
+        
+        <img class="lazy" data-src="/images/posts/qml-caching-loader.png" alt="QML CachingLoader Caching loaded pages">
+      </a>
+      
+      <div class="post-featured-meta">
+        <h3 class="post-featured-title"><a href="/QML-caching-loader-caching-loaded-pages">QML CachingLoader Caching loaded pages</a></h3>
+        <time class="post-featured-date" datetime="2020-01-15T01:00:00+01:00">15 Jan, 2020</time>
+      </div>
+    </div>
+    
+  
+
+    
+    
+    <div class="post-featured-content">
+      
+      <a href="/Using-QtWidgets-in-QML" class="post-featured-image">
+        
+        <img class="lazy" data-src="/images/posts/qtwidgets-qml.png" alt="Using QtWidgets in QML">
+      </a>
+      
+      <div class="post-featured-meta">
+        <h3 class="post-featured-title"><a href="/Using-QtWidgets-in-QML">Using QtWidgets in QML</a></h3>
+        <time class="post-featured-date" datetime="2019-11-27T01:00:00+01:00">27 Nov, 2019</time>
+      </div>
+    </div>
+    
+  
+
+    
+    
+    <div class="post-featured-content">
+      
+      <a href="/26-tips-for-Qt-projects-on-embedded-targets" class="post-featured-image">
+        
+        <img class="lazy" data-src="/images/logo-transparent.png" alt="26 tips for Qt projects on Embedded targets">
+      </a>
+      
+      <div class="post-featured-meta">
+        <h3 class="post-featured-title"><a href="/26-tips-for-Qt-projects-on-embedded-targets">26 tips for Qt projects on Embedded targets</a></h3>
+        <time class="post-featured-date" datetime="2019-10-01T02:00:00+02:00">01 Oct, 2019</time>
+      </div>
+    </div>
+    
+  
+
+    
+    
+    <div class="post-featured-content">
+      
+      <a href="/Meet-QSkinny-a-lightweight-Qt-UI-library" class="post-featured-image">
+        
+        <img class="lazy" data-src="/images/posts/meet-qskinny-speedometers.png" alt="Meet QSkinny, a lightweight Qt UI library">
+      </a>
+      
+      <div class="post-featured-meta">
+        <h3 class="post-featured-title"><a href="/Meet-QSkinny-a-lightweight-Qt-UI-library">Meet QSkinny, a lightweight Qt UI library</a></h3>
+        <time class="post-featured-date" datetime="2018-09-18T02:00:00+02:00">18 Sep, 2018</time>
+      </div>
+    </div>
+    
+  
+
+</div>
+
+
+        
+<div class="widget widget-tags">
+  <div class="widget-sidebar-head">
+    <h2 class="widget-sidebar-title">Topics</h2>
+  </div>
+
+  <div class="tag-cloud">
+    
+      
+      
+      
+
+      
+
+      <a href="/tags/?tag=qt"
+         class="tag-cloud__item"
+         style="background: #ff4500;">
+        Qt
+      </a>
+    
+      
+      
+      
+
+      
+
+      <a href="/tags/?tag=ai"
+         class="tag-cloud__item"
+         style="background: #4643ec;">
+        AI
+      </a>
+    
+  </div>
+</div>
+
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- end post -->
+
+    </main>
+    <!-- end content -->
+
+    <!-- begin footer -->
+<footer class="footer">
+
+  <div class="footer__inner">
+    <div class="container">
+      <div class="row">
+
+        <div class="col col-4 col-d-12">
+          <h3 class="footer__info__title">Edelhirsch Software</h3>
+          
+          <p class="footer__info__description">... is based in Munich (Germany), but also works remotely. Don't hesitate to get in touch with questions about user interfaces, QSkinny or Qt in general.</p>
+          
+          
+          <div class="footer__social">
+            <ul class="footer__social__list list-reset">
+              
+              <li class="footer__social__item">
+                <a class="footer__social__link" href="https://x.com/peha23" target="_blank" rel="noopener"
+                  aria-label="Twitter link"><i class="fa-brands fa-x-twitter"></i></a>
+              </li>
+              
+              <li class="footer__social__item">
+                <a class="footer__social__link" href="https://www.linkedin.com/company/edelhirsch" target="_blank" rel="noopener"
+                  aria-label="LinkedIn link"><i class="fa-brands fa-linkedin"></i></a>
+              </li>
+              
+              <li class="footer__social__item">
+                <a class="footer__social__link" href="https://github.com/edelhirsch" target="_blank" rel="noopener"
+                  aria-label="Github link"><i class="fa-brands fa-github"></i></a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </div>
+
+        <div class="col col-4 col-d-12">
+          <h3 class="footer__title">Recent Posts</h3>
+          <div class="footer__recent-posts">
+            
+            <div class="footer__recent-content">
+              
+              <a href="/Fendt-QSkinny-UI-demo" class="footer__recent-image">
+                
+                <div class="video-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                    <polygon points="40,30 70,50 40,70"></polygon>
+                  </svg>
+                </div>
+                
+                <img class="lazy" data-src="/images/posts/video-Fendt-QSkinny.png" alt="Fendt QSkinny UI demo">
+              </a>
+              
+              <div class="footer__recent-meta">
+                <h3 class="footer__recent-title"><a href="/Fendt-QSkinny-UI-demo">Fendt QSkinny UI demo</a></h3>
+                <time class="footer__recent-date" datetime="2022-05-09T02:00:00+02:00">09 May, 2022</time>
+              </div>
+            </div>
+            
+            <div class="footer__recent-content">
+              
+              <a href="/classifying-brain-tumors-with-machine-learning" class="footer__recent-image">
+                
+                <img class="lazy" data-src="/images/posts/ml-brain-tumors-data-set.png" alt="Classifying brain tumors with machine learning">
+              </a>
+              
+              <div class="footer__recent-meta">
+                <h3 class="footer__recent-title"><a href="/classifying-brain-tumors-with-machine-learning">Classifying brain tumors with machine learning</a></h3>
+                <time class="footer__recent-date" datetime="2020-12-11T01:00:00+01:00">11 Dec, 2020</time>
+              </div>
+            </div>
+            
+            <div class="footer__recent-content">
+              
+              <a href="/QSkinny-a-new-QtQuick-framework" class="footer__recent-image">
+                
+                <div class="video-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                    <polygon points="40,30 70,50 40,70"></polygon>
+                  </svg>
+                </div>
+                
+                <img class="lazy" data-src="/images/posts/video-QSkinny-qtws19.png" alt="QSkinny - A new approach for a QtQuick framework">
+              </a>
+              
+              <div class="footer__recent-meta">
+                <h3 class="footer__recent-title"><a href="/QSkinny-a-new-QtQuick-framework">QSkinny - A new approach for a QtQuick framework</a></h3>
+                <time class="footer__recent-date" datetime="2020-06-25T02:00:00+02:00">25 Jun, 2020</time>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        <div class="col col-2 col-d-6 col-m-12">
+          <div class="footer-nav__left">
+            <h3 class="footer__title">Menu</h3>
+            <div class="footer-nav__list">
+            
+            
+              <a class="footer-nav__link" href="/">Home</a>
+            
+            
+            
+              <a class="footer-nav__link" href="/#about">About</a>
+            
+            
+            
+              <a class="footer-nav__link" href="/#wasm">Demo</a>
+            
+            
+            
+              <a class="footer-nav__link" href="/contact/">Contact</a>
+            
+            
+            
+            
+            
+            </div>
+          </div>
+        </div>
+        
+
+        
+        
+
+        
+        <div class="col col-2 col-d-6 col-m-12">
+          <div class="footer-nav__right">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <h3 class="footer__title">Rest</h3>
+            <div class="footer-nav__list">
+              
+                <a class="footer-nav__link" href="/videos/">Videos</a>
+              
+                <a class="footer-nav__link" href="/archive/">Archive</a>
+              
+            </div>
+            
+            
+          </div>
+        </div>
+        
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="copyright">2025 &copy; <a href="/">Edelhirsch Software</a>. Crafted & Designed by <a href="https://jekyllthemes.io/developers/artem-sheludko">Artem Sheludko</a>.</div>
+        <div class="copyright">Legal notice / Impressum:<br /><br />
+            Edelhirsch Software GmbH<br /><br />
+            Forstenrieder Allee 93<br />
+            D-81476 München<br />
+            Vertretungsberechtiger Geschäftsführer: Peter Hartmann<br />
+            Telefon: +49 171 4608675<br />
+            E-Mail: info@edelhirsch.io<br />
+            Registergericht: Amtsgericht München<br />
+            Registernummer: HRB 247890<br />
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+<!-- end footer -->
+
+  </div>
+  <!-- end global wrap -->
+
+  <div class="top" title="Top"><i class="fa-solid fa-arrow-up"></i></div>
+
+  <div class="images-overlay"></div>
+
+  <script src="/js/scripts.js"></script>
+  <script src="/js/common.js"></script>
+</body>
+
+</html>

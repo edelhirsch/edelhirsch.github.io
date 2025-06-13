@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Edelhirsch Software</title>
+        <description>Beautiful technical UIs</description>
+        <link>/</link>
+        <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Fri, 13 Jun 2025 13:21:34 +0200</pubDate>
+        <lastBuildDate>Fri, 13 Jun 2025 13:21:34 +0200</lastBuildDate>
+        <generator>Jekyll v4.4.1</generator>
+        
+            <item>
+                <title>Fendt QSkinny UI demo</title>
+                <description>&lt;p&gt;A demo showing the Fendt One user interface written with QSkinny and Qt.&lt;/p&gt;
+</description>
+                <pubDate>Mon, 09 May 2022 02:00:00 +0200</pubDate>
+                <link>/Fendt-QSkinny-UI-demo</link>
+                <guid isPermaLink="true">/Fendt-QSkinny-UI-demo</guid>
+                
+                <category>Qt</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>Classifying brain tumors with machine learning</title>
+                <description>&lt;p&gt;This blog post shows the findings of a brain tumor classification problem, which was conducted for the talk “Machine Learning in medicine” for the ENEA 2020 conference (the yearly conference of the European Neuroendocrine Association).&lt;/p&gt;
+
+&lt;h2 id=&quot;hardware&quot;&gt;Hardware&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/ml-brain-tumors-hardware.jpg&quot; alt=&quot;Hardware&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For this problem a NVidia Jetson TX2 developer kit was used. Probably that board was more designed to be used for inference on the edge, but it turned out to be fast enough to train the whole model.&lt;/p&gt;
+
+&lt;p&gt;The reason for doing this with the board instead of a desktop computer with even better GPU was that when trying to use GPU-accelerated machine learning it can be tricky to get all the software package installation right: E.g. the combination of Ubuntu / NVidia’s cuDNN library / GPU-accelerated Tensorflow / Keras needs  specific versions of each package and might or might not work with other versions.&lt;/p&gt;
+
+&lt;p&gt;The Jetson developer board comes pre-installed with working software, and other needed parts like pythons’ tensorflow-gpu package can be installed from a desktop system with NVidia’s Jetpack installer (as of this writing that installer needs Ubuntu 18.04 and will not run on 20.04, so it had to be used from inside a VMPlayer instance).&lt;/p&gt;
+
+&lt;h2 id=&quot;data-set&quot;&gt;Data set&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/ml-brain-tumors-data-set.png&quot; alt=&quot;Data set&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Kaggle is a great resource for free data sets with interesting problems to learn from. The data set used here is “Brain Tumor Classification (MRI)” and consists of ~ 3200 MRI images, each one belonging to four different tumor classes (see above): Glioma, meningioma, pituitary tumor and no tumor.&lt;/p&gt;
+
+&lt;p&gt;This data set comes with the data already split into a training and a test set, each of them containing one subdirectory for each tumor category. So when using the right Keras functions, there is little preparation to do with the data before training the model.&lt;/p&gt;
+
+&lt;h2 id=&quot;machine-learning-model&quot;&gt;Machine learning model&lt;/h2&gt;
+
+&lt;p&gt;The 3200 images from the data set is already quite a high number, but not something that would guarantee a good accuracy without overfitting. However, data augmentation, i.e. artificially creating more data by flipping, rotating etc. the training data, did not help that much in this case, interestingly.&lt;/p&gt;
+
+&lt;p&gt;A rather recent trend in machine learning is transfer learning: A model that was used to train other images is used for the problem at hand, and while training for the new problem (in our case: MRI images), the weights of the old model can be used and carefully adapted.&lt;/p&gt;
+
+&lt;p&gt;The learning rate here should be low, and depending on the similarity of the models, a specific amount of layers should be frozen. These articles provide some further reading: Transfer learning and fine-tuning and A Simple Guide to Using Keras Pretrained Models.&lt;/p&gt;
+
+&lt;p&gt;The code for the brain tumor classification is using Keras and Tensorflow with weights pre-trained from another model (ImageNet).&lt;/p&gt;
+
+&lt;p&gt;The code can be found here: https://github.com/edelhirsch/brain-tumor-classification&lt;/p&gt;
+
+&lt;h2 id=&quot;results&quot;&gt;Results&lt;/h2&gt;
+
+&lt;p&gt;When using transfer learning, the model doesn’t need many epochs to achieve a good accuracy and low loss: In the case at hand, something around 10 epochs or even less is enough, see below. There is a better accuracy of 97.6% after 14 epochs, but this also seems to pose a bigger risk on overfitting the model.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/ml-brain-tumors-results.png&quot; alt=&quot;Results&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Evaluating the model with the test data shows that there is still room for improvement: The accuracy is 79.4% with a loss of 1.3. This hints at some overfitting during the training.&lt;/p&gt;
+
+&lt;h2 id=&quot;next-steps&quot;&gt;Next steps&lt;/h2&gt;
+
+&lt;p&gt;There are still some things left to do:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It would be nice to turn the code above into a jupyter notebook and upload it to the Kaggle site, happening hopefully soon (™).&lt;/li&gt;
+  &lt;li&gt;It seems unlikely that another image model might provide better results, but might be worth a try. There are several ones available on Tensorflow hub.&lt;/li&gt;
+  &lt;li&gt;Since the images from the original model and the MRI images are quite different, it would be interesting to try generating a model from other MRI images and transfer the weights from that model.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hints on how to further improve the code or merge requests are always appreciated.&lt;/p&gt;
+</description>
+                <pubDate>Fri, 11 Dec 2020 01:00:00 +0100</pubDate>
+                <link>/classifying-brain-tumors-with-machine-learning</link>
+                <guid isPermaLink="true">/classifying-brain-tumors-with-machine-learning</guid>
+                
+                <category>AI</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>QSkinny - A new approach for a QtQuick framework</title>
+                <description>&lt;p&gt;QSkinny is a framework that is built on top of the Qt scene graph and very few core classes from QtQuick.&lt;/p&gt;
+
+&lt;p&gt;It offers a C++ and/or QML API.
+Besides trying to find a good combination of concepts from Qt/Widgets and Qt/Quick it is also experimenting with new ideas like a focus on vector graphics or dynamic theming.
+This presentation will give an overview of those ideas, the resulting architecture and a summary of how far they worked out in a real-life automotive project.&lt;/p&gt;
+</description>
+                <pubDate>Thu, 25 Jun 2020 02:00:00 +0200</pubDate>
+                <link>/QSkinny-a-new-QtQuick-framework</link>
+                <guid isPermaLink="true">/QSkinny-a-new-QtQuick-framework</guid>
+                
+                <category>Qt</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>QML CachingLoader Caching loaded pages</title>
+                <description>&lt;p&gt;When writing QML, using a Loader can come in handy: Certain UI elements are loaded in a deferred way, e.g. not at app startup, but when the user clicks a button. When alternating between source elements of a Loader, the old component will always be deleted, as the documentation states: “Setting source to a new URL will also cause the item created by the previous URL to be unloaded.”&lt;/p&gt;
+
+&lt;p&gt;This might not always be what the user wants, so we have written a CachingLoader component, which (you guessed it) caches all components that have been loaded before:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/edelhirsch/cachingloader&quot;&gt;https://github.com/edelhirsch/cachingloader&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;For benchmarking the code the above repository loads 2 pages with big images to simulate non-trivial loading time of sub-pages. The test shows that for the first time when a page is loaded, all three ways of deferred loading (Loader with “source” property, Loader with “sourceComponent” property, CachingLoader) behave the same.&lt;/p&gt;
+
+&lt;p&gt;However, when a previously loaded page is loaded again, the Loader object has to re-read it from disk. The CachingLoader has not unloaded it, but just restores it from the cache for immediate displaying without reading anything from disk:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/qml-caching-loader.png&quot; alt=&quot;QML loader vs. caching loader&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In this example there is no real difference when loading files via the “source” or “sourceComponent” attribute, the slight differences seem to be only variation between measurements.&lt;/p&gt;
+
+&lt;p&gt;Memory usage is a bit harder to measure, because QML does not seem to release the deleted pages right away, but waits for the garbage collector to kick in. However, in general the CachingLoader is trading loading time vs. memory usage, which means when using the CachingLoader the memory usage will be higher. A normal Loader object can release the memory of previously loaded pages, while the CachingLoader keeps all pages in its cache.&lt;/p&gt;
+
+&lt;p&gt;The next steps for the CachingLoader would be to introduce a “property bool isCacheable” to have more control about whether pages should be cached or not.&lt;/p&gt;
+
+&lt;p&gt;Small caveat: When the CachingLoader caches one of its pages, it sets its “enabled” attribute to false, which means it won’t receive no more mouse and keyboard events (when loading it from the cache the attribute is of course set to true again). However, care must be taken for other activity coming from e.g. Connections attributes; those should probably made active only when the root page is active.&lt;/p&gt;
+</description>
+                <pubDate>Wed, 15 Jan 2020 01:00:00 +0100</pubDate>
+                <link>/QML-caching-loader-caching-loaded-pages</link>
+                <guid isPermaLink="true">/QML-caching-loader-caching-loaded-pages</guid>
+                
+                <category>Qt</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>Using QtWidgets in QML</title>
+                <description>&lt;p&gt;The somewhat official story goes like this: You write your desktop application in QtWidgets, and an embedded UI with QML. QtWidgets offers an extensive set of controls, and QML is good for rapid prototyping and easily embedding fancy stuff like animations, because of its hardware-rendered backends like OpenGL.&lt;/p&gt;
+
+&lt;p&gt;Porting a QtWidgets app to QML can be a huge task, and sometimes it might not be feasible at all, be it due to time constraints or due to some widgets missing their pendant in the QML world.&lt;/p&gt;
+
+&lt;p&gt;Thus embedding QtWidgets in QML might be an option, i.e. writing some controls in QML and some in QtWidgets, and maybe gradually rewrite widgets in QML (or leave some widgets as they are).&lt;/p&gt;
+
+&lt;p&gt;Here is a screenshot of a prototype:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/qtwidgets-qml.png&quot; alt=&quot;push button in QML&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;… and here is the corresponding code (LGPLv2):&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/edelhirsch/widgetitem&quot;&gt;https://github.com/edelhirsch/widgetitem&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The idea to do that is not really new, however there did not seem to be code publicly available for this. The code is using a QQuickPaintedItem in QML to draw the widget with a QPainter; a caveat of using widgets in QML is that you often need to call update() by hand once the widget has changed.&lt;/p&gt;
+
+&lt;p&gt;Performance-wise, bigger widgets take several milliseconds to draw, and since the code always updates the whole widgets, it might not be possible to always get a frame rate of 60 frames per second, depending on the use case. For a rather static UI without animations it might still be good enough though.&lt;/p&gt;
+
+&lt;p&gt;An alternative to a QQuickPaintedItem would have been to just render to widget to an QImage and use it in a custom QQuickItem which renders to a QSGSimpleTextureNode or similar.&lt;/p&gt;
+
+&lt;p&gt;So far the code is just a prototype; feel free to let us know your suggestions, or just file a merge request!&lt;/p&gt;
+</description>
+                <pubDate>Wed, 27 Nov 2019 01:00:00 +0100</pubDate>
+                <link>/Using-QtWidgets-in-QML</link>
+                <guid isPermaLink="true">/Using-QtWidgets-in-QML</guid>
+                
+                <category>Qt</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>26 tips for Qt projects on Embedded targets</title>
+                <description>&lt;p&gt;Some of them are less surprising than others, and some might be rather subjective:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Choose the right license for Qt, i.e. whether you want to buy licenses from The Qt Company or whether you want to go with LGPL. There is a nice presentation from Burkhard Stubert about this.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When choosing hardware: Always choose a GPU whose OpenGL driver is well supported. Also, when using QML, choose a system with enough RAM; I would say 1 GB is the minimum here. Boot to Qt might be a good helper as well.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Writing a Qt app with one fullscreen HMI using Qt’s “eglfs” plugin is a safer choice than using a windowing system, and the only things that can get in your way is the GPU or the OpenGL driver.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Writing a multi-window HMI with Wayland can be tricky with NVidia cards. Wayland with Intel graphics cards is the safer way to go.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When building Qt, you can improve performance with options like -openssl-linked, -fontconfig (should be detected automatically when fontconfig is installed) and others.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When using Qt built with fontconfig, make sure to not use QML FontLoader elements with big fonts (e.g. fonts with Asian characters). Last time I checked FontLoader read the font files synchronously and kept the whole file in memory, which for big fonts might  amount up to 10 MB.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Load QML files as resource files instead of reading them from disk.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;My personal rule of thumb: When starting to cross compile, it is a good time to introduce a CI system to check that the build is still working on all architectures.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When using Loader objects in QML: Make sure the code loaded is fast enough; you might want to use the QtQuick Compiler (see next item) or check out a “chained loading approach”: First load the main UI, when it has loaded (“Component.onCompleted”), load the code the user might click on. A separate blog post will hopefully follow soon.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Use the Qt Quick Compiler to speed up performance on target hardware, especially at startup and when using Loader objects. Startup can be improved by 30%, as this example shows, which is in line with a benchmark of one of my current projects.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;As written elsewhere already: Keep your QML layer as thin as possible, avoid JavaScript, and if you can write something in C++, do so.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When doing UI testing with Squish, start writing the tests when the UI is pretty stable. Otherwise you might spend a lot of time rewriting Squish tests when the designers change the look of the UI.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Always have an option to build and run your code with address sanitizer and other sanitizers. If you don’t have a build option, you might just want to do it manually from time to time.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When on Windows: Using sanitizers might be a good reason to use clang instead of MSVC.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If cross platform is important, e.g. your desktop client is running on Windows and your target client on Linux, then clang and cmake seem the natural way to go.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Static code checking might be helpful, if you are willing to dig through the massive amount of false positives. I personally think sanitizers are way more helpful though.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Only use git submodules (or SVN externals) when you have to, e.g. if you include a project which has a different release schedule and might change API or so.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Try your app on target hardware as early as possible. If there is no target hardware available, you might want to try it on similar hardware to check whether compilation (e.g. on ARM) and deployment works and the performance is acceptable. Some apps behave perfectly fine on desktop and turn out to be too slow on an embedded device.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create new threads only if necessary, e.g. if an API you want to call takes some time and is synchronous, or if there is another event loop. You should always be in control of the number of threads on your system. Don’t tell fellow developers to “just put your stuff into a thread”; this doesn’t scale.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Only use Qt Plugins (QQmlExtensionPlugin instances) if you have to; resolving symbols at runtime might be expensive. Creating a normal library instead of a plugin is faster.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If you are using QML and are accessing the network, there is no need to create a QNetworkAccessManager: You can reuse the one from “QQuickView::engine()-&amp;gt;networkAccessManager()”. This allows you to use cached DNS records, open sockets, TLS sessions etc. and can speed up network requests. For more information feel free to checkout one of my talks about QtNetwork performance.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Do not blindly call QNetworkReply::ignoreSslErrors() or QSslSocket::ignoreSslErrors(). If in doubt whether you are doing it right, do not call those methods at all.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;On Linux, you might want to try set the environment variable QSG_RENDER_LOOP to “threaded”, if your hardware doesn’t do that already. Qt is taking a conservative approach about when to use the threaded render loop, so maybe your configuration is not eligible for threaded rendering by default, even though it is working. For more information, see https://doc.qt.io/qt-5/qtquick-visualcanvas-scenegraph.html#scene-graph-and-rendering.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Use qmllint to check your QML files for syntactic errors, either manually from time to time or in your CI system.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When benchmarking code on Linux, you can simulate a cold system start by deleting the file system caches via “sync; echo 3 &amp;gt; /proc/sys/vm/drop_caches”. Otherwise your second and third app runs will be faster than the first one.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When measuring memory usage on Linux, make sure to measure only the memory that is actually loaded, e.g. via this cryptic line: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;grep &apos;^Pss:&apos; /proc/&lt;/code&gt;pidof MyApp&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/smaps | rev | cut -d &apos; &apos; -f 2 | rev | awk &apos;{total+=$1} END{print total}&apos;&quot;&lt;/code&gt;. Bottom line: Use the “Pss” or “Rss” field of smaps to measure memory.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Is there anything missing? Do you disagree with some of the points? Feel free to join the discussion here or write us on Twitter.&lt;/p&gt;
+
+</description>
+                <pubDate>Tue, 01 Oct 2019 02:00:00 +0200</pubDate>
+                <link>/26-tips-for-Qt-projects-on-embedded-targets</link>
+                <guid isPermaLink="true">/26-tips-for-Qt-projects-on-embedded-targets</guid>
+                
+                <category>Qt</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>Using the Qt Scene Graph from C++ with QSkinny</title>
+                <description>&lt;p&gt;Modern Qt apps instantiate a QML engine to parse UI files and display their contents.
+Under the hood, there is a scene graph taking care of handling graphical resources efficiently.
+The QSkinny framework on the other hand provides a C++ API on top of the Qt scene graph without the need for QML.&lt;/p&gt;
+
+&lt;p&gt;The Qt scene graph sits on top of OpenGL and is used by QML UI elements.
+The QSkinny framework, on the other hand, is using the scene graph directly without the need for a QML engine; it rather offers a higher level C++ API similar to QWidgets.
+This talk will give an overview over what is going on under the hood of QML apps and will compare it to how QSkinny operates.
+Reasons for giving QSkinny a try might include more fine-grained handling of resources, more control over memory usage and easier data access from C++.
+The QSkinny framework is being used in an automotive UI (which unfortunately cannot be shown in public yet).&lt;/p&gt;
+</description>
+                <pubDate>Mon, 01 Apr 2019 02:00:00 +0200</pubDate>
+                <link>/Using-the-Qt-scene-graph-from-C++-with-QSkinny</link>
+                <guid isPermaLink="true">/Using-the-Qt-scene-graph-from-C++-with-QSkinny</guid>
+                
+                <category>Qt</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>Meet QSkinny, a lightweight Qt UI library</title>
+                <description>&lt;p&gt;(This post appeared &lt;a href=&quot;https://www.peter.hartmann.tk/single-post/2018/09/18/Meet-QSkinny-a-lightweight-Qt-UI-library&quot;&gt;on my personal blog&lt;/a&gt; first.)&lt;/p&gt;
+
+&lt;p&gt;QSkinny offers a Qt API to write user interfaces in C++. It is inspired by the class design of QtWidgets, but runs on top of QtQuick. This means that QSkinny is hardware accelerated and can make use of e.g. animations and shaders. Below is a screenshot of a sample UI written with QSkinny:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/meet-qskinny-speedometers.png&quot; alt=&quot;QSkinny speedometers&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;how-does-it-work&quot;&gt;How does it work?&lt;/h2&gt;
+
+&lt;p&gt;Check out a simple “hello world” program written with QSkinny:&lt;/p&gt;
+
+&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;QGuiApplication&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;QskWindow&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QskLinearBox&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Qt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Vertical&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QskPushButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;push me&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QskTextLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Looks familiar? Users of QtWidgets code will feel right at home when using QSkinny’s API: There are similar controls in both worlds like text labels, push buttons, layouts, dialogs etc.&lt;/p&gt;
+
+&lt;p&gt;This diagram shows how QSkinny, QML and QtWidgets relate:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/meet-qskinny-architecture.png&quot; alt=&quot;QSkinny architecture&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The layers in the diagram above are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;QSkinny: C++ UI controls&lt;/li&gt;
+  &lt;li&gt;QML engine: declarative / JavaScript engine to parse UI files&lt;/li&gt;
+  &lt;li&gt;QtQuick: basic layer of UI controls (containing e.g. x/y positioning and focus handling)&lt;/li&gt;
+  &lt;li&gt;Qt scene graph: low level drawing primitives to make use of hardware acceleration&lt;/li&gt;
+  &lt;li&gt;OpenGL: API to support hardware accelerated drawing&lt;/li&gt;
+  &lt;li&gt;QtWidgets: C++ UI controls designed for desktop use&lt;/li&gt;
+  &lt;li&gt;Qt raster paint engine: software (i.e. not hardware accelerated) drawing engine&lt;/li&gt;
+  &lt;li&gt;QPainter API: interface for drawing images, text, shapes etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since both QSkinny and QML elements are instances of QQuickItem, both technologies can be mixed: The QSkinny “buttons” example for instance  is using a QskPushButton from QML.&lt;/p&gt;
+
+&lt;h2 id=&quot;where-is-the-code&quot;&gt;Where is the code?&lt;/h2&gt;
+
+&lt;p&gt;The code lives on github and is licensed under LGPLv2:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/uwerat/qskinny&quot;&gt;https://github.com/uwerat/qskinny&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Its original authors are Uwe Rathmann and Andrew Knight, the author of this blog post started contributing later.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-is-it-called-qskinny&quot;&gt;Why is it called QSkinny?&lt;/h2&gt;
+
+&lt;p&gt;It is slim. The sample screenshot above shows 3 speedometers, each one of them consists of one QQuickItem, which itself contains several scene graph nodes: There is one node for the background one for the needle, one for the labels etc. In QML, each subcontrol is a QQuickItem and therefor a QObject.&lt;/p&gt;
+
+&lt;p&gt;It separates the functionality of controls from their appearance; the latter being handled by so called Skinlets. Those Skinlets live on the scene graph thread and handle the actual drawing. How exactly they are drawn is determined by a so called Skin, and can be changed at runtime. This makes it easy to implement e.g. a daylight vs. nighttime theme or different brand schemes:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/meet-qskinny-speedometers-skin-change.gif&quot; alt=&quot;changing themes&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As an example, here is a skin setting all push buttons to have blue text on green background with a 10 pixel padding:&lt;/p&gt;
+
+&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;setGradient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QskPushButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Panel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Qt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;green&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;setColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QskPushButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Qt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;setMargins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QskPushButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Panel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QskAspect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Those skin properties are similar to properties in QML.&lt;/p&gt;
+
+&lt;p&gt;Upon a skin change, a programmer would just replace the colors, padding etc. with different values and then trigger a repaint; the according animation can even interpolate between colors, as seen above (reduced frame rate due to GIF compression).&lt;/p&gt;
+
+&lt;h2 id=&quot;how-mature-is-it&quot;&gt;How mature is it?&lt;/h2&gt;
+
+&lt;p&gt;QSkinny is currently used in a major automotive project which unfortunately cannot be shown in public yet. This means it is being stress tested for production, but still lacking in areas like documentation; moreover the controls currently implemented are aligned to the project needs so far.&lt;/p&gt;
+
+&lt;p&gt;Mixing QSkinny and QML is in a proof-of-concept state, because the application mentioned above is purely written in C++ and not using QML in any way.&lt;/p&gt;
+
+&lt;p&gt;This project is showing very good performance numbers, especially a fast startup time and low memory usage. Considering that there are lots of controls loaded right at application startup, those things do not seem to be an issue with QSkinny (at least for this project).&lt;/p&gt;
+
+&lt;p&gt;Also, since the developers working on it came from a QtWidgets background, they were familiar with the underlying concepts and productive right away with QSkinny.&lt;/p&gt;
+
+&lt;p&gt;Do you want to try it out? Just clone the repository above and let us know how it goes!&lt;/p&gt;
+
+&lt;p&gt;Contributions (source code changes, documentation etc.) will of course also be appreciated.&lt;/p&gt;
+</description>
+                <pubDate>Tue, 18 Sep 2018 02:00:00 +0200</pubDate>
+                <link>/Meet-QSkinny-a-lightweight-Qt-UI-library</link>
+                <guid isPermaLink="true">/Meet-QSkinny-a-lightweight-Qt-UI-library</guid>
+                
+                <category>Qt</category>
+                
+                
+            </item>
+        
+    </channel>
+</rss>
