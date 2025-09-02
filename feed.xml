@@ -5,9 +5,215 @@
         <description>Beautiful technical UIs</description>
         <link>/</link>
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 15 Jun 2025 09:48:48 +0200</pubDate>
-        <lastBuildDate>Sun, 15 Jun 2025 09:48:48 +0200</lastBuildDate>
+        <pubDate>Tue, 02 Sep 2025 17:23:11 +0200</pubDate>
+        <lastBuildDate>Tue, 02 Sep 2025 17:23:11 +0200</lastBuildDate>
         <generator>Jekyll v4.4.1</generator>
+        
+            <item>
+                <title>A taxonomy of modern user interfaces</title>
+                <description>&lt;p&gt;We implemented Google’s Material 3 and Microsoft’s Fluent 2 design systems for QSkinny,
+as shown in the screenshots below (still an ongoing effort).
+This required some new features to be implemented, some of
+which hinted at new general paradigms within many other design systems.&lt;/p&gt;
+
+&lt;p&gt;Contrarily, some features often found in commercial design systems seem to have been deliberately
+left out of these two ‘generic’ ones above.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/taxonomy-of-modern-user-interfaces-material3.png&quot; alt=&quot;Material 3&quot; /&gt;
+Google’s Material 3 design system&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/taxonomy-of-modern-user-interfaces-fluent2.png&quot; alt=&quot;Fluent 2&quot; /&gt;
+Microsoft’s Fluent 2 design system&lt;/p&gt;
+
+&lt;p&gt;Here is a subjective list of requirements for new design systems:&lt;/p&gt;
+
+&lt;h2 id=&quot;1-subtle-shadows-everywhere&quot;&gt;1. Subtle shadows everywhere&lt;/h2&gt;
+
+&lt;p&gt;Of course the days of the 90s style thick drop shadows are gone, but apparently so is the
+complete flat style of the first iPhone. Shadows (and other ways of elevation) are used as
+a subtle way to draw attention and show levels of visual hierarchy.&lt;/p&gt;
+
+&lt;p&gt;For instance, a hovered or focused button will have a higher elevation than a resting button,
+and a dialog or a popup an even higher one. Typically these shadows have a minimal x/y offset,
+and a semitransparent color.&lt;/p&gt;
+
+&lt;p&gt;Material has a &lt;a href=&quot;https://m3.material.io/styles/elevation/overview&quot;&gt;guide on elevation&lt;/a&gt;
+that lists shadows as one element, and colors as another one. Interestingly the usage of
+shadows in Material 3 was reduced in favor of coloring in comparison to its predecessor Material 2.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.figma.com/design/NAWMapFlXnoOb86Q2H5GKr/Windows-UI--Community-?node-id=5665-194&amp;amp;t=IUqkkvNMaHVbDCTX-0&quot;&gt;Fluent 2&lt;/a&gt;
+similarly lists shadows and box strokes (i.e. box borders) as elements of elevation.&lt;/p&gt;
+
+&lt;p&gt;As a consequence, &lt;em&gt;shadows should be 1st class citizens in UI toolkits&lt;/em&gt;:
+Defining a shadow on a control should be as easy as setting a color or a font.&lt;/p&gt;
+
+&lt;p&gt;Here is how QSkinny defines the gradient and shadow of the
+&lt;a href=&quot;https://github.com/uwerat/qskinny/blob/master/designsystems/fluent2/QskFluent2Skin.cpp#L821&quot;&gt;QskMenu class for Fluent 2&lt;/a&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QskMenu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;setBoxBorderColors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Panel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strokeColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;surface&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flyout&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;setGradient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Panel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flyout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;defaultColor&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;setShadowMetrics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Panel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shadow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flyout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;setShadowColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Panel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shadow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flyout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/taxonomy-of-modern-user-interfaces-menu.png&quot; alt=&quot;Fluent 2 menu&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fluent 2 menus in QSkinny&lt;/p&gt;
+
+&lt;p&gt;Side note: Inner shadows (as opposed to drop shadows) seem to be very rare and have only
+been observed in sophisticated controls for commercial design systems.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-gradients-are-gone-or-arent-they&quot;&gt;2. Gradients are gone… or aren’t they?&lt;/h2&gt;
+
+&lt;p&gt;Material 3 comes with an incredibly sophisticated color/palette system (see below);
+but surfaces like button panels etc. consist of one color only (Sometimes two
+colors need to be “flattened” into one, e.g. a semi-transparent hover color and an opaque
+button panel color).&lt;/p&gt;
+
+&lt;p&gt;Same for Fluent 2: The design system &lt;a href=&quot;https://www.figma.com/design/NAWMapFlXnoOb86Q2H5GKr/Windows-UI--Community-?node-id=5498-70729&amp;amp;t=IUqkkvNMaHVbDCTX-0&quot;&gt;lists several shades of its iconic blue color&lt;/a&gt;
+and more flavors of gray without any gradient.&lt;/p&gt;
+
+&lt;p&gt;However, many commercial design systems still use gradients for “2.5D-style” effects.
+Of course they are applied as subtly as the aforementioned shadows, but are still being
+used a lot.&lt;/p&gt;
+
+&lt;p&gt;The QSkinny example below shows two small buttons on the left with subtle linear gradients (45 degrees)
+in the inner panel and a reversed gradient on the outer button ring. This has both an elevation
+and a  “texture” effect without actually using textures (i.e. images). The shadows add
+to the depth, but even with only gradients would the sense of elevation still be there.&lt;/p&gt;
+
+&lt;p&gt;On the right is a gauge with conical gradients: The inner green one going from dark green
+to lighter green, and the outer one trying to mimic a chromatic effect. Radial gradiants
+are not shown here, but are equally usable.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/taxonomy-of-modern-user-interfaces-gradients.png&quot; alt=&quot;gradients example&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Gradients add depth and elevation&lt;/p&gt;
+
+&lt;p&gt;Outlook: For more sophistication there might be the need in the future of multi-dimensional
+gradients like the one below: a conical gradient (from purple to blue) and a radial one
+(transparent to full hue):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/taxonomy-of-modern-user-interfaces-ai.png&quot; alt=&quot;2-dimensional gradients&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A gauge generated by AI showing multi-dimensional gradients&lt;/p&gt;
+
+&lt;h2 id=&quot;3-those-modern-palettes-arent-what-they-used-to-be&quot;&gt;3. Those modern palettes aren’t what they used to be&lt;/h2&gt;
+
+&lt;p&gt;Google created a new color system called HCT (hue, chroma, tone) built on older ones like
+HSL (hue, saturation, lightness). The difference is that HCT is
+&lt;a href=&quot;https://m3.material.io/blog/science-of-color-design&quot;&gt;“perceptually accurate”&lt;/a&gt;, i.e.
+colors that feel lighter are actually recognized as lighter within HCT with a higher tone
+value.&lt;/p&gt;
+
+&lt;p&gt;By changing only the chroma (~ saturation) and tone (~ lightness) of a color, one can
+generate a whole palette to be used within a UI that matches the input color nicely;
+as an example, see the &lt;a href=&quot;https://www.figma.com/design/O4H724CKmUVPocw6JoSUrd/Material-3-Design-Kit--Community-?node-id=49823-12142&amp;amp;t=gqXeW8vxuSpmgA1D-0&quot;&gt;Material 3 palette on Figma&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In terms of accessibility, by choosing e.g. background and font colors with a big tone difference,
+one can be reasonably sure that text is comfortly legible.&lt;/p&gt;
+
+&lt;p&gt;So even developers without design experience can create a visibly appealing UI, without
+even knowing the main input color. Creating the palette depending on an input color
+is used on e.g. Android, where the user can choose a color or just upload an image,
+and all controls adapt to the main color.&lt;/p&gt;
+
+&lt;p&gt;Side note from the Qt world: QColor::darker() and QColor::lighter() are not fine-grained
+enough for this purpose.&lt;/p&gt;
+
+&lt;p&gt;With the additional support of changing colors dynamically (see below), this means that
+palettes can easily be generated for both day and night mode from one or two input colors;
+one could also easily change between different brand colors.&lt;/p&gt;
+
+&lt;p&gt;The QSkinny tractor example &lt;a href=&quot;https://github.com/edelhirsch/qskinny/blob/feature/tractor-ui/examples/tractorui/Skin.cpp#L47&quot;&gt;shows how to extend the Material 3 palette&lt;/a&gt;
+with more colors and how to change between day/night mode as well as different
+brands easily, as switching colors and other hints is supported directly in the framework.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/taxonomy-of-modern-user-interfaces-ikea.png&quot; alt=&quot;Ikea colors&quot; /&gt;
+QSkinny tractor example in day/night mode with “Ikea colors”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/taxonomy-of-modern-user-interfaces-john-deere.png&quot; alt=&quot;John Deere colors&quot; /&gt;
+QSkinny tractor example in day/night mode with “John Deere colors”&lt;/p&gt;
+
+&lt;p&gt;For an online demo of this app, see the &lt;a href=&quot;/#wasm&quot;&gt;tractor example on the main page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So while changing between branding themes as above might not be a day-to-day use case, changing
+between day and night mode certainly is. This means that a UI toolkit should be able to change
+skin colors dynamically.&lt;/p&gt;
+
+&lt;p&gt;Note: Ideally not only colors can be changed, but any type of skin definition like box roundings,
+fonts etc. 
+QSkinny treats every definition token, or so called “skin hint”, the same and can therefore
+exchange any of those at runtime.&lt;/p&gt;
+
+&lt;h2 id=&quot;4-graphics-write-once-change-all-the-time&quot;&gt;4. Graphics: Write once, change all the time&lt;/h2&gt;
+
+&lt;p&gt;Graphics like the button icons and the bigger tractor icon in the example above should be
+flexible in several ways:&lt;/p&gt;
+
+&lt;p&gt;They should adapt to color changes, as they are typically part of a definition that might
+change with the current skin; i.e. if the font and background colors change, then so need
+the icons.&lt;/p&gt;
+
+&lt;p&gt;Equally important, they should be flexible in size. With the Material 3 skin, e.g. buttons
+can have a different size in pixels depending on the physical size of the screen used:
+On smartphones that have a high resolution and a low physical size, buttons tend to have
+a bigger size in pixels than on tablets or TVs.
+This means that also the icons might have to grow with the buttons; when using layouts,
+they might even have to grow dynamically at runtime when resizing a window.&lt;/p&gt;
+
+&lt;p&gt;For the use case of different physical sizes, Material 3 supports so-called &lt;a href=&quot;https://developer.android.com/training/multiscreen/screendensities&quot;&gt;“density-independent pixels”&lt;/a&gt;;
+Fluent 2 has a similar concept named &lt;a href=&quot;https://microsoft.github.io/Win2D/WinUI3/html/DPI.htm&quot;&gt;“device-independent pixels”&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;These two points of course hint at using raster graphics like SVGs rather than JPGs/PNGs for icons;
+at least in Qt they have made &lt;a href=&quot;https://www.qt.io/blog/vector-graphics-in-qt-6.8&quot;&gt;kind of a revival&lt;/a&gt;
+recently.&lt;/p&gt;
+
+&lt;p&gt;In QSkinny flexible graphics have been supported from the start, and fit nicely with the use
+of icons in Material 3 and Fluent 2.&lt;/p&gt;
+
+&lt;p&gt;Lastly, at some point those graphics might also need to be animated with e.g. lottie. Material 3
+and Fluent 2 don’t seem to have an urgent need for this, but other design systems might have
+this requirement.&lt;/p&gt;
+
+&lt;h2 id=&quot;5-conclusion&quot;&gt;5. Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Implementing Material 3 and Fluent 2 for QSkinny was a painful but solid way to future-proof
+our UI toolkit.&lt;/p&gt;
+
+&lt;p&gt;Modern toolkits should be following the paradigms of modern design systems: They should allow
+for easy definition of shadows, or generally speaking: They should allow for styling all aspects
+of a “box” like gradients, border colors, box shapes, and shadows.&lt;/p&gt;
+
+&lt;p&gt;In addition they should allow for dynamically changing all aspects of the current style like
+colors, fonts and the aforementioned box aspects.&lt;/p&gt;
+
+&lt;p&gt;Talking in QSkinny terms, we believe that styling aspects of boxes and changing skin hints
+dynamically is well covered after having implemented bot Material 3 and Fluent 2.&lt;/p&gt;
+
+&lt;p&gt;Of course there is more work to do when it comes to more advanced features for other design
+systems like inner shadows, multi-dimensional gradients or multiple shadow colors.&lt;/p&gt;
+
+&lt;h2 id=&quot;6-quiz&quot;&gt;6. Quiz&lt;/h2&gt;
+
+&lt;p&gt;Can you guess the “brand” from the colors being used in the screenshot below? Let me know and
+the first one to get it right will receive a drink of his/her choice next time we meet in
+person!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/taxonomy-of-modern-user-interfaces-quiz.png&quot; alt=&quot;Which brand is this?&quot; /&gt;
+Which brand do these colors belong to? Hint: It is not really a company.&lt;/p&gt;
+</description>
+                <pubDate>Tue, 02 Sep 2025 02:00:00 +0200</pubDate>
+                <link>/A-taxonomy-of-modern-UIs</link>
+                <guid isPermaLink="true">/A-taxonomy-of-modern-UIs</guid>
+                
+                <category>Qt</category>
+                
+                
+            </item>
         
             <item>
                 <title>Fendt QSkinny UI demo</title>
